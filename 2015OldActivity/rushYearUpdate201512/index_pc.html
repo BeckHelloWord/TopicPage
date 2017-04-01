@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-闯年关</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var boxlist = $(".packet-tab-content>div");
+            $(".packet-tab-header li").on("mouseover", function() {
+                var num = $(this).index();
+                $(this).addClass("current").siblings().removeClass();
+                boxlist.eq(num).addClass("packet-content-current").siblings().removeClass();
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="top">
+            <div class="container clearfix">
+                <div class="logo fl">
+                    <a href="/"><img src="../images/logo.png" title="宝象金融"></a>
+                </div>
+                <div class="nav fr">
+                    <a href="/">宝象金融首页</a><span>|</span>
+                    <a href="/lc">理财</a><span>|</span>
+                    <a href="/zc">商品众筹</a><span>|</span>
+                    <a href="/gq">股权众筹</a><span>|</span>
+                    <a href="/borrow/index.html">借款</a><span>|</span>
+                    <a href="/about/index.html">关于宝象</a><span>|</span>
+                    <a href="/center/home/index">我的账户</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="banner">
+                <img src="./images/rushYear-banner.jpg" />
+            </div>
+            <div class="double-twelve">
+                <a class="bx-year-btn" href="/center/home/index">立即充值</a>
+                <div class="bx-rule pt50 bx-activity-rule">
+                    <p>1.充值金额以活动期间单笔统计为准，在活动后的3个工作日内进行红包发放。</p>
+                    <p>2.红包发放，单笔不累计，活动期间多笔充值可累计。</p>
+                    <p>3.红包需投30天以上标，使用规则以红包定义为准。</p>
+                </div>
+            </div>
+            <div class="bx-present">
+                <div class="bx-rule bx-activity-rule">
+                    <p>1.此红包为系统统一发放，当日最多领取1个，当月可多次领取。</p>
+                    <p>2.回款仅限直投项目，添添金和债权转让回款不参加活动。红包使用规则参见红包定义。</p>
+                </div>
+            </div>
+            <div class="bx-interest">
+                <div class="bx-rule bx-activity-rule">
+                    <p>1.标的加息与否请以标题为准。</p>
+                    <p>2.加息奖励在满标之后由系统自动发放。</p>
+                </div>
+            </div>
+            <div class="bx-packet">
+                <div class="bx-packet-tab">
+                    <ul class="packet-tab-header clearfix">
+                        <li class="current">新人注册即赠888</li>
+                        <li>排名有奖</li>
+                        <li>生日红包</li>
+                    </ul>
+                    <div class="packet-tab-content">
+                        <div class="packet-content-current">
+                            <img src="./images/register.gif" />
+                        </div>
+                        <div>
+                            <img src="./images/bx-ranking.gif" />
+                        </div>
+                        <div>
+                            <img src="./images/bx-birthday.gif" />
+                        </div>
+                    </div>
+                </div>
+                <p class="remind">理财有风险，投资需谨慎</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <!-- CNZZ统计代码 -->
+        <script type="text/javascript">
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1255472698'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1255472698' type='text/javascript'%3E%3C/script%3E"));
+
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?efee95d0149c1f6ca6092bbfbd6a29ef";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+
+        </script>
+    </div>
+</body>
+
+</html>

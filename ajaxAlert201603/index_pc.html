@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="renderer" content="webkit">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-1.11.1.min.js"></script><script src="js/layer.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="investSuccess">
+        <div class="news">
+            <p>已发送到您的手机上，<br />请注意查收微信消息！</p>
+            <a href="javascrip:;" class="message">微信未收到信息</a>
+        </div>
+        <div class="news_img"><img src="images/erwm.png" /></div>
+        <div class="content">
+        <p class="con">恭喜你<br />获得<span>1次发红包</span>的机会</p>
+        <p class="tips">小贴士：自己也可以抢哦！</p>
+        </div>
+        <!--<a href="javascript:;" class="close">不发了，放弃机会</a>-->
+    </div>
+</div>
+<script>
+$(".close").click(function(){
+         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+         parent.layer.close(index);
+    })
+    $(".message").click(function(){
+        $(".news").fadeOut();
+        $(".news_img").fadeIn();
+    })
+</script>
+</body>
+</html>

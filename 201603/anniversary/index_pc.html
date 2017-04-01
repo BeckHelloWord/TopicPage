@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-一周年庆</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/logostyle.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+        $(function(){
+            if(window.addEventListener){
+            //先执行一遍
+            (function(){
+                $(".balloon").stop().animate({"top":-303},2000).fadeOut(function(){
+                    $(this).css({"top":"400px"})
+                });
+                $(".bubble").stop().animate({"top":-303},2500).fadeOut(function(){
+                    $(this).css({"top":"562px"});
+                });
+            })();
+            //气球
+            var x,y;
+            var balloonAction=function(){
+                $(".balloon").stop().fadeIn(500).animate({"top":-303},2000).fadeOut(function(){
+                    $(this).css({"top":"400px"})
+                });
+                $(".bubble").stop().fadeIn(500).animate({"top":-303},2500).fadeOut(function(){
+                    $(this).css({"top":"562px"});
+                });
+            };
+            var flicker=function(){
+                $(".have").fadeToggle();
+            };
+
+            clearInterval(x);
+            x=setInterval(balloonAction,3500);
+
+            //烛光
+
+
+                clearInterval(y);
+                y=setInterval(flicker,600)
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="top">
+            <div class="container clearfix">
+                <div class="logo fl">
+                    <a href="/" class="newyear_logo">宝象金融</a>
+                </div>
+                <div class="nav fr">
+                    <a href="/">宝象金融首页</a><span>|</span>
+                    <a href="/lc">理财</a><span>|</span>
+                    <!--<a href="/zc">商品众筹</a><span>|</span>-->
+                    <!--<a href="/gq">股权众筹</a><span>|</span>-->
+                    <a href="/borrow/index.html">借款</a><span>|</span>
+                    <a href="/about/index.html">关于宝象</a><span>|</span>
+                    <a href="/center/home/index">我的账户</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+           <div class="pc-anniversary">
+               <div class="pc-anniversary-area1 pos-rel">
+                   <img src="./images/pc_anniversary01.jpg"/>
+                   <div class="balloon">
+                       <img src="./images/balloon.png"/>
+                   </div>
+                   <div class="bubble">
+                        <img src="./images/bubble.png"/>
+                   </div>
+                   <div class="candle">
+                       <img class="no" src="./images/no-candlelight.png"/>
+                       <img class="have" src="./images/have-candlelight.png"/>
+                       <!--<img class="no" src="./images/lazhu.gif"/>-->
+                   </div>
+               </div>
+               <div class="pc-anniversary-area2">
+                    <div class="type-area ">
+                        <div class="yellow-balloon">
+                            <p>回款当天有成功充值记录<br/>且无提现记录,可获得回款特权红包</p>
+                        </div>
+                    </div>
+               </div>
+               <div class="pc-anniversary-area3">
+                   <div class="type-area">
+                        <div class="yellow-green-balloon">
+                            <P>仅限直投项目回款，债权转让、添添金、周转贷、体验金<br/>均不享受该活动。回款红包在回款后2个工作日内发放，<br/>红包使用细则以红包定义为准。</P>
+                            <a href="//www.bxjr.com/center/home/index" class="yellow-btn btn"></a>
+                        </div>
+                   </div>
+                   <div class="type-area">
+                       <div class="green-balloon">
+                           <p>用户投资直投项目<br/>抢得首单或尾单≥100元，可享受5倍宝象币</p>
+                       </div>
+                   </div>
+               </div>
+               <div class="pc-anniversary-area4">
+                    <div class="type-area">
+                        <ul class="green-balloon-ul">
+                            <li class="num1">仅限直投项目，债权转让、添添金、周转贷、<br/>体验金均不享受该活动。</li>
+                            <li class="num2">宝象币奖励在满标后2个工作日内发放，不满<br/>100的投资不享受。</li>
+                        </ul>
+                    </div>
+               </div>
+               <div class="pc-anniversary-area5">
+                    <div class="type-area clearfix">
+                        <div class="pink-balloon fl">
+                            <p>3月份过生日的平台注册用户可享受1张<br/>50元生日红包，红包于生日当天发放至用户理财账户</p>
+                        </div>
+                        <div class="fr green-btn-area">
+                            <a href="//www.bxjr.com/lc/invest/list.html" class="green-btn btn">
+                            </a>
+                        </div>
+                    </div>
+               </div>
+               <div class="pc-anniversary-area6">
+                   <div class="type-area">
+                       <div class="pink-balloon-con">
+                           <p>仅限直投项目使用，不包含债权转让、添添金、周转<br/>贷、体验金项目</p>
+                           <a href="//www.bxjr.com/center/packet/list" class="btn pink-btn"></a>
+                       </div>
+                       <div class="orange-balloon">
+                           <div class="fr orange-balloon-area">
+                               <p>成为宝象理财师，不止赚高额佣金，<br/>还有Bigger好礼大放送！<br/><a href="//www.bxjr.com/topic/201603/invite/">查看活动详情</a></p>
+                               <a href="//www.bxjr.com/center/invite/index" class="btn orange-btn"></a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <img src="./images/pc_anniversary-footer.jpg"/>
+           </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+
+
+    </div>
+</body>
+
+</html>

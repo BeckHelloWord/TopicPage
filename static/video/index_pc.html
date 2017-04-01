@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>了解宝象 - 宝象金融</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="layout" content="main">
+    <link href="https://www.bxjr.com/css/css.css" rel="stylesheet" type="text/css">
+
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+    </style>
+    <link rel="shortcut icon" href="//www.bxjr.com/images/favicon.ico" type="image/x-icon">
+    <script async="" src="./js/analytics.js"></script>
+    <!--    <script src="./js/hm.js"></script>-->
+    <script type="text/javascript">
+        window.hxb = {ctx: '/'};
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/normalize.css?v=20150731"/>
+    <link rel="stylesheet" href="https://www.bxjr.com/css/common.css?v=20150731"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../css/logostyle.css">
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="./js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="./js/jq.Slide.js"></script>
+    <script type="text/javascript" src="./js/jquery.placeholder.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./js/sea.js"></script>
+    <script type="text/javascript" src="./js/seajs-css.js"></script>
+    <script type="text/javascript" src="./js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="./js/img-animal.js"></script>
+  
+
+    <script type="text/javascript">
+        seajs.config({
+            base: "/js",
+            alias: {
+                handlebars: 'handlebars-v1.3.0.js',
+                validationEngine: 'validation/js/jquery.validationEngine',
+                layer: 'layer1.9/layer',
+                inputFormat: 'jquery.inputFormat',
+                fancybox: 'fancybox/jquery.fancybox-1.3.2',
+                main: '../../js/application',
+                copy: 'copy/jquery.zclip.min'
+            },
+            map: [
+                [/^(.*\.(?:css|js))(.*)$/i, '$1?v=20150730']
+            ]
+        });
+        seajs.use("main");
+    </script>
+
+</head>
+<body>
+<div class="bx_head">
+    <div class="bx_top">
+        <div class="w1200">
+            <div class="bx_topbar_right">
+                <div class="bx_topmenu">
+                    <ul class="clearfix">
+                        <script type="text/javascript">
+                            (function(){
+                                var params = {isBalance: 'balance', isRecommend: 'recommend', isValidStatus: 'validStatus', isVoucherCount: 'voucherCount'};
+                                var paramsStr = '?';
+                                for(var item in params){
+                                    if(window[item]){
+                                        paramsStr += params[item] + "=true&";
+                                    }
+                                }
+                                var jrMsgCount = 0;
+                                $.ajax({
+                                    url: "//www.bxjr.com/secure/get-login-info.html" + paramsStr,
+                                    async: false,
+                                    cache: false,
+                                    success: function (data) {
+                                        window.loginInfo = data;
+                                        var newAction = new Date().getTime();
+                                        if (data && data.isLogin) {
+                                            document.write('<li><span>你好，<a href="/center/home/index" class="bx_userName">' + data.callName + '</a></span></li>\
+                                                <li class="bx_login_after bx_showMenu">\
+                                                    <a href="/center/message/index?' + newAction + '" class="bx_msg" target="_blank"><i id="jrMsg">0</i></a>\
+                                                </li>\
+                                                <li class="bx_exit"><a href="/logout/logout.html">[退出]</a></li>');
+                                            // 理财端的消息数
+                                            var nCount = data && data.nCount ? data.nCount : 0;
+                                            $("#wdMsg").text(nCount);
+                                            $("#wdMsg").addClass('msgCount'+nCount);
+                                            jrMsgCount = Number(nCount);
+                                            changeJrMsg();
+                                        } else {
+                                            $.get("/logout/ssoLogout.html");
+                                            document.write('<li class="bx_welcome"><span>欢迎来到宝象金融</span></li><li><a href="//www.bxjr.com/login/index.html">登录</a></li><li><a href="//www.bxjr.com/secure/register.html">免费注册</a></li>');
+                                        }
+                                    }
+                                });
+
+                                // 更新超过3位的数字
+                                function changeJrMsg() {
+                                    if(jrMsgCount > 0){
+                                        $("#jrMsg").addClass("newMsg")
+                                    }
+                                    if(jrMsgCount>99){
+                                        $("#jrMsg").html("...");
+                                        $("#jrMsg").addClass("bx_msg1")
+                                    } else {
+                                        $("#jrMsg").text(jrMsgCount);
+                                    }
+                                }
+                            })();
+                        </script>
+                        <li class="bx_app-jr">
+                            <b></b>
+                            <a href="https://www.bxjr.com/topic/app/" target="_blank">移动客户端</a>
+                        </li>
+                        <li><a href="/sageguard/guide.html">新手指引</a></li>
+                        <li><a href="/insure">保险频道</a></li>
+                        <li><a href="http://bbs.bxjr.com" target="_blank">宝象社区</a></li>
+                    </ul>
+                </div>
+                <div class="bx_toplink">
+                    <ul>
+                        <li class="bx_showMenu">
+                            <i class="bx_wx_icon"></i>
+                            <div class="bx_toplink_select">
+                                <s></s>
+                                <img src="images/topbar_wx.png" width="94" height="94"/>
+                                <p>关注宝象金融</p>
+                            </div>
+                        </li>
+                        <li class="bx_showMenu">
+                            <i class="bx_sina_icon"></i>
+                            <div class="bx_toplink_select">
+                                <s></s>
+                                <a rel="nofollow" href="http://weibo.com/bxjr" class="bx_round3">+ 宝象金融</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bx_nav clearfix w1200">
+        <a href="https://www.bxjr.com" class="bx_logo newyear_logo">宝象金融</a>
+        <div class="bx_menu">
+            <ul class="cc">
+                <li><a href="https://www.bxjr.com/">首页</a></li>
+                <li class="bx_showMenu" style="text-align: left">
+                    <a href="https://www.bxjr.com/lc">我要投资<span id="totalNum">(<i>36</i>)</span><s></s></a>
+
+                    <div class="bx_menu_second ">
+                        <a href="//www.bxjr.com/lc/fina/list.html" class=" new">月月丰<span id="finaNum">(<i></i>)</span></a>
+                        <a href="https://www.bxjr.com/lc/invest/list.html">直投项目<span
+                                id="borrowNum">(<i>21</i>)</span></a>
+                        <a href="https://www.bxjr.com/lc/bond/list.html">债权转让<span
+                                id="bondNum">(<i>15</i>)</span></a>
+                        <a href="https://www.bxjr.com/lc/special/list.html">活动专区<span
+                                id="specialNum">(<i>2</i>)</span></a>
+                    </div>
+                </li>
+                <!--<li><a href="https://www.bxjr.com/zc/">众筹频道</a></li>-->
+                <!--<li class="on"><a href="https://www.bxjr.com/">保险频道</a></li>-->
+                <li><a href="https://www.bxjr.com/borrow/index.html">我要借款</a></li>
+                <li><a href="https://www.bxjr.com/sageguard/index.html">安全保障</a></li>
+                <li><a href="/topic/static/science/">科技创新</a></li>
+                <li><a href="https://www.bxjr.com/about/index.html">关于我们</a></li>
+            </ul>
+
+            <script type="text/javascript">(function () {
+                var result = 0;
+                try {
+                    result = JSON.parse(localStorage['NavNum']);
+                } catch (e) {
+                }
+                window.inIntNavNum = function (num) {
+                    for (var i in num) {
+                        try {
+                            $('#' + i).html('(<i>' + num[i] + '</i>)');
+                        } catch (e) {
+                        }
+                    }
+                    try {
+                        localStorage['NavNum'] = JSON.stringify(num);
+                    } catch (e) {
+                    }
+                };
+                if (result) {
+                    inIntNavNum(result);
+                }
+                $.getScript("//www.bxjr.com/index/get-borrow-num.html?callback=inIntNavNum");
+            })();</script>
+            <script type="text/javascript" src="//www.bxjr.com/index/get-borrow-num.html?callback=inIntNavNum"></script>
+        </div>
+        <div class="bx_userMenu bx_showMenu">
+            <a href="https://www.bxjr.com/center/home/index"><b></b>我的账户<i></i></a>
+            <ul>
+                <li><span></span><a href="https://www.bxjr.com/center/invest/list" target="_blank">投资记录</a></li>
+                <li><span></span><a href="https://www.bxjr.com/center/member-info/member-basic-info"
+                                    target="_blank">个人资料</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(".bx_showMenu").mouseover(function(){
+            $(this).addClass("bx_showMenu_hover");
+        })
+        $(".bx_showMenu").mouseout(function(){
+            $(this).removeClass("bx_showMenu_hover");
+        })
+    </script>
+</div>
+
+<div class="video_container ">
+    <div class="clearfix w1200 ">
+        <div id="mod_player" class="video_box video-js vjs-default-skin vjs-controls-enabled vjs-has-started vjs-playing vjs-user-active">
+       
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="bx_foot" style="position: static">
+    <div class="w1200 clearfix">
+        <div class="bx_link bx_fl">
+            <dl class="bx_about">
+                <dt>
+                    <i></i>
+                    <a rel="nofollow" href="http://www.bxjr.com/about/index.html">关于我们</a>
+                </dt>
+                <dd>
+                    <a rel="nofollow" href="http://www.bxjr.com/about/team.html">管理团队</a>
+                    <a rel="nofollow" href="http://www.bxjr.com/about/collaboration.html">合作伙伴</a>
+                    <a rel="nofollow" href="http://www.bxjr.com/about/expert.html">专家顾问</a>
+                    <a rel="nofollow" href="http://www.bxjr.com/about/contact.html">联系我们</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/topic/static/sitemap/">网站地图</a>
+                </dd>
+            </dl>
+            <dl class="bx_help">
+                <dt>
+                    <i></i>
+                    <a rel="nofollow" href="http://www.bxjr.com/help/index.html">帮助中心</a>
+                </dt>
+                <dd>
+                    <a rel="nofollow" href="http://www.bxjr.com/help/index.html?helpKey=regLogin">注册与登录</a>
+                    <a rel="nofollow" href="http://www.bxjr.com/help/index.html">常见问题</a>
+                    <a rel="nofollow" href="http://www.bxjr.com/help/explain.html">名词解释</a>
+
+                    <a href="http://www.bxjr.com/help/expenses.html">资费标准</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="bx_service bx_fl">
+            <h2>400 885 1100</h2>
+
+            <p class="fl clearfix">服务时间：</p>
+
+            <div class="fl clearfix">
+                <p>周一至周五 9:00 - 21:00</p>
+
+                <p>周六、周日 9:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="bx_copyRight bx_fr">
+            <ul>
+                <li class="bx_foot_sina"><a class="f-sina" rel="nofollow" href="http://weibo.com/bxjr"
+                                            target="_blank" title="新浪微博"></a></li>
+                <li class="bx_foot_qq"><a class="f-qq" target="_blank"
+                                          href="http://shang.qq.com/wpa/qunwpa?idkey=0e905c66d135232a47886a1b5277b159354c4eacf54b13e93b2d084665abccff"
+                                          title="在线客服"></a></li>
+                <li class="bx_foot_wx"><a href="javascript:void(0)" class="f-wx" title="扫描二维码"><img class="lazy"
+                                                                                                    data-original="/images/indexnew/card-wx.png"
+                                                                                                    src="./images/card-wx.png"
+                                                                                                    style="display: block;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shgs w1200 clearfix"><br>
+        <a rel="nofollow" target="_blank" title="ICP备案" href="http://www.miibeian.gov.cn/"><img class="lazy"
+                                                                                                data-original="/images/icon/icp.jpg?v=20150806"
+                                                                                                src="./images/default.gif"
+                                                                                                alt="ICP备案"></a>
+        <a rel="nofollow" target="_blank" title="诺顿"
+           href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&amp;dn=www.bxjr.com&amp;lang=zh_cn"><img
+                class="lazy" data-original="/images/icon/norton.jpg?v=20150806"
+                src="./images/default.gif" alt="诺顿"></a>
+        <a rel="nofollow" target="_blank" title="中国信用企业"
+           href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1332343034"><img class="lazy"
+                                                                                        data-original="/images/icon/xyqy.jpg?v=20150806"
+                                                                                        src="./images/default.gif"
+                                                                                        alt="中国信用企业"></a>
+        <a rel="nofollow" target="_blank" title="诚信网站"
+           href="https://credit.szfw.org/CX20150826011067100188.html"><img class="lazy"
+                                                                           data-original="/images/icon/cert.jpg?v=20150806"
+                                                                           src="./images/default.gif"
+                                                                           border="0"></a>
+        <a rel="nofollow" target="_blank" title="工商营业执照"
+           href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=dov73ne26zbqq0ili51oosvqywkvpe6b6e"><img
+                class="lazy" data-original="/images/icon/shgs.jpg?v=20150806" src="./images/default.gif"
+                alt="上海工商"></a>
+        <a rel="nofollow" target="_blank" title="可信网站"
+           href="https://ss.knet.cn/verifyseal.dll?sn=e15091031011560337sppm000000&amp;ct=df&amp;a=1&amp;pa=0.9623787335585803"><img
+                class="lazy" data-original="/images/icon/verifyseal.jpg?v=20150806"
+                src="./images/default.gif" alt="可信网站"></a>
+        <a rel="nofollow" target="_blank" title="安全联盟"
+           href="http://www.anquan.org/authenticate/cert/?site=www.bxjr.com&amp;at=business"><img class="lazy"
+                                                                                                  data-original="/images/icon/anquan.png?v=20151028"
+                                                                                                  src="./images/default.gif"
+                                                                                                  alt="安全网站"
+                                                                                                  width="108"
+                                                                                                  height="40"></a>
+        <a rel="nofollow" target="_blank" title="互联网金融行业认证"
+           href="http://si.trustutn.org/info?sn=320160111000348686848"><img class="lazy"
+                                                                            data-original="/images/icon/hlwjr.jpg?v=20160115"
+                                                                            src="./images/default.gif"
+                                                                            alt="安全网站" width="108" height="40"></a>
+    </div>
+    <div class="w1200 clearfix">
+        <p class="bx_footP">Copyright©2014-2016.宝象金融版权所有 <a rel="nofollow" href="http://www.miibeian.gov.cn/"
+                                                            target="_blank">沪ICP备15015289号</a></p>
+        <p class="bx_footP remind">投资有风险，入市需谨慎</p>
+    </div>
+</div>
+<script type="text/javascript">
+    var h5Video=' <video id="example_video_1"  controls   width="1200" height="675" autoplay="autoplay"' +
+            '    poster="http://www.bxjr.com/topic/static/video/images/poster.jpg"    data-setup="{}">' +
+            '            <source src="bxVideo.mp4" type="video/mp4" />' +
+        '           </video>'
+    var ieVideo=' <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1200" height="675">' +
+            '            <param name="movie" value="Flvplayer.swf" />' +
+            '            <param name="quality" value="high" />' +
+            '            <param name="allowFullScreen" value="true" />' +
+            '            <embed src="Flvplayer.swf" allowfullscreen="true" flashvars="vcastr_file=bxVideo.FLV&IsAutoPlay=0" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1200" height="675"></embed> ' +
+            '</object> '
+    if(navigator.userAgent.indexOf("MSIE")>0){
+        if(navigator.userAgent.indexOf("MSIE 6.0")>0){
+          $("#mod_player").html(ieVideo)
+        }else if(navigator.userAgent.indexOf("MSIE 7.0")>0){
+            $("#mod_player").html(ieVideo)
+        }else if(navigator.userAgent.indexOf("MSIE 9.0")>0 && !window.innerWidth){//这里是重点，你懂的
+            $("#mod_player").html(ieVideo)
+        }else if(navigator.userAgent.indexOf("MSIE 9.0")>0){
+            $("#mod_player").html(ieVideo)
+        }else{
+            $("#mod_player").html(ieVideo)
+        }
+    }else{
+        $("#mod_player").html(h5Video)
+    }
+
+    toUpData();
+    function toUpData(){
+        $.post('/wd_api/about/getNoticeDetailByTypeOn', {api_key:0,bt:2,code:'company_profile',ct:1,typeCode:'ddd',sign:'ED59E8401BB9865FCB699C3B3625E620'}, function(json){
+            var conHtml = (json.data.descriptionDetail.split('\r\n')),len = conHtml.length,str = "";
+            for(var i = 0 ;i < len ; i++){
+                var conHtmlList = conHtml[i].length
+                if(conHtmlList != 1 && conHtmlList != 0){
+                    str += conHtml[i]+"<br />";
+                }
+            }
+            $(".conHtml").html(str);
+        },'json');
+    }
+
+</script>
+<!--版权内容 end-->
+<!--<script src="//vjs.zencdn.net/5.8.8/video.js"></script>-->
+
+
+<span style="display: none;">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var s = document.getElementsByTagName("script")[0];
+        //百度统计
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+        s.parentNode.insertBefore(hm, s);
+        //友盟统计
+        var ym = document.createElement("script");
+        ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+        s.parentNode.insertBefore(ym, s);
+    })();
+</script>
+</span>
+</body>
+</html>

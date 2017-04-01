@@ -1,0 +1,52 @@
+﻿/* PC融资租赁  */
+.container{width:1200px;margin:0 auto;}
+.t_c{text-align:center;}
+
+.page{padding:50px 0;}
+.page h2{padding-bottom:60px;text-align: center;font-weight:normal;font-size:35px;color:#7a8dda;}
+
+.main{width: 1920px;position: relative;left:50%;margin-left:-960px;}
+
+.financing{padding:30px 0;line-height:2;background-color:#374da5;font-size:18px;color:#fff;text-align:justify;}
+.cont h3{font-size:30px;color:#eeb91d;font-weight:normal; }
+.cont ul{float:left;width:500px;}.cont ul li{font-size:14px;color:#999;}
+.cont dl{padding-left: 150px;}
+.cont dl dd{padding-top:30px;margin-left:478px;}
+
+.functionality{background-color:#f6f8ff;line-height:2;}
+.functionality .cont dl{overflow:hidden;}
+.functionality .cont dl + dl{padding-top:50px;border-top:1px dashed #ccc;margin-top:50px;}
+.functionality .cont dl dt{float:left;margin-right:150px;}
+
+.sane ul li{float:left;width:16.66%;padding:0 15px;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.sane  ul li + li:before{content:"";width:22px;height:28px;background:url(../images/than.png) no-repeat;font-size:20px;color:#666;position:absolute;left:-11px;top:50px;}
+.sane  ul li p{padding-top:10px;line-height:2;font-size:16px;color:#333;}
+
+.cont  ul span{float:left;}
+.cont  ul p{margin-left:22px;}
+
+/* H5融资租赁  */
+.bx-financing img{width:100%; background-size:100%;-webkit-background-size:100%;}
+.bx-financing .financing_bg {font-size:1.2rem;line-height:1.6;padding:3%;text-align:justify;color:#c3cfff; background:  -webkit-linear-gradient(left top,#4f67c8,  #374da5 ); background: -o-linear-gradient(to bottom right, #374da5 , #4f67c8);background: -moz-linear-gradient(to bottom right, #374da5 , #4f67c8);background:linear-gradient(to bottom right, #374da5 , #4f67c8);}
+.bx-financing .bx-functionality{background-color:#f6f8ff;text-align:center;}
+.bx-financing .bx-functionality img{width:73%;}
+.bx-financing .bx-functionality p:first-child,.footer_sane p:first-child{padding:4% 0;font-size:1.6rem;color:#2c449f;}
+.bx-financing .txt{padding:5% 0 3% 0;font-size:1.6rem;color:#eeb91d;}
+.bx-financing .txt_ul{padding-bottom:5%;}
+.bx-financing .txt_ul ul{ width:90%;text-align: justify;font-size: 1.2rem;color: #999;position:relative;left:5%;}
+.bx-financing .txt_ul ul li span{float: left;}
+.bx-financing .txt_ul ul li p{margin-left:8%;}
+.bx-financing.bx-functionality .stabilize_bg1,.bx-financing .stabilize_bg2{margin-top:5%;}
+.bx-financing .footer_sane{padding:0 0 5% 0;text-align:center;background-color:#fff;}
+.bx-financing .footer_sane ul{margin-top:5%;}
+.bx-financing .footer_sane ul li {float:left;width:33.33%;padding:0 5%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.bx-financing .footer_sane ul li + li .img{position:relative;}
+.bx-financing .footer_sane ul li + li .img:before{content:"";width:17%;height:100%;background:url(../images/bx-h5-arr.png) no-repeat 0 center;background-size:100%;position:absolute;top:0;left:-31%;}
+.bx-financing .footer_sane ul li p{padding-top:10px;font-size:1.1rem;color:#999;}
+.bx-financing .footer_sane .message3_bg{width:17%;text-align:center;display:inline-block;}
+.bx-financing .footer_sane .message3_bg img{transform: rotate(90deg);}
+
+a.newyear_logo{margin-top:0;}
+
+
+

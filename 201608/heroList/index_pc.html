@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>欢乐英雄榜</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <div class="banner"><img src="images/banner.jpg" alt="" /></div>
+    <div class="part part_01">
+        <div class="container">
+            <div class="exchange clearfix">
+                <div class="left">
+                    <img src="images/packet.png" alt=""/>
+                    <div class="roll">
+                        <p>欢乐券<span>限兑换：<i>10次/天</i></span></p>
+                        <p>兑换1张欢乐券将消耗您的10宝象币</p>
+                    </div>
+                    <!--<a href="#" class="joyBtn"><img src="images/joyBtn.png" alt="" width="172" /><span id="num"></span></a>-->
+                </div>
+                <div class="right">
+                    <p>你的宝象币：<span class="js-integralTotal"></span><font>，排名：<span class="js-integralNo"></span></font>；</p>
+                    <p>你的欢乐券：<span class="js-ticketTotal"></span><font>， 排名：<span class="js-ticketNo"></span></font>。</p>
+                </div>
+            </div>
+            <div class="ranking clearfix">
+                <div class="centerEnd">
+                    <ul class="clearfix">
+                        <li>
+                            <h2><span>第1名：</span>小米60寸4K电视一台</h2>
+                            <table>
+                                <tr>
+                                    <td><img src="images/prizeEnd01.png" /></td>
+                                    <td class="td1"><span>Aa*****on</span></td>
+                                    <td><span>1675张欢乐券</span></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>
+                            <h2><span>第2-5名：</span>小米max智能手机一部</h2>
+                            <table>
+                                <tr>
+                                    <td rowspan="4"><img src="images/prizeEnd02.png" /></td>
+                                    <td class="td1"><span>小*****心</span></td>
+                                    <td><span>1299张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>jx*****96</span></td>
+                                    <td><span>1238张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****HP</span></td>
+                                    <td><span>1230张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>雨*****88</span></td>
+                                    <td><span>1220张欢乐券</span></td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li>
+                            <h2><span>第6-10名：</span>小米智能床头灯一台</h2>
+                            <table>
+                                <tr>
+                                    <td rowspan="5"><img src="images/prizeEnd03.png" /></td>
+                                    <td class="td1"><span>si*****er</span></td>
+                                    <td><span>1164张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****Pu</span></td>
+                                    <td><span>630张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>Mr*****nt</span></td>
+                                    <td><span>533张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****Zg</span></td>
+                                    <td><span>519张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>晨*****晏</span></td>
+                                    <td><span>469张欢乐券</span></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>
+                            <h2><span>第11-18名：</span>小米路由器mini一台</h2>
+                            <table>
+                                <tr>
+                                    <td rowspan="8"><img src="images/prizeEnd04.png" /></td>
+                                    <td class="td1"><span>白*****鱼</span></td>
+                                    <td><span>431张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>la*****ny</span></td>
+                                    <td><span>380张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>裸*****皮</span></td>
+                                    <td><span>291张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****u7g</span></td>
+                                    <td><span>278张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****H7g</span></td>
+                                    <td><span>269张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>sy*****ia</span></td>
+                                    <td><span>136张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>bx*****zH</span></td>
+                                    <td><span>132张欢乐券</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td1"><span>jj*****23</span></td>
+                                    <td><span>130张欢乐券</span></td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <!--<div class="part part_03">-->
+        <!--<div class="container">-->
+            <!--<div class="store">-->
+                <!--<div class="hd t_c">兑换商城</div>-->
+                <!--<ul class="clearfix">-->
+                    <!--<li>-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="rImg fl">-->
+                            <!--<img src="images/goods_01.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p><span><i>60元</i>红包</span><a class="fr" href="#" data-prize="cash60">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>5</i>张欢乐券</span></p>-->
+                                <!--<p>红包使用规则前往宝象金融App个人账户查看</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="rImg fl">-->
+                                <!--<img src="images/goods_01.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p><span><i>80元</i>红包</span><a class="fr" href="#" data-prize="cash80">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>5</i>张欢乐券</span></p>-->
+                                <!--<p>红包使用规则前往宝象金融App个人账户查看</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                    <!--<li class="item">-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="fl">-->
+                                <!--<img src="images/goods_02.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p><span><i>10000元</i>体验金</span><a class="fr" href="#" data-prize="coupon10000">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>30</i>张欢乐券</span></p>-->
+                                <!--<p>体验金使用规则前往宝象金融App个人账户查看</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="item">-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="rImg fl">-->
+                                <!--<img src="images/goods_05.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p><span><i>18倍</i>日化投资收益券</span><a class="fr" href="#" data-prize="profit18">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>50</i>张欢乐券（活动内限量1次）</span></p>-->
+                                <!--<p>用户在818/918当天，直投项目在投金额中本金最高的一笔，可享18倍年化收益奖励。该特权仅限享受1次，奖励以红包形式发放，0元激活。</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="item">-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="rImg fl">-->
+                                <!--<img src="images/goods_03.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p><span>小米电池套组</span><a class="fr" href="#" data-prize="miPackage">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>50</i>张欢乐券（每日限量5组）</span></p>-->
+                                <!--<p>换取后请联系客服4008851100登记寄送地址以及所需型号</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="item last">-->
+                        <!--<div class="roll clearfix">-->
+                            <!--<div class="rImg fl">-->
+                                <!--<img src="images/goods_06.png" alt="" />-->
+                            <!--</div>-->
+                            <!--<div class="txt fr">-->
+                                <!--<p class="clearfix"><span class="fl">善诊孝心体检套餐<br />(价值235元)</span><a class="fr" href="#" data-prize="cinemaTicket">立即兑换</a></p>-->
+                                <!--<p>价值: <span><i>1</i>张欢乐券（每人限用1次）</span></p>-->
+                                <!--<p>兑换后后请关注宝象金融微信服务号（服务号ID：bxjrccs）回复“善诊”获得使用方式。</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="part part_02">
+        <div class="container">
+            <div class="introduce" >
+                <h2 class="txtH2">本次宝象嘉年华所有实物礼品均选自小米智能产品系列</h2>
+                <div class="title">
+                    <ul class="list1 clearfix">
+                        <li>
+                            <span>获取方式一</span>
+                        </li>
+                        <li>
+                            <span>获取方式二</span>
+                        </li>
+                        <li>
+                            <span>获取方式三</span>
+                        </li>
+                    </ul>
+                    <ul class="list2 clearfix">
+                        <li>
+                            <h2>冲击欢乐英雄榜</h2>
+                            <div class="txt1">
+                                <p><span>第1名：</span>小米60寸4K电视一台</p>
+                                <p><span>第2-5名：</span>小米max智能手机一部</p>
+                                <p><span>第6-10名：</span>小米智能床头灯一台</p>
+                                <p><span>第11-18名：</span>小米路由器mini一台</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h2>每日818投资</h2>
+
+                            <div>
+                                <p>每日上午8：18投资（1000元以上）</p>
+                                <p> 小米智能插线板  每日首位</p>
+                                <p>每日下午8：18投资（1000元以上）</p>
+                                <p>小米移动电源   每日首位</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h2>欢乐商城兑换
+                                <p>（8月18日开通）</p></h2>
+                            <div>
+                                <p>小米七彩电池套组（每日限量5套）</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="present">
+                    <h2>实物礼品获得说明</h2>
+                    <ul>
+                        <li>1、宝象英雄榜排名从8月10日预热开始至9月17日23:59分截止；</li>
+                        <li>2、每日818投资获礼需满足投资金额1000以上（现金／且不含添添金以及债权转让）；</li>
+                        <li>3、工作人员将会在获奖的48小时内联系获奖者，联系奖品发放的具体事宜；</li>
+                        <li>4、宝象金融对该活动具有最终解释权，并有权取消恶意刷奖用户的领奖资格（领奖人需完成平台实名认证，恶意刷奖判定包括但不限于同一IP地址、同一联系人等）。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="explain ">
+                <div class="hd t_c">说明</div>
+                <ul class="clearfix">
+                    <li>
+                        <h3>宝象币使用/获取方式：</h3>
+                        <p><span>1、</span><font>活动期间在活动首页首次签到可以领取30枚宝象币；</font></p>
+                        <p><span>2、</span><font>活动期间每日上下午在活动首页签到可以分别领取10枚宝象币；</font></p>
+                        <p><span>3、</span><font>投资金额每100元可以获得1枚宝象币；</font></p>
+                        <p><span>4、</span><font>参与每个活动都需要消耗10枚宝象币；</font></p>
+                    </li>
+                    <li>
+                        <h3>欢乐券使用/获取方式：</h3>
+                        <p><span>1、</span><font>活动期间参与任意嘉年华项目可获得1张欢乐券；</font></p>
+                        <p><span>2、</span><font>部分活动可以直接抽取一定数量欢乐券；</font></p>
+                        <p><span>3、</span><font>欢乐英雄榜页面可以使用宝象币兑换欢乐券（10：1）<br />每日限量100个宝象币；</font></p>
+                        <p><span>4、</span><font>欢乐券可以直接在兑换商店兑换投资红包等礼品；</font></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer  t_c">理财有风险，投资需谨慎</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 弹出框 -->
+<div class="pop errPop">
+    <div class="cont">
+        <a class="close" href="#"><img  src="images/close.png" alt=""/></a>
+        <div class="txt-title"><h2>兑换成功</h2></div>
+        <div class="pic fl">
+            <img src="images/packet2.png" alt=""/>
+            <p>可以直接在兑换商店</p>
+            <p>兑换投资红包等礼品</p>
+        </div>
+        <div class="txtExplain">
+            <p>成功兑换一张欢乐券！</p>
+            <div class="btnGroup">
+                <a class="returnBtn" href="/topic/201607/carnival/">回嘉年华首页</a>
+                <a class="close knowBtn" href="#">我知道了</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask success">
+    <div class="cont">
+        <a class="close" href="#"><img  src="images/close.png" alt=""/></a>
+        <div class="txt-title"><h2>兑换成功</h2></div>
+        <div class="bd">
+            <img class="fl" src="images/success.png" alt="" />
+            <div class="rCont">
+                <p>您成功兑换了<span>30元红包</span>。</p>
+                <a class="close" href="">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask fail">
+    <div class="cont">
+        <a class="close" href="#"><img  src="images/close.png" alt=""/></a>
+        <div class="txt-title"><h2>兑换失败</h2></div>
+        <div class="bd">
+            <img class="fl" src="images/fail.png" alt="" />
+            <div class="rCont">
+                <p></p>
+                <a class="close" href="">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        $.ajax({
+            url: "/lottery-armory/index.html",
+            success: function(json){
+                if(!json.success){
+                    window.location.href = "/login/index.html?redirect=/topic/201608/heroList/";
+
+                    return false;
+                }
+
+                if(!json.integralTotal){
+                    $(".js-integralNo").parent().hide();
+                }
+                $(".js-integralTotal").text(json.integralTotal);
+                $(".js-integralNo").text(json.integralNo);
+
+
+                if(!json.ticketTotal){
+                    $(".js-ticketNo").parent().hide();
+                }
+                $(".js-ticketTotal").text(json.ticketTotal);
+                $(".js-ticketNo").text(json.ticketNo);
+                $("#num").text(json.remainChoice);
+
+                var html = "";
+                var html2 = "";
+                var html3 = "";
+
+                for(var i = 0, len = json.integralTop.length; i < len; i ++){
+                    html += '<li class="li' + (i + 1) + '">';
+                    html += '<span class="s1">' + (i + 1) + '</span>';
+                    html += '<span class="s2">' + json.integralTop[i].nickName + '</span>';
+                    html += '<span class="s3">' + json.integralTop[i].count + '</span>';
+                    html += '</li>';
+                }
+                for(var j = 0, len = json.happyTicketTop.length; j < len; j ++){
+                    html2 += '<li class="li' + (j + 1) + '">';
+                    html2 += '<span class="s2">' + json.happyTicketTop[j].nickName + '</span>';
+                    html2 += '<span class="s3">' + json.happyTicketTop[j].count + '</span>';
+                    html2 += '</li>';
+                }
+                for(var k = 0, len = json.wishStartTop.length; k < len; k ++){
+                    html3 += '<li>';
+                    html3 += '<span class="s2">' + json.wishStartTop[k].nickName + '</span>';
+                    html3 += '<span class="s3">' + json.wishStartTop[k].giftName + '</span>';
+                    html3 += '</li>';
+                }
+
+                $(".ranking .left ul").html(html);
+                $(".ranking .center ul").html(html2);
+                $(".ranking .right ul").html(html3);
+            }
+        });
+
+        $(".joyBtn").on("click", function(e){
+            $.ajax({
+                url: "/lottery-armory/to-ticket.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201607/crystalBall/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".errPop").show().find("h2").text("兑换失败")
+                        $(".errPop").show().find(".txtExplain p").addClass("small").text(json.message);
+
+                        return false;
+                    }
+
+                    $(".pop").show();
+                    $("#num").text(json.remainChoice);
+
+                    if(json.integralTotal){
+                        $(".js-integralNo").parent().show();
+                    }
+                    $(".js-integralTotal").text(json.integralTotal);
+                    $(".js-integralNo").text(json.integralNo);
+
+
+                    if(json.ticketTotal){
+                        $(".js-ticketNo").parent().show();
+                    }
+                    $(".js-ticketTotal").text(json.ticketTotal);
+                    $(".js-ticketNo").text(json.ticketNo);
+                }
+            });
+
+            e.preventDefault();
+        });
+
+        $(".pop .close").on("click", function(e){
+            $(this).parents(".pop").hide();
+
+            e.preventDefault();
+        });
+
+        $(".mask .close").on("click", function(e){
+            $(this).parents(".mask").hide();
+
+            e.preventDefault();
+        });
+
+        $(".store ul li a").on("click", function(e){
+            var prize = $(this).data("prize"), tit = $(this).siblings("span").text();
+
+            $.ajax({
+                url: "/lottery-armory/shopping-exchange.html",
+                data: {"goodsSign": prize},
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201607/crystalBall/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail").show().find(".rCont p").text(json.message)
+
+                        return false;
+                    }
+
+                    if(json.integralTotal){
+                        $(".js-integralNo").parent().show();
+                    }
+                    $(".js-integralTotal").text(json.integralTotal);
+                    $(".js-integralNo").text(json.integralNo);
+
+
+                    if(json.ticketTotal){
+                        $(".js-ticketNo").parent().show();
+                    }
+                    $(".js-ticketTotal").text(json.ticketTotal);
+                    $(".js-ticketNo").text(json.ticketNo);
+
+                    $(".success").show().find(".rCont p span").text(tit);
+
+                    var html2 = "";
+
+                    for(var j = 0, len = json.happyTicketTop.length; j < len; j ++){
+                        html2 += '<li class="li' + (j + 1) + '">';
+                        html2 += '<span class="s1">' + (j + 1) + '</span>';
+                        html2 += '<span class="s2">' + json.happyTicketTop[j].nickName + '</span>';
+                        html2 += '<span class="s3">' + json.happyTicketTop[j].count + '</span>';
+                        html2 += '</li>';
+                    }
+
+                    $(".ranking .center ul").html(html2);
+                }
+            });
+
+            e.preventDefault();
+        });
+    }())
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>象样情人节爱在大荧幕</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/mobStyle.css" />
+</head>
+<body>
+<article class="mob_main">
+    <img src="./images/mob_banner.jpg"/>
+    <div class="mob_channel_01 mob_channel">
+        <!--<img src="images/mob_bj_01.jpg" class="mob_channel_img">-->
+        <div class="mob_channel_box">
+            <p class="title">活动内容</p>
+            <p class="mob_channel_title"><span></span>抢票通道一：</p>
+            <p class="mob_channel_con">兑换券限量1000张，先投先得，送完即止。</p>
+            <div class="mob_channel_bill">
+                <div class="bill_img">
+                    <img src="./images/mob_bill.jpg"/>
+                    <p>可获赠1张蜘蛛网电影兑换券</p>
+                </div>
+                <p class="bill_txt">活动期间，用户投资平台90天及以上标的<br/>投资金额 <span>1314元整</span></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="mob_channel_02 mob_channel">
+        <div class="mob_channel_box">
+            <div class="mob_channel_bill">
+                <div class="bill_img bill_img_02">
+                    <img src="./images/mob_bill_02.png"/>
+                    <p>可获赠 4张蜘蛛网电影兑换券</p>
+                </div>
+                <p class="bill_txt">活动期间，用户投资平台90天及以上标的<br/>投资金额 <span>5200元整</span></p>
+            </div>
+            <p class="mt10">注:</p>
+            <ul class="bill_list">
+                <li>1、活动奖励为单笔投资兑换，多笔符合活动规则的投资可以重复获得奖励。债权转让及添添金投资不参与此活动；</li>
+                <li>2、参与活动的必要条件a：投资3个月标期以上的直投标的；b：投资金额只能为1314元或5200元（投资金额=现金投资+红包金额）；</li>
+                <li>3、平台将通过短信、站内信的方式，将蜘蛛网兑换券码形式发给用户，由于蜘蛛网券码限制，兑换券有效期至2月28日。请用户及时使用。</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="mob_channel_01 mob_channel ">
+        <!--<img src="images/mob_bj_01.jpg" class="mob_channel_img">-->
+        <div class="mob_channel_box pt10">
+            <p class="mob_channel_title"><span></span>抢票通道二：</p>
+            <div class="mob_channel_bill mob_channel_two">
+                <div class="bill_img">
+                    <img src="./images/mob_bill_03.png"/>
+                </div>
+                <p class="bill_txt bill_txt_03">活动期间，成功申购添添金满2万元并达到连续7个自然日未赎回的，可获赠1张电影票兑换券，每位用户最多获赠2张。</p>
+            </div>
+            <div class="bill_txt_two mt10">
+                <p>注:</p>
+                <ul class="bill_list">
+                    <li>1、活动期间内成功赎回的金额，如再次申购，则不计入参与活动的金额统计。</li>
+                    <li>2、兑换券限量100张，先到先得，送完即止。</li>
+                    <li>3、电影兑换券2月17日起陆续发放给用户。</li>
+                </ul>
+                <P class="mt10">举个例子：</P>
+                <P >唐小姐，在活动期间，分别在多日申购添添金6笔，合计3万元，并且没有任何成功的赎回操作，活动结束后，可获得一张电影票兑换券；</P>
+                <P class="mt10">佟小姐，在活动期间，3日分别成功申购5万添添金，但在活动结束后第一天就成功赎回2万元，添添金剩余资金3万持有了7个自然日，故只能获得一张电影票兑换券。</P>
+                <p class="mob_channel_title pt10"><span></span>特别提醒：</p>
+                <P class="mob_remind">由于蜘蛛网券码限制，本次活动所发放兑换券有效期至2月28日，请用户及时使用。兑换券的具体使用规则，请以蜘蛛网为准。</P>
+            </div>
+        </div>
+
+    </div>
+    <img src="./images/mob_footer.jpg"/>
+</article>
+<script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+<script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+<script>
+    var  url = location.href;
+    if(url.indexOf("www.") != -1){
+        location.href = url.replace("www.", "m.")
+    }
+    var wechatShare=new WeChatShare();
+    var shareData ={
+        shareConfig:{
+            title: "情人节看电影，宝象免费送电影票啦！",
+            desc: "情人节看电影，宝象免费送电影票啦！",
+            link: location.href,
+            imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1702/6418e9c3-6a75-4071-978f-a8a6648c279c.jpg"
+        },
+        menuList:{
+            menuList: [
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl', // 复制链接
+                'menuItem:share:appMessage'
+            ]
+        },
+        callback:function(){}
+    };
+    wechatShare.init(shareData);
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

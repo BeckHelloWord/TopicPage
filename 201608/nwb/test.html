@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>Title</title>
+    <style>
+        div{
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div id="test">test3</div>
+<div id="ceshi">221</div>
+<div id="ceshi2">221</div>
+
+<button onclick="dianwo()">点我</button>
+<br/>
+<br/>
+<br/>
+<a href="baoxiang://APPTopUp">装逼王 点我</a>
+</body>
+<script src="wechatLink-1.2.js?v=1.14"></script>
+<script src='../../js/jquery-1.8.2.min.js'></script>
+<script>
+
+            var dianwo=function(){
+                document.getElementById("ceshi").innerHTML=localStorage.getItem("appFunc")
+				 document.getElementById("ceshi2").innerHTML=navigator.userAgent.toLowerCase()
+            };
+    (function(){
+        var wechatShare=new WeChatShare();
+        var shareData ={
+            shareConfig:{
+                title: "app分享测试",
+                desc: "宝象金融app分享测试",
+                link: location.href,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/0ca304ef-f2f0-4a0c-aaa3-260bbf8f9f30.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl', // 复制链接
+                    'menuItem:share:appMessage'
+                ]
+            },
+            callback:function(response){
+					$("#test").append("</br>回调成功")
+
+            }
+        }
+        wechatShare.init(shareData);
+    }())
+
+</script>
+</html>

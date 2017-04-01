@@ -1,0 +1,8 @@
+#mainmain{min-height:1042px;background:url(../images/bg.jpg) no-repeat center top;}
+
+.main{padding-top:560px;}
+
+.wechat{width:394px;height:368px;padding-top:44px;margin:0 auto;background:url(../images/wechat.png) no-repeat;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.wechat p{padding-top:2px;font-size:24px;font-weight:bold;color:#5d3426;text-shadow:1px 1px 1px #e6d1b1;-webkit-text-shadow:1px 1px 1px #e6d1b1;}
+
+.footer{padding-top:60px;font-size:18px;color:#cee9bb;}

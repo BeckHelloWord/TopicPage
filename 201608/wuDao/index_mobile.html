@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象道馆</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="mobMain">
+    <div class="content index">
+        <img src="images/index.jpg" alt="" />
+        <a class="ruleBtn" href=""><img src="images/rule-btn.png" /></a>
+        <a class="enter" href=""><img src="images/enter.png" /><span id="num">5</span></a>
+    </div>
+    <div class="content play">
+        <img src="images/playing.jpg" alt="" />
+        <ul class="clearfix">
+            <li id="time">30.00</li>
+            <li id="score">0</li>
+        </ul>
+        <div id="play_item" class="play_item">
+            <!--<div class="item_01"><span></span><img src="images/animal-list1.png" alt="" /></div>-->
+            <!--<div class="item_02"><span></span><img src="images/animal-list2.png" alt="" /></div>-->
+            <!--<div class="item_03"><span></span><img src="images/animal-list3.png" alt="" /></div>-->
+            <!--<div class="item_04"><span></span><img src="images/animal-list4.png" alt="" /></div>-->
+        </div>
+    </div>
+</div>
+<div class="pop rule-pop">
+    <div class="cont">
+        <div class="bg">
+            <h3>活动规则</h3>
+            <ul>
+                <li><span>1</span><p>用户选择精灵球消耗相应的宝象币;</p></li>
+                <li><span>2</span><p>用户完成游戏获得和游戏内分数等额的欢乐券(由精灵球决定上限);</p></li>
+                <li><span>3</span><p>用户每次完成游戏后进行分享,获得一张欢乐券;</p></li>
+                <li><span>4</span><p>用户每日可以参与5次;</p></li>
+                <li><span>5</span><p>本活动最终解释权由宝象金融保留.</p></li>
+            </ul>
+            <a class="know" href=""><img src="images/kown.png" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div class="pop choice-pop">
+    <div class="cont">
+        <div class="bg t_c">
+            <h3>请选择</h3>
+            <ul class="item">
+                <li class="on" data-integral="10" data-maxTicket="5"><img src="images/list1.png" alt=""/></li>
+                <li data-integral="30" data-maxTicket="15"><img src="images/list2.png" alt=""/></li>
+                <li data-integral="100" data-maxTicket="30"><img src="images/list3.png" alt=""/></li>
+            </ul>
+            <a class="start" href=""><img src="images/start.png" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div class="pop success-pop">
+    <div class="cont">
+        <div class="bg">
+            <h3>恭喜获得</h3>
+            <div class="ticket t_c">
+                <img src="images/ticket.png" alt="" />
+                <p><span>10</span>张</p>
+            </div>
+            <div class="btn clearfix">
+                <a class="js-share fl" href=""><img src="images/share-btn.png" alt="" /></a>
+                <a class="js-again fr" href=""><img src="images/again.png" alt="" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop fail-pop">
+    <div class="cont">
+        <div class="bg t_c">
+            <h3>提示信息</h3>
+            <img src="images/fail.png" alt="" />
+            <p></p>
+            <a class="know" href=""><img src="images/kown.png" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div class="share">
+    <img src="images/share.png" alt="" />
+    <a class="close" href=""><img src="images/share-know.png" alt="" /></a>
+</div>
+
+<!-- 音乐 -->
+<audio id="car_audio" src="images/music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<script src="js/jquery.arctext.js"></script>
+<script src="js/des.js"></script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    (function(){
+        var playCont = $("#play_item"),
+                pWidth = playCont.width() / 4,
+                pHeight = playCont.height() / 4,
+                score = 0,  // 得分
+                spiritList = [],
+                resultArr = [],
+                gameSign = null;
+
+        // 默认显示第一页
+        showPart(0);
+        getPlayNum();
+
+        function getPlayNum(){
+            $.ajax({
+                url: "/lottery-beat-hamster/index.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201608/wuDao/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    $("#num").html(json.remainChoice);
+                }
+            });
+        }
+
+        // 弹出框标题弧线
+        $(".pop h3").arctext({radius: 200, dir: 1});
+
+        var bol, data = {"integral": 10, "maxTicket": 5};
+
+        // 显示规则
+        $(".index a").on("click", function(e){
+            if($(this).hasClass("ruleBtn")){ // 如果是直接点规则按钮标记一下
+                bol = true;
+            }
+
+            $(".rule-pop").show();
+
+            e.preventDefault();
+        });
+
+        $(".rule-pop .know").on("click", function(e){
+            // 根据进入方式的不同选择操作
+            if(bol){
+                bol = false; // 点击规则按钮进来就直接关闭
+            }else{
+                showPart(1); // 点击进入道馆来的就直接进行下一步
+                $(".choice-pop").show();
+            }
+
+            $(".rule-pop").hide();
+
+            e.preventDefault();
+        });
+
+        // 选择游戏的难度
+        $(".choice-pop .item li").click(function (e) {
+            var $this = $(this),
+                    integral = $this.attr("data-integral"),
+                    maxTicket = $this.attr("data-maxTicket");
+
+            data.integral = integral;
+            data.maxTicket = maxTicket;
+
+            $(this).addClass("on").siblings().removeClass("on");
+
+            e.preventDefault();
+        });
+
+        // 开始游戏
+        $(".start").on("click", function(e){
+            var $this = $(this);
+
+            if($this.hasClass("isPlaying")){
+                return false;
+            }
+
+            $this.addClass("isPlaying");
+            $("#score").html(0);
+
+            $.ajax({
+                url: "/lottery-beat-hamster/game-start.html",
+                data: data,
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201608/wuDao/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    gameSign = json.gameSign;
+                    spiritList = json.animas;
+
+                    for(var i = 0; i < 8; i ++){
+                        spiritList.push({"logo": "images/animal-list1.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list3.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list4.png", "score": 0});
+                    }
+                    for(var j = 0; j < 6; j ++){
+                        spiritList.push({"logo": "images/animal-list8.png", "score": 0});
+                    }
+
+                    $(".choice-pop").hide();
+                    playStart();
+                    $this.removeClass("isPlaying");
+                }
+            });
+
+            e.preventDefault();
+        });
+
+        // 分享
+        $(".js-share").on("click", function(e){
+            $(".success-pop").hide();
+            $(".share").show();
+
+            e.preventDefault();
+        });
+
+        // 重玩游戏
+        $(".js-again").on("click", function(e){
+            $(".success-pop").hide();
+            showPart(0);
+            getPlayNum();
+
+            e.preventDefault();
+        });
+
+        // 关闭分享层
+        $(".share .close").on("click", function(e){
+            $(".share").hide();
+            showPart(0);
+            getPlayNum();
+
+            e.preventDefault();
+        });
+
+        // 关闭错误提示层
+        $(".fail-pop .know").on("click", function(e){
+            $(".fail-pop").hide();
+
+            if($(".start").hasClass("isPlaying")){
+                $(".start").removeClass("isPlaying");
+            }
+
+            e.preventDefault();
+        });
+
+        // 显示页面
+        function showPart(index){
+            $(".mobMain .content").eq(index).show().siblings().hide();
+        }
+
+        function getRandom(num, add){
+            var add = add || 0;
+
+            return parseInt(Math.random() * num) + add;
+        }
+
+        function getRandomArr(num, count){
+            // 定义存放生成随机数的数组
+            var array = [];
+
+            // 循环N次生成随机数
+            for(var i = 0 ; i < num + 10; i++){
+                // 生成num + 10个随机数
+                generateRandom(count);
+            }
+
+            // 生成随机数的方法
+            function generateRandom(count){
+                var rand = parseInt(Math.random() * count);
+                for(var i = 0 ; i < array.length; i++){
+                    if(array[i] == rand){
+                        return false;
+                    }
+                }
+                array.push(rand);
+            }
+
+            // 返回num个随机数
+            return array.slice(0, num);
+        }
+
+        function getShowArr(arr){
+            var resultArr = [],len = arr.length,
+                    randArr = getRandomArr(4, len).sort(function(a, b){ return b - a; }); // 从大到小排序
+
+            for(var i = 0; i < 4; i ++){
+                resultArr.push(arr[randArr[i]]);
+                arr.splice(randArr[i], 1); // 从根数组中删除数据
+            }
+
+            // 获取每次显示的小精灵的列表
+            return resultArr;
+        }
+
+        // 把小精灵显示在页面上
+        function setPlayItem(){
+            var arr = getShowArr(spiritList), html = "";
+
+            for(var i = 0, len = arr.length; i < len; i ++){
+                html += '<div class="item item_0' + (i + 1) + '"><span class="score' + arr[i].score + '">' + arr[i].score + '</span><img src="' + arr[i].logo + '" alt="" /></div>';
+            }
+
+            playCont.html(html);
+
+            // 每个小精灵的随机位置
+            $(".item_01").css({right: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_02").css({left: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_03").css({left: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_04").css({right: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+
+            playCont.find(".item").on("touchstart", function(){
+                var $this = $(this);
+
+                if($this.hasClass("on")){
+                    return false;
+                }
+
+                $(this).addClass("on");
+
+                var s = +$this.find("span").text(), d = new Date().getTime(), o = {"score": "", "time": ""};
+
+                if(s){
+                    o.score = s;
+                    o.time = d;
+                    resultArr.push(o);
+                }
+
+                score = score + s;
+
+                $this.addClass("curr");
+                $("#score").text(score);
+            });
+        }
+
+        function playStart(){
+            countDown();
+            setPlayItem();
+
+            // 定时器
+            var timer = setInterval(function(){
+                if(spiritList.length > 0){
+                    setPlayItem();
+
+                    return false;
+                }
+
+                clearInterval(timer);
+            }, 1000);
+        }
+
+        // 倒计时
+        function countDown(){
+            var duration = 30 * 1000;
+            var endTime = new Date().getTime() + duration;
+
+            function interval(){
+                var n = (endTime - new Date().getTime()) / 1000;
+                if(n < 0) return;
+                document.getElementById("time").innerHTML = n.toFixed(2);
+                setTimeout(interval, 10);
+            }
+
+            interval();
+            setTimeout(function(){
+                playCont.html("");
+                document.getElementById("time").innerHTML = "0.00";
+                score = 0;
+                sendData();
+            }, 30100);
+        }
+
+        // 传递游戏之后的数据
+        function sendData(){
+
+            var gameData = getResult();
+
+            resultArr = [];
+
+            $.ajax({
+                url: "/lottery-beat-hamster/game-complete.html",
+                data: {"gameSign": gameSign, "gameData": gameData},
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201608/wuDao/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    $(".success-pop").show().find("p span").html(json.ticketCount);
+                }
+            });
+        }
+
+        // 获取加密后的数据
+        function getResult(){
+            //待加密字符串
+            var str = JSON.stringify(resultArr);
+
+            //第一个参数必须；第二个、第三个参数可选
+            var key1 = "bxjr_carnival1";
+            var key2 = "bxjr_carnival5";
+            var key3 = "bxjr_carnival9";
+
+            //加密方法
+            return strEnc(str,key1,key2,key3);
+        }
+
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+
+        function playAudio() {
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+        // 分享
+        var shareData = {
+            title: "皮卡丘！就决定是你了！",
+            desc: "宠物小精灵的世界里，小伙伴们又踏上了征程！等待在前的是久负盛名的宝象道馆，以投资理财著称的宝象道馆也已经宣布将筹赏千万欢乐券，鼓励大家前来挑战！",
+            link: location.href,
+            imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/ae255bf1-0e44-4e7e-acb5-9cd1966668d4.jpg",
+            success: function(json){
+                shareSuccess();
+            }
+        };
+
+        function shareSuccess(){
+            $.ajax({
+                url: "/lottery-beat-hamster/share-get-ticket.html",
+                data: {"gameSign": gameSign},
+                success: function(json){}
+            });
+        }
+
+        $.ajax({
+            url: "/wechat/sign.html",
+            data: {url: location.href},
+            success: function (data) {
+                // 微信分享事件监听
+                wx.config({
+                    debug: false,
+                    appId: data.appId, // 公众号的唯一标识
+                    timestamp: data.timestamp, // 生成签名的时间戳
+                    nonceStr: data.nonceStr, // 生成签名的随机串
+                    signature: data.signature, // 签名
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'hideMenuItems',
+                        'hideAllNonBaseMenuItem',
+                        'hideOptionMenu',
+                        'hideMenuItem'
+                    ]
+                });
+            }
+        });
+
+        wx.ready(function () {
+            //全部屏蔽掉
+            wx.hideMenuItems({
+                menuList: ['menuItem:copyUrl',//复制链接
+                    'menuItem:delete',//删除
+                    'menuItem:originPage',//原网页
+                    'menuItem:readMode',//阅读模式
+                    'menuItem:openWithQQBrowser',//在QQ浏览器中打开
+                    'menuItem:openWithSafari',//在Safari中打开
+                    'menuItem:share:email',//邮件
+                    'menuItem:share:brand',//一些特殊公众号
+                    'menuItem:share:qq',//分享到QQ
+                    'menuItem:share:weiboApp',//分享到Weibo
+                    'menuItem:favorite',//收藏
+                    'menuItem:share:facebook',//分享到FB
+                    'menuItem:share:QZone',//分享到 QQ 空间
+                    'menuItem:editTag']//编辑标签
+            });
+
+            //分享到朋友圈
+            wx.onMenuShareTimeline(shareData);
+
+            //分享到微信好友
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="岁末白拿">
+    <meta name="Description" content="岁末白拿">
+    <title>岁末白拿</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <style>
+        html,body{height:100%;}
+    </style>
+</head>
+<body>
+<div class="main">
+    <img src="images/bgTop.png" />
+</div>
+<div class="share_mask"><img src="./images/endLayer.png"></div>
+<script>
+    (function(){
+        /*获取后缀*/
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+
+        var dataJson = {
+            noticePage : "/topic/201701/free/attention.html",
+            indexPage : "/topic/201701/free/register.html",
+            freePage : "/topic/201701/free/prize.html"
+        };
+
+        if (getQueryString("oneLogin")) {
+            dataJson["oneLogin"] = true
+        }
+
+        $.ajax({
+            url: "/act-year-end-free/go-auth-link.html",
+            data: dataJson,
+            success: function (json) {
+                if (!json.type) {
+                    if (json.message == "活动已结束" || json.message == "活动不存在"){
+                        isEnd();
+                        return false;
+                    }
+                    layer.open({
+                        content:json.message ,
+                        skin: 'msg'
+                    });
+                    return false;
+                }
+                location.href = json.url;
+            }
+        })
+
+        /*活动结束图片*/
+        function isEnd() {
+            $(".share_mask").css({"height": "100%"});
+            return false;
+        }
+        $(".share_mask").click(function () {
+            $(this).css({height: "0"});
+        });
+
+        var wechatShare=new WeChatShare();
+        var shareData ={
+            shareConfig:{
+                title: "岁末白拿，这一次不玩虚的！",
+                desc: "宝象盛宴，喜迎新年",
+                link: 'http://t.cn/RM7WhKC',
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1612/aca4cc5b-915c-4cfa-97be-038fec717a25.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:share:appMessage'
+                ]
+            },
+            callback:function(){}
+        };
+        wechatShare.init(shareData);
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

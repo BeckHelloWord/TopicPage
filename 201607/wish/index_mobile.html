@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>星座许愿池</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/jQuery.link.js"></script>
+</head>
+<body class="body_bg">
+
+<div class="mobile">
+    <section><img src="images/banner.jpg" alt="" /></section>
+    <section class="games">
+        <img src="images/game_bg.jpg" alt="" />
+        <div id="playPart" class="playPart"></div>
+    </section>
+    <section class="explain">
+        <h3 class="t_c"><span>活动规则</span></h3>
+        <ul>
+            <li>
+                <p>用户参与许愿每次消耗10枚宝象币；</p>
+            </li>
+            <li>
+                <p>用户参与许愿每次得到1张欢乐券；</p>
+            </li>
+            <li>
+                <p>许愿中奖率为<span>100%</span>，每日抽奖次数不限；</p>
+            </li>
+            <li>
+                <p>红包以及其他奖励券按照其本身规则使用；</p>
+            </li>
+            <li>
+                <p>本活动最终解释权由宝象金融保留。</p>
+            </li>
+        </ul>
+    </section>
+    <footer><img src="images/logo.png" alt="" /></footer>
+</div>
+<div id="msg" class="noMask">
+    <div class="cont t_c">
+        <div class="hd">
+            <h3>恭喜亲，获奖啦！</h3>
+            <p><img src="images/prize_01.png" /></p>
+            <div class="desc">
+                <h4>您是<span>白羊座</span></h4>
+                <p>8月赋予白羊座的关键词是浪漫、欢愉、富有创意性。金星在木星不远处，会带来金钱、合作以及事业机会。工资上涨，奖金也随之而来。赚钱有渠道，只是有舍有得，关键时刻不宜犹豫不决。</p>
+            </div>
+        </div>
+        <div class="bd">
+            <a class="close" href="">继续抽奖</a>
+            <a class="app-url" data-app-url="baoxiang://APPProjectList" href="/lc/invest/list.html">去投资</a>
+        </div>
+    </div>
+    <div class="cont t_c">
+        <div class="hd">
+            <h3>亲，您的欢乐券用完啦！</h3>
+            <p><img src="images/loss.png" /></p>
+        </div>
+        <div class="bd">
+            <a class="close" href="">我知道了</a>
+            <a class="app-url" data-app-url="baoxiang://APPProjectList" href="/lc/invest/list.html">投资赢宝象币</a>
+        </div>
+    </div>
+</div>
+<div class="pop errPop t_c">
+    <div class="cont">
+        <div class="hd">
+            <p></p>
+        </div>
+        <div class="bd">
+            <a class="close" href="">我知道啦</a>
+        </div>
+    </div>
+</div>
+<!-- 音乐 -->
+<audio id="car_audio"  src="images/music5.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/game.js"></script>
+<script type="text/javascript">
+    (function(){
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+
+        var items = [
+            ["白羊座", "images/gift_01.png", ""],
+            ["金牛座", "images/gift_02.png", ""],
+            ["双子座", "images/gift_03.png", ""],
+            ["巨蟹座", "images/gift_04.png", ""],
+            ["天秤座", "images/gift_05.png", ""],
+            ["天蝎座", "images/gift_06.png", ""],
+            ["双鱼座", "images/gift_07.png", ""],
+            ["水瓶座", "images/gift_08.png", ""],
+            ["摩羯座", "images/gift_09.png", ""],
+            ["射手座", "images/gift_10.png", ""],
+            ["处女座", "images/gift_11.png", ""],
+            ["狮子座", "images/gift_12.png", ""]
+        ];
+
+        var TGameconfig = {
+            "logo": "",
+            "logoUrl": "",
+            "name": "",
+            "time": "1474243200000",
+            "item": items
+        };
+
+        $('#playPart').GameA({
+            main : TGameconfig,
+            lucker : '',
+            url: '/lottery-wish/lottery.html'
+        });
+
+        $(".close").click(function(e){
+            $(this).parents("#msg").hide();
+            $(this).parents(".pop").hide();
+
+            e.preventDefault();
+        });
+
+        var shareData = {
+            title: "快来星座许愿池许愿吧",
+            desc: "古老的星盘掌管着命运的魔力，来到宝象嘉年华的人儿啊，快来这里测试自己的运气吧，看看你是拥有火象的霸气、水象的睿智、风象的自由还是土象的稳健，命运的齿轮又开始了转动，将你的手放在星盘的中央，等待奇迹的到来吧。",
+            link: location.href,
+            imgUrl: "https://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/68f9c634-c6c5-4536-8bb6-fc2b9a0b67af.jpg"
+        };
+
+        $.ajax({
+            url: "/wechat/sign.html",
+            data: {url: location.href},
+            success: function (data) {
+                // 微信分享事件监听
+                wx.config({
+                    debug: false,
+                    appId: data.appId, // 公众号的唯一标识
+                    timestamp: data.timestamp, // 生成签名的时间戳
+                    nonceStr: data.nonceStr, // 生成签名的随机串
+                    signature: data.signature, // 签名
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'hideMenuItems',
+                        'hideAllNonBaseMenuItem',
+                        'hideOptionMenu',
+                        'hideMenuItem'
+                    ]
+                });
+            }
+        });
+
+        wx.ready(function () {
+            //全部屏蔽掉
+            wx.hideMenuItems({
+                menuList: ['menuItem:copyUrl',//复制链接
+                    'menuItem:delete',//删除
+                    'menuItem:originPage',//原网页
+                    'menuItem:readMode',//阅读模式
+                    'menuItem:openWithQQBrowser',//在QQ浏览器中打开
+                    'menuItem:openWithSafari',//在Safari中打开
+                    'menuItem:share:email',//邮件
+                    'menuItem:share:brand',//一些特殊公众号
+                    'menuItem:share:qq',//分享到QQ
+                    'menuItem:share:weiboApp',//分享到Weibo
+                    'menuItem:favorite',//收藏
+                    'menuItem:share:facebook',//分享到FB
+                    'menuItem:share:QZone',//分享到 QQ 空间
+                    'menuItem:editTag']//编辑标签
+            });
+
+            //分享到朋友圈
+            wx.onMenuShareTimeline(shareData);
+
+            //分享到微信好友
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

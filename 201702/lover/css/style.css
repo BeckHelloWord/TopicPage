@@ -1,0 +1,67 @@
+/*pc样式*/
+*{box-sizing: border-box;}
+.w1200{width:1200px;margin:0 auto;}
+.w1242{width:1242px;margin:0 auto;}
+.pl_46{padding-left:46px;}
+.pt_262{padding-top:262px;}
+.mt_40{margin-top:40px;}
+.mt_38{margin-top:38px;}
+i{font-style:normal;}
+.t_c{text-align:center;}
+.t_l{text-align:left;}
+.t_r{text-align:right;}
+
+.wrapper{width:100%;min-width:1200px;overflow:hidden;text-align:justify;background:#061237;color:#9cb3f6;font-size:14px;}
+.main{position: relative;width: 1920px;left:50%;margin-left:-960px;}
+.shakedown_one{height: 791px;background:url("../images/bj_01.jpg") no-repeat center;}
+.details{font-size:40px;line-height:1.2;margin-bottom:45px;color:#f38d35;text-align: center;}
+.title{padding-left:45px;height: 30px;line-height: 30px;font-size:30px;color:#d04d88;background: url("../images/rectangle.png") no-repeat left center;}
+.shakedown_two{overflow:hidden;height:752px;background: url("../images/bj_02.jpg") no-repeat center;}
+.footer{height:222px;background: url("../images/footer.jpg") no-repeat center;font-size:18px;color:#877575;text-align: center;padding-top:182px;}
+.aisle_one{margin-top:24px; color:#f38d35;}
+.aisle_one_con{font-size:21px;margin-bottom:24px;}
+.ticket_box{position:relative;width:558px;height:355px;border:5px solid #874d1b;text-align: center;color:#fff;font-size:18px;}
+.ticket_box .ticket_img{
+    width: 303px;
+    height:169px;
+    padding-top:130px;
+    margin:67px auto 24px;
+    background: url("../images/ticket.jpg") no-repeat top center;
+}
+.ticket_box .ticket-txt{font-size:18px;color:#ffc694;text-align: center;line-height: 36px;background: rgba(243,141,53,.4);}
+.ticket_box strong{font-size:24px;color:#f38d35;}
+.ticket_box .ticket_img_rotate{
+    position: absolute;
+    top:-46px;
+    left:50%;
+    margin-left:-157px;
+    width: 315px;
+    height: 293px;
+    padding-top:255px;
+    background: url("../images/ticket_02.png") no-repeat top center;
+}
+.ticket_box .w303{position:relative;left:1px;width:303px;}
+.ticket_explain{
+    margin-top:40px;
+    font-size:18px;
+    color:#f38d35;
+}
+.ticket_02_explain{
+    position: relative;
+    padding-left:56px;
+    height: 90px;
+    line-height: 90px;
+    font-size:20px;
+    color:#fff;
+    border:5px solid #874d1b;
+}
+.ticket_02_explain .ticket_img_03{
+    position: absolute;
+    top:-119px;
+    right:-30px;
+    width: 315px;
+    height: 177px;
+    background: url("../images/ticket_03.png") no-repeat center;
+}
+.remind{margin-top:80px;margin-bottom:20px;}
+.remind-txt{font-size:20px;color:#fff;}

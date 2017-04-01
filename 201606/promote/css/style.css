@@ -1,0 +1,17 @@
+﻿.bx_wrap{width:100%;min-width:1200px;overflow:hidden;}
+.w1200{width:1200px;margin:0 auto; }
+.wrapper{}
+a.newyear_logo{line-height:60px !important;margin-top:0 !important;}
+.wrapper h2{font-size:44px;color:#7a8dda;text-align:center;font-weight:normal;line-height:3;}
+.wrapper .main{background:#f6f8ff;padding-top:40px;min-width:100%;margin:0 auto;font-size:18px;color:#999;}
+.wrapper .main .dateTime{position:relative;padding-top:20px;padding-bottom:60px;}
+.wrapper .main .dateTime .fl{width:50%;}
+.wrapper .main .dateTime ul{position:relative;}
+.wrapper .main .dateTime ul li:nth-child(odd){color:#ddac1d;font-size:24px;position:relative;}
+.wrapper .main .dateTime ul li:nth-child(odd) span:before{content:"";width:46px;height:51px;line-height:51px;text-align:center;color:#fff;display:block;background:url(../images/list.png) no-repeat;position:absolute;left:-60px;top:0;}
+.wrapper .main .dateTime ul li:nth-child(1) span:before{content:"1";}
+.wrapper .main .dateTime ul li:nth-child(3) span:before{content:"2";}
+
+.wrapper .review{width:100%;background:#fff;padding:40px 20px 0 20px;}
+.wrapper .review p:nth-child(even){color:#ddac1d;font-size:26px;}
+.wrapper .review p:last-child{margin-bottom:20px;}

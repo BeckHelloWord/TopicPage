@@ -1,0 +1,28 @@
+*{margin:0; padding:0;}
+body{width:100%; overflow-x:hidden;}
+
+.invite{width:1920px; position:relative; left:50%; margin-left:-960px; overflow:hidden;}
+.invite img{vertical-align:middle;}
+.invite .backhome{display:block; position:absolute; left:500px; top:20px; font-size: 18px; color: #fff;}
+.invite .backhome:hover{text-decoration:underline;}
+.invite .friendinvite{display:block; width:352px; height:110px; position:absolute; left:800px; top:580px; background:url(about:blank);}
+.invite .invitetab{position:absolute; width:100%; left:0; top:1840px;}
+.invite .invitetab .container{width:1218px; margin:0 auto; position:relative;}
+.invite .invitetab .container h3{padding-left:43px; position:relative; font-weight:normal; margin-bottom:100px;}
+.invite .invitetab .container h3 a{display:inline-block; margin-right:10px; width:264px; text-align:center; color:#fff; background:url(../images/invitebtnhover.png) no-repeat; text-decoration:none; font-size:30px;  height:104px; line-height:92px;}
+.invite .invitetab .container h3 a.curr{background-image:url(../images/invitebtn.png); color:#975d1d;}
+.invite .invitetab .container h3 span{display:block; width:973px; height:126px; position:absolute; left:10px; top:78px; background:url(../images/inviteh3.png) no-repeat;}
+.invite .invitetab .container .p1{padding:10px 0 0 100px;}
+.invite .invitetab .container .p2{margin:10px 0 0 -30px;}
+
+.mobinvite{width:100%; overflow:hidden; position:relative;}
+.mobinvite img{vertical-align:middle; max-width:100%;}
+.mobinvite .friendinvite{display:block; width:32%; height:3%; position:absolute; left:33%; top:9%;}
+.mobinvite .invitetab{position:absolute; width:100%; left:0; top:38%;}
+.mobinvite .invitetab h3{padding-left:4%; position:relative; margin-bottom:8px; font-weight:normal;}
+.mobinvite .invitetab h3 a{display:inline-block; width:32%; text-align:center; color:#fff; overflow:hidden; background:url(../images/invitebtnhover.png) no-repeat; background-size:100%; text-decoration:none; font-size:14px; padding: 3% 0 10%; line-height:1;}
+.mobinvite .invitetab h3 a.curr{background-image:url(../images/invitebtn.png); color:#975d1d;}
+.mobinvite .invitetab h3 span{display:block; width:86%; position:absolute; left:0; top:50%;}
+.mobinvite .invitetab p{width:100%;}
+.mobinvite .invitetab p img{max-width:100%;}
+.mobinvite .invitetab p.p2{margin-top:15px;}

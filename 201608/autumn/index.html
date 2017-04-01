@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>团圆节晒团圆照</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <style>
+        .swiper-slide{-webkit-transform:scale(0.8) !important;-moz-transform:scale(0.8) !important;-ms-transform:scale(0.8) !important;-o-transform:scale(0.8) !important;transform:scale(0.8) !important;}
+        .swiper-slide.swiper-slide-next{-webkit-transform:scale(1) !important;-moz-transform:scale(1) !important;-ms-transform:scale(1) !important;-o-transform:scale(1) !important;transform:scale(1) !important;}
+    </style>
+</head>
+<body>
+<div class="main mainI">
+    <section class="mainIndex">
+        <img class="topImg" src="images/indexTop.png" />
+        <div class="topTitle">
+           <div class="topTitleImg"><img src="images/title.png" /></div>
+            <a href="javascript:;" class="rule">活动规则</a>
+        </div>
+        <div class="sequence">
+            <h2>豪礼展示</h2>
+            <div class="swiper-container">
+                <a class="arrow-left arrow-btn" href="javascript:;"><span></span></a>
+                <a class="arrow-right arrow-btn" href="javascript:;"><span></span></a>
+                <div class="swiper-wrapper" style="width:80%;">
+                    <div class="swiper-slide"><img src="images/slide01.png" /></div>
+                    <div class="swiper-slide"><img src="images/slide02.png" /></div>
+                    <div class="swiper-slide"><img src="images/slide03.png" /></div>
+                    <div class="swiper-slide"><img src="images/slide04.png" /></div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <p class="timer">活动期间（9月12日—17日），晒家人/朋友的合照，小米手机等智能豪礼等你来领！</p>
+        </div>
+        <div class="btn btnIndex">
+            <a href="list.html" class="btnVote fl bx_round5"><i class="before"></i>我要投票<i class="after"></i></a>
+            <a href="javascript:;" class="btnShine fr bx_round5"><i class="before"></i>我要晒照<i class="after"></i></a>
+        </div>
+    </section>
+</div>
+<div class="share_mask"><img src="./images/end.png"></div>
+<script src="js/swiper.min.js"></script>
+<script src="js/layer.js"></script>
+<script src="../../js/wechatLink.js"></script>
+<script>
+    $(function () {
+        $(".btnShine").on("click",function(e){
+            if($(this).hasClass("isEnd")){
+                isEnd();
+
+                return false;
+            }else{
+                $.ajax({
+                    url:"/secure/get-login-info.html",
+                    success:function(json){
+                        if(!json.isLogin){
+                            window.location.href = "/lc/channel/channel/share?mark=bxshequ&taskId=PC&redirect=/topic/201608/autumn/photo.html";
+                        }else{
+                            window.location.href = "/topic/201608/autumn/photo.html";
+                        }
+                    }
+                });
+            }
+
+            e.preventDefault();
+        });
+        $.ajax({
+            url:'/lottery-midfestival/activity-is-run.html',
+            success:function(json) {
+                if(!json.type){
+                    if(json.isEnd){
+                        $(".btnShine").addClass("isEnd");
+                    }
+                }
+            }
+        });
+
+//        $(".btnIndex").on("click", function(e){
+//            if($(this).hasClass("isEnd")){
+//                isEnd();
+//
+//                return false;
+//            }
+//        });
+
+        function isEnd(){
+            $(".share_mask").css({"height": "100%"});
+            return false;
+        }
+        $(".share_mask").click(function(){
+            $(this).css({height:"0"});
+        });
+
+        setTimeout(function () {
+            $(".topTitleImg img").addClass("curr");
+        }, 500);
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 3,
+            paginationClickable: true,
+            loop: true,
+        });
+        $('.arrow-left').on('click', function(e){
+            e.preventDefault();
+            swiper.slidePrev();
+        });
+        $('.arrow-right').on('click', function(e){
+            e.preventDefault();
+            swiper.slideNext();
+        });
+
+        $(".rule").on("click",function(e){
+           openLayer = layer.open({
+                type:1,
+                className: 'openLayerCss',
+                closeBtn: false,
+                title:  false,
+                content: '<div class="openLayer"><h1>活动规则<a class="indexClose close" href="javascript:;"></a></h1><div class="openCont"><h4>参加活动用户</h4><ul><li>参与活动用户可通过上传与家人/朋友的合影照片，写上中秋节寄语，参与“晒团圆”活动；</li> <li>活动期间，每位用户只能上传照片1次；</li> <li>参赛作品根据投票数进行排名，前15名用户都有豪礼大赠送；</li><li>所有参与活动用户需在活动页用手机号注册登录，方可参加活动。</li></ul><h4>投票用户</h4><ul><li>用户在活动页用手机号注册登录即可给自己喜欢的参赛作品投票；</li><li>用户每天可给5张照片投票，每张照片限投一次，每投一票获得100元体验金 ；</li></ul><h4>活动说明</h4><ul><li>活动拒绝作弊刷票，一经查证将取消获奖资格；</li><li>前三名获奖用户需为宝象金融投资用户，新注册用户需要在我公司进行投资，现金投资≧500元，可投任意标的、不限天数；</li><li>所有奖品的发放将在活动结束后<span class="seven">7个工作日之内</span>完成；</li><li>本活动最终解释权归宝象金融所有，参与过程中有任何疑问，请关注宝象金融服务号(微信号：bxjrccs）咨询。</li></ul></div></div>'
+            });
+
+            $(".close").on("click",function(e){
+                layer.close(openLayer);
+                e.preventDefault()
+            });
+        });
+        var wechatShare=new WeChatShare();//创建对象
+        var shareData = {
+            title: "中秋节，晒团圆照 ",
+            desc: "宝象金融与你共团圆",
+            link: location.href,
+            imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/f4717d06-6369-4b6a-a7dc-c9fe1af3b835.jpg"
+        };
+        var showList = {//创建显示菜单列表，默认全部关闭
+            menuList: [
+                'menuItem:share:appMessage',
+                'menuItem:share:qq',
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl' // 复制链接
+            ]
+        };
+        wechatShare.init(shareData,showList);//创建分享 自定义菜单
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

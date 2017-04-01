@@ -1,0 +1,74 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.ml20{margin-left:20px;}
+.yellow{color:#fae572;}
+
+/* pc端 */
+
+.wrapper{width:100%; min-width:1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+.main{width:1920px; position:relative; left:50%; margin-left:-960px; z-index: 0;}
+.main .item{position:relative;}
+.main .item .item_cont{position:absolute; left:0; top:610px; width:100%;}
+.main .item .item_cont ul{width:600px; margin: 0 auto; font-size:16px; color:#7f1717;}
+.main .item .item_cont ul li{list-style-type: decimal; margin-left: 15px;}
+
+.main .step1 a{display:block; position:absolute; left:50%; top:378px; margin-left:-208px;}
+
+.main .step3 .item_cont{top:685px;}
+.main .step3 .item_cont ul{width:752px; color:#155f6b;}
+
+.main .step4 .item_cont{top:890px;}
+.main .step4 .item_cont ul{width:750px; color:#276121;}
+
+
+/* h5页面 */
+.mobMain{}
+.mobMain img{max-width:100%;}
+.mobMain section{position:relative;}
+.mobMain section ul{padding:1% 5%; color:#7f1717; font-size:14px;}
+.mobMain section ul li{list-style-type: decimal; margin-left: 20px;}
+
+.mobMain section.step2{background:#ff7d7d;}
+.mobMain section.step2 a{display:block; position:absolute; left:20%; top:37%; width:60%;}
+
+.mobMain section.step5{background:#54bac9;}
+.mobMain section.step5 ul{color:#155f6b;}
+
+.mobMain section.step6{background:#80c779;}
+.mobMain section.step6 ul{color:#276121;}
+
+@media only screen and (min-width:375px){
+    .mobMain section.step2 a{top:40%;}
+}

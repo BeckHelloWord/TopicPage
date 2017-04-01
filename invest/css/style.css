@@ -1,0 +1,69 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+/*ul,ol,li{list-style-type:none;}*/
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+.wrap{width: 100%; min-width: 1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+/* h5页面 */
+.h5-wrap{}
+.h5-wrap img{max-width:100%;}
+footer{color:#333;font-size:14px;background:url(../images/mobinvest_09.jpg) no-repeat center top #efefef;background-size:100%;}
+footer h3{font-weight:normal;font-size:24px;padding:5% 0;}
+footer ol{margin-left:10%;margin-right:5%;}
+footer p{max-width:90%;margin:5% auto 0;padding-bottom:5%;font-size:16px;position:relative;}
+footer p span{padding:0 10px;position:relative;background:#ededed;display:inline-block;z-index:9;}
+footer p i{width:100%;border-top:1px solid #999;position:absolute;left:0;top:15px;display:block;}
+
+/* PC */
+.main{width:1920px;position:relative;left:50%;margin-left:-960px;}
+.page{position:relative;}
+.footer{height:707px;font-size:25px;color:#333;background:url(../images/invest_09.jpg) no-repeat center top;position:relative;}
+.footer h3{font-size:44px;font-weight:normal;padding:50px 0;}
+.footer ol{width:1100px; margin:0 auto;}
+.footer ol li{padding:0 20px;}
+.footer p{max-width:900px;margin:100px auto 0;font-size:18px;position:relative;}
+.footer p span{padding:0 50px;position:relative;background:#ededed;display:inline-block;z-index:9;}
+.footer p i{width:100%;border-top:1px solid #999;position:absolute;top:20px;left:0;display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+

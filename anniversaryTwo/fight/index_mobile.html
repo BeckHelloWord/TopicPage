@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象大作战</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style_mobile.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="mobMain">
+    <div class="content index">
+        <img src="images/index.jpg" alt="" />
+        <a class="ruleBtn" href="">活动规则</a>
+        <a class="enter t_c" href=""><img src="images/enter.png" alt="" /><span id="num">3</span></a>
+    </div>
+    <div class="content play">
+        <img src="images/playing.png" alt="" />
+        <ul class="clearfix">
+            <li id="time">30.00</li>
+            <li id="score">0</li>
+        </ul>
+        <div id="play_item" class="play_item">
+            <div class="item_01"><span></span><img src="images/animal-list1.png" alt="" /></div>
+            <div class="item_02"><span></span><img src="images/animal-list1.png" alt="" /></div>
+            <div class="item_03"><span></span><img src="images/animal-list3.png" alt="" /></div>
+            <div class="item_04"><span></span><img src="images/animal-list4.png" alt="" /></div>
+        </div>
+    </div>
+</div>
+<div class="pop rule-pop">
+    <div class="cont">
+        <h2>活动规则</h2>
+        <div class="bg">
+            <ul>
+                <li><span>1</span> 用户点击活动页面内的开始按钮进行游戏，在30s限时内对画面内出现的形象进行点赞，以此获得相应的加分和减分；</li>
+                <li><span>2</span> 用户完成游戏即可获得现金红包、投资红包等随机奖励;</li>
+                <li><span>3</span> 用户游戏积分将会进入排行榜，活动结束后，排名前50名的用户将会得到2017限量版宝象公仔以及2017全年投资券礼包的专属奖励；</li>
+                <li><span>4</span> 每个用户在活动期间每日可以参与10次游戏，除此之外，用户在12月1日—12月31日的现金投资额可以用1000：1的比例转化为新的游戏机会；（例：小象在12月1日—5日累计现金投资10000元，他在活动期间的游戏机会会在每日10次常规机会之外增加10次额外机会)；</li>
+                <li><span>5</span> 用户在活动期间每日首次完成游戏并分享到自己的朋友圈后，可以得到1000元体验金的奖励；</li>
+                <li><span>6</span> 如有任何疑问请联系客服电话：400-885-1100 ；</li>
+                <li><span>7</span> 在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+            </ul>
+        </div>
+        <a class="close" href=""></a>
+    </div>
+</div>
+<div class="pop success-pop js-success-pop">
+    <div class="cont">
+        <h2>恭喜你获得</h2>
+        <div class="bg t_c">
+            <div class="ticket">
+                <img src="images/success-ticket.png" alt="" />
+                <p>周年庆投资红包</p>
+            </div>
+            <div class="btn clearfix">
+                <a class="js-share fl blue" href="">去分享</a>
+                <a class="js-again fr yellow" href="">再来一局</a>
+            </div>
+        </div>
+        <a href="" class="close"></a>
+    </div>
+</div>
+<div class="pop fail-pop">
+    <div class="cont">
+        <h2>温馨提示</h2>
+        <div class="bg t_c">
+            <p>亲，您的欢乐券不足</p>
+            <div class="btn clearfix">
+                <a class="fl blue" href="">知道了</a>
+                <a class="fr yellow" href="/topic/anniversaryTwo/fight/">玩点别的</a>
+            </div>
+        </div>
+        <a href="" class="close"></a>
+    </div>
+</div>
+<div class="pop tip-pop">
+    <div class="cont">
+        <h2>温馨提示</h2>
+        <div class="bg t_c">
+            <p>此次参与需要消耗<br />50欢乐券</p>
+            <div class="btn">
+                <a class="blue go-on" href="">确认继续</a>
+            </div>
+        </div>
+        <a href="" class="close"></a>
+    </div>
+</div>
+<div class="share">
+    <img src="images/share.png" alt="" />
+</div>
+
+<div class="loading"><i></i></div>
+
+<!-- 音乐 -->
+<audio id="car_audio" src="images/music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="js/des.js"></script>
+<script>
+    (function(){
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+        var playCont = $("#play_item"),
+                pWidth = playCont.width() / 4,
+                pHeight = playCont.height() / 4,
+                score = 0,  // 得分
+                spiritList = [],
+                resultArr = [];
+
+        // 默认显示第一页
+        showPart(0);
+        getPlayNum();
+        function getPlayNum(){
+            $.ajax({
+                url: "js/game-count.json",
+                dataType:"json",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/anniversaryTwo/fight/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    if(json.count == 0){
+                        $(".enter").addClass("noNumber");
+                        $("#num").hide();
+                    }else if(json.count > 0){
+                        $.cookie("free-cookie",null)
+                    }
+
+                    $(".enter").show().find("span").text(json.count);
+                }
+            });
+        }
+
+        // 显示规则
+        $(".ruleBtn").on("click", function(e){
+            $(".rule-pop").show();
+            e.preventDefault();
+        });
+        //开始游戏
+        $(".enter").on("click", function(e){
+            if($(this).hasClass("noNumber") && $.cookie("free-cookie") == "null"){ // 没有次数
+                $.cookie("free-cookie",true);
+
+                $(".tip-pop").show();
+                return false;
+            }
+
+            showPart(1);
+            startGame($(this));
+            e.preventDefault();
+        });
+        $(".go-on").on("click", function(e){
+            $this = $(".enter");
+            showPart(1);
+            startGame( $this);
+            $(".tip-pop").hide();
+            e.preventDefault();
+        });
+        // 开始游戏
+        function startGame($this){
+            // 开始游戏
+            if($this.hasClass("isPlaying")){
+                return false;
+            }
+
+            $this.addClass("isPlaying");
+            $("#score").html(0);
+
+            $.ajax({
+                url: "js/index.json",
+                dataType:"json",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/anniversaryTwo/fight/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+                        showPart(0);
+
+                        return false;
+                    }
+
+                    spiritList = json.animal;
+
+                    for(var i = 0; i < 7; i ++){
+                        spiritList.push({"logo": "images/animal-list1.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list2.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list3.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list4.png", "score": 0});
+                    }
+                    spiritList.push({"logo": "images/animal-list1.png", "score": 0});
+                    spiritList.push({"logo": "images/animal-list4.png", "score": 0});
+
+                    playStart();
+                }
+            });
+        }
+
+        // 分享
+        $(".js-share").on("click", function(e){
+            $(".js-success-pop").hide();
+            $(".share").show();
+            e.preventDefault();
+        });
+        // 重玩游戏
+        $(".js-again").on("click", function(e){
+            $(".js-success-pop").hide();
+            showPart(0);
+            getPlayNum();
+            e.preventDefault();
+        });
+        // 关闭分享层
+        $(".share").on("click", function(e){
+            $(this).hide();
+            showPart(0);
+            getPlayNum();
+
+            e.preventDefault();
+        });
+
+        // 关闭错误提示层
+        $(".close").on("click", function(e){
+            $(".pop").hide();
+            e.preventDefault();
+        });
+
+        // 显示页面
+        function showPart(index){
+            $(".mobMain .content").eq(index).show().siblings().hide();
+        }
+
+        function getRandom(num, add){
+            var add = add || 0;
+
+            return parseInt(Math.random() * num) + add;
+        }
+
+        function getRandomArr(num, count){
+            // 定义存放生成随机数的数组
+            var array = [];
+
+            // 循环N次生成随机数
+            for(var i = 0 ; i < num + 10; i++){
+                // 生成num + 10个随机数
+                generateRandom(count);
+            }
+
+            // 生成随机数的方法
+            function generateRandom(count){
+                var rand = parseInt(Math.random() * count);
+                for(var i = 0 ; i < array.length; i++){
+                    if(array[i] == rand){
+                        return false;
+                    }
+                }
+                array.push(rand);
+            }
+
+            // 返回num个随机数
+            return array.slice(0, num);
+        }
+
+        function getShowArr(arr){
+            var resultArr = [],len = arr.length,
+                    randArr = getRandomArr(4, len).sort(function(a, b){ return b - a; }); // 从大到小排序
+
+            for(var i = 0; i < 4; i ++){
+                resultArr.push(arr[randArr[i]]);
+                arr.splice(randArr[i], 1); // 从根数组中删除数据
+            }
+
+            // 获取每次显示的小精灵的列表
+            return resultArr;
+        }
+
+        // 把小精灵显示在页面上
+        function setPlayItem(){
+            var arr = getShowArr(spiritList), html = "";
+
+            for(var i = 0, len = arr.length; i < len; i ++){
+                html += '<div class="item item_0' + (i + 1) + '"><span class="score' + arr[i].score + '">' + arr[i].score + '</span><img src="' + arr[i].logo + '" alt="" /></div>';
+            }
+
+            playCont.html(html);
+
+            // 每个小精灵的随机位置
+            $(".item_01").css({right: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_02").css({left: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_03").css({left: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_04").css({right: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+
+            playCont.find(".item").on("touchstart", function(){
+                var $this = $(this);
+
+                if($this.hasClass("on")){
+                    return false;
+                }
+
+                $(this).addClass("on");
+
+                var s = +$this.find("span").text(), o = {"score": ""};
+
+                if(s){
+                    o.score = s;
+                    resultArr.push(o);
+                }
+
+                score = score + s;
+
+                $this.addClass("curr");
+                $("#score").text(score);
+            });
+        }
+
+        function playStart(){
+            setPlayItem();
+            countDown();
+
+            // 定时器
+            var timer = setInterval(function(){
+                if(spiritList.length > 0){
+                    setPlayItem();
+
+                    return false;
+                }
+                
+                $(".enter").removeClass("isPlaying");
+                clearInterval(timer);
+            }, 1000);
+        }
+
+        // 倒计时
+        function countDown(){
+            var duration = 30 * 1000;
+            var endTime = new Date().getTime() + duration;
+
+            function interval(){
+                var n = (endTime - new Date().getTime()) / 1000;
+                if(n < 0) return;
+                document.getElementById("time").innerHTML = n.toFixed(2);
+                setTimeout(interval, 10);
+            }
+
+            interval();
+            setTimeout(function(){
+                playCont.html("");
+                document.getElementById("time").innerHTML = "0.00";
+                score = 0;
+                $(".loading").show();
+                sendData();
+            }, 30100);
+        }
+
+        // 传递游戏之后的数据
+        function sendData(){
+            var gameData = getResult();
+            resultArr = [];
+
+            $.ajax({
+                url: "js/game-complete.json",
+                data: {"gameData": gameData},
+                type: "post",
+                cache: false,
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/anniversaryTwo/fight/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    $(".loading").hide();
+                    $(".js-success-pop").show();
+                    $(".js-success-pop .ticket img").attr("src", json.giftLogo);
+                    $(".js-success-pop .ticket p").text(json.giftName);
+                    if(!json.ticketCount){
+                        if (/baoxiang/.test(navigator.userAgent)) {
+                            $(".js-success-pop .btn .js-again").remove();
+                            $(".js-success-pop .btn").append('<a class="fr yellow" href="baoxiang://APPProjectInvesting?type=invest&investId='+json.investId+'">去投资</a>');
+                            return false;
+                        }
+                        $(".js-success-pop .btn .js-again").remove();
+                        $(".js-success-pop .btn").append('<a class="fr yellow" href="/lc/invest/detail/'+json.investId+'.html">去投资</a>');
+                    }
+                }
+            });
+        }
+
+        // 获取加密后的数据
+        function getResult(){
+            //待加密字符串
+            var str = JSON.stringify(resultArr);
+
+            //第一个参数必须；第二个、第三个参数可选
+            var key1 = "bxjr_carnival1";
+            var key2 = "bxjr_carnival5";
+            var key3 = "bxjr_carnival9";
+
+            //加密方法
+            return strEnc(str,key1,key2,key3);
+        }
+
+        // 分享
+        var wechatShare=new WeChatShare(),
+            shareData ={
+                shareConfig:{
+                    title: "宝象大作战，够厉害就来玩！",
+                    desc: "疯狂大作战，找金象赢红包，一起来玩吧",
+                    link: location.href,
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/d75c6799-8f30-4663-b182-27379c59acc4.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:copyUrl', // 复制链接
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){}
+        };
+        
+        wechatShare.init(shareData);
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

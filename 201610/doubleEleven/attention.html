@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="尽情投资，尽在宝象">
+    <meta name="Description" content="尽情投资，尽在宝象">
+    <title>尽情投资,尽在宝象</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+</head>
+
+<body class="main">
+    <img src="images/index.jpg">
+<script>
+    (function(){
+        if (/MicroMessenger/i.test(navigator.userAgent) == false) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+            return false;
+        }else{
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "尽情投资，尽在宝象双11",
+                    desc: "iWatch疯狂抽不停，更有无限流量免费送！",
+                    link: location.host + "/topic/201610/doubleEleven/index.html",
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1610/4e66d3eb-c58f-4dc1-93fa-a35445a471a9.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){}
+            }
+            wechatShare.init(shareData);
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="涨薪宝">
+    <meta name="Description" content="涨薪宝">
+    <meta content="telephone=no" name="format-detection">
+    <title>涨薪宝</title>
+    <link rel="stylesheet" href="../../css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <!--<script src="../../js/wechatLink-1.1.js"></script>-->
+    <!--<script src="../../js/public.js"></script>-->
+    <script src="js/layer_mobile/layer.js"></script>
+    <script src="https://www.bxjr.com/assets/mobile/js/jq.Slide.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="win-out accelerated"></div>
+    <div class="turn">
+        <div class="dish">
+            <div class="turnplate accelerated">
+                <canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+                <!--<img class="pointer" src="images/turnplate-pointer.png" />-->
+                <a href="javascript:void(0)" class="pointer"><img src="images/turnplate-pointer.png" alt="">
+                    <div class="lottery-wrap"><p>抽奖</p>
+                        <p class="lottery-num">(<span class="js-lotteryNum">0</span>次)</p></div>
+                </a>
+            </div>
+
+            <img src="images/shadow.png" class="shadow"/>
+        </div>
+    </div>
+    <div class="listTop"><img src="images/listTop.png" alt=""></div>
+    <div class="list box">
+        <h2>获取名单</h2>
+        <div class="listLine scroll">
+            <div class="w92">
+                <ul class="JQ-slide-content"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="time w92 clearfix">
+        <div class="fl timeImg"><img alt="" src="images/time.png"></div>
+        <div class="timeCon fl">
+            <h3>活动时间</h3>
+            <p> 2017年3月15日 00:00至2017年3月31日23:59</p>
+        </div>
+    </div>
+    <div class="rule box">
+        <h2>活动规则</h2>
+        <div class="listLine">
+            <ul class="w92">
+                <li><h3>活动时间</h3></li>
+                <li>体验金当即到帐；<br/>实物奖品在活动结束后15个工作日内寄出。</li>
+                <br/>
+                <li><h3>参与方式</h3></li>
+                <li>在宝象平台内投任意散标满200元即可获得一次抽奖机会；<br/>投资金额(不含红包金额)在活动期限内可累加计算。</li>
+            </ul>
+        </div>
+        <br><br><br>
+        <div class="bot">
+            <!--未登录-->
+            <div class="notLogin">
+                <a href="//m.bxjr.com//login/index.html?redirect=/topic/201702/zxb/" class="blue btnStyle"><i></i>登录</a>
+            </div>
+            <div class="hasLogin clearfix">
+                <p class="fl">当前账户：<span class="mobile">0</span></p>
+                <p class="fl">已投金额：<span class="leftAmount">0</span></p>
+                <a href="" class="yellow btnStyle fl invest"><i></i>去投资</a>
+            </div>
+
+    </div>
+    <!--提交收货地址-->
+    <div class="a_layerBox a_formBox">
+        <div class="a_layerBg"></div>
+        <form id="a_addressForm" action="" class="a_addressForm a_layerCon">
+            <div style="width:96%;">
+                <div class="a_addressTitle">恭喜您<p class="giftName">抽得AIRWEAR防雾霾口罩</p></div>
+                <div class="a_addressConfirm">确认收货信息</div>
+                <div class="a_addressCont">
+                    <label class="label"><i class="fl">收货人</i><span class="a_userName fl">黄思嘉</span></label>
+                    <label class="label"><i class="fl">联系电话</i><span class="a_mobile fl">18217070047</span></label>
+                    <label class="label a_address_txt">
+                        <i class="f_s fl">收货地址</i>
+                        <input type="text" placeholder="为确保您能收到，请填写详细地址" class="a_address_val fl" maxlength="25"/>
+                        <p class="empty"></p>
+                    </label>
+                    <button type="button" id="submit" class="submit blue btnStyle js-submit">提交<i></i></button>
+                </div>
+                <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+            </div>
+        </form>
+    </div>
+    <!--领取成功-->
+    <div class="a_layerBox a_formSuccessBox js-formSuccessBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p class="js-title">恭喜您</p>
+            </div>
+            <div class="a_addressConfirm js-con">领取成功<br/>奖品将于活动结束后<br/>7个工作日内寄出！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="blue btnStyle close"><i></i><span class="js-ok">确认</span></a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+    <!--抽奖机会用完-->
+    <div class="a_layerBox a_noChanceBox js-noChanceBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>抽奖机会</p>
+            </div>
+            <div class="a_addressConfirm">十分抱歉<br/>抽奖机会已用完<br/></div>
+            <div class="a_addressCont clearfix">
+                <a href="javascript:void(0)" class="blue btnStyle fl close"><i></i>确认</a>
+                <a href="javascript:void(0)" class="yellow btnStyle fr go-invest"><i></i>继续投资</a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+    <!--</div>-->
+</div>
+<script src="js/awardRotate.js"></script>
+<script src="js/lanren.js"></script>
+<script src="js/turntable.js"></script>
+<script>
+    (function () {
+        var a_formBox = $(".a_formBox"), a_formSuccessBox = $(".a_formSuccessBox"), a_noChanceBox = $(".a_noChanceBox"), a_noWinBox = $(".a_noWinBox");
+
+        //遍历获奖名单
+        traversal();
+        function traversal() {
+            $.ajax({
+                url: "js/index.json",
+                dataType: "json",
+                success: function (json) {
+                    if (!json.success) {
+                        return false;
+                    }
+                    var html = "", winHtml = "";
+                    for (var i = 0, len = json.data.length; i < len; i++) {
+                        html += '<li><span class="s1">' + json.data[i].id + '</span><span class="s2">' + json.data[i].prize + '</span><span class="s3">' + json.data[i].time + '</span></li>';
+                        if (json.data[i].shiwu) {
+                            winHtml += '<div class="win"><div class="win-con">恭喜 <span>' + json.data[i].id + '</span> 获得 ' + json.data[i].prize + '</div></div>';
+                        }
+                    }
+                    $(".JQ-slide-content").html(html);
+                    $(".win-out").html(winHtml);
+
+                    setTimeout(function () {
+                        winAnimation($(".win-out"));
+                    }, 1000)
+                }
+            });
+        }
+
+        //获奖名单滚动
+        $(".scroll").Slide({
+            effect: "scroolTxt",
+            autoPlay: true,
+            speed: "normal",
+            timer: 2000,
+            steps: 1
+        });
+        //滑 文字
+        function winAnimation(obj) {
+            var first = obj.find(".win").eq(0);
+            animateNext(first);
+            function animateNext(first) {
+                var now = first, range = 20 * Math.random();
+                now.css({top: range + "%"}).addClass("on");
+                setTimeout(function () {
+                    now = now.next();
+                    if (now) {
+                        animateNext(now)
+                    }
+                }, 6000)
+            }
+        }
+
+        //弹框 关闭
+        $(".close").on("click", function (e) {
+            var closeParent = $(this).parents(".a_layerBox");
+            closeParent.hide();
+        });
+        //提交
+        function sendAddress() {
+            $(".submit").unbind("click");
+            $(".submit").on("click", function () {
+                var txt = $(this).siblings(".a_address_txt").find("input").val();
+                $.ajax({
+                    url: '',
+                    type: "post",
+                    data: {address: txt},
+                    success: function (json) {
+                        if (!json.type) {
+                            $(".empty").show().text(json.message);
+                            return false;
+                        }
+                        $(".a_formBox").hide();
+                        $(".a_formSuccessBox").show();
+                    }
+                })
+            });
+        }
+        $(".a_address_val").bind("keyup input focus", function () {
+            if ($(".a_address_val").val() != "") {
+                $(".empty").hide();
+            }
+        });
+
+        //已投金额
+        function getAmount() {
+            $.ajax({
+                url: '',
+                success: function (json) {
+                    if (!json.type) {
+                        layer.open({
+                            content: json.message,
+                            skin: 'msg'
+                        });
+                        return false;
+                    }
+                    if (json.leftAmount < 0) {
+                        json.leftAmount = 0
+                    }
+                    $('.leftAmount').html(json.leftAmount);
+                }
+            })
+        }
+    }());
+</script> 
+<!--流量统计-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+
+</html>

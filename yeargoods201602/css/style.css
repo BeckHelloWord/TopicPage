@@ -1,0 +1,521 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+q:before,
+q:after {
+    content: '';
+}
+
+/* 消除q前后的内容 */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+body {
+        /*font: 12px/1.5 "Microsoft YaHei", "微软雅黑";*/
+    font: 14px/1.5 "黑体", "Microsoft YaHei", "微软雅黑";
+    color: #666;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+/*
+a:hover {
+    color: #f90;
+    text-decoration: none;
+}
+*/
+
+a:focus,
+input:focus {
+    outline: 0;
+}
+.fl,
+.left {
+    float: left;
+}
+.fr,
+.right {
+    float: right;
+}
+.t_l {
+    text-align: left;
+}
+.t_c {
+    text-align: center;
+}
+.t_r {
+    text-align: right;
+}
+.pos {
+    position: relative;
+}
+.pt10 {
+    padding-top: 10px;
+}
+.br5 {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+/* pc端 */
+
+.wrapper {
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.top {
+    background-color: #f9f9f9;
+}
+.top .container {
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+}
+.top .logo {
+    margin-top: -3px;
+}
+.top .nav a,
+.top .nav span {
+    float: left;
+}
+.top .nav a {
+    display: inline-block;
+    padding: 0 15px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+}
+.pt50 {
+    padding-top: 50px;
+}
+.main {
+    box-sizing: border-box;
+    width: 1920px;
+    /*height: 2586px;*/
+    position: relative;
+    left: 50%;
+    margin-left: -960px;
+    z-index: 0;
+    /*padding-top:662px;*/
+    font-size:24px;
+    /*background: url("../images/yeargoods.jpg") no-repeat center;*/
+}
+.pink{
+    color:#fe6694;
+}
+.main .bx-yeargoods-head{
+    position: relative;
+    height: 661px;
+    overflow: hidden;
+    background: url("../images/bx-yeargoods-head.jpg") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-tracery{
+    position: absolute;
+    top:-27px;
+    left:0;
+    width:100%;
+    height: 49px;
+    background: url("../images/tracery.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img{
+    height:609px;
+}
+/*.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone{
+    position: relative;
+
+}*/
+.main .bx-yeargoods-head .bx-yeargoods-head-img .phone1{
+    position: absolute;
+    top:177px;
+    left:-13px;
+    width:162px;
+    height: 150px;
+    background:url("../images/phone3.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .phone2{
+    position: absolute;
+    top:95px;
+    left:33px;
+    width:163px;
+    height: 166px;
+    background:url("../images/phone2.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .phone3{
+    position: absolute;
+    top:49px;
+    left:110px;
+    width:149px;
+    height:172px;
+    background:url("../images/phone1.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .phone4{
+     position: absolute;
+     top:38px;
+     left:644px;
+     width:108px;
+     height:130px;
+     background:url("../images/phone4.png") no-repeat center;
+ }
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .phone5{
+    position: absolute;
+    top:77px;
+    left:687px;
+    width:149px;
+    height:158px;
+    background:url("../images/phone5.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .phone6{
+    position: absolute;
+    top:145px;
+    left:740px;
+    width:171px;
+    height:151px;
+    background:url("../images/phone6.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .left-fly{
+    position: absolute;
+    top:273px;
+    left:-70px;
+    width:210px;
+    height: 250px;
+    background: url("../images/phone-leftfly.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-phone .right-fly{
+    position: absolute;
+    top:150px;
+    left:986px;
+    width:190px;
+    height: 230px;
+    background: url("../images/phone-right-fly.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .gold{
+    position: absolute;
+    top:282px;
+    left:32px;
+    width:150px;
+    height: 150px;
+    background: url("../images/gold.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu{
+    position: relative;
+    top:-137px;
+    left:0;
+    /*z-index: 999;*/
+    width:903px;
+    height:690px;
+    background:url("../images/bx-fu.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .phone11{
+    position: absolute;
+    bottom:-45px;
+    left:134px;
+    z-index: 999;
+    width:150px;
+    height:142px;
+    background:url("../images/phone10.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .phone12{
+    position: absolute;
+    bottom:-45px;
+    left:240px;
+    z-index: 999;
+    width:109px;
+    height:182px;
+    background:url("../images/phone7.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .phone13{
+    position: absolute;
+    bottom:-45px;
+    left:323px;
+    z-index: 999;
+    width:321px;
+    height:186px;
+    background:url("../images/phone8.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .phone14{
+    position: absolute;
+    bottom:-45px;
+    left:614px;
+    z-index: 999;
+    width:149px;
+    height:233px;
+    background:url("../images/phone9.png") no-repeat center;
+}
+.main .bx-yeargoods-head .bx-yeargoods-head-img .bx-yeargoods-head-fu .phone15{
+    position: absolute;
+    bottom:-64px;
+    left:686px;
+    z-index: 999;
+    width:363px;
+    height:339px;
+    background:url("../images/monkey.png") no-repeat center;
+}
+.main .bx-yeargoods-content{
+    height:1793px;
+    padding-top:132px;
+    background: url("../images/bx-pc-bj.jpg") no-repeat center;
+}
+.main .yeargoods,.main .bx-yeargoods-head .bx-yeargoods-head-img{
+    position: relative;
+    width:1006px;
+    margin:0 auto;
+}
+.main .yeargoods .quiz{
+
+    padding:0 14px;
+}
+.main .yeargoods .quiz h2{
+    position: relative;
+    padding:0 0 25px 42px;
+    font-size:24px;
+    font-weight:normal;
+    color:#ffa2be;
+}
+.main .yeargoods .quiz h2:before,.yeargoods .quiz p:before,.yeargoods .quiz ul:before{
+    content: "Q";
+    position: absolute;
+    top:3px;
+    left:0;
+    width:32px;
+    height:31px;
+    border-radius: 5px;
+    text-align: center;
+    line-height:31px;
+    color:#fff;
+    background: #fe6694;
+}
+.main .yeargoods .quiz p{
+    position: relative;
+    padding:0 0 36px 42px;
+    color:#ffd272;
+}
+.main .yeargoods .quiz p strong{
+    font-weight:normal;
+    color:#ffeb02;
+}
+.main .yeargoods .quiz p:before,.main .yeargoods .quiz ul:before{
+    content: 'A';
+    background: #ff8c25;
+}
+.main .yeargoods .quiz ul{
+    position: relative;
+    padding-left:67px;
+    color:#ffd272;
+}
+.main .yeargoods .quiz ul li{
+    position: relative;
+    margin-bottom:10px;
+    text-align: justify;
+}
+.main .yeargoods .quiz ul li:before{
+    content: "1.";
+    position: absolute;
+    top:0;
+    left:-25px;
+    color: #ffd272;
+}
+.main .yeargoods .quiz ul li.no2:before{
+    content: "2.";
+}
+.main .yeargoods .quiz ul li.no3:before{
+    content: "3.";
+}
+.main .yeargoods .quiz ul li.no3 span{
+    font-size:16px;
+    color: #ff8e8e;
+}
+.main .yeargoods .goods-btn{
+    display: block;
+    width:325px;
+    height:99px;
+    margin:30px auto 0;
+}
+.main .yeargoods .goods-img{
+    margin-bottom:20px;
+}
+.main .yeargoods .goods-img .img{
+    width:498px;
+    height: 302px;
+}
+.main .yeargoods .goods-img img{
+    margin-bottom:10px;
+}
+
+
+
+/* h5页面 */
+
+.prl3{padding:0 3%;}
+.bx-mob-main {
+    position: relative;
+    width: 100%;
+    font-size:14px;
+}
+.bx-mob-main img {
+    width: 100%;
+    height: auto;
+}
+.bx-mob-main .bx-mob-goods{
+    padding-top:40px;
+    background: url("../images/h5-goods-bj.gif") no-repeat;
+    background-size:100% 100%;
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz h2,.bx-mob-main  .bx-mob-goods p{
+    position: relative;
+    padding-left:25px;
+    padding-bottom: 15px;
+    font-weight: normal;
+    font-size: 14px;
+    color:#ffa2be;
+}
+.bx-mob-main  .bx-mob-goods p{
+    text-align: justify;
+    color:#ffd272;
+}
+.bx-mob-main  .bx-mob-goods p strong{
+    color:#ffea00;
+    font-weight: normal;
+}
+.bx-mob-main  .bx-mob-goods h2:before,.bx-mob-main .bx-mob-goods .bx-mob-quiz ul:before,.bx-mob-main .bx-mob-goods .bx-mob-quiz .cj:before{
+    content: "Q";
+    position: absolute;
+    top:0;
+    left:0;
+    width:20px;
+    height: 20px;
+    border-radius: 3px;
+    color:#fff;
+    text-align: center;
+    background:#ff6695 ;
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul:before{
+    content: "A";
+    background:#ff8c25;
+}
+.bx-mob-main .bx-mob-goods .bx-mob-quiz .cj:before{
+    content: "A";
+    background: #ff8c25;
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul{
+    position: relative;
+    padding-left:25px;
+}
+
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul li{
+    position: relative;
+    padding-left:15px;
+    margin-bottom: 10px;
+    text-align: justify;
+    color:#ffd272;
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul li:before{
+    content: "1.";
+    position: absolute;
+    top:0;
+    left:0;
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul li.no2:before{
+    content: "2.";
+}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz ul li.no3:before{
+    content: "3.";
+}
+
+.bx-mob-main .bx-mob-goods .bx-mob-goods-img img{
+    margin-bottom:10px;
+}
+.rh{background:#d40117;padding-top:20px;}
+.bx-mob-main  .bx-mob-goods .bx-mob-quiz p.explain{color:#ff8e8e;}
+.footer{
+    position: relative;
+}
+.footer .h5-btn{
+    position: absolute;
+    top:20px;
+    left:50%;
+    margin-left:-30%;
+    width:60%;
+}
+@media only screen and (max-width:320px) {
+
+}
+@media only screen and (min-width:400px) {
+
+}

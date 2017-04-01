@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>你收到一台好友赠送的加湿器</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/jQuery.link.js"></script>
+</head>
+<body>
+<div class="mob-main">
+    <img src="images/mob-banner.jpg" alt="人脉大PK,财富大家帮" />
+    <div class="mob-part mob-part-01">
+        <img src="images/mob-part-01.png" alt="" />
+    </div>
+    <div class="mob-part mob-part-02 bg-blue t_c">
+        <div class="hd">好友投资即得现金</div>
+        <div class="bd">
+            <img src="images/mob-part-02.png" alt="" />
+        </div>
+    </div>
+    <div class="mob-part mob-part-03">
+        <div class="t_c">
+            <img src="images/mob-part-03.png" alt="" />
+        </div>
+    </div>
+    <div class="mob-part mob-part-04 bg-blue">
+        <div class="hd t_c">活动规则</div>
+        <div class="bd">
+            <p>活动规则：</p>
+            <p>1、活动时间：2016年10月10日-2016年10月31日；</p>
+            <p>2、活动期间，分享个人“专属链接”给好友发红包，好友通过专属链接成功注册，方可获得符合奖励规则的相应奖励；</p>
+            <p>注：现金奖励发放时间：收益每日结算一次，自动划入到您的理财账户余额；</p>
+            <p>3、有效好友累计投资总金额定义：活动期间内，所有邀请有效好友投资本金总和（债权转让、体验金、使用的红包金额不计算在内）；</p>
+            <p>4、每个被邀请注册用户活动期间只能参加一次实物奖励活动，冒用他人身份证、银行卡、手机号注册无效，相同IP多个用户注册、刷奖、一经核实，取消活动资格，所得奖励不予承兑；</p>
+            <p>5、详细规则最终以官网公告为准；</p>
+            <p>6、本活动最终解释权最终归宝象金融所有，如对活动有任何疑问，请致电客服电话：400-885-1100。</p>
+        </div>
+    </div>
+    <div class="mob-footer t_c">市场有风险，投资需谨慎</div>
+    <div class="mob-invite-btn t_c"><a class="appUrl" href="/center/invite/index" data-app-url="baoxiang://APPInviteFriendPage"><img src="images/mob-btn.png" /></a></div>
+</div>
+
+<script src="../../js/wechatLink.js"></script>
+<script>
+    (function(){
+        var wechatShare = new WeChatShare();//创建对象
+        // 分享
+        var shareData = {
+            title: "你收到一台好友赠送的加湿器",
+            desc: "人脉大PK，邀请越多好友，现金奖励越多！",
+            link: location.href,
+            imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1610/450cbc87-f1c0-42be-bca9-fc1e196309e6.jpg"
+        };
+        var showList = {//创建显示菜单列表，默认全部关闭
+            menuList: [
+                'menuItem:share:appMessage',
+                'menuItem:share:qq',
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl' // 复制链接
+            ]
+        };
+        wechatShare.init(shareData,showList);//创建分享 自定义菜单
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

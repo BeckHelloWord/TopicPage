@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta content="email=no" name="format-detection">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-好友推荐活动</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jQuery.link.js"></script>
+    <script src="https://vm.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js"></script>
+
+</head>
+
+<body>
+    <section class="bx-mob">
+        <img src="./image/mb_banner.jpg"/>
+        <div class="bx-mob-wrap">
+            <div class="title">
+                <img src="./image/title.png"/>
+            </div>
+            <div class="mob-con">
+<!--                <div id="movideo" class="mob-video"></div>
+                <div class="androidVideo">
+                    <iframe class="video_iframe" style=" z-index:1; "
+                            src="https://v.qq.com/iframe/player.html?vid=j0311npft3b&amp;amp;width=300px;amp;height=200px;amp;auto=0"
+                            allowfullscreen="" frameborder="0" height="200"
+                            width="100%"></iframe>
+                </div>
+                <script type="text/javascript">
+                    var u = navigator.userAgent;
+                    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                    if(isiOS){
+                        $('.androidVideo').hide();
+                    }
+                    if(isAndroid){
+                        $('.mob-video').hide();
+                    }
+                </script>-->
+                <p class="txt">你想任性地买买买吗？<br/>你想来一场说走就走的旅行吗？<br/>你想把人脉转化为钱脉吗？</p>
+                <a class="mob-btn appUrl" href="//m.bxjr.com/center/invite/index" data-app-url="baoxiang://APPInviteFriendPage">
+                    <img src="./image/mob-btn.png"/>
+                </a>
+                <img class="case" src="./image/mob-case.jpg"/>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td style="width:33%;">理财师等级</td>
+                            <td style="width:40%;">一级好友奖励</td>
+                            <td style="width:40%;">二级好友奖励</td>
+                        </tr>
+                        <tr>
+                            <td>理财师-小象</td>
+                            <td>0.50%</td>
+                            <td>0.10%</td>
+                        </tr>
+                        <tr>
+                            <td>理财师-大象</td>
+                            <td>1.00%</td>
+                            <td>0.20%</td>
+                        </tr>
+                        <tr>
+                            <td>理财师-金象</td>
+                            <td>2.00%</td>
+                            <td>0.40%</td>
+                        </tr>
+                    </table>
+                </div>
+                <ul class="mob-ul01 mob-ul">
+                    <li>注：收益每日结算一次，自动划入到您的理财账户余额。</li>
+                </ul>
+                <ul class="mob-ul02 mob-ul">
+                    <p>注意事项：</p>
+                    <li>1、您的好友注册之日起，2年内好友奖励关系有效。</li>
+                    <li>2、如发现使用非正常方式赚取奖励的，宝象金融有权在不进行通知的前提下解除您与好友之间的奖励关系。</li>
+                    <li>3、本奖励方案最终解释权归宝象金融所有。</li>
+                </ul>
+            </div>
+            <img src="./image/bgBottom.jpg"/>
+            <p class="mob-hint">友情提示：理财有风险，投资需谨慎</p>
+        </div>
+    </section>
+    <script>
+        var video = new tvp.VideoInfo();
+        video.setVid("j0311npft3b");
+        var player =new tvp.Player();
+        player.create({
+            video:video,
+            modId:"movideo",
+            autoplay:true
+        });
+    </script>
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+
+
+    </div>
+</body>
+
+</html>

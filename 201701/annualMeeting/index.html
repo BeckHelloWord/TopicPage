@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>晚会签到</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+    body{background-color:#c3231e;}
+    .main h1{color:#fff302;}
+    .main p{color:#fedeab;}
+    </style>
+</head>
+<body>
+<div class="main" id="main">
+    <img src="http://preloaders.net/preloaders/8/Triangles%20indicator.gif" />
+</div>
+<div style="font-size:10px;color:#7e1512;position:absolute;bottom:0;width:100%;text-align:center">by 阳明</div>
+<script>
+if(location.hostname != 'm.bxjr.com'){
+  location.href =  location.href.replace(location.hostname, 'm.bxjr.com');
+}
+    (function(){
+        $.ajax({
+            url: "/secure/get-login-info.html",
+            success: function (json) {
+              if (!json.isLogin) {
+                  //alert(JSON.stringify(json))
+                  //writeHTML('请通过扫描二维码的方式签到！','<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbfd7c3d589090b70&redirect_uri=http%3A%2F%2Fm.bxjr.com%2Flogin%2Findex.html?redirect=%2Ftopic%2F201701%2FannualMeeting&response_type=code&scope=snsapi_userinfo&state=wechat">点此尝试再次登录</a>');
+                  location.href ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbfd7c3d589090b70&redirect_uri=http%3A%2F%2Fm.bxjr.com%2Flogin%2Findex.html?redirect=%2Ftopic%2F201701%2FannualMeeting&response_type=code&scope=snsapi_userinfo&state=wechat";
+              }else{
+              
+                var dataJson = {
+                  'username' : json.username,
+                  'avatar' : json.avatar == null ? 'https://www.bxjr.com/images/member/member-def-avatar.png' : 'https://bxwd-img.oss-cn-hangzhou.aliyuncs.com/' + json.avatar,
+                  'mobile' : json.mobile,
+                };
+                
+                $.ajax({
+                    url: "./do.php?a=checkIn",
+                    type: 'POST',
+                    data: dataJson,
+                    dataType: 'json',
+                    success: function (json) {
+                      //console.log(json)
+                      if(json.stat == 'error'){
+                        writeHTML('请通过扫描二维码的方式签到！','<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbfd7c3d589090b70&redirect_uri=http%3A%2F%2Fm.bxjr.com%2Flogin%2Findex.html?redirect=%2Ftopic%2F201701%2FannualMeeting&response_type=code&scope=snsapi_userinfo&state=wechat">点此尝试再次登录</a>');
+                      }
+                      if(json.stat){//签到成功
+                        writeHTML('签到成功!', '您的抽奖帐号为：' + dataJson.username + '(' + dataJson.mobile + ')<br/>您现在可以入席就坐。');
+                      }else{//重复签到
+                        writeHTML('签到成功了!', '您的抽奖帐号为：' + dataJson.username + '(' + dataJson.mobile + ')<br/>您现在可以入席就坐。');
+                      }
+                    }
+                })
+              }
+            }
+        })
+        
+        function writeHTML(_a,_b){
+          $('#main').html('<h1>'+_a+'</h1><p>'+_b+'</p>');
+        }
+    }());
+</script>
+</body>
+</html>

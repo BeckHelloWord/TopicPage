@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>团圆节晒团圆照</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="sunPhotos">
+        <form id="rechargeForm" action="" method="post" enctype="multipart/form-data" style="-webkit-tap-highlight-color:transparent;">
+        <section class="clearfix proof_img">
+            <div class="pic-group">
+                <div class="uploadBox clearfix">
+                    <div class="file_input loadimg">
+                        <input type="file" class="input-file js-required" data-role="uploader" accept="image/*"
+                               name="picture"/>
+                        <input type="hidden" class="url-hidden" name="url-picture" value="${url}">
+                        <span class="checkTip wrong"></span>
+                    </div>
+
+                    <div class="filebtn">
+                        <div class="cont">
+                            <img id="file_img" class="file_img" src=""/>
+                            <i class="close"><img src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABBAAD/4QMraHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE4NTg1NzBEREI3MzExRTU4Qzk2RDBBRThBMDdBODg2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE4NTg1NzBFREI3MzExRTU4Qzk2RDBBRThBMDdBODg2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTg1ODU3MEJEQjczMTFFNThDOTZEMEFFOEEwN0E4ODYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTg1ODU3MENEQjczMTFFNThDOTZEMEFFOEEwN0E4ODYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAmQWRvYmUAZMAAAAABAwAVBAMGCg0AAAUdAAAFdAAABeYAAAZX/9sAhAAFBAQEBAQFBAQFBwUEBQcJBwUFBwkKCAgJCAgKDQoLCwsLCg0MDAwNDAwMDw8REQ8PFxYWFhcZGRkZGRkZGRkZAQYGBgoJChQNDRQWEQ4RFhkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRn/wgARCAAkACQDAREAAhEBAxEB/8QAnQABAAMBAQAAAAAAAAAAAAAAAAMEBQEGAQEAAAAAAAAAAAAAAAAAAAAAEAADAAMBAAAAAAAAAAAAAAABAgMQIARAEQABAQQHCQAAAAAAAAAAAAACAQASMgMQIBEhMeEiQWFxwdFCUhMEEgEAAAAAAAAAAAAAAAAAAABAEwEAAQMDBAMBAAAAAAAAAAABESExQQAQUSBA8GGRoeGx/9oADAMBAAIRAxEAAAHUAABqkJAVwXzUPOnAWCAmIAAAf//aAAgBAQABBQLZEn0zjzlzZkd8c8S5pRe9SCDhrO6AkGtWs23/2gAIAQIAAQUC9P8A/9oACAEDAAEFAvT/AP/aAAgBAgIGPwJP/9oACAEDAgY/Ak//2gAIAQEBBj8CrIAI59IbPPNlKZolBGXLi1ssXAwRKfYROSgiPpvZwNEwLwBe7NrFuVKRlrAGCI1qXKjPnFX/AP/aAAgBAQMBPyHqOgCmAvnx/HFz688NFowDKgy+3dxefLPGh06pQodUQWCNx3a4AooJ5eXQJLgS46oUoBQiYy++v//aAAgBAgMBPyHuf//aAAgBAwMBPyHuf//aAAwDAQACEQMRAAAQAAAEAEAAAAAAH//aAAgBAQMBPxDqcNGtB5VVQ+U0Rc9DwBjbq0Y+kxrBVQwKr7o/d0TPDsAVOdYi3wICYw092wAPKog9SNAKIju4swQyVSOWJ/dIPULQCoiar3o/0sULrL1//9oACAECAwE/EO5//9oACAEDAwE/EO5//9k="></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="ask">上传你的团圆照片，小于15M的jpg、png、jpeg、gif格式，要求图片清晰</p>
+                <div class="info infoPhoto"><textarea class="txt" rows="3" cols="0" placeholder="中秋寄语：（留下你想对于亲人朋友说的一句话）"></textarea></div>
+            </div>
+        </section>
+        <div class="Validform_checktip"></div>
+        <section>
+            <button type="submit" disabled class="bx-btn w100 sub_btn bx_round5"><i class="before"></i><i class="before1"></i>立即提交<i class="after"></i><i class="after1"></i></button>
+        </section>
+        </form>
+    </div>
+</div>
+<div class="img_alt" style="display:none;">
+    <div class="img_alt_top">
+        <header>
+            <a id="back-btn" class="icon-caretLeft fl" href="javascript:void(0);"></a>
+            <a class="menulinkremove fr" href="javascript:void(0);"></a>
+        </header>
+    </div>
+    <div class="img_alt_in"><img id="file_big_img" src="" /></div>
+</div>
+<script src="js/layer.js"></script>
+<script src="../../js/wechatLink.js"></script>
+<script>
+    $(function () {
+        var $file = $(".input-file"),
+                $img = $(".file_img"),
+                $btn = $(".filebtn"),
+                $loading = $(".loadimg");
+                $hidden = $("input[name=url-picture]");
+                $sub_btn = $(".bx-btn");
+
+        //上传图片
+        $file.on("change",function(){
+            var $this = $(this), data = new FormData(),name = $this.attr("name");
+
+            if($file.length == 0){
+                return
+            }
+            data.append("file", $this.get(0).files[0]);
+            data.append("name", name);
+
+            $hidden.val("");
+
+            var loadingTips = layer.open({
+                type: 2
+                ,content: '上传中...'
+            });
+
+            $.ajax({
+            url: '/lottery-midfestival/file-upload.html',
+                type: 'POST',
+                data: data,
+                dataType: 'JSON',
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (json) {
+                    if(!json.success){
+                        window.location.href = "/lc/channel/channel/share?mark=bxshequ&taskId=PC&redirect=/topic/201608/autumn/photo.html";
+                        return false;
+                    }
+                    if(!json.type){
+                        if(json.message=="请确认上传的文件后缀为jpeg, jpg, png, gif, JPEG, JPG, PNG, GIF文件。"){
+                            json.message = "您上传的格式有误，请重新上传！";
+                        }
+                        tips = layer.open({
+                            content:'<div class="voteClose"><p>'+json.message+'</p><a class="close" href="javascript:;"></a></div>'
+                        });
+                        $(".close").on("click",function(e){
+                            layer.close(tips);
+                            e.preventDefault()
+                        });
+
+                        clearFileValue($this);
+                        layer.close(loadingTips);
+                        return false;
+                    }
+                    layer.close(loadingTips);
+                    $loading.hide();
+                    $btn.show();
+                    $img.attr("src",json.picUrl);
+                    $("#file_big_img").attr("src",json.picUrl);
+                    empty();
+                },
+                error:function(){
+                    layer.close(loadingTips);
+                    layer.open({
+                        content:'图片上传失败，请用浏览器打开此链接，重新上传！'
+                        ,btn:['确定'],
+                        yes:function(index){
+                            location.reload();
+                            layer.close(index);
+                        }
+                    })
+                }
+            });
+        });
+        $(".filebtn .close").click(function () {
+            $hidden.val("");
+            $img.attr("src", "");
+            $btn.hide();
+            clearFileValue($file);
+            $file.val("").show();
+            $loading.show();
+            empty();
+        });
+        // 清空file,file为jq对象
+        function clearFileValue(file) {
+            file.wrap('<form></form>');
+            file.parent()[0].reset();
+            file.unwrap();
+        }
+
+        $sub_btn.click("click",function(e){
+            var mark = " "+$(".txt").val();
+            var data = {"picUrl":$img.attr("src"), "mark": mark};
+            $.ajax({
+                url: '/lottery-midfestival/save-pic.html',
+                data: data,
+                success: function (json) {
+                    if(!json.success){
+                        window.location.href = "/lc/channel/channel/share?mark=bxshequ&taskId=PC&redirect=/topic/201608/autumn/photo.html";
+                        return false;
+                    }
+                    if(!json.type){
+                        tips = layer.open({
+                            content:'<div class="voteClose"><p>'+json.message+'</p><a class="close" href="javascript:;"></a></div>'
+                        });
+                        $(".close").on("click",function(e){
+                            layer.close(tips);
+                            e.preventDefault()
+                        });
+
+                        return false;
+                    }
+                    window.location.href = "/topic/201608/autumn/vote.html?photoId="+json.photoId;
+                }
+            });
+
+            e.preventDefault();
+        });
+
+
+        //放大图片
+        $img.click(function(){
+            $(".img_alt").show();
+        });
+        //删除图片
+        $(".filebtn i").click(function(){
+            $img.attr("src", "");
+            $btn.hide();
+            $file.val("").show();
+            $loading.show();
+        });
+        //缩小图片
+        $("#back-btn,.img_alt_in").click(function(){
+            $(".img_alt").hide();
+        });
+        $(".menulinkremove").click(function(){
+            $(".filebtn i").trigger("click");
+            $(".img_alt").hide();
+        });
+        $(".Validform_checktip").each(function(){
+            if($(this).text() == ""){
+                $(this).hide();
+            }else{
+                $(this).show();
+            }
+        });
+
+        $(".txt").keyup(function(){
+            var ranges = [
+                '\ud83c[\udf00-\udfff]', // U+1F300 to U+1F3FF
+                '\ud83d[\udc00-\ude4f]', // U+1F400 to U+1F64F
+                '\ud83d[\ude80-\udeff]'  // U+1F680 to U+1F6FF
+            ];
+
+            this.value = this.value.replace(new RegExp(ranges.join('|'), 'g'), '');
+            //this.value = this.value.replace(/([\uE000-\uF8FF]|\uD83C[\uDF0
+            empty();
+        });
+
+
+        function empty(){
+            var txt = $(".infoPhoto textarea").val(),src=$(".filebtn img").attr("src");
+            if(( txt && src ) != ""){
+                $sub_btn.removeAttr("disabled");
+            }else{
+                $sub_btn.attr("disabled","true")
+            }
+        }
+        $(".closebtn").click(function(){
+            $sub_btn.attr("disabled","true")
+        });
+        var wechatShare=new WeChatShare();//创建对象
+        var shareData = {
+            title: "中秋节，晒团圆照 ",
+            desc: "宝象金融与你共团圆",
+            link: location.href,
+            imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/f4717d06-6369-4b6a-a7dc-c9fe1af3b835.jpg"
+        };
+        var showList = {//创建显示菜单列表，默认全部关闭
+            menuList: [
+                'menuItem:share:appMessage',
+                'menuItem:share:qq',
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl' // 复制链接
+            ]
+        };
+        wechatShare.init(shareData,showList);//创建分享 自定义菜单
+
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+﻿<!DOCTPYE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><?=$topicName?> - 宝象金融</title>
+<meta name="keywords" content="<?=$topicName?>"/>
+<meta name="description" content="<?=$topicName?>"/>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="layout" content="mobile"/>
+<base href="<?=$hostBase?>" />
+<link rel="stylesheet" href="assets/mobile/css/normalize.css?v=20150814" />
+<link rel="stylesheet" href="assets/mobile/css/common.css?v=20150814" />
+
+
+<link rel="stylesheet" href="assets/mobile/css/normalize.css">
+<link rel="stylesheet" href="topic/coupon/style/common.css">
+    <style>
+        .layui-layer{width:90% !important;}
+        .mobielForm td{font-size:13px; text-align: left;}
+        /*.mobielForm td .voice{color:#33cc99 !important; text-decoration:underline;background: none !important;}*/
+        /*.mobielForm #voice-verification{height:32px; line-height: 32px; background: #f0f0f0; padding: 0;}*/
+        .mobielForm td.hideAll{display: none;}
+        .mobielForm td.showVerify .verify-tip,.mobielForm td.showVoice .voice-tip{display:block;}
+        .mobielForm td.showVerify .voice-tip,.mobielForm td.showVoice .verify-tip{display:none;}
+        .imgVerify{width:100%;}
+        .imgVerify .imgVerifyForm label span img {vertical-align:middle;}
+        .imgVerify .imgVerifyForm label input[type="text"]{padding:7px 0 10px 4px}
+        .imgVerify .imgVerifyForm label span{display:inline-block;}
+        .MyErrorContent {margin-left: 40px;}
+    </style>
+</head>
+<body>
+<section class="banner">
+    <img src="<?=$Mob_pic1;?>" />
+</section>
+<section class="regisTable" style="background: #fff7c1">
+    <form id="register-form" method="post" action="secure/do-register.html" autocomplete="off">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+					<input type="text" maxlength="10" class="input w100 password_icon" name="referrerCode" datatype="*" ajaxurl="validate/ajax-code.html" tip="兑换码" altercss="tipcolor" />
+					<span class="Validform_checktip fz12"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+				   <input type="text" maxlength="11" class="input w100 phone_icon" name="mobile" id="mobile" datatype="m" ajaxurl="validate/ajax-mobile.html" tip="手机号码" altercss="tipcolor" />
+                    <span class="Validform_checktip fz12"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="clearfix">
+						<input type="text" maxlength="6" class="input w60 fl code_icon" name="verifyNo" id="verifyNo" datatype="/^\d{6}$/" tip="短信验证码" altercss="tipcolor" />
+                        <input type="button" class="fr button_orange sendMobile" value="获取验证码" id="sendMobile" disabled="disabled" />
+						<div class="clearfix"></div>
+						<span class="Validform_checktip fz12"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="mobielForm">
+                <td id="voice-verification" class="hideAll">
+                    <span class="verify-tip">还没收到验证码?点此获得 <a href="javascript:void(0);" class="voice sendVoice" id="sendVoice">语音验证码</a></span>
+                    <span class="voice-tip">请注意接听语音电话，输入电话中听到的验证码。</span>
+                </td>
+            </tr>
+            <tr style="height: 20px;"><td></td></tr>
+            <tr>
+                <td style="padding-bottom:10px;">
+                    <label><input type="checkbox" class="cka" checked/>
+                    同意<a style="color: #47a5e7;" href="//m.bxjr.com/agreement/service.html">《宝象金融用户协议》</a>和<a style="color:#47a5e7;text-decoration:none;" href="/secure/brisk-transfer.html" target="_blank">《添添金自动转入</a>&nbsp;/&nbsp;
+								<a style="color:#47a5e7;text-decoration:none;" href="/secure/brisk-contract.html" target="_blank">投资服务协议》</a></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="BXJRZC" type="submit" class="submit-btn w100 submit_yellow" value="<?=$btnName?>" />
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    <span style="width:100%;margin:20px 0 8px;text-align:center;">已经有帐号，<a href="//m.bxjr.com/login/index.html">立即登录</a></span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+		<input name="password" id="password" type="hidden">
+        <input type="hidden" name="ct" value="3"/>
+        <input type="hidden" name="bt" value="0"/>
+    </form>
+</section>
+<section class="banner">
+    <img src="images/banner.jpg" alt="info"/>
+</section>
+<script type="text/javascript">window.hxb={ctx:"<?=$hostBase?>"};</script>
+<script type="text/javascript" src="js/indexnew/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/validform/js/validform_v5.3.2.js"></script>
+<script type="text/javascript" src="js/layer1.9/layer.js"></script>
+<script type="text/javascript" src="js/seajs/dist/sea.js"></script>
+<script type="text/javascript" src="../topic/js/application2015.js"></script>
+<script type="text/javascript">
+    (function() {
+		var btnSendCode = $('#sendMobile');
+        var verification=$("#voice-verification");
+		$("#register-form").Validform({
+            ajaxPost:true,
+            beforeSubmit:function(){
+                $("#password").val($("#verifyNo").val());
+            },
+			callback:function(result){
+				if(result.success){
+					location.href = "//m.bxjr.com/center/valid/success.html";
+				}
+			},
+			ajaxurl:{
+				success:function(data,obj){
+					if(obj.attr('name') == 'mobile'){
+						if(data.status == 'y'){
+							btnSendCode.removeAttr("disabled");
+						}else{
+							btnSendCode.attr("disabled", "true");
+						}
+					}
+				}
+			}
+		});
+        function sendCodeVoice (isVoice) {
+            //向后台发送处理数据
+            $.ajax({
+                type: "POST", //用POST方式传输
+                dataType: "text", //数据格式:JSON
+                url: "//m.bxjr.com/secure/send-register-mobile.html", //目标地址
+                data: {mobile: $("#mobile").val(), voice: isVoice},
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                },
+                success: function (msg) {
+                }
+            });
+        }
+        $(".sendMobile").sendCode("//m.bxjr.com/secure/send-register-mobile.html", function () {
+			var mob = $('#mobile');
+            if (!mob.val()) {
+                layer.alert("请先输入手机号", {icon: 0});
+                return false;
+            }
+            if (mob.hasClass('Validform_error')) {
+                return false;
+            }
+            verification[0].className = "hideAll";
+            return {mobile: mob.val()}
+        },'#mobile',true);
+        $(".voice").click(function(){
+            verification[0].className = "showVoice";
+            sendCodeVoice(true);
+        })
+    })();
+
+//勾选
+$(".cka").change(function () {
+    if ($(this).is(":checked")) {
+		$(".submit-btn").removeAttr("disabled");
+    } else {
+		$(".submit-btn").attr("disabled", "true");
+    }
+});
+</script>
+<span style="display: none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var s = document.getElementsByTagName("script")[0];
+    //百度统计
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+    s.parentNode.insertBefore(hm, s);
+    //友盟统计
+    var ym = document.createElement("script");
+    ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+    s.parentNode.insertBefore(ym, s);
+})();
+</script>
+
+
+</span>
+</body>
+</html>

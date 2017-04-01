@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>星座许愿池</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/jQuery.link.js"></script>
+    <script src="../js/layer/mobile/layer.js"></script>
+</head>
+<body class="body_bg">
+
+<div class="mobile">
+    <section class="games">
+        <div id="playPart" class="playPart"></div>
+    </section>
+    <section class="explain">
+        <h3 class="t_c"><span>活动规则</span></h3>
+        <ul>
+            <li>活动时间：<span>2017年4月17日至5月04日</span>；</li>
+            <li>用户每日免费参与1次许愿，之后每次消耗50欢乐券；</li>
+            <li>红包以及其他奖励券按照其本身规则使用；</li>
+            <li>如有任何疑问请联系在线客服；</li>
+            <li>为保证健康公平的投资环境，一切恶意刷奖行为将被取消获奖资格；</li>
+            <li>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+        </ul>
+    </section>
+    <footer>市场有风险，投资需谨慎</footer>
+</div>
+<div id="msg" class="noMask">
+    <div class="cont t_c">
+        <div class="hd">温馨提示</div>
+        <div class="bd">
+            <div class="img"><img src="images/prize_01.png" alt="" /></div>
+            <div class="desc">
+                <h4>恭喜获得</h4>
+                <p>50张 欢乐券</p>
+            </div>
+        </div>
+        <div class="btn">
+            <a class="close js-share" href="">去分享</a>
+            <a class="close" href="">知道了</a>
+        </div>
+    </div>
+    <div class="cont t_c hidden">
+        <div class="hd">温馨提示</div>
+        <div class="bd">
+            <div class="img"><img src="images/prize_02.png" alt="" /></div>
+            <div class="desc">
+                <p>您的欢乐券用完了</p>
+            </div>
+        </div>
+        <div class="btn clearfix">
+            <a class="app-url" data-app-url="baoxiang://APPProjectList" href="/lc/invest/list.html">赚欢乐券</a>
+            <a class="close" href="">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="share t_c">
+    <img src="images/share.png" alt="" />
+    <div class="btn"><a class="close js-share-close" href="">知道了</a></div>
+</div>
+
+<!-- 音乐 -->
+<audio id="car_audio" src="images/music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="../js/login.js"></script>
+<script src="js/game.js"></script>
+<script type="text/javascript">
+    (function(){
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+        var items = [
+            ["白羊座", "images/gift_01.png", ""],
+            ["金牛座", "images/gift_02.png", ""],
+            ["双子座", "images/gift_03.png", ""],
+            ["巨蟹座", "images/gift_04.png", ""],
+            ["天秤座", "images/gift_05.png", ""],
+            ["天蝎座", "images/gift_06.png", ""],
+            ["双鱼座", "images/gift_07.png", ""],
+            ["水瓶座", "images/gift_08.png", ""],
+            ["摩羯座", "images/gift_09.png", ""],
+            ["射手座", "images/gift_10.png", ""],
+            ["处女座", "images/gift_11.png", ""],
+            ["狮子座", "images/gift_12.png", ""]
+        ],
+            endTime = new Date("2017-5-4").getTime();
+
+        var TGameconfig = {
+            "logo": "",
+            "logoUrl": "",
+            "name": "",
+            "time": endTime,
+            "item": items
+        };
+
+        $('#playPart').GameA({
+            main : TGameconfig,
+            lucker : '',
+            url: '/lottery-wish/lottery.html'
+        });
+
+        $(".close").click(function(e){
+            if($(this).hasClass("js-share")){
+                $(".share").show();
+            }
+            
+            if($(this).hasClass("js-share-close")){
+                $(this).parents(".share").hide();
+            }else{
+                $(this).parents("#msg").hide();
+            }
+
+            e.preventDefault();
+        });
+    }());
+</script>
+<script>
+    // 分享
+    var wechatShare=new WeChatShare(),
+        shareData ={
+            shareConfig:{
+                title: "星座许愿池，等你来许愿！",
+                desc: "你的星座财运如何？来宝象星座许愿池测测看？",
+                link: location.href,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/83d81313-45a5-478c-b991-f59abd47f6fe.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl', // 复制链接
+                    'menuItem:share:appMessage'
+                ]
+            },
+            callback:function(){}
+        };
+    wechatShare.init(shareData);
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

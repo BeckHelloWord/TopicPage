@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+	<meta content="email=no" name="format-detection">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="Keywords" content="邀请好友攻略-宝象金融">
+    <meta name="Description" content="邀请好友攻略-宝象金融">
+    <title>邀请好友攻略-宝象金融</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jQuery.link.js"></script>
+</head>
+
+<body>
+    <section class="h5main">
+        <img src="images/h5banner.jpg" />
+        <div class="introduce">
+
+            <div class="introducecon">
+                <p>为祝贺宝象宝象金融一周年，宝象邀请有奖又抛出荷包弹了。加入宝象金融一周年百万理财季活动，不止赚高额佣金，还有Bigger好礼大放送！赶紧呼朋唤友来理财，躺着也能收钱。</p>
+                <p class="h5time">活动时间：2016年3月1日--2016年3月31日</p>
+            </div>
+            <ul class="clearfix">
+                <li class="on small"><i></i>我是小小理财师</li>
+                <li class="super"><i></i>我是超级理财师</li>
+            </ul>
+        </div>
+        <div class="h5con">
+            <div class="h5con1">
+                <a href="//m.bxjr.com/center/invite/index" class="btn appUrl" data-app-url="baoxiang://APPInviteFriendPage"><img src="images/small1.jpg" /></a>
+                <a href="//m.bxjr.com/center/invite/index" class="btn appUrl" data-app-url="baoxiang://APPInviteFriendPage"><img src="images/small2.jpg" /></a>
+            </div>
+            <div class="h5con2">
+                <img src="images/super1.jpg" />
+                <img src="images/super2.jpg" />
+                <a href="//m.bxjr.com/center/invite/index" class="btn appUrl" data-app-url="baoxiang://APPInviteFriendPage"><img src="images/super3.jpg" /></a>
+            </div>
+        </div>
+        <footer>
+            <div class="footerimg"><img src="images/h5erwm.png" /></div>
+            <div class="footerli">
+                活动细则：
+                <ol>
+                    <li>1、好友务必需点击您的“专属链接”后，注册才能算您的推荐！</li>
+                    <li>2、一级好友累计在投净资产定义：活动期间内，您直接邀请所有好友在投净资产总和（添添金、体验金、使用的红包金额以及二级好友累计在投净资产不计算在内）；</li>
+                    <li>3、本活动不同时享受PC官网、微信等其他优惠活动；</li>
+                    <li>4、详细规则最终以官网公告为准；</li>
+                    <li>5、本活动最终解释权最终归宝象金融所有，如对活动有任何疑问，请致电客服电话：400-885-1100或加入宝象金融投资交流群：487203033在线咨询。</li>
+                </ol>
+                <p class="tip">理财有风险，投资需谨慎</p>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        $(".introduce ul li").click(function(){
+            var ind=$(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $(".h5con div").eq(ind).show().siblings().hide();
+        })
+    </script>
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+
+
+    </div>
+</body>
+
+</html>

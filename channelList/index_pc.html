@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渠道标的列表</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <!--<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="artTemplate.js"></script>-->
+    <script type="text/javascript" src="../js/artTemplate.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <style>
+    .js-sort>td>a{
+        cursor: default;
+    }
+    .js-sort>td>a>span{display: none;}
+    .product-con .product-title .title-tag.tag-timing{padding: 0;background: #fdf4f4;}
+    </style>
+</head>
+<body>
+<!--{header}-->
+<!-- 产品列表 //begin -->
+<div class="pro-main">
+    <div class="container clearfix">
+        <div class="sort">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr class="js-sort">
+                    <td width="360"><a href="javascript:;" data-type="yearRate">项目年利率<span><i></i></span></a></td>
+                    <td width="250"><a href="javascript:;" data-type="seq">项目期限<span><i></i></span></a></td>
+                    <td><a href="javascript:;" data-type="investProcess">项目进度<span><i></i></span></a></td>
+                    <td width="142"><a href="javascript:;" data-type="surplusAmount">可投金额<span><i></i></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content" id="contentbox">
+            <script id="domTemplate" type="text/html">
+            {{each list}}
+            <div class="product-con no-shadow" data-schedule="{{$value.investProcess}}">
+                <a href="{{getUrl($value.id,$value.tableName)}}" target="_blank" class="product-con-box">
+                    <div class="product-list">
+                        <h2 class="product-title"><span
+                                class="title-txt">{{$value.title}}</span>
+                            {{if $value.classify=='experience'}}
+                            <span class="title-tag  tag-taste">仅体验金可投</span>
+                            {{/if}}
+                            {{if $value.isLimitBeginner}}
+                            <span class="title-tag  tag-sprog">新手专享</span>
+                            {{/if}}
+                            {{if $value.schedule && CompareDate($value.schedule)}}
+                            <span class="title-tag  tag-timing">{{HandleDate($value.schedule)}}准时开抢</span>
+                            {{/if}}
+                            {{if $value.rewardRate}}
+                            <span class="title-tag  icon-fanXian" title="起息后立即返现"><i>返现</i>{{HandleRate($value.rewardRate)}}%</span>
+                            {{/if}}
+                            {{if $value.isExclusiveApp}}
+                            <span class="title-tag  app-enjoy">APP专享</span>
+                            {{/if}}
+                            {{if Handledebt($value.tableName)}}
+                            <span class="title-tag  icon-debt">债权转让</span>
+                            {{/if}}
+                        </h2>
+
+                        <div class="product-item product-noob">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td width="360" class="td-rate">
+                                        <p class="item-info item-rate"><strong class="scrollNum"
+                                                                            data-numtarget="{{$value.yearRate}}">{{HandleRate($value.yearRate)}}{{if $value.subsidyRate}}+{{HandleRate($value.subsidyRate)}}{{/if}}</strong>%</p>
+                                        <p class="item-remark">
+                                            {{if $value.tableName=='bond' || $value.surplusAmount==null }}
+                                            转让年利率
+                                            {{else if $value.tableName!='bond'}}
+                                            借款年利率
+                                            {{/if}}</p>
+                                    </td>
+                                    <td width="250" class="td-date">
+                                        <p class="item-info item-date">
+                                            {{if $value.cycleType=='day'}}
+                                            <strong class="scrollNum" data-numtarget="{{$value.date}}">{{$value.cycle}}</strong>天
+                                        {{else}}
+                                            <strong class="scrollNum" data-numtarget="{{$value.date}}">{{$value.cycle}}</strong>个月
+                                        {{/if}}
+                                        </p>
+                                        <p class="item-remark">{{if $value.tableName=='bond'}}剩余期限{{/if}}{{if $value.tableName!='bond'}}项目期限{{/if}}</p>
+                                    </td>
+                                    <td width="348">
+                                        <p class="item-info item-schedule"><span><i class="js-level" style="width: {{$value.investProcess}}%;"></i></span>{{HandleRate($value.investProcess)}}%</p>
+
+                                        <p class="item-remark">项目进度</p>
+                                    </td>
+                                    <td width="142" class="td-btn">
+                                        {{if $value.status!='process'}}
+                                        <span class="product-item-btn  btn-profit" jump_href="{{getUrl($value.id,$value.tableName)}}">已售罄<i class="icon_sell"></i></span>
+                                        {{else if $value.schedule && CompareDate($value.schedule)}}
+                                        <span class="product-item-btn  btn-invest" jump_href="{{getUrl($value.id,$value.tableName)}}">尚未开始</span>
+                                        {{else if $value.classify=='experience'}}
+                                        <span class="product-item-btn  btn-free" jump_href="{{getUrl($value.id,$value.tableName)}}">免费体验</span>
+                                        {{else}}
+                                        <span class="product-item-btn  btn-invest" jump_href="{{getUrl($value.id,$value.tableName)}}">立即投资</span>
+                                        {{/if}}
+                                        <p class="mt-5">可投: {{$value.amount}} 元</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+            </script>
+        </div>
+        <div class="loading-txt  js-loading"></div>
+    </div>
+</div>
+<!-- 产品列表 //end -->
+<!--{copyright}-->
+<script>
+    $(function(){
+            window.hxb={ctx:"/"};
+             /*日期格式化*/
+            function formatDate(date, fmt) {
+                date = date == undefined ? new Date() : date;
+                date = typeof date == 'number' ? new Date(date) : date;
+                fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
+                var obj =
+                {
+                    'y': date.getFullYear(), // 年份，注意必须用getFullYear
+                    'M': date.getMonth() + 1, // 月份，注意是从0-11
+                    'd': date.getDate(), // 日期
+                    'q': Math.floor((date.getMonth() + 3) / 3), // 季度
+                    'w': date.getDay(), // 星期，注意是0-6
+                    'H': date.getHours(), // 24小时制
+                    'h': date.getHours() % 12 == 0 ? 12 : date.getHours() % 12, // 12小时制
+                    'm': date.getMinutes(), // 分钟
+                    's': date.getSeconds(), // 秒
+                    'S': date.getMilliseconds() // 毫秒
+                };
+                var week = ['天', '一', '二', '三', '四', '五', '六'];
+                for (var i in obj) {
+                    fmt = fmt.replace(new RegExp(i + '+', 'g'), function (m) {
+                        var val = obj[i] + '';
+                        if (i == 'w') return (m.length > 2 ? '星期' : '周') + week[val];
+                        for (var j = 0, len = val.length; j < m.length - len; j++) val = '0' + val;
+                        return m.length == 1 ? val : val.substring(val.length - m.length);
+                    });
+                }
+                return fmt;
+            }
+            
+            /*获取服务器时间*/
+            function getServerTime(){
+                var xmlHttp = false;
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e2) {
+                        xmlHttp = false;
+                    }
+                }
+
+                if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+                    xmlHttp = new XMLHttpRequest();
+                }
+
+                xmlHttp.open("GET", window.location.href.toString(), false);
+                xmlHttp.setRequestHeader("Range", "bytes=-1");
+                xmlHttp.send(null);
+
+                var severtime=new Date(xmlHttp.getResponseHeader("Date"));
+                return severtime
+            }
+            var helper = function () {
+            //拼接标的链接
+            template.helper("getUrl", function (value, path) {
+                return window.hxb.ctx + "lc/" + "invest" + "/detail/" + value + ".html";
+            });
+
+            //处理日期
+            template.helper("HandleDate", function (value) {
+                return formatDate(new Date(value.replace(new RegExp(/-/g), '/')), 'MM-dd HH:mm');
+            });
+
+            //处理利率
+            template.helper("HandleRate", function (value) {
+                return value.toFixed(2);
+            });
+
+            //判断是否债权转让
+            template.helper("Handledebt", function (value) {
+                return false;
+            });
+
+
+            //比较日期
+            template.helper("CompareDate", function (value) {
+                if(formatDate(new Date(value.replace(new RegExp(/-/g), '/')), 'MM-dd HH:mm') >formatDate(getServerTime(),'MM-dd HH:mm')){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+        };
+        /*辅助函数 end*/
+
+        /*js渲染数据 start*/
+
+
+        helper();
+        // var jump_url = "http://10.0.1.52:9665/web/borrow/channelBorrowList.html";
+        var jump_url = "/borrow/channelBorrowList.html";
+        var dataList = {};
+        var getData = function(url){
+             $.get(url,{identification:"☆"}, function (data) {
+                if (data.success) {
+                    if (data.list.length > 0) {
+                        dataList.list = data.list;
+                        var html = template('domTemplate', dataList);
+                        document.getElementById('contentbox').innerHTML += html;
+                    }else{
+                        $('.js-loading').text('暂无数据');
+                    }
+                    first = false;
+                } else {
+                    $('.js-loading').text('服务器正忙,请稍后重试');
+                }
+            })
+        }
+        getData(jump_url);
+    })
+        // var html = template('domTemplate', dataList);
+        // document.getElementById('contentbox').innerHTML = html;
+</script>
+</body>
+</html>

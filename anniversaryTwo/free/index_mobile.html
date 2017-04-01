@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>欢乐商城</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/artTemplate.js"></script>
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/layer/mobile/layer.js"></script>
+    <style>
+        html,body{width:100%;max-width:750px;margin:0 auto;position:relative;background:#f2f2f2;}
+    </style>
+</head>
+<body class="h5-main">
+<div class="h5-img"><img src="images/h5_banner.png" /></div>
+<div class="h5-info">
+    <h4>活动介绍</h4>
+    <p>用户在活动期间投资平台指定直投标的获取欢乐券（1000元现金投资投360天标的，计入1000欢乐券，若投 180天则计入500欢乐券，以此类推，四舍五入）；欢乐券可以在活动期间通过欢乐商城兑换实物奖励、红包；</p>
+</div>
+<div class="h5-prompt h5-cont pub-prompt"></div>
+<div class="h5-cont">
+    <div class="h5-mt clearfix">
+        <div class="h5-tab clearfix">
+            <div class="h5-tab-item">商品选购区</div>
+            <a href="" class="sort sortStart" >价格</a>
+        </div>
+    </div>
+    <div class="h5-mc"><div class="mcItem clearfix"><ul></ul></div></div>
+    <div class="h5-me">
+        <h4>活动说明</h4>
+        <ul>
+            <li>1.活动时间：2017年4月17日至5月04日；</li>
+            <li>2.用户通过投资平台指定直投标的获得欢乐券，参与活动（不含月月丰、债权转让以及个人消费贷），在商城内兑换所选商品；</li>
+            <li>3.所有实物奖品的发放将在活动结束后7个工作日之内发出，若商品缺货，以到货日期为准；若缺货时间超过30天，将以等值24K纯现金红包形式发放；</li>
+            <li>4.如有任何疑问请联系在线客服；</li>
+            <li>5.为保证健康公平的投资环境，一切恶意刷奖行为将被取消获奖资格；</li>
+            <li>6.在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+        </ul>
+    </div>
+    <div class="h5-tips">市场有风险，投资需谨慎</div>
+    <div class="h5-mask" id="mask"></div>
+</div>
+<script type="text/javascript" src="../js/login.js"></script>
+<script id="tp-test" type="text/template">
+    {{each list as item}}
+    <li id="{{item.giftId}}">
+        {{if item.leftAmount == 0}}
+        <div class="h5-p-img layerBtn-yy">
+            <a target="_blank" href="javascript:void(0)" title='{{item.name}}'><img alt='{{item.name}}' src='{{item.logo}}'></a>
+        </div>
+        <div class="h5-p-name layerBtn-yy">
+            <a target="_blank" href="javascript:void(0)" title="">{{item.name}}</a>
+            <p>宝象2周年庆</p>
+        </div>
+        {{else}}
+        <div class="h5-p-img layerBtn">
+            <a target="_blank" href="javascript:void(0)" title='{{item.name}}'><img alt='{{item.name}}' src='{{item.logo}}'></a>
+        </div>
+        <div class="h5-p-name layerBtn">
+            <a target="_blank" href="javascript:void(0)" title="">{{item.name}}</a>
+            <p>宝象2周年庆</p>
+        </div>
+        {{/if}}
+        <div class="h5-p-price"><span>需要{{item.needTicket}}欢乐券</span></div>
+        {{if item.leftAmount == 0}}
+        <div class="h5-p-btn p-yy-btn">
+            <a href="javascript:void(0)" class="layerBtn-yy">立即预约</a>
+            <p><span class="getNum">{{item.sendCount}}</span>人白拿成功</p>
+        </div>
+        {{else}}
+        <div class="h5-p-btn">
+            <a href="javascript:void(0)" class="layerBtn">立即白拿</a>
+            <p><span class="getNum">{{item.sendCount}}</span>人白拿成功</p>
+        </div>
+        {{/if}}
+    </li>
+
+    {{/each}}
+</script>
+<script id="tp-prompt" type="text/template">
+    <div class="h5-prompt-p">
+        <p>我的活动期间现金投资额:&nbsp;&nbsp;<span>
+            {{if success == false}}--{{else}}
+            {{investAmount}}
+            {{/if}}
+        </span></p>
+    </div>
+    <div class="h5-prompt-p clearfix">
+        <p class="fl">我的欢乐券累计值:&nbsp;&nbsp;<span>
+            {{if success == false}}--{{else}}
+            {{totalTicket}}
+            {{/if}}
+        </span></p>
+        <p class="fr">排名:&nbsp;&nbsp;<span>
+            {{if success == false}}--{{else}}
+            {{totalTicketNo}}
+            {{/if}}
+        </span></p>
+    </div>
+    <div class="h5-prompt-p clearfix">
+        <p class="fl">我的当前欢乐券:&nbsp;&nbsp;<span>
+            {{if success == false}}--{{else}}
+            {{ticketNumber}}
+            {{/if}}
+        </span></p>
+        <p class="fr">排名:&nbsp;&nbsp;<span>
+            {{if success == false}}--{{else}}
+            {{ticketNumberNo}}
+            {{/if}}
+        </span></p>
+    </div>
+</script>
+<script id="tp-mask" type="text/template">
+    {{each list as item}}
+    <div class="bot">
+        <a href="javascript:void(0)" class="close"></a>
+        <h3 class="name">{{item.name}}</h3>
+        <div class="mask-con">
+            <ul>
+                <li class="clearfix">
+                    <div class="s1 fl">商品价格：</div>
+                    <div class="s2 fl">
+                        <i class="price">&yen;<span>{{item.price}}</span></i>
+                        已有<span class="getNum">{{item.sendCount}}</span>人成功白拿
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="s1 fl">商品描述：</div>
+                    <div class="s2 fl des">{{item.description}}</div>
+                </li>
+                <li>
+                    <div class="mask-line"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="s1 fl">领取方式：</div>
+                    <div class="s2 fl">欢乐券兑换</div>
+                </li>
+                <li class="clearfix">
+                    <div class="s1 fl">兑换情况：</div>
+                    <div class="s2 fl">
+                        欢乐券数量：<i class="amount"><span>{{item.needTicket}}</span></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="mask-line"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="p-btn" id="mask-p-btn">
+            <a href="javascript:void(0)">立即白拿</a>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="js/public.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+
+<script>
+    (function(){
+        loginFun();
+
+        // 分享
+        var wechatShare=new WeChatShare(),
+            shareData ={
+                shareConfig:{
+                    title: "折扣不如白拿就在欢乐商城",
+                    desc: "Phone7、戴森吹风机、京东E卡，通通白拿，快来围观！",
+                    link: location.href,
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/c0f85abe-d908-4b03-9012-c941d7d283c8.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:copyUrl', // 复制链接
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){}
+            };
+
+        wechatShare.init(shareData);
+    }())
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

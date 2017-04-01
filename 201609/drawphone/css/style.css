@@ -1,0 +1,85 @@
+/*pc样式*/
+*{box-sizing: border-box;}
+.main{position: relative; left:50%; width:1920px; margin-left:-960px; font-size:20px; color:#333;background: #f6f6f6;}
+.main .w1200{width:1200px; margin:0 auto;}
+
+.main .draw-msg{margin-top: 30px;padding: 0 40px 30px;background: #FFF;}
+.main .draw-msg .draw-title{padding: 60px 0 50px;text-align: center;font-size:40px;color:#333;letter-spacing: 4px;line-height: 1.2;font-weight: normal;}
+.main .draw-msg .draw-title strong{color:#1270c7;margin-left:10px;letter-spacing: normal; font-weight: normal;}
+.main .table-list{width: 100%;border-collapse: collapse;border:1px solid #ddd;}
+.main .table-list thead{background: #ffb930;color:#fff;font-size:25px;line-height: 80px;}
+.main .table-list thead tr td{border: 0;text-align: center;position: relative;}
+.main .table-list thead tr td:nth-child(4):before{content: url(../images/pc-prize.png);position: absolute;margin-top: -32px;top: 0;right: 0;}
+.main .table-list tbody{font-size:29px;color:#888;}
+.main .table-list tbody tr{border-bottom:1px solid #ddd;}
+.main .table-list tbody tr:first-child,
+.main .table-list tbody tr:nth-child(2),
+.main .table-list tbody tr:nth-child(3){height: 26.3333px;}
+
+.main .table-list tbody tr td p{vertical-align: top;}
+.main span.orange{color: #feb930;font-size: 25px;font-weight: bold;padding-right: 8px;}
+.main .table-list tbody tr td:first-child{padding-left: 45px;padding-right: 45px;vertical-align: middle;line-height: 78px;}
+.plr45{padding-left: 45px;padding-right: 45px;vertical-align: middle;line-height: 78px;}
+.main .table-list tbody tr td:nth-child(2){padding-left: 60px;padding-right: 70px;vertical-align: middle;line-height: 78px;}
+.main .table-list tbody tr td.special1{padding:60px 35px 70px;vertical-align: top;line-height: 1.6;font-size: 20px;}
+.main .table-list tbody tr td.special1 p:first-child{margin-bottom: 10px;}
+.main .table-list tbody tr td.special1 .text-iden{text-indent: 25px;margin-bottom: 15px;}
+.main .table-list tbody tr td.special2{padding:60px 32px 0 28px;;vertical-align: top;line-height: 1.5;font-size: 20px;}
+
+.main .draw-rule{margin-top: 50px;}
+.main .draw-rule .draw-rule-title{border: 1px solid #feb930;width: 150px;height: 55px;background: #feb930;color: #FFF;text-align: center;font-size: 30px;line-height: 1.8;}
+.main .draw-rule .draw-rule-list{list-style-type: none;padding: 0;font-size: 19px;line-height: 45px;}
+.main .draw-rule .draw-rule-list li span.gray{color: #9d9c9c;}
+.main .draw-rule .draw-rule-list li span.red{border: 1px solid #fcdada; background: #fcdada;color: #ff5150;}
+.main .draw-rule .draw-rule-list li.text-iden{text-indent: 30px;word-break: break-all;}
+
+
+.main .consult-txt{margin-top:40px;text-align: center;color:rgba(97,97,97,.5);font-size:20px;}
+.main .consult-txt strong{font-size:54px;color:rgba(97,97,97,.5);font-weight: normal;}
+.main .ta-c{text-align: center;}
+.main .hint-txt{font-size:18px; padding:30px 0; color:rgba(85,85,85,.5);}
+.btn-fixed{position:fixed;bottom:30px;left:50%;margin-left:-150px;width:300px;height:60px;line-height: 60px;text-align:center;color:#fff;background:#ffb930;border-radius:200px;font-size: 24px;}
+/*.btn-fixed{cursor: default;position: fixed;bottom:30px;left:50%;margin-left:-150px;width:300px;height:60px;line-height: 60px;text-align:center;color:#fff;background:#b9b6b6;border-radius:200px;font-size: 24px;}*/
+.btn-fixed:hover{color:#fff;}
+
+
+
+/*h5样式*/
+.p14{padding:0 14px 3rem;background: #fff}
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+.mobMain{color:#333;font-size:1.2rem;background: #f6f6f6;}
+.mobMain .mobBanner img{width: 100%;}
+.mobMain h1{font-size:1.7rem;font-weight:normal;text-align:center;padding:1.5rem 0;}
+.mobMain table{border:1px solid #e8e8e8;margin-bottom:2rem;}
+.mobMain span.callout{color:#1270c7}
+.mobMain table.invest-rule thead{background:#ffb930;color:#fff;line-height: 4rem;}
+.mobMain table.invest-rule thead tr td{font-size:1.2rem;color: #FFF;border: none;text-align: center;}
+
+.mobMain table.invest-rule tbody tr td{color: #818181;border:1px solid #e8e8e8;font-size: 1.2rem;}
+.mobMain table.invest-rule tbody tr td:first-child{width: 24%; text-align: center;line-height: 3.5rem;vertical-align: middle;}
+.mobMain table.invest-rule tbody tr td:nth-child(2){width: 28%;padding-left: 7%;line-height: 3.5rem;vertical-align: middle;}
+.mobMain table.invest-rule tbody tr td.special{padding: 1rem 0.8rem;vertical-align: top;line-height: 2;text-align: justify;}
+.mobMain table.invest-rule tbody tr td span{font-size: 1.4rem;}
+.mobMain table.invest-rule tbody tr td img{float: right;width: 65%;}
+
+.mobMain .match-rule{border: 1px solid #ddd;border-bottom: none;}
+.mobMain .match-rule table{border-left: none;border-right: none;}
+.mobMain .match-rule .match-title{margin-bottom: 15px;line-height: 4rem;background: #ffb930;text-align: center;font-size: 1.8rem;color: #FFF;}
+.mobMain .match-rule p{margin-right: 13%;font-size: 1.5rem;color: #000;line-height: 3rem;text-align: right;}
+.mobMain .match-rule p span{color: #ffb930;font-weight: bold;padding-right: 5px;font-size: 2rem;}
+.mobMain .match-rule table{margin-top: 1.5rem;font-size: 0.8rem;text-align: center;width: 100%;}
+.mobMain .match-rule table thead{background: #f3f3f3;color: #000;line-height: 3rem;}
+
+.mobMain .activity-rule{padding-left: 10px;}
+.mobMain .activity-rule .activity-title{width: 30%;margin: 15px 0;line-height: 4rem;background: #ffb930;text-align: center;font-size: 1.8rem;color: #FFF;}
+.mobMain .activity-rule ul{list-style-type: none;}
+.mobMain .activity-rule ul li{font-size: 1.4rem;text-align: justify;}
+.mobMain span.orange{color: #ffb930;}
+.mobMain span.gray{color: #888;}
+.mobMain span.red{border: 1px solid #ffd1d1;color: #ff6060;background: #ffd1d1;}
+.mobMain span.blue{color: #7a8ed7;}
+
+.mobMain footer{margin:1.4rem 0;text-align:center;color:#b5b5b5;}
+.mobMain footer p.tips{margin-top:1rem;}
+/*.mobMain .btn{cursor:default;border-radius:25px;font-size: 1.8rem;width:80%;height:3.6rem;line-height:3.6rem;position:fixed;bottom:1rem;margin-left:-40%;left:50%;background: #b9b6b6;box-shadow:0 4px 5px #888888;display:block;color:#fff;text-align:center;}*/
+.mobMain .btn{border-radius:25px;font-size: 1.8rem;width:80%;height:3.6rem;line-height:3.6rem;position:fixed;bottom:1rem;margin-left:-40%;left:50%;background: #ffb930;box-shadow:0 4px 5px #888888;display:block;color:#fff;text-align:center;}

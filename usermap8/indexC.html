@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>屏幕C</title>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        html,body,.wrapper{width:100%;height:100%;padding:0;margin:0;overflow:hidden;}
+        body{font-family:"微软雅黑";-webkit-background-image:linear-gradient(#0c0a54, #210ee3);background-image:linear-gradient(#0c0a54, #210ee3);}
+        p{margin:10px 0;}
+        .side,.side_cont{width:50%;height:50%;position:absolute;-webkit-box-sizing:border-box;box-sizing:border-box;}
+        .side_cont{height:100%;top:0;}
+        .side_cont.side_cont2{width:100%;height:50%;left:0;}
+        #side1{left:0;top:0;}
+        #side2{;right:0;top:0;}
+        #side3{left:0;bottom:0;}
+        #side4{right:0;bottom:0;}
+        #side_01,#side_03,#side1_01{left:0;}
+        #side_02,#side_04,#side1_02{right:0;}
+        #side1_01{width:75%}
+        #side1_02{width:25%;height:auto;text-align:center;font-size:30px;color:#fff;left:70%;top:auto;bottom:40px;}
+        #side1_02 p:last-child{font-size:24px;}
+        #side3_01{width:100%;height:60%;}
+        #side3_02{width:100%;height:40%;top:60%;}
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="side1" class="side">
+        <div id="side1_01" class="side_cont"></div>
+        <div id="side1_02" class="side_cont">
+            <img src="images/china.jpg" alt="" />
+            <p>24.2%</p>
+            <img src="images/usa.jpg" alt="" />
+            <p>77.5%</p>
+            <p>消费金融渗透率</p>
+        </div>
+    </div>
+    <div id="side2" class="side"></div>
+    <div id="side3" class="side">
+        <div id="side_01" class="side_cont"></div>
+        <div id="side_02" class="side_cont">
+            <div id="side3_01" class="side_cont"></div>
+            <div id="side3_02" class="side_cont"></div>
+        </div>
+    </div>
+    <div id="side4" class="side">
+        <div id="side_03" class="side_cont"></div>
+        <div id="side_04" class="side_cont"></div>
+    </div>
+</div>
+
+<div id="main"></div>
+<script src="./js/echarts.js"></script>
+<script type="text/javascript">
+    require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+    require(
+            [
+                'echarts',
+                'echarts/chart/map',
+                'echarts/chart/bar',
+                'echarts/chart/chord',
+                'echarts/chart/venn',
+                'echarts/chart/line',
+                'echarts/chart/scatter',
+                'echarts/chart/pie'
+            ],
+            function (ec) {
+                var myChart1 = ec.init(document.getElementById('side1_01'), 'default');
+                var option1 = {
+                    title : {
+                        text: '2010-2019年中国消费信贷余额规模及增长率',
+                        textStyle: {
+                            color: "#27727b"
+                        }
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    color: ["#f7b62d","#f7b62d"],
+                    calculable : true,
+                    grid: {
+                        borderWidth: 0
+                    },
+                    legend: {
+                        data:['中国消费信贷市场规模（一万元）','增长率（%）'],
+                        x: 80,
+                        y:"bottom",
+                        textStyle: {
+                            color: "#ccc"
+                        }
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : ['2010','2011','2012','2013','2014','2015','2016e','2017e','2018e','2019e'],
+                            splitLine: {
+                                show: false
+                            },
+                            axisLabel : {
+                                textStyle: {
+                                    color: "#ccc"
+                                }
+                            },
+                            itemStyle: {
+                                barBorderWidth: 0
+                            }
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name : '中国消费信贷市场规模',
+                            axisLabel : {
+                                formatter: '{value}',
+                                textStyle: {
+                                    color: "#ccc"
+                                }
+                            },
+                            splitLine: {
+                                show: false
+                            }
+                        },
+                        {
+                            type : 'value',
+                            name : '',
+                            axisLabel : {
+                                formatter: '{value}',
+                                textStyle: {
+                                    color: "rgba(0,0,0,0)"
+                                }
+                            },
+                            splitLine: {
+                                show: false
+                            },
+                            axisLine: {
+                                show: false
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            name:'中国消费信贷市场规模（一万元）',
+                            type:'bar',
+                            data:[7.5, 8.9, 10.4, 13.0, 15.4, 19.0, 23.0, 27.9, 33.8, 41.1],
+                            markPoint : {
+                                data : [
+                                    {name: '2010', value: 7.5, xAxis: 0, yAxis: 7.5 + 1.5},
+                                    {name: '2011', value: 8.9, xAxis: 1, yAxis: 8.9 + 1.5},
+                                    {name: '2012', value: 10.4, xAxis: 2, yAxis: 10.4 + 1.5},
+                                    {name: '2013', value: 13.0, xAxis: 3, yAxis: 13.0 + 1.5},
+                                    {name: '2014', value: 15.4, xAxis: 4, yAxis: 15.4 + 1.5},
+                                    {name: '2015', value: 19.0, xAxis: 5, yAxis: 19.0 + 1.5},
+                                    {name: '2016', value: 23.0, xAxis: 6, yAxis: 23.0 + 1.5},
+                                    {name: '2017', value: 27.9, xAxis: 7, yAxis: 27.9 + 1.5},
+                                    {name: '2018', value: 33.8, xAxis: 8, yAxis: 33.8 + 1.5},
+                                    {name: '2019', value: 41.1, xAxis: 9, yAxis: 41.1 + 1.5}
+                                ],
+                                normal: {
+                                    label: {
+                                        textStyle: {
+                                            background: "none"
+                                        }
+                                    }
+                                },
+                                symbolSize: 0
+                            }
+                        },
+                        {
+                            name:'增长率（%）',
+                            type:'line',
+                            yAxisIndex: 1,
+                            data:[16.8, 18.3, 17.7, 24.2, 18.5, 23.3, 21.1, 21.4, 21.5, 21.4],
+                            markPoint : {
+                                data : [
+                                    {name: '2010', value: 16.8, xAxis: 0, yAxis: 16.8 - 1.5},
+                                    {name: '2011', value: 18.3, xAxis: 1, yAxis: 18.3 + 1.5},
+                                    {name: '2012', value: 17.7, xAxis: 2, yAxis: 17.7 - 1.5},
+                                    {name: '2013', value: 24.2, xAxis: 3, yAxis: 24.2 + 1.5},
+                                    {name: '2014', value: 18.5, xAxis: 4, yAxis: 18.5 - 1.5},
+                                    {name: '2015', value: 23.3, xAxis: 5, yAxis: 23.3 + 1.5},
+                                    {name: '2016', value: 21.1, xAxis: 6, yAxis: 21.1 - 1.5},
+                                    {name: '2017', value: 21.4, xAxis: 7, yAxis: 21.4 + 1.5},
+                                    {name: '2018', value: 21.5, xAxis: 8, yAxis: 21.5 - 1.5},
+                                    {name: '2019', value: 21.4, xAxis: 9, yAxis: 21.4 + 1.5}
+                                ],
+                                normal: {
+                                    label: {
+                                        textStyle: {
+                                            background: "none"
+                                        }
+                                    }
+                                },
+                                symbolSize: 0
+                            }
+                        }
+                    ]
+                };
+                myChart1.setOption(option1);
+
+                var myChart2 = ec.init(document.getElementById('side2'), 'infographic');
+                var option2 = {
+                    title : {
+                        text: '资产类型占比'
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    calculable : false,
+                    series : (function (){
+                      var thedata = [
+                        [
+                          {value: 0,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 0,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 51520000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 2831000,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 0,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 0,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 48970000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 4075000,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 0,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 0,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 12580000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 1865000,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 351400,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 0,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 1110000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 200000,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 965700,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 550000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 600000,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 1050000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 500000,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 460000,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1200000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 6340000,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 2380000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 951000,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 200,  name:'信用贷'},
+                          {value: 450000,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 2750000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 10260000,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 14740000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 18350000,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 2550000,  name:'信用贷'},
+                          {value: 3920000,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 21000000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 19580000,  name:'供应链贸易贷'},
+                          {value: 0,  name:'个人消费贷'},
+                          {value: 19600000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 12500000,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 10600000,  name:'信用贷'},
+                          {value: 978300,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 2150000,  name:'助农贸易贷'},
+                          {value: 2500000,  name:'企业经营贷'},
+                          {value: 37119950,  name:'供应链贸易贷'},
+                          {value: 36183,  name:'个人消费贷'},
+                          {value: 19495684,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 5250000,  name:'信用贷'},
+                          {value: 141992,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 0,  name:'助农贸易贷'},
+                          {value: 2500000,  name:'企业经营贷'},
+                          {value: 37100000,  name:'供应链贸易贷'},
+                          {value: 5206722,  name:'个人消费贷'},
+                          {value: 10180000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 9700000,  name:'信用贷'},
+                          {value: 35498,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 225000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 28308000,  name:'供应链贸易贷'},
+                          {value: 5487629,  name:'个人消费贷'},
+                          {value: 23150000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 515000,  name:'助农贸易贷'},
+                          {value: 180000,  name:'企业经营贷'},
+                          {value: 25146491,  name:'供应链贸易贷'},
+                          {value: 1580279,  name:'个人消费贷'},
+                          {value: 20970000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 1100,  name:'信用贷'},
+                          {value: 484700,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 885000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 17542936,  name:'供应链贸易贷'},
+                          {value: 3432553,  name:'个人消费贷'},
+                          {value: 14790000,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 200000,  name:'助农贸易贷'},
+                          {value: 0,  name:'企业经营贷'},
+                          {value: 14776115,  name:'供应链贸易贷'},
+                          {value: 5519153,  name:'个人消费贷'},
+                          {value: 9866297,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 390000,  name:'助农贸易贷'},
+                          {value: 1200000,  name:'企业经营贷'},
+                          {value: 26741889,  name:'供应链贸易贷'},
+                          {value: 21078531,  name:'个人消费贷'},
+                          {value: 17385035,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 660000,  name:'助农贸易贷'},
+                          {value: 9800000,  name:'企业经营贷'},
+                          {value: 26000000,  name:'供应链贸易贷'},
+                          {value: 26441000,  name:'个人消费贷'},
+                          {value: 58000,  name:'房产抵押贷'},
+                          {value: 1000000,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 739500,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 790000,  name:'助农贸易贷'},
+                          {value: 11000000,  name:'企业经营贷'},
+                          {value: 35300000,  name:'供应链贸易贷'},
+                          {value: 28622300,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 2000000,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1110000,  name:'助农贸易贷'},
+                          {value: 19900000,  name:'企业经营贷'},
+                          {value: 31100000,  name:'供应链贸易贷'},
+                          {value: 32307100,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 498000,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1480000,  name:'助农贸易贷'},
+                          {value: 9600000,  name:'企业经营贷'},
+                          {value: 15300000,  name:'供应链贸易贷'},
+                          {value: 39718000,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1300000,  name:'助农贸易贷'},
+                          {value: 9800000,  name:'企业经营贷'},
+                          {value: 45600000,  name:'供应链贸易贷'},
+                          {value: 32985200,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1500000,  name:'助农贸易贷'},
+                          {value: 16600000,  name:'企业经营贷'},
+                          {value: 68350000,  name:'供应链贸易贷'},
+                          {value: 25565800,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 1590000,  name:'助农贸易贷'},
+                          {value: 78200000,  name:'供应链贸易贷'},
+                          {value: 16300000,  name:'企业经营贷'},
+                          {value: 21059600,  name:'个人消费贷'},
+                          {value: 0,  name:'房产抵押贷'},
+                          {value: 0,  name:'个人经营贷'},
+                          {value: 0,  name:'票据'},
+                          {value: 0,  name:'融资租赁贷'},
+                          {value: 0,  name:'信用贷'},
+                          {value: 0,  name:'质押贷'}
+                        ],
+                        [
+                          {value: 2020000,  name:'助农贸易贷'},
+                          {value: 19900000,  name:'企业经营贷'},
+                          {value: 125600000,  name:'供应链贸易贷'},
+                          {value: 24284500,  name:'个人消费贷'},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      ];
+                    
+                        var series = [];
+                        for (var i = 0,len = thedata.length; i < len; i++) {
+                            series.push({
+                                name:'历年资产占比',
+                                type:'pie',
+                                itemStyle : {normal : {
+                                    label : {show : i > (len - 2)},
+                                    labelLine : {show : i > (len - 2), length:20}
+                                }},
+                                radius : [i * 4 + 40, i * 4 + 43],
+                                data:thedata[i]
+                            })
+                        }
+                        series[0].markPoint = {
+                            symbol:'emptyCircle',
+                            symbolSize:series[0].radius[0],
+                            effect:{show:true,scaleSize:12,color:'rgba(255,225,255,0.8)',shadowBlur:10,period:30},
+                            data:[{x:'50%',y:'50%'}]
+                        };
+                        
+                        return series;
+                    })()
+                };
+                setTimeout(function (){
+                    var _ZR = myChart2.getZrender();
+                    var TextShape = require('zrender/shape/Text');
+                    // 补充千层饼
+                    _ZR.addShape(new TextShape({
+                        style : {
+                            x : _ZR.getWidth() / 2,
+                            y : _ZR.getHeight() / 2,
+                            color: '#666',
+                            text : '',
+                            textAlign : 'center'
+                        }
+                    }));
+                    _ZR.addShape(new TextShape({
+                        style : {
+                            x : _ZR.getWidth() / 2 + 200,
+                            y : _ZR.getHeight() / 2,
+                            brushType:'fill',
+                            color: 'orange',
+                            text : '',
+                            textAlign : 'left',
+                            textFont:'normal 20px 微软雅黑'
+                        }
+                    }));
+                    _ZR.refresh();
+                }, 2000);
+                myChart2.setOption(option2);
+
+                var myChart3 = ec.init(document.getElementById('side_03'), "infographic");
+                var option3 = {
+                    title : {
+                        text: '移动理财趋势'
+                    },
+					tooltip : {
+						trigger: 'axis'
+					},
+                    legend: {
+                        x : 'center',
+                        y : 30 ,
+                        data:[
+                            'iOS', 'Android'
+                        ],
+                        textStyle: {
+                            color: "#ccc"
+                        }
+                    },
+					toolbox: {
+						show : false,
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+                            axisLabel: {
+                                textStyle: { color: "#ccc" }
+                            },
+                            splitLine: {
+                                show: false
+                            },
+							data : ['2015/7', '2015/8', '2015/9', '2015/10', '2015/11', '2015/12', '2016/1', '2016/2', '2016/3', '2016/4', '2016/5', '2016/6', '2016/7', '2016/8', '2016/9', '2016/10', '2016/11']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value',
+                            name : '移动累计用户',
+                            axisLabel : {
+                                formatter: '{value} 人',
+                                textStyle: { color: "#ccc" }
+                            }
+						}
+					],
+					series : [
+						{
+							name:'iOS',
+							type:'line',
+							stack: '累计',
+                            textStyle: {
+                                color: "#ccc"
+                            },
+							data:['0', '0', '23', '121', '2044', '4334', '6664', '8404', '12953', '18782', '26657', '34162', '37302', '40236', '44405', '48394', '52287']
+						},
+						{
+							name:'Android',
+							type:'line',
+							stack: '累计',
+                            textStyle: {
+                                color: "#ccc"
+                            },
+							data:['0', '0', '0', '181', '4104', '9286', '12608', '15378', '25790', '41319', '56254', '70766', '74837', '77348', '82109', '86251', '89420']
+						}
+					]
+				};
+                myChart3.setOption(option3);
+
+                var myChart6 = ec.init(document.getElementById('side_04'), "infographic");
+                var option6 = {
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient : 'vertical',
+                        x : 'left',
+                        data:['PC投资额','无线投资额','PC注册人数','无线注册人数'],
+                        textStyle: {
+                            color: "#ccc"
+                        }
+                    },
+                    calculable : false,
+                    series : [
+                        {
+                            name:'投资总额',
+                            type:'pie',
+                            selectedMode: 'single',
+                            radius : [0, 70],
+
+                            // for funnel
+                            x: '20%',
+                            width: '40%',
+                            funnelAlign: 'right',
+                            max: 1548,
+
+                            itemStyle : {
+                                normal : {
+                                    label : {
+                                        position : 'inner'
+                                    },
+                                    labelLine : {
+                                        show : false
+                                    }
+                                }
+                            },
+                            data:[
+                                {value:61.73, name:'PC投资额'},
+                                {value:38.27, name:'无线投资额'}
+                            ]
+                        },
+                        {
+                            name:'注册人数',
+                            type:'pie',
+                            radius : [100, 140],
+
+                            // for funnel
+                            x: '60%',
+                            width: '35%',
+                            funnelAlign: 'left',
+                            max: 1048,
+
+                            data:[
+                                {value:35.29, name:'PC注册人数'},
+                                {value:64.71, name:'无线注册人数'}
+                            ]
+                        }
+                    ]
+                };
+
+                myChart6.setOption(option6);
+
+                var myChart4 = ec.init(document.getElementById('side_01'), 'infographic');
+                var option4 = {
+                    title : {
+                        text: '投资用户画像'
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    calculable : true,
+                    series : [
+                        {
+                            name:'面积模式',
+                            type:'pie',
+                            radius : [30, 110],
+                            center : ['50%', "50%"],
+                            roseType : 'area',
+                            x: 'center',               // for funnel
+                            max: 40,                // for funnel
+                            sort : 'ascending',     // for funnel
+                            data:[
+                                {value:7.53 - 7.5, name:'双子座 7.53%'},
+                                {value:8.14 - 7.5, name:'双鱼座 8.14%'},
+                                {value:8.96 - 7.5, name:'处女座 8.96%'},
+                                {value:10.06 - 7.5, name:'天秤座 10.06%'},
+                                {value:8.98 - 7.5, name:'天蝎座 8.98%'},
+                                {value:8.21 - 7.5, name:'射手座 8.21%'},
+                                {value:7.86 - 7.5, name:'巨蟹座 7.86%'},
+                                {value:8.15 - 7.5, name:'水瓶座 8.15%'},
+                                {value:8.72 - 7.5, name:'狮子座 8.72%'},
+                                {value:7.51 - 7.5, name:'白羊座 7.51%'},
+                                {value:7.56 - 7.5, name:'金牛座 7.56%'},
+                                {value:8.34 - 7.5, name:'摩羯座 8.34%'}
+                            ]
+                        }
+                    ]
+                };
+                myChart4.setOption(option4);
+
+                function random(){
+                    var r = Math.round(Math.random() * 10000);
+                    return (r * (r % 2 == 0 ? 1 : 1));
+                }
+
+                function randomDataArray() {
+                    var d = [];
+                    var len = 300;
+                    while (len--) {
+                        d.push([
+                            random(),
+                            random(),
+                            Math.abs(random())
+                        ]);
+                    }
+                    return d;
+                }
+
+                var myChart5 = ec.init(document.getElementById('side3_01'));
+                var option5 = {
+                    title : {
+                        text: '投资用户年龄分布',
+                        textStyle: {
+                            color: "#27727b"
+                        }
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    calculable : true,
+                    series : [
+                        {
+                            name:'访问来源',
+                            type:'pie',
+                            radius : '55%',
+                            center: ['50%', '60%'],
+                            data:[
+                                {value:70747, name:'20-30岁'},
+                                {value:33409, name:'30-40岁'},
+                                {value:19127, name:'40-50岁'},
+                                {value:14144, name:'50-60岁'}
+                            ]
+                        }
+                    ]
+                };
+                myChart5.setOption(option5);
+
+                var myChart7 = ec.init(document.getElementById('side3_02'), 'infographic');
+                var option7 = {
+                    title : {
+                        text: '投资者性别占比'
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{b}: {c}%"
+                    },
+                    calculable : false,
+                    series : [
+                        {
+                            name:'',
+                            type:'venn',
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: true,
+                                        textStyle: {
+                                            fontFamily: 'Arial, Verdana, sans-serif',
+                                            fontSize: 16,
+                                            fontStyle: 'italic',
+                                            fontWeight: 'bolder'
+                                        }
+                                    },
+                                    labelLine: {
+                                        show: false,
+                                        length: 10,
+                                        lineStyle: {
+                                            // color: 各异,
+                                            width: 1,
+                                            type: 'solid'
+                                        }
+                                    }
+                                },
+                                emphasis: {
+                                    color: '#cc99cc',
+                                    borderWidth: 3,
+                                    borderColor: '#996699'
+                                }
+                            },
+                            data:[
+                                {value:51.93, name:'男 51.93%'},
+                                {value:48.07, name:'女 48.07%'},
+                                {value:0, name:''}
+                            ],
+                            markPoint : {
+                                data : [
+                                    {name: '2010', value: 1, x: 50, y: 50},
+                                    {name: '2011', value: 2, x: 50, y: 100}
+                                ]
+//                                ,
+//                                symbolSize: 0
+                            }
+                        }
+                    ]
+                };
+                myChart7.setOption(option7);
+
+                setInterval(function(){
+                    setTimeout(function(){
+                        myChart1.restore();
+                    }, 2000);
+                    setTimeout(function(){
+                        myChart2.restore();
+                    }, 4000);
+                    setTimeout(function(){
+                        myChart4.restore();
+                        myChart5.restore();
+                    }, 6000);
+                    setTimeout(function(){
+                        myChart3.restore();
+                        myChart6.restore();
+                    }, 8000);
+                }, 10000);
+            }
+    );
+</script>
+
+</body>
+</html>

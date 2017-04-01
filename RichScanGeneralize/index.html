@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>宝象金融_互联网金融理财,投资,票据,借款专业平台 - 宝象金融</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="layout" content="mobile"/>
+
+
+    <link rel="stylesheet" href="//m.bxjr.com/assets/mobile/css/normalize.css?v=20150731"/>
+    <link rel="stylesheet" href="//m.bxjr.com/assets/mobile/css/common.css?v=20150731"/>
+    <script type="text/javascript">window.hxb = {ctx: "/web/"};</script>
+    <!--<script type="text/javascript" src="./jquery-1.8.2.min.js"></script>-->
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <!--<script type="text/javascript" src="/web/js/validation/js/jquery.validationEngine-mobile.js"></script>-->
+    <!--<script type="text/javascript" src="/web/js/validation/js/jquery.validationEngine-zh_CN.js"></script>-->
+    <!--<script type="text/javascript" src="/web/js/layer/layer/layer.min.js"></script>-->
+    <!--<script type="text/javascript" src="/web/js/jquery.inputFormat.js"></script>-->
+    <!--<script type="text/javascript" src="/web/js/jquery.lazyload.min.js"></script>-->
+    <!--<script type="text/javascript" src="/web/js/jquery.cookie.js"></script>-->
+    <!--<script type="text/javascript" src="/web/assets/mobile/js/jQuery.link.js?v=20150731"></script>-->
+    <!--<script type="text/javascript" src="/web/assets/mobile/js/application.js?v=20150731"></script>-->
+    <script>
+    </script>
+    <!--<link rel="stylesheet" href="/web/assets/mobile/css/normalize.css">-->
+    <link rel="stylesheet" href="style/common.css">
+    <meta name="baidu-site-verification" content="7y7lrVOwxk"/>
+</head>
+
+<body>
+<section class="richScan">
+    <!--banner start-->
+    <div class="banner">
+        <img src="./images/banner.jpg"/>
+    </div>
+    <!--banner end-->
+
+    <!--content start-->
+    <div class="content">
+        <div class="con">
+            <div class="column">
+                <div class="tab-title showTab">
+                    <img src="./images/register-tab.png"/>
+                </div>
+                <div class="tab-title">
+                    <img src="./images/invest-tab.png"/>
+                </div>
+
+                <ul class="click-box">
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="txt">
+                <div class="con-list register on">
+                    <div>
+                        <h2>注册免费得5000元体验金</h2>
+
+                        <p>使用获得的体验金投资，可以享受投资收益，投资到期后体验金由平台回收，所得收益发放至理财账户中。</p>
+                    </div>
+                    <a class="btn" href="/lc/channel/channel/share?mark=BX_T032_16&taskId=wechat">
+                        <img src="./images/btn.png"/>
+                        <img src="./images/nullity-btn.png" class="nullity-btn"/>
+                    </a>
+                </div>
+
+                <div class="con-list invest ">
+                    <div>
+                        <h2>使用5000元体验金得收益</h2>
+
+                        <p>使用体验金投资《扫啥呦体验金专享标》，可以享受投资收益。投资到期后平台回收体验金,所得收益发放至您的理财账户中。</p>
+                    </div>
+                    <a class="btn" href="//m.bxjr.com/lc/invest/list.html">
+
+                        <img src="./images/btn-invest.png"/>
+
+                    </a>
+                </div>
+
+                <div class="con-list sign-in ">
+                    <div>
+                        <h2>每日签到</h2>
+                    </div>
+                    <a class="btn invalid" href="javascript:;">
+                        敬请期待
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+</section>
+
+
+<div style="display:none">
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var s = document.getElementsByTagName("script")[0]; 
+  //百度统计
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+  s.parentNode.insertBefore(hm, s);
+  //友盟统计
+  var ym = document.createElement("script");
+  ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+  s.parentNode.insertBefore(ym, s);
+})();
+</script>
+</div>
+<script>
+    $(function () {
+        if(location.hash){
+            var id=location.hash.replace('#','');
+            //console.log(id);
+            if(id == parseInt(id,10)){ //解决微信阅读原文带 #rd 等标识的问题
+                $('.btn').attr('href','//m.bxjr.com/lc/invest/detail/' + id + '.html');
+            }
+        }
+
+        $(".click-box li").on("click", function () {
+            var index = $(this).index();
+            $('.tab-title').eq(index).addClass('showTab').siblings().removeClass('showTab');
+            if (index) {
+                $('.click-box').addClass('invest-tab');
+            } else {
+                $('.click-box').removeClass('invest-tab');
+            }
+            $(".txt>div").eq(index).addClass("on").siblings("div").removeClass("on");   //切换内容
+        });
+
+        //判断是否登录，登录点击投资，没有登录点击注册
+        $.getJSON("/secure/get-login-info.html", function(json) {
+            if(json.isLogin){
+                $(".click-box li").eq(1).trigger("click");
+                //改变按钮样式,阻止默认事件
+                $('.register .btn img').eq(1).removeClass('nullity-btn').siblings().addClass('nullity-btn');
+                $(".register").find(".btn").click(function (e) {
+                    e.preventDefault();
+                });
+            }
+        });
+    })
+</script>
+</body>
+</html>
+

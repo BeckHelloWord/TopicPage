@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="我是女王，我做主！">
+    <meta name="Description" content="9款商品限时大派送开始啦！">
+    <title>我是女王，我做主！</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <script src="../../js/public.js"></script>
+    <script src="//www.bxjr.com/js/validform/js/validform_v5.3.2.js?v=${g.version()}"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+</head>
+<body>
+<div class="prizeMain">
+    <img src="images/bgTop.png" />
+    <div class="bgBottom prizeBottom">
+        <div class="petal"><img src="images/petal.png" alt="" /></div>
+        <ul class="prizeItem">
+            <li class="prizeTitle part-01">分享领取</li>
+            <li class="prizeCont part-01"></li>
+            <li class="prizeTitle part-02">投资8388领取</li>
+            <li class="prizeCont part-02"></li>
+            <li class="prizeTitle part-03">投资16888领取</li>
+            <li class="prizeCont part-03"></li>
+            <li class="prizeTitle part-04">投资23888领取</li>
+            <li class="prizeCont part-04"></li>
+        </ul>
+        <ul class="part05">
+            <li class="prizeTitle">活动说明</li>
+            <ol>
+                <li><span>1、</span>参与用户每组可兑换<i>一份奖品</i>，活动不限制使用红包（红包金额不计），不限制个人消费贷；</li>
+                <li><span>2、</span>所有奖品数量有限，<i>先到先得，送完即止</i>，所有奖品以我公司发放实物为准；</li>
+                <li><span>3、</span>选择物品点击领取——去投资——<i>投资成功后返回活动页面——选择所需物品立即领取</i>——填写正确地址，所有奖品一经兑换，无法更改调换；</li>
+                <li><span>4、</span>在活动参与过程中，<i>请用户核实确认是否兑换成功，</i>若因个人操作不当或者遗漏步骤导致奖品未能成功兑换，由用户自行承担；</li>
+                <li><span>5、</span>所有奖品由京东自营店或品牌官网采购，奖品一经发放<i>我司不负责售后</i>，若出现产品质量问题我司将提供采购单据由用户自行与商家联系；</li>
+                <li><span>6、</span>我司作为活动举办方，无法实时跟踪快递寄送情况，若由快递导致奖品未能寄送问题，<i>亲们可以根据快递单号自行查询，</i>我司也会提供相应协助；</li>
+                <li><span>7、</span>所有奖品将在活动结束后七个工作日内寄送，请大家耐心等待。</li>
+            </ol>
+        </ul>
+    </div>
+    <div class="tips">活动最终解释权归宝象金融所有</div>
+    <div class="whetherLogin">
+        <div class="notLogin">
+            <a href="/login/index.html">登录</a>
+            <a href="/secure/register.html">注册</a>
+        </div>
+        <div class="hasLogin clearfix">
+            <p class="fl">当前账户:<span class="mobile">0</span>&nbsp;&nbsp;已投金额: <span class="leftAmount">0</span></p>
+            <div class="loginInvest">
+                <a href="" class="invest fr">去投资</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask share_mask">
+        <img src="images/share-mask.png" />
+    </div>
+    <!--提交收货地址-->
+    <div class="a_layerBox a_formBox">
+        <div class="a_layerBg"></div>
+        <form id="a_addressForm" action="" class="a_addressForm a_layerCon">
+            <div class="a_addressTitle">
+                您正在领取
+                <p class="giftName"></p>
+            </div>
+            <div class="a_addressConfirm">请确认收货信息</div>
+            <div class="a_addressCont">
+                <label class="label"><i class="fl">收货人:</i><span class="a_userName fl"></span></label>
+                <label class="label"><i class="fl">联系电话:</i><span class="a_mobile fl"></span></label>
+                <label class="label a_address_txt">
+                    <i class="f_s fl">收货地址:</i>
+                    <input type="text" placeholder="为确保您能收到，请填写详细地址" class="a_address_val fl" maxlength="25"/>
+                    <p class="empty"></p>
+                </label>
+                <button type="button" id="submit" class="submit redBtn">提交<i></i></button>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </form>
+    </div>
+
+    <!--提交收货地址 领取成功-->
+    <div class="a_layerBox a_formSuccessBox">
+    <div class="a_layerBg"></div>
+    <div class="a_layerCon">
+        <div class="a_addressTitle">
+            <p>领取成功</p>
+        </div>
+        <div class="a_addressConfirm">奖品将于活动结束后7个工作日内寄出！</div>
+        <div class="a_addressCont">
+            <a href="javascript:void(0)" class="close redBtn">知道了</a>
+        </div>
+        <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+    </div>
+</div>
+
+    <!--领取成功-->
+    <div class="a_layerBox a_successBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>领取成功</p>
+            </div>
+            <div class="a_addressConfirm">恭喜您成功领取到<span class="a_successBoxName"></span>！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+
+    <!--领取失败 需要投资-->
+    <div class="a_layerBox a_failBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>领取失败</p>
+            </div>
+            <!--<p class="a_addressNeed"></p>-->
+            <div class="a_addressConfirm">
+                需要投资<span class="giftPrice">0</span>元才能带走它！
+                <p>还差<span class="needAmount">0</span>呢</p>
+            </div>
+            <div class="a_addressCont clearfix">
+                <a href="javascript:void(0)" class="close redBtn fl">知道了</a>
+                <div class="loginInvest"><a href="javascript:void(0)" class="invieteBtn yellowBtn fr">去投资</a></div>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+
+    <!--领取失败 没有奖品-->
+    <div class="a_layerBox a_noPrizeBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>领取失败</p>
+            </div>
+            <div class="a_addressConfirm">手慢了，这个奖品已经没有了！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+
+    <!--领取失败 已经拿过-->
+    <div class="a_layerBox a_alreadyBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>领取失败</p>
+            </div>
+            <div class="a_addressConfirm">这组奖品您已经拿过了！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+    <!-- 去投资提示 -->
+    <div class="a_layerBox go-invest">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>小编提醒</p>
+            </div>
+            <div class="a_addressConfirm"> 投资完成后请返回页面<br />选择相应奖品兑换领取</div>
+            <div class="a_addressCont" style="visibility:hidden;">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+    </div>
+
+    <p class="tip">市场有风险，投资需谨慎</p>
+</div>
+<script>
+    (function(){
+        if (!/MicroMessenger/i.test(navigator.userAgent)) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+            return false;
+        } else {
+            var urlId = "",
+                time = new Date().getTime();
+            
+            $.when(
+                    $.getJSON('/act-year-end-free/free-index.html?ver=' + time),
+                    $.getJSON('/act-year-end-free/has-gifts.html?ver=' + time)
+            ).then(function(a, b) {  // 或者也可以使用 ".done"
+                        //奖品数据
+                        var json = a[0],data = b[0];
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+
+                        $('.prizeCont').eq(0).append(getHtml(json.list0));
+                        $('.prizeCont').eq(0).find(".otherBtn a").addClass("shareBtn").removeClass('inviteBtn');
+                        $('.prizeCont').eq(1).append(getHtml(json.list2588));
+                        $('.prizeCont').eq(2).append(getHtml(json.list5888));
+                        $('.prizeCont').eq(3).append(getHtml(json.list15888));
+
+                        if(!json.success){
+                            $(".notLogin").show();
+                            $(".hasLogin").hide();
+                            $('body').addClass("noLog");
+                            return false;
+                        }
+
+
+
+                        //去投资标的链接
+                        getInviteId();
+                        //立即领取按钮
+                        exchangeNow();
+
+                        //已经登录账户信息
+                        $(".notLogin").hide();
+                        $(".hasLogin").show();
+                        $(".mobile").html(json.mobile);
+                        if (json.leftAmount < 0 ){
+                            json.leftAmount = 0
+                        }
+                        $(".leftAmount").html(json.leftAmount);
+                        //有无拿奖品
+                        var arr = data.giftIds;
+                        var tab= $('.prizeCont table');
+                        tab.each(function(){
+                            var giftId = $(this).attr("id");
+                            if (arr.toString().indexOf(giftId) > -1) {
+                                tabFun($(this));
+                            }
+                        })
+
+                    });
+            function tabFun(tab){
+                tab.find(".allBtn").html("已领取");
+                tab.closest("li").find(".allBtn").addClass("on");
+                tab.closest("li").find(".allBtn").unbind('click').attr('href','javascript:void(0)');
+            }
+            //直接进入此页面
+            $.ajax({
+                url:"/act-year-end-free/has-noticed.html",
+                success:function(json){
+                    if(!json.type){
+                        layer.open({
+                            content:json.message ,
+                            skin: 'msg'
+                        });
+                        return false;
+                    }
+                    if(!json.hasOpened){
+                        location.href = "index.html";
+                        return;
+                    }
+                    if(!json.hasNoticed){
+                        location.href = "attention.html";
+                        return;
+                    }
+                }
+            })
+            //登录
+            function loginLayerFun(){
+                layer.open({
+                    content: '您还没有登录，马上去登录？'
+                    ,btn: ['确定', '取消']
+                    ,yes: function(index){
+                        location.href = "/login/index.html?redirect=/topic/201702/free/";
+                        layer.close(index);
+                    }
+                });
+            }
+            //去投资标的链接
+            function getInviteId(){
+                $.ajax({
+                    url:'/act-year-end-free/go-invest.html',
+                    success:function(json){
+
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+
+                        urlId = json.investId;
+
+//                        $(".loginInvest").html('<a href="/lc/invest/detail/'+ json.investId +'.html" class="invest fr appUrl yellowBtn" data-app-url="baoxiang://APPProjectInvesting?type=invest&investId='+ json.investId +'">去投资</a>');
+//                        appUrl();
+                    }
+                })
+            }
+
+            // 去投资，先提示
+            $(".loginInvest a").on("click", function(e){
+                if(!urlId){
+                    return false;
+                }
+                
+                $(".go-invest").show();
+
+                e.preventDefault();
+            });
+
+            // 去投资
+            $(".go-invest").on("click", function(){
+                var url = "";
+
+                if(/baoxiang/.test(navigator.userAgent)){
+                    url = 'baoxiang://APPProjectInvesting?type=invest&investId='+ urlId;
+                }else{
+                    url = '/lc/invest/detail/'+ urlId + '.html';
+                }
+
+                location.href = url;
+            });
+
+            //已投金额
+            function getAmount(){
+                $.ajax({
+                    url:'/act-year-end-free/get-amount.html',
+                    success:function(json){
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+                        if (json.leftAmount < 0 ){
+                            json.leftAmount = 0
+                        }
+                        $('.leftAmount').html(json.leftAmount);
+                    }
+                })
+            }
+            //份额
+            function getNum(id){
+                $.ajax({
+                    url:'/act-year-end-free/gift-count.html',
+                    type:"post",
+                    data:{giftId:id},
+                    success:function(json){
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+                        $("#"+id).find('.leftNum em').html(json.giftCount);
+                    }
+                })
+            }
+            //for循环数据列表
+            function getHtml(obj){
+                var html = '';
+                for (var i = 0,len = obj.length ; i < len; i++) {
+                    html += '<table cellpadding="0" cellspacing="0" id=' + obj[i].giftId + '>';
+                    html += '<tr>';
+                    html += '<td rowspan="2" class="tdImg"><div class="img"><img src=' + obj[i].logo + ' /></div></td>';
+                    if(obj[i].name.split(" ").length > 1){
+                        html += '<td class="message">' + obj[i].name.split(" ")[0] + '<span><i class="leftNum">(剩<em>' + obj[i].leftAmount + '</em>份)</i></span><p>' + obj[i].name.split(" ")[1] + '</p></td>';
+                    }else{
+                        html += '<td class="message">' + obj[i].name + '<span><i class="leftNum">(剩<em>' + obj[i].leftAmount + '</em>份)</i></span></td>';
+                    }
+                    html += '</tr>';
+                    html += '<tr>';
+                    if (obj[i].leftAmount == 0) {
+                        html += '<td class="otherBtn"><a class="inviteBtn allBtn on" href="javascript:void(0)">立即领取</a></td>';
+                    } else {
+                        html += '<td class="otherBtn"><a class="inviteBtn allBtn" href="">立即领取</a></td>';
+                    }
+                    html += '</tr>';
+                    html += '</table>';
+                }
+               return html;
+            }
+            //兑换奖品按钮
+            function exchangeNow(){
+                //分享领取按钮
+                $(".shareBtn").unbind("click");
+                $(".shareBtn").on('click',function(e){
+                    if($('body').hasClass("noLog")){
+                        loginLayerFun();
+                    }else{
+                        $(".share_mask").css({"height": "100%"});
+                        var id = $(this).parents('table').attr('id');
+                        $(".prizeCont").eq(0).attr("data-id",id);
+                    }
+                    e.preventDefault();
+                });
+                //投资领取
+                $(".inviteBtn").unbind("click");
+                $(".inviteBtn").on("click",function(e){//跳转投资链接
+                    if($('body').hasClass("noLog")){
+                        loginLayerFun();
+                   }else{
+                        var id = $(this).parents('table').attr('id');
+                        allPrize(id);
+                   }
+                    e.preventDefault();
+                })
+            }
+            //兑换奖品
+            var flag = false;
+            function allPrize(id){
+                if(flag){
+                    return
+                }
+                flag = true;
+                $.ajax({
+                    url:'/act-year-end-free/exchange.html',
+                    type:'post',
+                    data:{giftId:id},
+                    success:function(json){
+                        flag = false;
+
+                        if(json.toFirstPage){
+                            location.href="index.html";
+                            return false;
+                        }
+                        //成功 实物
+                        if(json.status == 1 && json.isGood){
+                            var a_formBox = $(".a_formBox"),a_formSuccessBox = $(".a_formSuccessBox");
+                            $('.giftName').html(json.giftName);
+                            $('.a_userName').html(json.userName);
+                            $(".a_mobile").html(json.mobile);
+                            $(".a_address_val").val(json.address);
+                            a_formBox.show();
+                            getNum(id);
+                            sendAddress();
+                            tabFun($("#"+id));
+                            getAmount();
+                            return false;
+
+                        }
+                        //成功 虚拟
+                        if(json.status == 1 && !json.isGood){
+                            var a_successBox = $(".a_successBox");
+                            $('.a_successBoxName').html(json.giftName);
+                            a_successBox.show();
+                            getNum(id);
+                            tabFun($("#"+id));
+                            getAmount();
+                            return false;
+                        }
+                        //这组奖品您已经拿过了
+                        if(json.status == 2){
+                            var a_alreadyBox = $(".a_alreadyBox");
+                            a_alreadyBox.show();
+                            return false;
+                        }
+                        //手慢了，这个奖品已经没有了
+                        if(json.status == 3){
+                            var a_noPrizeBox = $(".a_noPrizeBox");
+                            a_noPrizeBox.show();
+                            return false;
+                        }
+                        //引导投资
+                        if(json.status == 4){
+                            var a_failBox = $(".a_failBox");
+                            $(".giftPrice").html(json.giftPrice);
+                            $(".needAmount").html(json.needAmount);
+                            a_failBox.show();
+                            $(".invieteBtn").on("click",function(e){
+                                getInviteId();
+                                e.preventDefault();
+                            });
+                            return false;
+                        }
+                    }
+                });
+            }
+
+            //弹框 关闭
+            $(".close").on("click",function(e){
+                var closeParent = $(this).parents(".a_layerBox");
+                
+                if(!closeParent.hasClass("go-invest")){
+                    closeParent.hide();
+                }
+            });
+
+            //提交
+            function sendAddress(){
+                $(".submit").unbind("click");
+                $(".submit").on("click",function(){
+                    var txt = $(this).siblings(".a_address_txt").find("input").val();
+                    $.ajax({
+                        url:'/act-year-end-free/save-address.html',
+                        type:"post",
+                        data:{address:txt},
+                        success:function(json){
+                            if(!json.type){
+                                $(".empty").show().text(json.message);
+                                $(".a_address_val").bind("keyup input focus",function(){
+                                    if($(".a_address_val").val() != ""){
+                                        $(".empty").hide();
+                                    }
+                                });
+                                return false;
+                            }
+                            $(".a_formBox").hide();
+                            $(".a_formSuccessBox").show();
+                        }
+                    })
+                });
+            }
+            /*蒙层*/
+            $(".mask").on("click",function(){
+                $(this).css("height","0")
+            });
+            //分享
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "我是女王，我做主！",
+                    desc: "9款商品限时大派送开始啦！",
+                    link: 'http://t.cn/RJOOJeL', // 长网址http://mp.weixin.qq.com/s/kVmqHziVlkygpKYA7pO9Mg
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1702/4f61bb68-fd64-416d-a302-b582380b215b.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline' // 分享到朋友圈
+                    ]
+                },
+                callback:function(){
+                    $(".mask").css("height","0");
+                    exchangeNow();
+                    var id=$(".prizeCont").eq(0).attr("data-id");
+                    allPrize(id);
+                }
+            };
+            wechatShare.init(shareData);
+            //appURL
+//            function appUrl(){
+//                if (/baoxiang/.test(navigator.userAgent)) {
+//                    $('a.appUrl').each(function () {
+//                        var appUrl = $(this).data().appUrl;
+//                        if (appUrl) {
+//                            $(this).attr('href', appUrl);
+//                        }
+//                    })
+//                }
+//            }
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

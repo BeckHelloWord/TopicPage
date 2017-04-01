@@ -1,0 +1,51 @@
+/*主题活动PC*/
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.hidden{display:none;}
+.main{width: 1920px;position: relative;left: 50%;margin-left: -960px;z-index: 0;}
+.container{width:1000px; margin:0 auto;}
+.part1{height:194px;background:url("../images/pc-describe.jpg")no-repeat;}
+.part1 ul{font-size:16px;color:#fff;line-height:2;}
+.part1 ul li span{float:left;display:inline-block;color:#ffd633;}
+.part1 ul li p{margin-left:20px;}
+.part1 .container ul li p i{font-style:normal;color:#00fffc;}
+
+.explain .hd{background-color:#ffd633;}
+.explain .hd a{float:left;width:25%;line-height:74px;font-size:24px;color:#a3671a;display:inline-block;background-color:#ffd633;}
+.explain .hd a.curr{background:#fff;color:#7e7ee1;}
+
+.explain{height:881px;background:url("../images/pc-conter.jpg")no-repeat;}
+.explain .container{background-color:#fff;}
+.explain .bd{min-height:714px;font-size:18px;padding:30px;line-height:2;}
+.explain .bd ul li span{float:left;}
+.explain .bd ul li p{margin-left:20px;}
+
+.explain .bd .rule p span{color:#7e7ee1;}
+.explain .bd .rule p:last-child{margin-bottom:10px;}
+
+
+/*主题活动H5*/
+.mobWord{position: relative;}
+.mobWord img{max-width:100%;}
+.mobWord .content{padding:14px;}
+.describe{padding:14px;background:#030325;display:inline-table;}
+.describe ul{font-size:1.4rem;color:#fff;margin-top:-15%;}
+.describe ul li span{float:left;line-height:2rem;margin-right:2%;color:#ffd633;font-size:2rem;}
+.describe ul li p i{font-style:normal;color:#00fffc;}
+.mobBg{padding:14px 3% 20%;background:url(../images/h5-foote.jpg) no-repeat center bottom #0c092a;background-size:100%;}
+.mobExplain{min-height:80%;background-color:#fff;}
+.mobExplain .hd{background-color:#ffd633;}
+.mobExplain .hd a{float:left;width:25%;line-height:1.4;padding:2% 0;font-size:1.6rem;color:#a3671a;display:inline-block;}
+.mobExplain .hd a.curr{background:#fff;color:#7e7ee1;}
+
+.mobExplain .bd{padding:14px;line-height: 2;}
+.mobExplain .bd ul{font-size:1.4rem;}
+.mobExplain .bd ul li span{float:left;}
+.mobExplain .bd ul li p{margin-left:20px;}
+
+.mobExplain .bd{min-height:950px;}
+.mobExplain .bd .rule{font-size:1.4rem;}
+.mobExplain .bd .rule li span{float:left;color:#7e7ee1;}
+.mobExplain .bd .rule li p{margin-left:25%;}
+.mobExplain .bd .rule{margin-bottom:10%;}
+.mobExplain .bd p{font-size:1.4rem;}

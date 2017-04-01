@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="Keywords" content="2016第三季度运营报告">
+    <meta name="2016第三季度运营报告" content="2016第三季度运营报告">
+    <title>2016年三季度运营报告|“亿”起再出发</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+            <!--report-01-->
+            <div class="swiper-slide">
+                <div class="report-01">
+                    <img src="images/report-page01.gif" />
+                </div>
+            </div>
+
+            <!--report-02-->
+            <div class="swiper-slide">
+                <div class="report-02 page">
+                    <img class="music-pic music-col" src="images/music.png" alt="">
+                    <p class="animated title hidden" id="re02-title">平台运营总数据</p>
+                    <div class="report-list">
+                        <img class="animated hidden" src="images/page02-p1.png" alt="">
+                        <p class="blue animated hidden"><span class="gray">累计交易额</span><br><span class="big">20</span>亿 <span class="big">9123</span>万元</p>
+                    </div>
+                    <div class="report-list">
+                        <p class="blue animated hidden"><span class="gray">累计注册用户</span><br><span class="big">105</span>万 <span class="big">5834</span>人</p>
+                        <img class="animated hidden" src="images/page02-p2.png" alt="">
+                    </div>
+                    <div class="report-list">
+                        <img class="animated hidden" src="images/page02-p3.png" alt="">
+                        <p class="blue animated hidden"><span class="gray">用户累计收益</span><br><span class="big">3295</span>万 <span class="big">6947</span>元</p>
+                    </div>
+                    <div class="report-list">
+                        <p class="blue animated hidden"><span class="gray">累计成交笔数</span><br><span class="big">45</span>万 <span class="big">5489</span>笔</p>
+                        <img class="animated hidden" src="images/page02-p4.png" alt="">
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<audio id="car_audio" autoplay="autoplay" loop="loop"></audio>
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/animate.js"></script>
+<script src="../../js/jQuery.link.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script>
+    (function(){
+        var wechatShare = new WeChatShare();//创建对象
+        // 分享
+        var shareData = {
+            shareConfig:{
+                title: "2016年三季度运营报告|“亿”起再出发",
+                desc: "105万注册用户，20亿累计交易额，感恩一路有你，让我们“亿”起再出发……",
+                link: location.href,
+                imgUrl: "https://www.bxjr.com/topic/201610/thirdReport/images/h5-share.png"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            }
+        }
+        wechatShare.init(shareData);//创建分享 自定义菜单
+    }());
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = true;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', 'images/music.mp3');
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, true);
+        });
+
+        $.find('.music-pic').forEach(function(i) {
+            var $i = $(i);
+            $i.click(function() {
+                var audio = document.getElementById('car_audio')
+                if(!audio.paused) {                 
+                    audio.pause();// 这个就是暂停//audio.play();// 这个就是播放  
+                }
+                $.find('.music-col').forEach(function(x) {
+                    var $x = $(x);
+                    $x.addClass('hidden')
+                })
+            })
+        })
+    })
+
+    //把页面加入到数组
+    
+    $(function () {
+        
+        var a=[]
+        a[0] = '<!--report-03-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-03 page">'+
+                        '<p class="animated title hidden">2016年平台数据</p>'+
+                        '<div class="report-list">'+
+                            '<img class="animated hidden" src="images/page02-p1.png" alt="">'+
+                            '<p class="blue animated hidden"><span class="gray">累计交易额</span><br><span class="big">14</span>亿 <span class="big">1909</span>万元</p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<p class="blue animated hidden"><span class="gray">累计注册用户</span><br><span class="big">70</span>万 <span class="big">3515</span>人</p>'+
+                            '<img class="animated hidden" src="images/page02-p2.png" alt="">'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<img class="animated hidden" src="images/page02-p3.png" alt="">'+
+                            '<p class="blue animated hidden"><span class="gray">用户累计收益</span><br><span class="big">2324</span>万 <span class="big">4822</span>元</p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<p class="blue animated hidden"><span class="gray">累计成交笔数</span><br><span class="big">33</span>万 <span class="big">4700</span>笔</p>'+
+                            '<img class="animated hidden" src="images/page02-p4.png" alt="">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[1] = '<!--report-04-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-04 page">'+
+                        '<p class="animated title hidden">三季度平台数据</p>'+
+                        '<div class="report-list">'+
+                            '<img class="animated hidden" src="images/page02-p1.png" alt="">'+
+                            '<p class="blue animated hidden"><span class="gray">累计交易额</span><br><span class="big">3</span>亿 <span class="big">5733</span>万元</p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<p class="blue animated hidden"><span class="gray">累计注册用户</span><br><span class="big">11</span>万 <span class="big">3407</span>人</p>'+
+                            '<img class="animated hidden" src="images/page02-p2.png" alt="">'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<img class="animated hidden" src="images/page02-p3.png" alt="">'+
+                            '<p class="blue animated hidden"><span class="gray">用户累计收益</span><br><span class="big">675</span>万 <span class="big">1573</span>元</p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<p class="blue animated hidden"><span class="gray">累计成交笔数</span><br><span class="big">11</span>万 <span class="big">3318</span>笔</p>'+
+                            '<img class="animated hidden" src="images/page02-p4.png" alt="">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[2] = '<!--report-05-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-05 page">'+
+                        '<p class="report-title animated hidden">用户投资习惯分布</p>'+
+                        '<p class="report-content animated hidden">平台64%的用户有使用PC进行投资的习惯<br>但56%的投资金额在APP上完成</p>'+
+                        '<p class="report-pic-title1 animated hidden">投资人数占比</p>'+
+                        '<ul class="ul1">'+
+                            '<li class="animated hidden"><img src="images/page05-p1.png" alt=""></li>'+
+                            '<li class="animated hidden"><img src="images/page05-p2.png" alt=""></li>'+
+                            '<li class="animated hidden"><img src="images/page05-p3.png" alt=""></li>'+
+                        '</ul>'+
+                        '<p class="report-pic-title2 clearfix animated hidden">投资金额占比</p>'+
+                        '<ul class="ul2">'+
+                            '<li class="animated hidden"><img src="images/page05-p4.png" alt=""></li>'+
+                            '<li class="animated hidden"><img src="images/page05-p5.png" alt=""></li>'+
+                            '<li class="animated hidden"><img src="images/page05-p6.png" alt=""></li>'+
+                        '</ul>'+
+                        '<div class="clearfix"></div>'+
+                    '</div>'+
+                '</div>'
+        a[3] = '<!--report-06-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-06 page">'+
+                        '<p class="report-content animated hidden">三季度平台累计交易额<br>同比增长36%，环比下降1%</p>'+
+                        '<p class="report-pic-title animated hidden">三季度各月交易明细</p>'+
+                        '<div class="reprot-06-bg animated hidden">'+
+                            '<img src="images/page06-p1.png" alt="">'+
+                            '<img class="report-06-blue hidden" src="images/page06-blue.png" alt="">'+
+                            '<img class="report-06-yellow hidden" src="images/page06-yellow.png" alt="">'+
+                            '<img class="digit animated hidden" src="images/page06-p2.png" alt="">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[4] = '<!--report-07-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-07 page">'+
+                        '<p class="report-content animated hidden">三季度平台注册用户量<br><span class="bold">同比增长20%，环比下降77%</span></p>'+
+                        '<p class="report-pic-title animated hidden">三季度各月用户注册量</p>'+
+                        '<div class="report-07-bg animated hidden">'+
+                            '<img src="images/page07-p1.png" alt="">'+
+                            '<img class="report-07-img report-07-blue hidden" src="images/page07-blue.png" alt="">'+
+                            '<img class="report-07-img report-07-pink hidden" src="images/page07-pink.png" alt="">'+
+                            '<img class="report-07-img report-07-purple hidden" src="images/page07-purple.png" alt="">'+
+                            '<img class="digit animated hidden" src="images/page07-p2.png" alt="">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[5] = '<!--report-08-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-08 page2">'+
+                        '<div class="title-1 hidden">'+
+                            '<p class="blue">从标的数量分布来看</p>'+
+                            '<p class="index-top report-pic-title">90天以下的标的占比为79%</p>'+
+                        '</div>'+
+                        '<div class="pie hidden pie-1">'+
+                            '<div class="layer-left layer"></div>'+
+                            '<div class="pie-left">'+
+                                '<img src="images/page-08-01.jpg" alt="">'+
+                            '</div>'+
+                            '<div class="layer-right layer"></div>'+
+                            '<div class="pie-right">'+
+                                '<img src="images/page-08-02.jpg" alt="">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="report-middle title-2 hidden">'+
+                            '<p class="blue">从标的成交金额来看</p>'+
+                            '<p class="index-top report-pic-title">90天以下的标的占比为82%</p>'+
+                        '</div>'+
+                        '<div class="pie hidden pie-2">'+
+                            '<div class="layer-left layer"></div>'+
+                            '<div class="pie-left">'+
+                                '<img src="images/page-08-03.jpg" alt="">'+
+                            '</div>'+
+                            '<div class="layer-right layer"></div>'+
+                            '<div class="pie-right">'+
+                                '<img src="images/page-08-04.jpg" alt="">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="report-bottom hidden">'+
+                            '<img class="w90" src="images/page08-p3.jpg" alt="">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[6] = '<!--report-09-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-09 page">'+
+                        '<p class="report-content">三季度，<span class="blue">企业经营贷和个人消费贷</span><br>成为广大投资人比较青睐的投资资产。</p>'+
+                        '<p class="report-pic-title">标的类型分布</p>'+
+                        '<div class="report-09-bg">'+
+                            '<img src="images/page09_background.png" alt="">'+
+                            '<img src="images/page09_triangle.png" alt="" class="tri-pic hidden">'+
+                            '<img src="images/page09_words.png" alt="" class="word-pic hidden">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[7] = '<!--report-10-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-10 page">'+
+                        '<p class="report-title hidden">截止到9月30日平台的逾期情况</p>'+
+                        '<div class="report-list">'+
+                            '<img class="hidden" src="images/page10-p1.png" alt="">'+
+                            '<p class="hidden blue"><span class="gray">90天以上逾期金额</span><br><span class="big">205</span>万<span class="big">8736</span>元</p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<img class="hidden" src="images/page10-p2.png" alt="">'+
+                            '<p class="hidden blue"><span class="gray">90天以上逾期率</span><br><span class="big">1.28%</span></p>'+
+                        '</div>'+
+                        '<div class="report-list">'+
+                            '<img class="hidden" src="images/page10-p3.png" alt="">'+
+                            '<p class="hidden blue"><span class="gray">90天以上累计逾期率</span><br><span class="big">0.47%</span></p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[8] = '<!--report-11-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-11 page">'+
+                        '<p class="report-title hidden">平台一半以上的标的12小时内满标，<br><span class="blue">90%以上</span>的标的48小时内满标。</p>'+
+                        '<p class="report-subtitle hidden">满标速度</p>'+
+                        '<div class="relative hidden">'+
+                            '<div>'+
+                                '<img src="images/page11-bg.png" alt="">'+
+                            '</div>'+
+                            '<div class="report-chart clearfix">'+
+                                '<div class="report-chart-blue report-chart-body">'+
+                                    '<img src="images/page11_04.png" class="report-11-blue hidden" alt="">'+
+                                '</div>'+
+                                '<div class="report-chart-yellow report-chart-body">'+
+                                    '<img src="images/page11_03.png" class="report-11-yellow hidden" alt="">'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[9] = '<!--report-12-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-12 page2">'+
+                        '<div class="report-12-map hidden">'+
+                            '<img src="images/page12_map.png" alt="">'+
+                        '</div>'+
+                        '<p class="hidden text-center">投资人数前十大地区占比分布图</p>'+
+                        '<div class="report-body hidden">'+
+                            '<div class="report-body-left report-pie">'+
+                                '<div class="layer-left layer"></div>'+
+                                '<div class="report-pie-left">'+
+                                    '<img src="images/page12-pie_03.jpg" alt="">'+
+                                '</div>'+
+                                '<div class="layer-right layer"></div>'+
+                                '<div class="report-pie-right">'+
+                                    '<img src="images/page12-pie_04.jpg" alt="">'+
+                                '</div>'+
+                                '<div class="clean"></div>'+
+                            '</div>'+
+                            '<div class="report-body-right hidden">'+
+                                '<img src="images/page12_city.jpg" alt="">'+
+                            '</div>'+
+                            '<div class="clean"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+        a[10] = '<!--report-13-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-13 page2">'+
+                        '<p class="report-content ta_j hidden">70、80后为平台主流投资用户，无论是人群数量还是投资金额，均占据了半壁江山，但真正的<span class="blue">超级VIP投资用户</span>则为<span class="blue">60后</span>。</p>'+
+                        '<p class="fs15 report-pic-title hidden title-1">投资金额分布图</p>'+
+                        '<div class="pie hidden pie-1">'+
+                            '<div class="layer-left layer"></div>'+
+                            '<div class="pie-left"><img src="images/page14_pie_03.jpg" alt=""></div>'+
+                            '<div class="layer-right layer"></div>'+
+                            '<div class="pie-right"><img src="images/page14_pie_04.jpg" alt=""></div>'+
+                        '</div>'+
+                        '<p class="fs15 report-pic-title hidden title-2">投资人数分布图</p>'+
+                        '<div class="pie hidden pie-2">'+
+                            '<div class="layer-left layer"></div>'+
+                            '<div class="pie-left"><img src="images/page14_pie_07.jpg" alt=""></div>'+
+                            '<div class="layer-right layer"></div>'+
+                            '<div class="pie-right"><img src="images/page14_pie_08.jpg" alt=""></div>'+
+                        '</div>'+
+                        '<div class="footer hidden"><img class="w65" src="images/page14-p3.jpg" alt=""></div>'+
+                    '</div>'+
+                '</div>'
+        a[11] = '<!--report-14-->'+ 
+                '<div class="swiper-slide">'+
+                    '<div class="report-14 page">'+
+                        '<p class="report-content hidden animated">三季度宝象福利<br>共发放<span class="blue">38万1566次</span>，惠泽<span class="blue">65068人</span>。</p>'+
+                        '<ul class="ul1 animated hidden">'+
+                            '<li><p>抽奖</p><br><img src="images/page15-p1.png" alt=""><br><p class="fs2">417</p></li>'+
+                            '<li><p>中秋晒照投票活动</p><br><img src="images/page15-p2.png" alt=""><br><p class="fs2">2434</p></li>'+
+                            '<li><p>嘉年华</p><br><img src="images/page15-p3.png" alt=""><br><p class="fs2">58785</p></li>'+
+                        '</ul>'+
+                        '<div class="clear"></div>'+
+                        '<ul class="ul2 animated hidden">'+
+                            '<li><p>摇一摇</p><br><img src="images/page15-p4.png" alt=""><br><p class="fs2">33951</p></li>'+
+                            '<li><p>特别奖励</p><br><img src="images/page15-p5.png" alt=""><br><p class="fs2">37445</p></li>'+
+                            '<li><p>流量</p><br><img src="images/page15-p6.png" alt=""><br><p class="fs2">113</p></li>'+
+                        '</ul>'+
+                        '<div class="clear"></div>'+
+                        '<ul class="ul3 animated hidden">'+
+                            '<li><p>注册奖励</p><br><img src="images/page15-p7.png" alt=""><br><p class="fs2">148754</p></li>'+
+                            '<li><p>签到</p><br><img src="images/page15-p8.png" alt=""><br><p class="fs2">99667</p></li>'+
+                            '<li></li>'+
+                        '</ul>'+
+                        '<div class="clear"></div>'+
+                    '</div>'+
+                '</div>'
+        a[12] = '<!--report-15--><div class="swiper-slide"><div class="reproter-15"><img src="images/report-bottom.gif" alt=""></div></div>'
+
+
+            function getHtml() {
+                var b = a.shift()
+                return b;
+
+            }
+
+            var swiper = new Swiper('.swiper-container', {
+                mousewheelControl : true,
+                direction: 'vertical',
+                lazyLoading : true,
+                lazyLoadingInPrevNext : true,
+                lazyLoadingInPrevNextAmount : 1,
+                resistanceRatio : 0.9,
+                longSwipesRatio : 0.1,
+                
+                //添加css动画
+                onSlideChangeEnd: function(swiper) {
+                    $cur = swiper.activeIndex
+                    console.log('第'+($cur+1)+'页动画加载完毕')
+                    var t;
+                    switch($cur)
+                    {
+
+                        case 1:
+                            t=setTimeout(function() {
+                                $.find('.report-02>p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInDownBig')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-02 .report-list > img').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInLeftBig')
+                                })
+                            }, 500);
+
+                            t=setTimeout(function () {
+                                $.find('.report-02 .report-list > p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInRightBig')
+                                })
+                            }, 900);
+                        break;
+
+                        case 2:
+                            t=setTimeout(function() {
+                                $.find('.report-03>p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInDownBig')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-03 .report-list > img').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInDownBig')
+                                })
+                            }, 500);
+
+                            t=setTimeout(function () {
+                                $.find('.report-03 .report-list > p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInUpBig')
+                                })
+                            }, 900);
+                        break;
+
+                        case 3:
+                            t=setTimeout(function() {
+                                $.find('.report-04>p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInDownBig')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-04 .report-list > img').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('zoomInLeft')
+                                })
+                            }, 500);
+
+                            t=setTimeout(function () {
+                                $.find('.report-04 .report-list > p').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('zoomInRight')
+                                })
+                            }, 900);
+                        break;
+
+                        case 4:
+                            t=setTimeout(function() {
+                                $.find('.report-05 .report-title').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rubberBand')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-05 .report-content').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rubberBand')
+                                })
+                            }, 400);
+
+                            t=setTimeout(function() {
+                                $.find('.report-05 .report-pic-title1').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInLeftBig')
+                                })
+                            }, 800);
+
+                            $('.report-05 .ul1 li').each(function(x){
+                                var $this  = $(this);
+                                t=setTimeout(function(){
+                                    $this.removeClass('hidden').addClass('fadeInLeftBig');
+                                },1500 + x%3 * 300)
+                            });
+                            t=setTimeout(function() {
+                                $.find('.report-05 .report-pic-title2').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInRightBig')
+                                })
+                            }, 2500);
+
+                            $('.report-05 .ul2 li').each(function(x){
+                                var $this  = $(this);
+                                t=setTimeout(function(){
+                                    $this.removeClass('hidden').addClass('fadeInRightBig');
+                                },3500 + x%3 * 300)
+                            });
+                        break;
+
+                        case 5:
+                            t=setTimeout(function() {
+                                $.find('.report-06 .report-content').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('wobble')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-06 .report-pic-title').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInDownBig')
+                                })
+                            }, 400);
+
+                            t=setTimeout(function() {
+                                $.find('.report-06 .reprot-06-bg').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInUpBig')
+                                })
+                            }, 800);
+
+                            t=setTimeout(function () {
+                                $.find('.report-06 .reprot-06-bg .report-06-blue').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('stretch-me-animation');
+                                })
+                            }, 2000);
+
+                            t=setTimeout(function () {
+                                $.find('.report-06 .reprot-06-bg .report-06-yellow').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('stretch-me-animation');
+                                })
+                            }, 3000);
+                            t=setTimeout(function () {
+                                $.find('.report-06 .reprot-06-bg .digit').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInRightBig');
+                                })
+                            }, 4000);
+                        break;
+
+                        case 6:
+                            t=setTimeout(function() {
+                                $.find('.report-07 .report-content').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rotateIn')
+                                })
+                            }, 100);
+
+                            t=setTimeout(function() {
+                                $.find('.report-07 .report-pic-title').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rotateIn')
+                                })
+                            }, 400);
+
+                            t=setTimeout(function() {
+                                $.find('.report-07 .report-07-bg').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInUpBig')
+                                })
+                            }, 800);
+
+                            t=setTimeout(function () {
+                                $.find('.report-07 .report-07-bg .report-07-blue').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('pull-me-animation');
+                                })
+                            }, 2000);
+
+                            t=setTimeout(function () {
+                                $.find('.report-07 .report-07-bg .report-07-pink').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('pull-me-animation');
+                                })
+                            }, 3000);
+                            t=setTimeout(function () {
+                                $.find('.report-07 .report-07-bg .report-07-purple').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('pull-me-animation');
+                                })
+                            }, 4000);
+                            t=setTimeout(function () {
+                                $.find('.report-07 .report-07-bg .digit').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('fadeInRightBig');
+                                })
+                            }, 5000);
+                        break;
+
+                        case 7:
+                            t=setTimeout(function(){
+                                $('.report-08>.title-1').removeClass('hidden').addClass('fadeInRightBig animated');
+                            },200);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-1').removeClass('hidden').addClass('fadeInUpBig animated');
+                            },500);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-1>.layer-right').addClass('rotate-right-animation');
+                            },1500);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-1>.layer-right').addClass('hidden');
+                                $('.report-08>.pie-1>.layer-left').addClass('rotate-left-animation');
+                            },2100);
+                            t=setTimeout(function(){
+                                $('.report-08>.title-2').removeClass('hidden').addClass('fadeInRightBig animated');
+                            },2300);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-2').removeClass('hidden').addClass('fadeInUpBig animated');
+                            },2500);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-2>.layer-right').addClass('rotate-right-animation');
+                            },3500);
+                            t=setTimeout(function(){
+                                $('.report-08>.pie-2>.layer-right').addClass('hidden');
+                                $('.report-08>.pie-2>.layer-left').addClass('rotate-left-animation');
+                            },4100);
+                            t=setTimeout(function(){
+                                $('.report-08>.report-bottom').removeClass('hidden').addClass('fadeInUpBig animated');
+                            },4500)
+                        break;
+
+                        case 8:
+                            $('.tri-pic').removeClass('hidden').addClass('stretch-animation');
+                            t=setTimeout(function(){
+                                $('.word-pic').removeClass('hidden').addClass('fadeInRightBig animated');
+                            },1000)
+                        break;
+
+                        case 9:
+                            $('.report-10 > .report-title').removeClass('hidden').addClass('rotateIn animated');
+                            $('.report-10 > .report-list img').each(function(x){
+                                var $this  = $(this);
+                                t=setTimeout(function(){
+                                    $this.removeClass('hidden').addClass('zoomInLeft animated');
+                                },1000 + x%3 * 1000)
+                            });
+                            $('.report-10 > .report-list p').each(function(x){
+                                var $this  = $(this);
+                                t=setTimeout(function(){
+                                    $this.removeClass('hidden').addClass('zoomInRight animated');
+                                },1500 + x%3 * 1000)
+                            });
+                        break;
+
+                        case 10:
+                            $('.report-11 > .report-title').removeClass('hidden').addClass('fadeInUpBig animated');
+                            t=setTimeout(function(){
+                                $('.report-11 > .report-subtitle').removeClass('hidden').addClass('fadeInUpBig animated');
+                                $('.report-11 > .relative').removeClass('hidden').addClass('fadeInUpBig animated');
+                            },1000)
+                            t=setTimeout(function() {
+                                $.find('.report-11 .report-chart .report-11-blue').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('pull-animation')
+                                })
+                            }, 2000);
+                            t=setTimeout(function() {
+                                $.find('.report-11 .report-chart .report-11-yellow').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('pull-animation')
+                                })
+                            }, 3000);
+                        break;
+
+                        case 11:
+                            $('.report-12 > .report-12-map').removeClass('hidden').addClass('bounceIn animated');
+                            t=setTimeout(function(){
+                                $('.report-12 > p').removeClass('hidden').addClass('fadeInUpBig animated');
+                            },500)
+                            t=setTimeout(function(){
+                                $('.report-12 > .report-body').removeClass('hidden').addClass('fadeInUpLeft animated');
+                            },1500)
+                            t=setTimeout(function(){
+                                $('.report-12 > .report-body> .report-body-left > .layer-right').addClass('rotate-right-animation');
+                            },2500)
+                            t=setTimeout(function(){
+                                $('.report-12 > .report-body> .report-body-left > .layer-right').addClass('hidden');
+                                $('.report-12 > .report-body> .report-body-left > .layer-left').addClass('rotate-left-animation');
+                            },3200);
+                            t=setTimeout(function(){
+                                $('.report-12 > .report-body > .report-body-right').removeClass('hidden').addClass('fadeInRightBig animated');
+                            },3500)
+                        break;
+
+                        case 12:
+                                $('.report-13>.report-content').removeClass('hidden').addClass('fadeInUpBig animated');
+                                t=setTimeout(function(){
+                                    $('.report-13>.title-1').removeClass('hidden').addClass('fadeInUpBig animated');
+                                },200);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-1').removeClass('hidden').addClass('fadeInUpBig animated');
+                                },500);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-1>.layer-right').addClass('rotate-right-animation');
+                                },1500);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-1>.layer-right').addClass('hidden');
+                                    $('.report-13>.pie-1>.layer-left').addClass('rotate-left-animation');
+                                },2200);
+                                t=setTimeout(function(){
+                                    $('.report-13>.title-2').removeClass('hidden').addClass('fadeInUpBig animated');
+                                },2400);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-2').removeClass('hidden').addClass('fadeInUpBig animated');
+                                },2600);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-2>.layer-right').addClass('rotate-right-animation');
+                                },3600);
+                                t=setTimeout(function(){
+                                    $('.report-13>.pie-2>.layer-right').addClass('hidden');
+                                    $('.report-13>.pie-2>.layer-left').addClass('rotate-left-animation');
+                                },4200);
+                                t=setTimeout(function(){
+                                    $('.report-13>.footer').removeClass('hidden').addClass('fadeInUpBig animated');
+                                },4600)
+                        break;
+
+                        case 13:
+                            t=setTimeout(function() {
+                                $.find('.report-14 .report-content').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rubberBand')
+                                })
+                            }, 100);
+                            t=setTimeout(function() {
+                                $.find('.report-14 .ul1').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rotateIn')
+                                })
+                            }, 1300);
+                            t=setTimeout(function() {
+                                $.find('.report-14 .ul2').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rotateInDownRight')
+                                })
+                            }, 2300);
+                            t=setTimeout(function() {
+                                $.find('.report-14 .ul3').forEach(function (i) {
+                                    var $i = $(i);
+                                    $i.removeClass('hidden').addClass('rotateInDownLeft')
+                                })
+                            }, 3300);
+                        break;
+
+                    }
+                },
+
+                //动态加载
+                onSlideNextEnd: function(swiper){
+                    var $cur = swiper.activeIndex+1   //active页
+                    console.log('当前是第'+$cur+'页')
+
+                    $node = $cur+1  //下一页
+                    var exist = $('div[class="report-0' + ($node) + '"]').length || $('div[class="report-' + ($node) + '"]').length;  //判断active的下一页是否存在要载入的节点
+
+                    if(exist == 0 && $node>=3) {                //如果不存在，则加载
+                        console.log('第'+($node) +'页页面加载完毕')
+                        swiper.appendSlide(getHtml())    //加载下一页
+                        if($node == 15) {
+                            var w=document.documentElement?document.documentElement.clientHeight:document.body.clientHeight;
+                            $('.reproter-15 img').attr('height', w + 'px')
+                            console.log(screen.availHeight)
+                        }
+                    }
+                    console.log('----------------------------------------------')
+                }
+            })
+    }) 
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象大作战</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="mobMain">
+    <div class="content index">
+        <img src="images/index.jpg" alt="" />
+        <a class="ruleBtn" href=""><img src="images/rule-btn.png" /></a>
+        <a class="enter" href=""><img src="images/enter.png" /><span id="num">5</span></a>
+    </div>
+    <div class="content play">
+        <img src="images/playing.jpg" alt="" />
+        <ul class="clearfix">
+            <li id="time">30.00</li>
+            <li id="score">0</li>
+        </ul>
+        <div id="play_item" class="play_item">
+            <div class="item_01"><span></span><img src="images/animal-list1.png" alt="" /></div>
+            <div class="item_02"><span></span><img src="images/animal-list1.png" alt="" /></div>
+            <div class="item_03"><span></span><img src="images/animal-list3.png" alt="" /></div>
+            <div class="item_04"><span></span><img src="images/animal-list4.png" alt="" /></div>
+        </div>
+    </div>
+</div>
+<div class="pop rule-pop">
+    <div class="cont">
+        <div class="bg">
+            <ul>
+                <li>1. 用户点击活动页面内的开始按钮进行游戏，在30s限时内对画面内出现的形象进行点赞，以此获得相应的加分和减分；</li>
+                <li>2. 用户完成游戏即可获得现金红包、投资红包等随机奖励;</li>
+                <li>3. 用户游戏积分将会进入排行榜，活动结束后，排名前50名的用户将会得到2017限量版宝象公仔以及2017全年投资券礼包的专属奖励；</li>
+                <li>4. 每个用户在活动期间每日可以参与10次游戏，除此之外，用户在12月1日—12月31日的现金投资额可以用1000：1的比例转化为新的游戏机会；（例：小象在12月1日—5日累计现金投资10000元，他在活动期间的游戏机会会在每日10次常规机会之外增加10次额外机会)；</li>
+                <li>5. 用户在活动期间每日首次完成游戏并分享到自己的朋友圈后，可以得到1000元体验金的奖励；</li>
+                <li>6. 如有任何疑问请联系客服电话：400-885-1100 ；</li>
+                <li>7. 在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+            </ul>
+            <a class="know" href="">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="pop success-pop js-success-pop">
+    <div class="cont">
+        <div class="bg">
+            <div class="ticket t_c">
+                <img src="images/packet-02.png" alt="" />
+                <p>投资红包</p>
+            </div>
+            <div class="btn clearfix">
+                <a class="js-share fl" href=""><img src="images/share-btn.png" alt="" /></a>
+                <a class="js-again fr" href=""><img src="images/again.png" alt="" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop fail-pop">
+    <div class="cont">
+        <div class="bg t_c">
+            <p>亲，您今天的次数用完了，明天再来吧！</p>
+            <a class="know" href="">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="share">
+    <img src="images/share.png" alt="" />
+    <a class="close" href="">知道了</a>
+</div>
+<div class="pop success-pop share-success">
+    <div class="cont">
+        <div class="bg">
+            <div class="ticket t_c">
+                <img src="images/bbin.png" alt="" />
+                <p>体验金</p>
+            </div>
+            <a class="know js-again" href=""><img src="images/again.png" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div class="loading"><i></i></div>
+
+<!-- 音乐 -->
+<audio id="car_audio" src="images/music.mp3" autoplay="autoplay" loop="loop"></audio>
+
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="js/des.js"></script>
+<script>
+    (function(){
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+        var playCont = $("#play_item"),
+                pWidth = playCont.width() / 4,
+                pHeight = playCont.height() / 4,
+                score = 0,  // 得分
+                spiritList = [],
+                resultArr = [];
+
+        // 默认显示第一页
+        showPart(0);
+        getPlayNum();
+
+        function getPlayNum(){
+            $.ajax({
+                url: "/act-year-end/game-count.html ",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201612/dayDay/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+                    
+                    if(json.count == 0){
+                        $(".enter").addClass("noNumber");
+                    }
+
+                    $(".enter").show().find("span").text(json.count);
+                }
+            });
+        }
+
+        var bol;
+
+        // 显示规则
+        $(".index a").on("click", function(e){
+            if($(this).hasClass("noNumber")){ // 没有次数
+                $(".fail-pop").show().find("p").html("您的游戏次数已用完");
+                
+                return false;
+            }
+            
+            if($(this).hasClass("ruleBtn")){ // 如果是直接点规则按钮标记一下
+                bol = true;
+            }
+
+            $(".rule-pop").show();
+
+            e.preventDefault();
+        });
+
+        $(".rule-pop .know").on("click", function(e){
+            var $this = $(this);
+            
+            // 根据进入方式的不同选择操作
+            if(bol){
+                bol = false; // 点击规则按钮进来就直接关闭
+            }else{
+                showPart(1);
+                
+                startGame($this);
+            }
+            
+            $(".rule-pop").hide();
+            
+            e.preventDefault();
+        });
+
+        // 开始游戏
+        function startGame($this){
+            // 开始游戏
+            if($this.hasClass("isPlaying")){
+                return false;
+            }
+
+            $this.addClass("isPlaying");
+            $("#score").html(0);
+
+            $.ajax({
+                url: "/act-year-end/index.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201612/dayDay/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+                        showPart(0);
+
+                        return false;
+                    }
+
+                    spiritList = json.animas;
+
+                    for(var i = 0; i < 10; i ++){
+                        spiritList.push({"logo": "images/animal-list1.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list3.png", "score": 0});
+                        spiritList.push({"logo": "images/animal-list4.png", "score": 0});
+                    }
+
+                    playStart();
+                }
+            });
+        }
+
+        // 分享
+        $(".js-share").on("click", function(e){
+            $(".js-success-pop").hide();
+            $(".share").show();
+
+            e.preventDefault();
+        });
+
+        // 重玩游戏
+        $(".js-again").on("click", function(e){
+            $(".success-pop").hide();
+            showPart(0);
+            getPlayNum();
+
+            e.preventDefault();
+        });
+
+        // 关闭分享层
+        $(".share .close").on("click", function(e){
+            $(".share").hide();
+            showPart(0);
+            getPlayNum();
+
+            e.preventDefault();
+        });
+
+        // 关闭错误提示层
+        $(".fail-pop .know").on("click", function(e){
+            $(".fail-pop").hide();
+
+            if($(".start").hasClass("isPlaying")){
+                $(".start").removeClass("isPlaying");
+            }
+
+            e.preventDefault();
+        });
+
+        // 显示页面
+        function showPart(index){
+            $(".mobMain .content").eq(index).show().siblings().hide();
+        }
+
+        function getRandom(num, add){
+            var add = add || 0;
+
+            return parseInt(Math.random() * num) + add;
+        }
+
+        function getRandomArr(num, count){
+            // 定义存放生成随机数的数组
+            var array = [];
+
+            // 循环N次生成随机数
+            for(var i = 0 ; i < num + 10; i++){
+                // 生成num + 10个随机数
+                generateRandom(count);
+            }
+
+            // 生成随机数的方法
+            function generateRandom(count){
+                var rand = parseInt(Math.random() * count);
+                for(var i = 0 ; i < array.length; i++){
+                    if(array[i] == rand){
+                        return false;
+                    }
+                }
+                array.push(rand);
+            }
+
+            // 返回num个随机数
+            return array.slice(0, num);
+        }
+
+        function getShowArr(arr){
+            var resultArr = [],len = arr.length,
+                    randArr = getRandomArr(4, len).sort(function(a, b){ return b - a; }); // 从大到小排序
+
+            for(var i = 0; i < 4; i ++){
+                resultArr.push(arr[randArr[i]]);
+                arr.splice(randArr[i], 1); // 从根数组中删除数据
+            }
+
+            // 获取每次显示的小精灵的列表
+            return resultArr;
+        }
+
+        // 把小精灵显示在页面上
+        function setPlayItem(){
+            var arr = getShowArr(spiritList), html = "";
+
+            for(var i = 0, len = arr.length; i < len; i ++){
+                html += '<div class="item item_0' + (i + 1) + '"><span class="score' + arr[i].score + '">' + arr[i].score + '</span><img src="' + arr[i].logo + '" alt="" /></div>';
+            }
+
+            playCont.html(html);
+
+            // 每个小精灵的随机位置
+            $(".item_01").css({right: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_02").css({left: getRandom(pWidth) + pWidth * 2, bottom: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_03").css({left: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+            $(".item_04").css({right: getRandom(pWidth) + pWidth * 2, top: getRandom(pHeight) + pHeight * 2}).animate({opacity: 1}, 100);
+
+            playCont.find(".item").on("touchstart", function(){
+                var $this = $(this);
+
+                if($this.hasClass("on")){
+                    return false;
+                }
+
+                $(this).addClass("on");
+
+                var s = +$this.find("span").text(), o = {"score": ""};
+
+                if(s){
+                    o.score = s;
+                    resultArr.push(o);
+                }
+
+                score = score + s;
+
+                $this.addClass("curr");
+                $("#score").text(score);
+            });
+        }
+
+        function playStart(){
+            setPlayItem();
+            countDown();
+
+            // 定时器
+            var timer = setInterval(function(){
+                if(spiritList.length > 0){
+                    setPlayItem();
+
+                    return false;
+                }
+                
+                $(".rule-pop .know").removeClass("isPlaying");
+                clearInterval(timer);
+            }, 1000);
+        }
+
+        // 倒计时
+        function countDown(){
+            var duration = 30 * 1000;
+            var endTime = new Date().getTime() + duration;
+
+            function interval(){
+                var n = (endTime - new Date().getTime()) / 1000;
+                if(n < 0) return;
+                document.getElementById("time").innerHTML = n.toFixed(2);
+                setTimeout(interval, 10);
+            }
+
+            interval();
+            setTimeout(function(){
+                playCont.html("");
+                document.getElementById("time").innerHTML = "0.00";
+                score = 0;
+                $(".loading").show();
+                sendData();
+            }, 30100);
+        }
+
+        // 传递游戏之后的数据
+        function sendData(){
+            var gameData = getResult();
+            
+            resultArr = [];
+
+            $.ajax({
+                url: "/act-year-end/game-complete.html",
+                data: {"gameData": gameData},
+                type: "post",
+                cache: false,
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201612/dayDay/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+
+                        return false;
+                    }
+
+                    $(".loading").hide();
+                    $(".js-success-pop").show().find("p span").html(json.ticketCount);
+                    $(".js-success-pop .ticket img").attr("src", json.giftLogo);
+                    $(".js-success-pop .ticket p").text(json.giftName);
+                }
+            });
+        }
+
+        // 获取加密后的数据
+        function getResult(){
+            //待加密字符串
+            var str = JSON.stringify(resultArr);
+
+            //第一个参数必须；第二个、第三个参数可选
+            var key1 = "bxjr_carnival1";
+            var key2 = "bxjr_carnival5";
+            var key3 = "bxjr_carnival9";
+
+            //加密方法
+            return strEnc(str,key1,key2,key3);
+        }
+		//只分享一次标识
+        var onceShareFlag=false;
+        // 分享成功显示
+        function shareSuccess(){
+            if($(".rule-pop .know").hasClass("isPlaying")){
+                return false;
+            }
+            if(onceShareFlag){
+				return
+			}
+            $(".js-success-pop").hide();
+            $(".share").hide();
+            onceShareFlag=true
+            $.ajax({
+                url: "/act-year-end/game-share.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201612/dayDay/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".fail-pop").show().find("p").html(json.message);
+                        showPart(0);
+                        
+                        return false;
+                    }
+                    
+                    $(".share-success").show();
+                }
+            });
+        }
+        
+        // 关闭分享成功提示层
+        $(".share-success .know").on("click", function(e){
+            $(".share-success").hide();
+            
+            e.preventDefault();
+        });
+
+        // 分享
+        var wechatShare=new WeChatShare(),
+            shareData ={
+                shareConfig:{
+                    title: '“点赞”新年宝象，红包加息拿不停',
+                    desc: "这年头，不拼钱多，只拼手快！给新年宝象点赞吧！",
+                    link: location.href,
+                    imgUrl: "http://100cfp.oss-cn-hangzhou.aliyuncs.com/upload/image/bc24ca7f-d0a1-4ba3-b91c-2e79353d1d62.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:copyUrl', // 复制链接
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){
+                    shareSuccess();
+                }
+        };
+        
+        wechatShare.init(shareData);
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

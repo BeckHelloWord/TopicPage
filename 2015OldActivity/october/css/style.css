@@ -1,0 +1,94 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+.bx_round5 {-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;}
+.bx_round3 {-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;-ms-border-radius:3px;border-radius:3px;}
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+.wrap{width: 100%; min-width: 1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+
+/* PC */
+.main{width:1920px;position:relative;left:50%;margin-left:-960px;}
+.page{position:relative;margin:0;padding:0;}
+.page h3{color:#ff5a00;font-size:40px;}
+.page .introduce{line-height:40px;}
+.page p{color:#ff9600;font-size:17px;}
+.page p span{color:#ff5a00;font-size:30px;}
+.page a{width:300px;height:70px;line-height:70px;margin:20px auto;background:#ff9600;color:#fff;font-size:30px;display:block;}
+.page i{color:#8c8c8c;font-size:14px;font-style:normal;line-height:1; }
+.page .contact ul{margin:80px 0 40px 26px;text-align:center;}
+.page .contact ul li{width:122px;margin-right:25px;float:left;color:#fff;font-size:18px;}
+.page .contact ul li span{font-size:30px;}
+.page2{height:848px;background:url(../images/october_02.jpg) no-repeat;}
+.page3{height:605px;background:url(../images/october_03.jpg) no-repeat;}
+.page4{height:949px;background:url(../images/october_04.jpg) no-repeat;}
+.page5{height:911px;background:url(../images/october_05.jpg) no-repeat;}
+.page6{height:894px;background:url(../images/october_06.jpg) no-repeat;}
+.page7{height:898px;background:url(../images/october_07.jpg) no-repeat;}
+.page2 .contact{width:650px;top:190px;left:860px;position:relative;text-align:center;}
+.page3 .contact{width:500px;top:80px;left:530px;position:relative;}
+.page3 .contact .introduce{margin-bottom:30px;}
+.page4 .contact{width:520px;top:190px;left:920px;position:relative;}
+.page4 .contact h3,.page4 .contact .introduce,.page4 .contact a{text-align:center;}
+.page4 .contact i{text-align:left;}
+.page5 .contact{width:980px;top:50px;left:480px;position:relative;}
+.page5 .contact h3,.page5 .contact h4{text-align:center;}
+.page5 .contact h4{font-size:30px;margin-top:20px;color:#ff9600;float:left;width:50%;}
+.page5 .contact .pageleft{width:430px;padding:0 30px;}
+.page5 .contact .pageright{width:386px;padding:0 50px;}
+.page5 .contact .introduce{height:140px;color:#ff9600;font-size:16px;margin-top:40px;line-height:30px;}
+.page5 .contact i{line-height:30px;}
+.page6 .contact{width:770px;top:110px;left:500px;position:relative;}
+.page7 .contact{width:650px;top:110px;left:825px;position:relative;}
+.page7 h3{font-size:36px;}
+.page7 .contact ul{margin:90px 0 40px 10px;}
+.page7 .contact ul li{width:121px;margin-right:38px;}
+.footer{height:250px;background:#ffc800;color:#fff;text-align:center;font-size:24px;}
+
+
+
+<!--h5-->
+.h5-wrap{width: 100%;position: relative; height: 100%; margin: 0 auto; background-color: #fff; overflow: hidden;}
+.h5-wrap img{max-width:100%;}
+.h5-main { position: relative; width: 100%; height: 100%; overflow: hidden;}
+.mobPage2,.mobPage4{position:relative;}
+.btn a{width:50%;display: block;position: absolute;left:25%;bottom:38%;color:#fff;padding:5% 0;text-align:center;font-size:14px;}
+.btn1 a{bottom:50%;}
+footer{text-align:center;width:100%;font-size:16px;background:#ffc800;color:#fff;padding:20% 0;}
+
+
+
+
+
+
+
+

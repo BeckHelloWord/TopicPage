@@ -1,0 +1,142 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+body{font: 12px/22px 'Microsoft YaHei','Heiti','SC';}
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;/*IE/7/6*/}
+.w100{width:80%;}
+
+.bx_main{}
+/*安全保障*/
+.guard{width:100%;min-width:1200px;overflow:hidden;color:#fff;}
+.guard .guard_banner{width:1920px;margin-left:-960px;text-align:center;position:relative;left:50%;}
+
+/*背景*/
+.guard .num01{height:1017px;background:url("../images/sageguard/safety_01.jpg")}
+.guard .num02{height:956px;background: url("../images/sageguard/safety_02.jpg")}
+.guard .num03{height:1106px;background: url("../images/sageguard/safety_03.jpg")}
+.guard .num04{height:948px;background: url("../images/sageguard/safety_04.jpg")}
+.guard .num05{height:743px;background: url("../images/sageguard/safety_05.jpg")}
+.guard .num06{height:751px;background:url("../images/sageguard/safety_06.jpg")}
+.guard .num07{height: 954px;background:url("../images/sageguard/safety_07.jpg")}
+.guard .num08{height: 956px;background: url("../images/sageguard/safety_08.jpg")}
+.guard .num09{height: 799px;background: url("../images/sageguard/safety_09.jpg")}
+.guard .num10{height: 905px;font-size:14px;background: url("../images/sageguard/safety_10.jpg")}
+.guard .num10 .bd{padding-top:58px;}
+.teamListBox{overflow: hidden;position: relative;width:249px;}
+
+.guard .num10 .member-resume{position:relative;width:248px;height:401px;padding:62px 40px 0;background:#5750a6;}
+.guard .num10 .member-resume .name p{font-size:20px;text-align: center;}
+.guard .num10 .member-resume ul li p{font-size:12px;line-height:2;}
+.guard .num10 .member-resume .decorate{position: absolute;top:0;left:12px;width:54px;height:52px;padding:7px;font-size:18px;color:#f4ac00;background: url("../images/sageguard/team-decorate.png") no-repeat center;z-index:9999;}
+.guard .num10 .member-resume .arrows{position: absolute;top:50%;width:11px;height:20px;margin-top:-10px;cursor: pointer;}
+.guard .num10 .member-resume .arrow_L{left:14px;background:url("../images/sageguard/arrows_L.png") no-repeat;}
+.guard .num10 .member-resume .arrow_R{right:14px;background:url("../images/sageguard/arrows_R.png") no-repeat;}
+.guard .num10 .member-resume .details{display:block;color:#fff;width:93px;height:30px;margin:20px auto;font-size:14px;line-height:30px;border:1px solid #fff;border-radius: 30px;}
+.guard .num10 .bd .teamtxt{padding:20px 0;}
+.guard .hd p{height:60px;line-height:60px;font-size:40px;}
+.guard .num01 .hd p{background:url("../images/sageguard/title_0.png");}
+.guard .num02 .hd p{;color:#fff;background:url("../images/sageguard/title_03.png");}
+.guard .num03 .hd p{font-size:36px;color:#6860c9;background:url("../images/sageguard/title_04.png");}
+.guard .num04 .hd p{color:#6860c9;font-size:36px;color:#fff;background:url("../images/sageguard/title_05.png");}
+.guard .num05 .hd p{background:url("../images/sageguard/title_06.png");}
+.guard .num05 .hd{padding-bottom:90px;}
+.guard .num05 .bd ul{padding:0 30px;}
+.guard .num05 .bd ul li{float:left;width:260px;text-align: center;}
+.guard .num05 .bd ul li.marginLR{margin:0 92px;}
+
+.guard .num06 .hd p{color:#fff;background:url("../images/sageguard/title_07.png");}
+.guard .num07 .hd p{background:url("../images/sageguard/title_08.png");}
+.guard .num08 .hd p{color:#fff;background: url("../images/sageguard/title_09.png");}
+.guard .num09 .hd p{background: url("../images/sageguard/title_10.png");}
+.guard .num10 .hd p{color:#fff;background: url("../images/sageguard/title_11.png");}
+.guard .num08 .bd ul{padding-top:165px;}
+.guard .num08 ul li img{margin-top:-86px;}
+.guard .num,
+.guard .num .hd p{background-position: center;background-repeat: no-repeat;}
+.bx_main .guard .num08 ul li p{padding-top:10px;text-align: justify;line-height: 1.8;}
+.bx_main .guard .num07 .hd{padding-bottom: 114px;}
+.bx_main .guard .num09 .hd{padding-bottom: 56px;}
+.bx_main .guard .num09 .bd{padding:0 40px;}
+.guard .num09 .bd dl dd{padding-bottom:36px;color:#333;}
+.guard_part .bd ul li .txtcenter{text-align: center};
+.guard .guard_banner{width:1920px;margin-left:-960px;text-align:center;position:relative;left:50%;}
+
+.guard_btn{width:36px;height:36px;line-height:36px;border:1px solid #6760c7;margin-left:-18px;text-align:center;font-size:18px;color:#6760c7;position:absolute;left:50%;bottom:40px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.btn_white{border:1px solid #fff;color:#fff;}
+.guard_btn:hover{color:#6760c7;opacity:.6;}
+.btn_white:hover{color:#fff;}
+.guard_btn_white{border-color:#fff;color:#fff;}
+.guard_btn_white:hover{color:#fff;}
+
+.guard_part{position:relative;}
+.guard_part .hd{line-height:1.2;padding:155px 0 0;text-align:center;color:#6860c7;}
+.guard_part .hd h3{font-size:80px;}
+/*.guard_part .hd p{height:60px;line-height:60px;font-size:40px;background:url(../images/sageguard/title_01.png) no-repeat center 25px;}*/
+.guard_part .bd{width:1024px;margin:0 auto;}
+.guard_part .bd .teamList{position:relative;}
+.guard_part .bd .teamList li{float:left;width:250px;line-height:1.6;text-align:center;color:#fff;background: #5750a6}
+.guard_part .bd .teamList li p{padding-top:0;}
+.num08 .bd ul li{float:left;width:250px;height:423px;padding:0 22px;line-height:1.6;text-align:center;color:#fff;background: #5750a6;}
+.num08 .bd ul li + li{margin-left:71px;}
+.guard_part .bd ul li h3{margin-top:20px;font-size:18px;font-weight:normal;}
+.guard_part .bd ul li p{padding-top:5px;text-align:left;font-size:14px;}
+.guard_part .bd dl dt{padding-bottom:5px;font-size:18px;color:#333;}
+.guard_part .bd dl dd{font-size:14px;}
+.guard_part_white .bd ul li h3,.guard_part_gray .bd ul li h3{color:#333;}
+.guard_part_white .bd ul li p,.guard_part_gray .bd ul li p{color:#999;}
+#guard_part_02 .img{padding-bottom:50px;border-bottom:1px dashed #dadada;margin-bottom:20px;}
+
+/*右侧浮动*/
+.guard .nav-right{position: fixed;top:40%;right:100px;z-index: 99999;visibility: hidden;opacity:0;transition:all .2s ease-in;transform:scale(0);}
+.guard .nav-right a{position:relative;display:block;width:33px;height:34px;margin-bottom:17px;background:url("../images/sageguard/nva_right_icon.png") no-repeat center center;}
+.guard .nav-right a:hover{background:url("../images/sageguard/nva_right_on.png") no-repeat center center;}
+.guard .nav-right a:after{position: absolute;content:"";bottom:-16px;left:50%;width:2px;height:15px;margin-left:-1px;background:#ffe05c;}
+.guard .nav-right a.current{background:url("../images/sageguard/nva_right_on.png") no-repeat center center;}
+.guard .nav-right a.nomargin:after{width:0;height:0;margin-bottom:0;}
+
+
+
+
+/*H5样式开始*/
+.bx-mob-main{box-sizing:border-box;font-size:14px;color:#fff;}
+.bx-mob-main img{width:100%;}
+.bx-mob-main .gap{padding:0 2.6%;}
+.bx-mob-main .purpletxt{color:#665fc5;}
+.bx-mob-main  .mob-safety{position: relative;}
+.bx-mob-main  .mob-safety .mob-safety-title{position: absolute;top:54px;left:50%;width:100%;text-align: center;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

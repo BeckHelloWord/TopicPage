@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="renderer" content="webkit">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-1.11.1.min.js"></script><script src="js/layer.js"></script>
+</head>
+
+<body>
+<div class="main">
+	<a href="javascript:;" class="close"></a>
+    <div class="investSuccess">
+    	<h3>恭喜您将获得1%奖金</h3>
+        <p>分享红包给好友</p><p>开启躺着都赚钱的新福利~</p>
+        <a href="#">发红包</a>
+    </div>    
+</div>
+<script>
+$(".close").click(function(){
+         var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+         parent.layer.close(index);
+    })
+</script>
+</body>
+</html>

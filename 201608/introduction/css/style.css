@@ -1,0 +1,123 @@
+/* PC*/
+*{margin:0; padding:0;}.top{height: 60px;}
+.mainmain{position:relative;top:0;left:50%;width:1920px;margin-left:-960px;background: #f3f5ff;}
+
+.mainmain .introduction {height: 300px;padding: 0 360px;}
+.mainmain .introduction img{left: 50%;transform: translateX(-50%);position: absolute;}
+.mainmain .introduction p{position: absolute;margin-top:115px;font-size: 20px; color: #808080;left: 50%;transform: translateX(-50%);text-align: justify;width: 1200px;}
+
+.mainmain .characteristic {background: #f3f5ff;padding: 0 360px;height: 300px;}
+.mainmain .characteristic>img{left: 50%;transform: translateX(-50%);position: absolute;}
+.mainmain .characteristic ul {margin-top: 100px;position: absolute;text-align: center;}
+.mainmain .characteristic ul li{width: 400px;float: left;}
+
+
+
+.mainmain .advantage{height: 450px; padding: 90px 360px; background: #f1f1f9; text-align: center;}
+.mainmain .advantage > img {left: 50%;transform: translateX(-50%);position: absolute;}
+.mainmain .advantage ul{list-style-type: none;margin-top: 120px;}
+.mainmain .advantage ul li{width: 170px; float: left;text-align: center; padding:40px 15px 0 15px;}
+.mainmain .advantage ul li+li {margin-left: 50px;}
+.advantage-li{display: block; border-top: 2px solid #ecb81c; background-color: white; height: 315px;}
+.mainmain .advantage ul li h1{font-size: 20px; margin-bottom: 15px;}
+.mainmain .advantage ul li p{font-size: 16px; color: #b0b0b0;text-align: justify;}
+.mainmain .advantage ul li span{font-size: 16px; color: #b0b0b0;text-align: center;}
+
+
+.mainmain .joinus{background-color: #f3f5ff; height: 320px; padding: 80px 360px;}
+.mainmain .joinus > img {left: 50%;transform: translateX(-50%);position: absolute;}
+.mainmain .joinus ul{list-style-type: none;margin-top: 100px;}
+.mainmain .joinus ul li{display: inline-block; margin: 0 100px; text-align: right; padding-top: 40px;}
+.mainmain .joinus ul li img{margin-bottom: 35px;}
+.mainmain .joinus ul li p{color: #999; font-size: 25px;}
+
+.pad {margin-top: 100px;}
+.mainmain .problem{background-color: #f1f1f9; height: 620px;padding: 50px 360px;}
+.mainmain .problem  img {left: 50%;transform: translateX(-50%);position: absolute;}
+.mainmain .problem .docu {margin-top: 100px;}
+.mainmain .problem .text{text-align:justify;position: relative;margin-bottom: 45px;}
+.mainmain .problem .text .black{font-size: 23px;font-weight: bold;}
+.mainmain .problem .text p{font-size: 16px; color: #999; text-indent: 25px;line-height: 35px;font-weight: bold;}
+
+.mainmain .bottom{text-align: center;}
+.mainmain .bottom .pic{background: url("../images/pc-bottom.jpg") no-repeat; height: 445px; padding-top: 100px;}
+.mainmain .bottom .pic h2{color: white; font-size: 30px;font-weight: bolder;}
+.mainmain .bottom .pic p{color: white; font-size: 20px; margin-bottom: 23px;}
+.mainmain .bottom .pic img{height: 253px;left: 50%;transform: translateX(-50%);position: absolute;}
+
+
+
+
+/* h5活动页面 */
+.mobActivity{background: #f3f5ff;}
+.mobActivity img{max-width:100%;}
+
+.mobActivity .mBanner .introduction{background: #f3f5ff; text-align: center; padding: 2% 5%;}
+.mobActivity .mBanner img{width: 100%;}
+.mobActivity .mBanner .introduction p{margin: 2% 0; color: #cccccc;}
+.mobActivity .mBanner .introduction span{font-size: 2rem; color: #ecb81c; margin: 0 5%; position: relative; top: 4px;}
+.mobActivity .mBanner .introduction p:last-child{text-align: left; color: #808080;font-size: 1.1rem}
+
+.mobActivity .characteristic{background:#f1f1f9;text-align: center;padding:2% 4% 4%;}
+.mobActivity .characteristic p{margin: 2% 0; color: #cccccc;}
+.mobActivity .characteristic span{font-size: 2rem; color: #ecb81c; margin: 0 5%; position: relative; top: 4px;}
+.mobActivity .characteristic img{margin: 4% 0;}
+
+.mobActivity .advantage{background: #f3f5ff;background-size: 100%; text-align: center; padding: 2% 0;}
+.mobActivity .advantage p{margin: 2% 0; color: #cccccc;}
+.mobActivity .advantage span{font-size: 2rem; color: #ecb81c; margin: 0 5%; position: relative; top: 4px;}
+.mobActivity .advantage li{vertical-align: top;}
+.mobActivity .advantage h1 {font-size: 1.3rem;font-weight: bold}
+.mobActivity .advantage .advantage_first{}
+.mobActivity .advantage .advantage_first ul{list-style-type: none;}
+.mobActivity .advantage .advantage_first ul li{width: 25.5%; display: inline-block; border-top: 2px solid #ecb81c; background-color: white; height: 260px; margin: 0 2.5%; padding: 5% 2%; text-align: center;}
+.mobActivity .advantage .advantage_first ul li p{color: #999; text-align: justify;}
+.mobActivity .advantage .advantage_second{}.mobActivity .advantage .advantage_second ul{list-style-type: none; padding: 5% 0;font-size: 0;}
+.mobActivity .advantage .advantage_second ul li{width: 25.5%; display: inline-block; border-top: 2px solid #ecb81c; background-color: white; height: 280px; margin: 2% 2.5%; padding: 5% 1%;font-size:1.2rem;}
+.mobActivity .advantage .advantage_second ul li p{text-align: justify; margin-top: 5%; color: #999;}
+
+.mobActivity .joinus{background:#f1f1f9; text-align: center; padding: 2% 5%;}
+.mobActivity .joinus p{margin: 2% 0; color: #ccc;}
+.mobActivity .joinus span{font-size: 2rem; color: #ecb81c; margin: 0 5%; position: relative; top: 4px;}
+.mobActivity .joinus img{margin: 4% 0;}
+
+.mobActivity .problem{background: #f3f5ff; margin-top: 4%; padding: 0 5%;}
+.mobActivity .problem>p{margin: 2% 0; color: #cccccc; text-align: center;}
+.mobActivity .problem span{font-size: 2rem; color: #ecb81c; margin: 0 5%; position: relative; top: 4px;}
+.mobActivity .problem .text{margin-bottom: 45px; font-size: 1.2rem; color: #5c5c5c; text-align: justify;}
+.mobActivity .problem .text .black{font-size: 1.6rem; color: black;font-weight: bold;}
+.mobActivity .problem .text ul{list-style-position: inside;}
+.mobActivity .problem .text ul li{position: relative; margin-bottom: 5%; text-align: justify; list-style-type: disc;}
+
+.mobActivity .bottom{background: url("../images/H5-bottom.jpg"); width: 100%; text-align: center; padding: 5% 0; color: white;}
+.mobActivity .bottom img{width:40%;margin-top: 5%;}
+.mobActivity .bottom p{color: white;}
+
+@media screen and (min-width: 414px) {
+    .mobActivity .advantage .advantage_first ul li {
+        height: 330px;
+    }
+
+    .mobActivity .advantage .advantage_second ul li {
+        height: 380px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .mobActivity .advantage .advantage_first ul li {
+        height: 350px;
+    }
+
+    .mobActivity .advantage .advantage_second ul li {
+        height: 580px;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .mobActivity .advantage .advantage_first ul li {
+        height: 330px;
+    }
+
+    .mobActivity .advantage .advantage_second ul li {
+        height: 330px;
+    }
+}

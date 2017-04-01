@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象发年中奖</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="mobMain">
+    <img src="images/bx-banner.jpg" alt=""/>
+    <img src="images/bx-content.jpg" alt=""/>
+    <div class="mPacket">
+        <ul class="clearfix">
+            <li>
+                <img src="images/bx-parket-1.png" alt=""/>
+                <p>30天及以上标的可用</p>
+                <a href="#" data-url="https://m.bxjr.com/topic/201607/yearEndBonus/"><img src="images/bx-btn.png" alt=""/></a>
+            </li>
+            <li>
+                <img src="images/bx-packet-2.png" alt=""/>
+                <p>60天及以上标的可用</p>
+                <a href="#" data-url="https://m.bxjr.com/topic/201607/yearEndBonus/"><img src="images/bx-btn.png" alt=""/></a>
+            </li>
+            <li>
+                <img src="images/bx-packet-3.png" alt=""/>
+                <p>90天及以上标的可用</p>
+                <a href="#" data-url="https://m.bxjr.com/topic/201607/yearEndBonus/"><img src="images/bx-btn.png" alt=""/></a>
+            </li>
+            <li>
+                <img src="images/bx-packet-4.png" alt=""/>
+                <p>90天及以上标的可用</p>
+                <a href="#" data-url="https://m.bxjr.com/topic/201607/yearEndBonus/"><img src="images/bx-btn.png" alt=""/></a>
+            </li>
+        </ul>
+    </div>
+    <img src="images/bx-content2.jpg" alt=""/>
+        <img src="images/bx-rule1_02.jpg" alt=""/>
+        <div class="mRule">
+            <ul>
+                <li><span>1</span><p>每种红包每个用户每天可领1张，且限领1张。红包有效期为1天，当日24点前有效。</p></li>
+                <li><span>2</span><p>活动期间内，用户可以重复领取。</p></li>
+                <li><span>3</span><p>每种红包每日随机不定时限量发放，先到先得，领完为止。红包数量当天清零，次日重新随机不定时限量发放。</p></li>
+                <li><span>4</span><p>红包详细使用规则，以“红包定义”</p></li>
+                <li><span>5</span><p>本活动最终解释权归宝象金融所有</p></li>
+            </ul>
+        </div>
+        <img src="images/bx-footer_04.jpg" alt=""/>
+</div>
+<!-- 弹出框 -->
+<div class="Popover">
+    <div class="Popover_img">
+        <img class="bg_code" src="images/bx-capacity.png" alt="" />
+        <h3>进入公众号，领投资红包！</h3>
+        <img class="qrcode" src="images/qrcode.png" alt="" />
+    </div>
+</div>
+
+<script>
+    if (/MicroMessenger/i.test(navigator.userAgent) == false) {
+        var url = "http://mp.weixin.qq.com/s?__biz=MzA4NjQ2ODU4OA==&mid=503309517&idx=1&sn=887a71596a1d71c00889309f744b797a&scene=18#wechat_redirect";
+
+        $(".mPacket ul li a").attr('href', url);
+    } else {
+        $(".mPacket ul li a").click(function () {
+            $(".Popover").show();
+        });
+        $(".Popover").on("click", function(){
+            $(this).hide();
+        });
+    }
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+</html>

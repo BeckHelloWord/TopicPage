@@ -1,0 +1,174 @@
+.pc {
+    min-width: 1200px;
+}
+
+.header {
+    background: url('../images/header_new.jpg') no-repeat center center;
+    background-size: 1920px 100%;
+    position: relative;
+    padding-top: 385px;
+    padding-bottom: 66px;
+}
+
+.header .code_wrap {
+    background: url('../images/gray_bg_new.png');
+    width: 236px;
+    margin: 0 auto;
+    padding: 26px 18px 26px 14px;
+}
+
+.header .code_wrap .caption {
+    text-align: center;
+    color: #ecb81c;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.body01 {
+    text-align: center;
+}
+
+.body01 .title {
+    padding-top: 18px;
+    padding-bottom: 20px;
+}
+
+.body01 .subtitle {
+    font-size: 24px;
+    line-height: 24px;
+    color: #777;
+    padding-bottom: 13px;
+}
+
+.body01 .triangle {
+    vertical-align: top;
+}
+
+.body01 .product {
+    padding-bottom: 40px;
+}
+
+.body02,
+.body03,
+.body04 {
+    width: 100%;
+}
+
+.body02 img,
+.body03 img,
+.body04 img {
+    width: 100%;
+}
+
+.mobile_header img {
+    width: 100%;
+}
+
+.mobile_body01 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mobile_body01 .triangle img {
+    width: 10%;
+    vertical-align: top;
+}
+
+.mobile_body01 .title {
+    padding-top: 15px;
+    padding-bottom: 6px;
+}
+
+.mobile_body01 .title img {
+    width: 34%;
+}
+
+.mobile_body01 .subtitle {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    color: #777;
+    padding-bottom: 14px;
+}
+
+.mobile_body01 .product img {
+    padding-top: 35px;
+    width: 100%;
+}
+
+.mobile_body02 {
+    background: #f2f2f2;
+    padding-top: 38px;
+    text-align: center;
+}
+
+.mobile_body02 h2 {
+    color: #222f8d;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: normal;
+}
+
+.mobile_body02 p {
+    padding-top: 10px;
+    color: #777777;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    padding-bottom: 36px;
+}
+
+.mobile_body02 .pic02 img {
+    width: 100%;
+}
+
+.mobile_body03 {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.mobile_body03 .pic03 img {
+    width: 100%;
+}
+
+.mobile_body03 h2 {
+    color: #222f8d;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: normal;
+}
+
+.mobile_body03 p {
+    padding-top: 10px;
+    color: #777777;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    padding-bottom: 32px;
+}
+
+.mobile_body04 {
+    background: #f2f2f2;
+    padding-top: 34px;
+    text-align: center;
+}
+
+.mobile_body04 .pic04 img {
+    width: 100%;
+}
+
+.mobile_body04 h2 {
+    color: #222f8d;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: normal;
+}
+
+.mobile_body04 p {
+    padding-top: 10px;
+    color: #777777;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    padding-bottom: 55px;
+}
+
+.mob_product {
+    width: 70%;
+}

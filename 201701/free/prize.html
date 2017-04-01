@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="岁末白拿">
+    <meta name="Description" content="岁末白拿">
+    <title>岁末白拿</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <script src="../../js/public.js"></script>
+    <script src="//www.bxjr.com/js/validform/js/validform_v5.3.2.js?v=${g.version()}"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+</head>
+<body>
+<div class="prizeMain">
+    <img src="images/bgTop.png" />
+    <div class="bgBottom prizeBottom">
+        <ul class="prizeItem">
+            <li class="prizeTitle">免费<span>白拿区</span></li>
+            <li class="prizeCont"></li>
+            <li class="prizeTitle">投资2288元<span>白拿区</span></li>
+            <li class="prizeCont"></li>
+            <li class="prizeTitle">投资5888元<span>白拿区</span></li>
+            <li class="prizeCont"></li>
+            <li class="prizeTitle">投资15888元<span>白拿区</span></li>
+            <li class="prizeCont"></li>
+        </ul>
+        <ul class="part05">
+            <li class="prizeTitle"><span>活动说明</span></li>
+            <ol>
+                <li>1、每组奖品仅可<span>白拿一份</span>；</li>
+                <li>2、奖品数量有限，先到先得，送完即止，所有奖品<span>以实物为准</span>；</li>
+                <li>3、已投金额仅包含在特定标（≧6个月）的现金投资额，<span>含多笔投资</span>；</li>
+                <li>4、若用户未通过活动页面进行投资，将不计入成功白拿奖品；</li>
+                <li>5、鲜花配送地区：江浙沪、湖北、重庆市全境，江西、福建、安徽、广东省部分地区。</li>
+            </ol>
+        </ul>
+    </div>
+    <div class="tips">活动最终解释权归宝象金融所有</div>
+    <div class="whetherLogin">
+        <div class="notLogin">
+            <a href="/login/index.html">登录</a>
+            <a href="/secure/register.html">注册</a>
+        </div>
+        <div class="hasLogin clearfix">
+            <p class="fl">当前账户:<span class="mobile">0</span>&nbsp;&nbsp;已投金额: <span class="leftAmount">0</span></p>
+            <div class="loginInvest">
+                <a href="" class="invest fr">去投资</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask share_mask">
+        <img src="images/share-mask.png" />
+    </div>
+    <!--提交收货地址-->
+    <div class="a_layerBox a_formBox">
+        <div class="a_layerBg"></div>
+        <form id="a_addressForm" action="" class="a_addressForm a_layerCon">
+            <div class="a_addressTitle">
+                <h2>成功白拿到</h2>
+                <p class="giftName"></p>
+            </div>
+            <div class="a_addressConfirm">请确认收获信息</div>
+            <div class="a_addressCont">
+                <label class="label"><i class="fl">收货人:</i><span class="a_userName fl"></span></label>
+                <label class="label"><i class="fl">联系电话:</i><span class="a_mobile fl"></span></label>
+                <label class="label a_address_txt">
+                    <i class="f_s fl">收货地址:</i>
+                    <input type="text" placeholder="为确保您能收到，请填写详细地址" class="a_address_val fl" maxlength="25"/>
+                    <p class="empty"></p>
+                </label>
+                <button type="button" id="submit" class="submit redBtn">提交<i></i></button>
+            </div>
+
+        </form>
+    </div>
+
+    <!--提交收货地址 白拿成功-->
+    <div class="a_layerBox a_formSuccessBox">
+    <div class="a_layerBg"></div>
+    <div class="a_layerCon">
+        <div class="a_addressTitle">
+            <p>白拿成功</p>
+            <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+        </div>
+        <div class="a_addressConfirm">奖品将于活动结束后7个工作日内寄出！</div>
+        <div class="a_addressCont">
+            <a href="javascript:void(0)" class="close redBtn">知道了</a>
+        </div>
+    </div>
+</div>
+
+    <!--白拿成功-->
+    <div class="a_layerBox a_successBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>白拿成功</p>
+                <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+            </div>
+            <div class="a_addressConfirm">恭喜您成功白拿到<span class="a_successBoxName"></span>！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+        </div>
+    </div>
+
+    <!--白拿失败 需要投资-->
+    <div class="a_layerBox a_failBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>白拿失败</p>
+                <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+            </div>
+            <p class="a_addressNeed">需要投资<span class="giftPrice">0</span>元才能带走它！</p>
+            <div class="a_addressConfirm">还差<span class="needAmount">0</span>呢</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn fl">知道了</a>
+                <div class="loginInvest"><a href="javascript:void(0)" class="invieteBtn yellowBtn fr">去投资</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--白拿失败 没有奖品-->
+    <div class="a_layerBox a_noPrizeBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>白拿失败</p>
+                <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+            </div>
+            <div class="a_addressConfirm">手慢了，这个奖品已经没有了！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+        </div>
+    </div>
+
+    <!--白拿失败 已经拿过-->
+    <div class="a_layerBox a_alreadyBox">
+        <div class="a_layerBg"></div>
+        <div class="a_layerCon">
+            <div class="a_addressTitle">
+                <p>白拿失败</p>
+                <a href="javascript:void(0)" class="layerClose close"><i class="before"></i><i class="after"></i></a>
+            </div>
+            <div class="a_addressConfirm">这组奖品您已经拿过了！</div>
+            <div class="a_addressCont">
+                <a href="javascript:void(0)" class="close redBtn">知道了</a>
+            </div>
+        </div>
+    </div>
+
+    <p class="tip">市场有风险，投资需谨慎</p>
+</div>
+<script>
+    (function(){
+        if (!/MicroMessenger/i.test(navigator.userAgent)) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+            return false;
+        } else {
+            $.when(
+                    $.getJSON('/act-year-end-free/free-index.html'),
+                    $.getJSON('/act-year-end-free/has-gifts.html')
+            ).then(function(a, b) {  // 或者也可以使用 ".done"
+                        //奖品数据
+                        var json = a[0],data = b[0];
+                    if(!json.type){
+                        layer.open({
+                            content:json.message ,
+                            skin: 'msg'
+                        });
+                        return false;
+                    }
+
+                        $('.prizeCont').eq(0).append(getHtml(json.list0));
+                        $('.prizeCont').eq(0).find(".otherBtn a").addClass("shareBtn").removeClass('inviteBtn');
+                        $('.prizeCont').eq(1).append(getHtml(json.list2588));
+                        $('.prizeCont').eq(2).append(getHtml(json.list5888));
+                        $('.prizeCont').eq(3).append(getHtml(json.list15888));
+
+                        if(!json.success){
+                            $(".notLogin").show();
+                            $(".hasLogin").hide();
+                            $('body').addClass("noLog");
+                            return false;
+                        }
+
+
+
+                        //去投资标的链接
+                        getInviteId();
+                        //立即白拿按钮
+                        exchangeNow();
+
+                        //已经登录账户信息
+                        $(".notLogin").hide();
+                        $(".hasLogin").show();
+                        $(".mobile").html(json.mobile);
+                        if (json.leftAmount < 0 ){
+                            json.leftAmount = 0
+                        }
+                        $(".leftAmount").html(json.leftAmount);
+                        //有无拿奖品
+                        var arr = data.giftIds;
+                        var tab= $('.prizeCont table');
+                        tab.each(function(){
+                            var giftId = $(this).attr("id");
+                            if (arr.toString().indexOf(giftId) > -1) {
+                                tabFun($(this));
+                            }
+                        })
+
+                    });
+            function tabFun(tab){
+                tab.find(".allBtn").html("已白拿");
+                tab.closest("li").find(".allBtn").addClass("on");
+                tab.closest("li").find(".allBtn").unbind('click').attr('href','javascript:void(0)');
+            }
+            //直接进入此页面
+            $.ajax({
+                url:"/act-year-end-free/has-noticed.html",
+                success:function(json){
+                    if(!json.type){
+                        layer.open({
+                            content:json.message ,
+                            skin: 'msg'
+                        });
+                        return false;
+                    }
+                    if(!json.hasOpened){
+                        location.href = "index.html";
+                        return;
+                    }
+                    if(!json.hasNoticed){
+                        location.href = "attention.html";
+                        return;
+                    }
+                }
+            })
+            //登录
+            function loginLayerFun(){
+                layer.open({
+                    content: '您还没有登录，马上去登录？'
+                    ,btn: ['确定', '取消']
+                    ,yes: function(index){
+                        location.href = "/login/index.html?redirect=/topic/201701/free/";
+                        layer.close(index);
+                    }
+                });
+            }
+            //去投资标的链接
+            function getInviteId(){
+                $.ajax({
+                    url:'/act-year-end-free/go-invest.html',
+                    success:function(json){
+
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+                        $(".loginInvest").html('<a href="/lc/invest/detail/'+ json.investId +'.html" class="invest fr appUrl yellowBtn" data-app-url="baoxiang://APPProjectInvesting?type=invest&investId='+ json.investId +'">去投资</a>');
+                        appUrl();
+                    }
+                })
+            }
+
+            //已投金额
+            function getAmount(){
+                $.ajax({
+                    url:'/act-year-end-free/get-amount.html',
+                    success:function(json){
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+                        if (json.leftAmount < 0 ){
+                            json.leftAmount = 0
+                        }
+                        $('.leftAmount').html(json.leftAmount);
+                    }
+                })
+            }
+            //份额
+            function getNum(id){
+                $.ajax({
+                    url:'/act-year-end-free/gift-count.html',
+                    type:"post",
+                    data:{giftId:id},
+                    success:function(json){
+                        if(!json.type){
+                            layer.open({
+                                content:json.message ,
+                                skin: 'msg'
+                            });
+                            return false;
+                        }
+                        $("#"+id).find('.leftNum').html(json.giftCount);
+                    }
+                })
+            }
+            //for循环数据列表
+            function getHtml(obj){
+                var html = '';
+                for (var i = 0,len = obj.length ; i < len; i++) {
+                    html += '<table cellpadding="0" cellspacing="0" id=' + obj[i].giftId + '>';
+                    html += '<tr>';
+                    html += '<td rowspan="2" class="tdImg"><div class="img"><img src=' + obj[i].logo + ' /></div></td>';
+                    html += '<td class="message">' + obj[i].name + '<span>（剩<i class="leftNum">' + obj[i].leftAmount + '</i>份）</span></td>';
+                    html += '</tr>';
+                    html += '<tr>';
+                    if (obj[i].leftAmount == 0) {
+                        html += '<td class="otherBtn"><a class="inviteBtn allBtn on" href="javascript:void(0)">立即白拿</a></td>';
+                    } else {
+                        html += '<td class="otherBtn"><a class="inviteBtn allBtn" href="">立即白拿</a></td>';
+                    }
+                    html += '</tr>';
+                    html += '</table>';
+                }
+               return html;
+            }
+            //兑换奖品按钮
+            function exchangeNow(){
+                //分享白拿按钮
+                $(".shareBtn").unbind("click");
+                $(".shareBtn").on('click',function(e){
+                    if($('body').hasClass("noLog")){
+                        loginLayerFun();
+                    }else{
+                        $(".share_mask").css({"height": "100%"});
+                        var id = $(this).parents('table').attr('id');
+                        $(".prizeCont").eq(0).attr("data-id",id);
+                    }
+                    e.preventDefault();
+                });
+                //投资白拿
+                $(".inviteBtn").unbind("click");
+                $(".inviteBtn").on("click",function(e){//跳转投资链接
+                    if($('body').hasClass("noLog")){
+                        loginLayerFun();
+                   }else{
+                        var id = $(this).parents('table').attr('id');
+                        allPrize(id);
+                   }
+                    e.preventDefault();
+                })
+            }
+            //兑换奖品
+            var flag = false;
+            function allPrize(id){
+                if(flag){
+                    return
+                }
+                flag = true;
+                $.ajax({
+                    url:'/act-year-end-free/exchange.html',
+                    type:'post',
+                    data:{giftId:id},
+                    success:function(json){
+                        flag = false;
+                        if(json.toFirstPage){
+                            location.href="index.html";
+                            return false;
+                        }
+                        //成功 实物
+                        if(json.status == 1 && json.isGood){
+                            var a_formBox = $(".a_formBox"),a_formSuccessBox = $(".a_formSuccessBox");
+                            $('.giftName').html(json.giftName);
+                            $('.a_userName').html(json.userName);
+                            $(".a_mobile").html(json.mobile);
+                            $(".a_address_val").val(json.address);
+                            a_formBox.show();
+                            getNum(id);
+                            sendAddress();
+                            tabFun($("#"+id));
+                            getAmount();
+                            return false;
+
+                        }
+                        //成功 虚拟
+                        if(json.status == 1 && !json.isGood){
+                            var a_successBox = $(".a_successBox");
+                            $('.a_successBoxName').html(json.giftName);
+                            a_successBox.show();
+                            getNum(id);
+                            tabFun($("#"+id));
+                            getAmount();
+                            return false;
+                        }
+                        //这组奖品您已经拿过了
+                        if(json.status == 2){
+                            var a_alreadyBox = $(".a_alreadyBox");
+                            a_alreadyBox.show();
+                            return false;
+                        }
+                        //手慢了，这个奖品已经没有了
+                        if(json.status == 3){
+                            var a_noPrizeBox = $(".a_noPrizeBox");
+                            a_noPrizeBox.show();
+                            return false;
+                        }
+                        //引导投资
+                        if(json.status == 4){
+                            var a_failBox = $(".a_failBox");
+                            $(".giftPrice").html(json.giftPrice);
+                            $(".needAmount").html(json.needAmount);
+                            a_failBox.show();
+                            $(".invieteBtn").on("click",function(e){
+                                getInviteId();
+                                e.preventDefault();
+                            });
+                            return false;
+                        }
+                    }
+                });
+                //弹框 关闭
+                $(".close").on("click",function(){
+                    $(".a_layerBox").hide();
+                });
+            }
+            //提交
+            function sendAddress(){
+                $(".submit").unbind("click");
+                $(".submit").on("click",function(){
+                    var txt = $(this).siblings(".a_address_txt").find("input").val();
+                    $.ajax({
+                        url:'/act-year-end-free/save-address.html',
+                        type:"post",
+                        data:{address:txt},
+                        success:function(json){
+                            if(!json.type){
+                                $(".empty").show().text(json.message);
+                                $(".a_address_val").bind("keyup input focus",function(){
+                                    if($(".a_address_val").val() != ""){
+                                        $(".empty").hide();
+                                    }
+                                });
+                                return false;
+                            }
+                            $(".a_formBox").hide();
+                            $(".a_formSuccessBox").show();
+                        }
+                    })
+                });
+            }
+            /*蒙层*/
+            $(".mask").on("click",function(){
+                $(this).css("height","0")
+            });
+            //分享
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "岁末白拿，这一次不玩虚的！",
+                    desc: "宝象盛宴，喜迎新年",
+                    link: 'http://t.cn/RM7WhKC',
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1612/aca4cc5b-915c-4cfa-97be-038fec717a25.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){
+                    $(".mask").css("height","0");
+                    exchangeNow();
+                    var id=$(".prizeCont").eq(0).attr("data-id");
+                    allPrize(id);
+                }
+            };
+            wechatShare.init(shareData);
+            //appURL
+            function appUrl(){
+                if (/baoxiang/.test(navigator.userAgent)) {
+                    $('a.appUrl').each(function () {
+                        var appUrl = $(this).data().appUrl;
+                        if (appUrl) {
+                            $(this).attr('href', appUrl);
+                        }
+                    })
+                }
+            }
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

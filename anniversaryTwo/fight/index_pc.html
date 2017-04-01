@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>宝象大作战</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+<div class="wrapper">
+    {activity}
+    <div id="mainmain">
+        <div class="main container">
+            <div class="wechat t_c">
+                <img src="images/qrcode.png" alt="" />
+                <p>扫码进入游戏</p>
+            </div>
+        </div>
+        <div class="footer t_c">市场有风险，投资需谨慎</div>
+    </div>
+</div>
+<!-- 音乐 -->
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+    
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/layer1.9/layer.js"></script>
+<script src="../../js/public.js"></script>
+<script src="js/index.js"></script>
+<script>
+    timerFinish();
+    
+    function timerFinish(){
+        $(".count").hide();
+        $(".start").show();
+    }
+</script>
+<!--统计代码-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

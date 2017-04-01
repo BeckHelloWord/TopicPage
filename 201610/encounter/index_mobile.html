@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>你与宝象，只需要一次“蟹”逅</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/jQuery.link.js"></script>
+</head>
+<body>
+    <div class="mob-main">
+        <img src="images/h5-encounter-banner.jpg" alt="">
+        <img src="images/h5-encounter-time.jpg" alt="">
+        <img src="images/h5-encounter-title.jpg" alt="">
+        <img src="images/h5-encounter-prize.jpg" alt="">
+        <img src="images/h5-encounter-order.jpg" alt="">
+
+        <div class="encounter-process encounter-order">
+            <p>主题鲜明、内容积极健康、</p><p>故事鲜活有趣，字数800以上。</p><p>宝象用户需突出与宝象结缘经过、</p><p>投资经历与感悟。</p>
+        </div>
+
+        <img src="images/h5-encounter-shouldknow.jpg" alt="">
+
+        <div class="encounter-process encounter-sendto">
+            <p>Word文档格式发送作品至<span class="encounter-mail">shequ@bxjr.com</span>邮箱进行投稿，或关注宝象金融微信服务号(bxjrccs)，留言沟通其他投稿方式。</p>
+            <p>用户的投稿被采纳后，需提供5张以上的生活照以及在线采访的支持。</p>
+        </div>
+
+        <img src="images/h5-encounter-rule.jpg" alt="">
+
+        <div class="encounter-process encounter-rule">
+            <div class="first">
+                <p>根据得分高低评选出前6名，活动结束后公布入围作品分数。</p>
+            </div>
+            <div class="second">
+                <p class="bold">总分：</p>
+                <p class="bold">作品内容 (60分满分) + 回帖支持数 (40分满分)</p>
+                <p>作品内容 = 故事的真实度、吸引力、逻辑等回帖支持数 = 作品刊登后10个工作日内的该作品的回贴数</p>
+            </div>
+            <div>
+                <p class="bold">附加分：</p>
+                <p class="bold">微信支持数(20分)</p>
+                <p>把自己的故事转发至朋友圈，邀请好友来点赞，满20个赞可获满分。需将微信支持数相关截图回复至宝象金融服务号(微信bxjrccs)</p>
+            </div>
+        </div>
+
+        <img src="images/h5-encounter-botborder.jpg" alt="">
+
+        <div class="encounter-bottom">
+            <a href="http://bbs.bxjr.com/thread-89018-1-1.html"><img src="images/h5-encounter-button.png" alt=""></a>
+        </div>
+        
+    </div>
+
+
+<script src="../../js/wechatLink-1.1.js"></script>
+<script>
+    (function(){
+        var wechatShare = new WeChatShare();//创建对象
+        // 分享
+        var shareData = {
+            shareConfig:{
+                title: "我用大闸蟹换你的故事",
+                desc: "有奖征文，你与宝象只差一次“蟹”逅。",
+                link: location.href,
+                imgUrl: "https://www.bxjr.com/topic/201610/encounter/images/h5-share.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            }
+        }
+        wechatShare.init(shareData);//创建分享 自定义菜单
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

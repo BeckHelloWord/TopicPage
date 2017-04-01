@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融</title>
+    <link rel="stylesheet" href="css/style.css?v=1.02" />
+</head>
+<body>
+<div class="banner">
+    <img src="images/billion_banner.jpg">
+</div>
+<div class="list_1 font8" >
+    <div class="title">活动规则</div>
+    <div class="list_name">
+        <span class="span_1">投资直投项目</span>
+        <span class="span_2">单笔满</span>
+        <span class="span_3">赠体验金</span>
+    </div>
+    <div class="list_odd">
+        <span class="span_1">60天</span>
+        <span class="span_2">2000元</span>
+        <span class="span_3 red">2000元</span>
+    </div>
+    <div class="list_even">
+        <span class="span_1">120天</span>
+        <span class="span_2">2000元</span>
+        <span class="span_3 red">4000元</span>
+    </div>
+    <div class="list_odd">
+        <span class="span_1">180天</span>
+        <span class="span_2">2000元</span>
+        <span class="span_3 red">8000元</span>
+    </div>
+    <div class="list_even">
+        <span class="span_1">240天</span>
+        <span class="span_2">2000元</span>
+        <span class="span_3 red">10000元</span>
+    </div>
+    <div class="list_tips">直投项目不含个人消费贷、债权转让以及月月丰。</div>
+    <div class="list_tips">以上体验金单笔可累计，多笔之间不累计。多投多送，上不封顶，零额不计。</div>
+    <div class="list_img">
+        <img src="images/billion_1.jpg">
+    </div>
+</div>
+<div class="linkImg">
+    <img src="images/billion_2.jpg">
+</div>
+<div class="list_1 margin_add font8" >
+    <div class="title">举个例子</div>
+    <div class="list_name">
+        <span class="span_1">投资直投项目</span>
+        <span class="span_2">赠体验金</span>
+        <span class="span_3">三天得奖励</span>
+    </div>
+    <div class="list_odd">
+        <span class="span_1">60天,1万元</span>
+        <span class="span_2">10000元</span>
+        <span class="span_3">10元</span>
+    </div>
+    <div class="list_even">
+        <span class="span_1">120天,1万元</span>
+        <span class="span_2">20000元</span>
+        <span class="span_3">20元</span>
+    </div>
+    <div class="list_odd">
+        <span class="span_1">180天,1万元</span>
+        <span class="span_2">40000元</span>
+        <span class="span_3">40元</span>
+    </div>
+    <div class="list_even">
+        <span class="span_1">240天,1万元</span>
+        <span class="span_2">50000元</span>
+        <span class="span_3">50元</span>
+    </div>
+</div>
+<div class="linkImg">
+    <img src="images/billion_2.jpg">
+</div>
+<div class="list_1 margin_add">
+    <div class="title">活动细则</div>
+    <div class="list_tips">仅限直投项目，不含个人消费贷、债权转让以及月月丰；活动时间以用户投标时间为准；</div>
+    <div class="list_tips">体验金单笔可累计，多笔之间不累计；</div>
+    <div class="list_tips">体验金有效期为3天，投资平台12%、3天的体验金标的；</div>
+    <div class="list_tips">体验金将于活动后的3个工作日内发放至用户账户内。</div>
+</div>
+<div class="linkImg lastImg">
+    <img src="images/billion_3.jpg">
+</div>
+<div class="fixBtn">
+    <a class="mob-btn appUrl" href="//m.bxjr.com/lc/invest/list.html" data-app-url="baoxiang://APPProjectList">
+        <img src="images/billion_4.png" class="btn">
+    </a>
+</div>
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../../js/jQuery.link.js"></script>
+<script src="../../js/wechatLink.js"></script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+<script>
+    var toInvest=function(){
+        location.href="/lc/invest/list.html"
+    }
+
+    var wechatShare=new WeChatShare();//创建对象
+    var shareData = {//创建数据
+        title: "狂欢3天庆祝破20亿 邀您乐赚5倍体验金",
+        desc: "我们的目标是，让您赚的盆！满！钵！满！",
+        link: location.href,
+        imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1609/e538bfae-145b-4240-8b21-5c5fa0d419e0.jpg"
+    };
+    var showList = {//创建显示菜单列表，默认全部关闭
+        menuList: [
+            'menuItem:share:appMessage',
+            'menuItem:share:qq',
+            'menuItem:readMode', // 阅读模式
+            'menuItem:share:timeline', // 分享到朋友圈
+            'menuItem:copyUrl' // 复制链接
+        ]
+    };
+    wechatShare.init(shareData,showList);//创建分享 自定义菜单
+
+</script>
+</body>
+</html>

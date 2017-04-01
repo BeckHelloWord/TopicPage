@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>开宝箱 - 宝象金融</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style_mobile.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/layer/mobile/layer.js"></script>
+    <script src="../../js/artTemplate.js"></script>
+</head>
+<body class="body-activity">
+
+<div class="main">
+    <img src="images/mobile/bg.png" alt="开宝箱" />
+    <div class="main-btn">
+        <a href="" class="js-play-btn">
+            <img src="images/mobile/chest-btn.png" alt="" />
+            <p>每次开启消耗50欢乐券</p>
+        </a>
+    </div>
+    <div class="list">
+        <p>奖励列表</p>
+        <ul class="js-chest-list">
+            <script id="chestList" type="text/template">
+                {{each data as value i}}
+                <li>
+                    <span>{{ i+1 }}</span>
+                    {{ value.name }}
+                </li>
+                {{/each}}
+            </script>
+        </ul>
+    </div>
+    <div class="mask hidden">
+        <div class="mask-content t_c">
+            <a class="close js-close" href="">关闭</a>
+            <div class="cont success hidden">
+                <div class="hd">恭喜您获得66元红包一份！</div>
+                <div class="bd"><img src="images/prize-01.png" alt="恭喜您获得66元红包一份！" /></div>
+                <div class="btn">
+                    <a class="js-close" href="">知道啦</a>
+                    <a class="js-close" href="">再玩一次</a>
+                </div>
+            </div>
+            <div class="cont fail hidden">
+                <div class="hd">很抱歉，欢乐券不足！</div>
+                <div class="bd"><img src="images/fail.png" /></div>
+                <div class="btn">
+                    <a href="../main/">玩些别的</a>
+                    <a class="app-url" data-app-url="baoxiang://APPProjectList" href="/lc/invest/list.html">去投资</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!-- 音乐 -->
+<audio id="car_audio" src="images/start.mp3" autoplay="autoplay" loop="loop"></audio>
+<audio id="car_audio_open" src="images/music.wav" ></audio>
+<script src="../../js/jQuery.link.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="../js/login.js"></script>
+<script src="js/chest.js"></script>
+<script>
+    (function(){
+        loginFun();
+
+        /*音乐*/
+        var audio = document.querySelector('#car_audio');
+
+        function playAudio() {
+            audio.play();
+        }
+
+        playAudio();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                playAudio();
+            });
+        }, false);
+
+    }());
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>
+

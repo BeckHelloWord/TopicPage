@@ -1,0 +1,22 @@
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.mobMain img{max-width:100%;}
+.banner{padding:14px;background: #2d449f; /* 一些不支持背景渐变的浏览器 */background:-moz-linear-gradient(top, #4b66cc,#2d449f);background: -webkit-gradient(linear, 0 0, 0 100%, from(#4b66cc), to(#2d449f));background:-o-linear-gradient(top,  #4b66cc, #2d449f);  }
+.banner h2{margin-top:2rem;text-align:center;color:#ecb81c;font-size:3rem;}
+.banner p{font-size:1.5rem;color:#fff;text-indent:2em;text-align:justify;}
+
+.rule{margin:1rem 0;padding:14px;}
+.rule h2 img{width:12%;margin-right:14px;vertical-align: bottom;font-weight: normal;}
+.rule h2 {font-size:2rem;color:#2d449f;font-weight:normal;}
+.rule p {margin:1rem 0;font-size:1.5rem;color:#3f3f3f;text-align: justify;}
+.rule p span{font-weight:bold;}
+.rule .investBtn {margin-top:1rem;width:100%;text-align:center;background-color:#ecb81c;font-size:1.6rem;color:#fff;padding:2%;display:inline-block;}
+
+.rule ul{margin:2rem 0;}
+.rule ul li{float:left;width:33.33%;padding:0 2%;text-align:center;}
+.rule ul li img{height:6rem;}
+.rule ul li a{width:100%;height:2.4rem;line-height:2.4rem;font-size:1.2rem;margin-top:0.6rem;background-color:#ecb81c;color:#ffffbd;display:block;padding-right:20%;position:relative;}
+.rule ul li a i{display:inline-block;width:0;height:0;border-top:.3rem solid transparent;border-bottom:.3rem solid transparent;border-left:.5rem solid #fff;}
+.rule ul li a span{position:absolute;top:-2px;right:5px;}
+
+

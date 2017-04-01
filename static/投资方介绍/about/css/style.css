@@ -1,0 +1,84 @@
+.bothAlign{text-align:justify !important;}
+.bx_main .bx_teams{margin-bottom:140px;}
+.bx_main .bx_teams li h3{margin-bottom:18px;}
+.bx_main .bx_teams li img{width:auto;max-width:100%;height:146px;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;}
+.bx_main .bx_teams.bx_slide01 li img{border:3px solid #d0d8f9;}
+.bx_main .bx_teams li{width:320px;padding:0 40px;border-right-color:#828fc2;}
+.bx_main .bx_teams li p{height:auto;font-size:13px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.bx_main .bx_teams li{width:320px;padding:0 40px;}
+.bx_main .mArtical{margin:0 146px;}
+.bx_main .bx_about_md h1 i{top:-11px;}
+.bx_main .bx_about_md h1 span{top:-68px;}
+.bx_main .bx_md_01 p{line-height:27px;}
+
+.bx_main .bx_md_01{height:742px;background:#2b4097 url(../images/about_banner.jpg) no-repeat top center;}
+.bx_main .bx_md_01 .conAll{padding-top:280px;}
+.bx_main .bx_md_01 .conAll .conTitle{margin-bottom:30px;text-align:center;color:#f90;font-size:32px;font-weight:normal;}
+.bx_main .bx_md_01 .conAll .conHtml{padding-top:0 !important;margin: 0 112px;font-size:15px;letter-spacing:1px;text-align:justify}
+.bx_main .bx_md_01 .conAll .conHtml .conHtmlSpan{display:block;height:20px;}
+
+.bx_main .bx_md_02{height:530px;}
+.bx_main .bx_md_02 h1 i{background: url(../images/crownImg01.png) no-repeat center 0;}
+.bx_main .bx_md_02 h4{margin-bottom:25px;font-size:20px;color:#666;font-weight:normal;text-align:center;}
+.bx_main .bx_md_02 .mArtical p{font-size:16px;color:#666;line-height:27px;letter-spacing:1px;text-align:justify;}
+.bx_main .bx_md_02 .mArtical span{font-size:14px;color:#999;}
+
+.bx_main .bx_md_03{background:#2b4097 url(../images/md_bg_03.png) no-repeat center bottom;}
+.bx_main .bx_md_03 h1{background:#fff;}
+.bx_main .bx_md_03 h1 i{background:url(../images/crownWhite.png) no-repeat center 0;}
+.bx_main .bx_md_03 .bx_teams li a{margin-top:40px;}
+.bx_main .bx_md_03 .bx_teams li h3,.bx_main .bx_md_03 .bx_teams li h2,.bx_main .bx_md_03 .bx_teams li p,.bx_main .bx_md_03 .bx_teams li a{color:#fff;}
+.bx_main .bx_md_03 h1 span{background:#2b4097;}
+
+.bx_main .bx_md_05{background:#5365aa url(../images/md_bg_05.jpg) no-repeat center bottom;;}
+.bx_main .bx_md_05 h1{background:#828fc1;}
+.bx_main .bx_md_05 h1 span{background:#5365aa;}
+.bx_main .bx_md_05 h1 i{background:url(../images/crownBlue.png) no-repeat center 0;}
+.bx_main .bx_md_05 .bx_slide02 li h2,.bx_main .bx_md_05 .bx_slide02 li h3,.bx_main .bx_md_05 .bx_slide02 li p,.bx_main .bx_md_05 .bx_slide02 li a{color:#fff;}
+
+.bx_main .bx_md_07{background:url(../images/aboutEvents.jpg) no-repeat center 0;}
+.bx_main .bx_md_07 .bxEvents{margin-top:60px;}
+.bx_main .bx_md_07 .bxEvents .hBottom{height:390px;}
+.bx_main .bx_md_07 .bxEvents .bxEventsImg{width:100%;height:210px;line-height:210px;text-align:center;}
+.bx_main .bx_md_07 .bxEvents .bxEventsImg img{max-width:300px;height:auto;}
+.bx_main .bx_md_07 ul li h3{font-size:20px;}
+
+.aboutH5{}
+.aboutH5 .bannerImg{background:#2b4097;padding-bottom:5rem;}
+.aboutH5 .conTitle{padding:0 5%;margin-top:-3rem;margin-bottom:1rem;color:#f90;font-weight:normal;font-size:1rem;}
+.aboutH5 .investment{padding:0 5% 5rem;}
+.aboutH5 h2 span.s1{color:#f90;}
+.aboutH5 .investment h4{margin:.6rem 0;color:#666;font-size:1.1rem;text-align:center;font-weight:normal;}
+.aboutH5 .investment .mArtical{margin-bottom:5%;text-align:left;font-size:12px;}
+.aboutH5 .investment .mArtical p{color:#666;}
+.aboutH5 .investment .mArtical span{color:#999;}
+.aboutH5 .executivesTeam{background:#2b4097;}
+.aboutH5 .executivesTeam .slideTeam{color:#fff;}
+.aboutH5 .JQ-slide-nav a{top:14%;}
+.aboutH5 .executivesTeam .aboutTeam li img{margin:6% auto;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;}
+.aboutH5 .executivesTeam .aboutTeamOne li img{border:1px solid #d0d8f9;}
+.aboutH5 .executivesTeam .aboutTeam li p{padding:0 10%;}
+.aboutH5 .famous{padding-bottom:5rem;}
+.aboutH5 .expert{background:#5365aa;}
+.aboutH5 .executivesTeam .expertTeam{width:100%;position:relative;overflow:hidden;}
+.aboutH5 .reports{padding-bottom:5rem;}
+.aboutH5 .reports ul{margin-top:1rem;}
+.aboutH5 .reports li{width:47%;margin-left:2%;}
+.aboutH5 .reports li a{display:block;width:100%;height:12rem;padding:0;text-align:center;font-size:12px;}
+.aboutH5 .reports li a img{max-width:100%;max-height:100%;margin-bottom:.4rem;}
+.aboutH5 .bxEvents{background:url(../images/event.jpg) no-repeat,url(../images/eventbg.jpg) repeat-y;background-size:100% 100%;}
+.aboutH5 .bxEvents .aboutEvent li{margin-top:1rem;}
+.aboutH5 .bxEvents .aboutEvent li img{margin-bottom:1rem;}
+.aboutH5 .bxEvents .aboutEvent li time span{margin-top:20px;}
+.aboutH5 .goto{position:absolute;margin-left:-19px;left:50%;bottom:34px;width:38px;height:38px;background-repeat:no-repeat;background-position:0 0; cursor:pointer;opacity:.4;filter: alpha(opacity=40);-webkit-transition:.6s;-moz-transition:.6s;-o-transition:.6s; transition:.6s;}
+.aboutH5 .goto.bx_next_white{background-image:url(../images/arr_down_white.png);}
+.aboutH5 .goto.bx_next_gray{background-image:url(../images/arr_down_gray.png);}
+.aboutH5 .goto:hover{opacity:1;filter: alpha(opacity=100);}
+
+
+
+
+
+
+
+

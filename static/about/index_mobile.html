@@ -1,0 +1,277 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <title>关于我们-宝象金融</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="layout" content="mcenter"/>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="/assets/mobile/css/normalize.css?v=20150731"/>
+    <link rel="stylesheet" href="/assets/mobile/css/common.css?v=20150731"/>
+    <script type="text/javascript">window.hxb={ctx:"/"};</script>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/validation/js/jquery.validationEngine-mobile.js">
+    </script><script type="text/javascript" src="/js/validation/js/jquery.validationEngine-zh_CN.js"></script>
+    <script type="text/javascript" src="/js/layer/layer/layer.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.inputFormat.js"></script>
+    <script type="text/javascript" src="/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/topic/js/jQuery.link.js?v=20150731"></script>
+    <script type="text/javascript" src="/assets/mobile/js/application.js?v=20150731"></script>
+    <style>
+        .change-size {margin-bottom: 20px;height: 98px;}
+    </style>
+</head>
+<body class="">
+<header>
+    <section class="titleTop top">
+        关于我们
+        <a id="back-btn" class="icon-caretLeft" href="/"></a>
+        <span class="fr nav ml20">
+            <a class="menulink" href="javascript:void(0);"></a>
+        </span>
+        <ul class="menu">
+            <li><a href="/"><span><img class="lazy" data-original="/assets/mobile/images/navicon1.png" src="/images/default.gif"/></span><p>首页</p></a></li>
+            <li><a href="/lc/invest/list.html"><span><img class="lazy" data-original="/assets/mobile/images/navicon2.png" src="/images/default.gif"/></span><p>投资</p></a></li>
+            <li><a href="/loan/index.html"><span><img class="lazy" data-original="/assets/mobile/images/navicon7.png" src="/images/default.gif"/></span><p>借款</p></a></li>
+            <li><a href="/sageguard/guide.html"><span><img class="lazy" data-original="/assets/mobile/images/navicon4.png" src="/images/default.gif"/></span><p>新手指引</p></a></li>
+            <li><a href="/center/invite/index"><span><img class="lazy" data-original="/assets/mobile/images/navicon5.png" src="/images/default.gif"/></span><p>邀请好友</p></a></li>
+            <li><a href="http://a.app.qq.com/o/simple.jsp?pkgname=cc.bxjr.bxapp"><span><img class="lazy" data-original="/assets/mobile/images/navicon6.png" src="/images/default.gif"/></span><p>免费APP</p></a></li>
+        </ul>
+    </section>
+</header>
+<script>
+    $(function(){
+        var menulink = $(".menulink"),
+                menu = $(".menu"),
+                doclose = false;
+
+        menulink.click(function(){
+            menulink.toggleClass("on");
+            menu.stop().slideToggle();
+            if(menulink.hasClass("on")){
+                doclose = true;
+            };
+
+            //点击导航菜单触发懒加载事件
+            $(window).resize();
+        });
+
+        window.onscroll = function(){
+            if(doclose){
+                menulink.removeClass("on");
+                menu.slideUp();
+            }
+        }
+        //初始化图片懒加载
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
+    });
+</script>
+<section class="m_titleBg"></section>
+    
+<article class="aboutH5">
+    <section class="bannerImg">
+        <img src="/assets/mobile/images/about/bannerImg03.jpg"/>
+        <div class="conHtml"></div>
+    </section>
+    <!--<section class="executivesTeam clearfix">-->
+        <!--<div class="executivesTitle"><img src="/assets/mobile/images/about/teamTitle.png"/></div>-->
+        <!---->
+        <!--<h2><span>管理团队</span></h2>-->
+        <!--<div class="slideTeam">-->
+            <!--<div class="clearfix aboutTeam">-->
+                <!--<ul class="JQ-slide-content">-->
+                    <!---->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1604/7b7ac7a1-ab68-4907-9baf-409829b7ce83.jpg" width="116" height="116">-->
+                                <!--<h3>侯彦卫</h3>-->
+                                <!--<h4>宝象金融创始人  董事长兼CEO</h4>-->
+                                <!--<p>​全国青年联合会委员、中国青年企业家协会理事、上海财经大学校董、全国十大杰出青年提名奖。2008年6月14日在中南海怀仁堂受到胡锦涛主席亲切接见。</p>-->
+                            <!--</li>-->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1604/c7ea3f47-e113-43cf-b7ed-078cc5339ecc.jpg" width="116" height="116">-->
+                                <!--<h3>张炜</h3>-->
+                                <!--<h4>宝象金融COO 联合创始人</h4>-->
+                                <!--<p>毕业于南京财经大学，微软全球系统工程师MCSE、微软全球数据库管理专家MCDBA、思科全球网络工程师CCNA。现任宝象金融集团COO、联合创始人，分管市场、运营、品牌、客服、互联网产品等工作。历任知名互联网电商公司高管职务。在互联网公司整体经营有着丰富的管理经验。</p>-->
+                            <!--</li>-->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/5901a4f9-44ce-4ed0-98a3-d594d8e13b79.jpg" width="116" height="116">-->
+                                <!--<h3>冯德东</h3>-->
+                                <!--<h4>宝象资产CEO 联合创始人</h4>-->
+                                <!--<p>烟台大学经济管理本科，天津大学计算机工程硕士研究生。有丰富的银行从业经验，历任支行行长、零售、公司业务、风控、科技、电子银行等部门总经理及银行高管；并且有丰富的互联网金融管理经验，为多家互联网金融公司提供过业务解决方案。现任宝象金融集团副总裁、资产管理总裁。</p>-->
+                            <!--</li>-->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/8d5fe301-bea3-4182-a939-b19aaf08da90.jpg" width="116" height="116">-->
+                                <!--<h3>张娟</h3>-->
+                                <!--<h4>宝象金融集团CFO 联合创始人</h4>-->
+                                <!--<p>上海交通大学上海高级金融学院EMBA，国际会计师，高级信用管理师。现任宝象金融集团CFO、联合创始人，分管财务工作。历任某美国上市公司财务经理、董事会秘书、总裁助理等职务，曾全程运作并参与某国内公司于2006年成功登陆美国纳斯达克市场，在财务管理、内部控制及资本运作方面有着十几年的经验。</p>-->
+                            <!--</li>-->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/d3106a3f-4589-4937-9f02-8e5486eda22d.jpg" width="116" height="116">-->
+                                <!--<h3>王义山</h3>-->
+                                <!--<h4>宝象金融集团CTO 联合创始人</h4>-->
+                                <!--<p>毕业于复旦大学，研究生学历，MBA，国家认证系统分析师，项目管理师(PMP)，微软认证开发专家。现任宝象金融副总裁，分管技术工作。拥有十多年世界100强IT工作经验，多年海外工作学习及跨国团队管理经验，深入理解大型信息系统的架构和建设，对移动开发、云计算有深入的研究和长期的实践，也是国内教育云、物流O2O平台、车联网平台的先行者，曾主持研发过日本排名第一的财务系统、中国第一款移动权限控制系统等多款产品。</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="images/yzp.jpg" width="116" height="116">-->
+                                <!--<h3>杨张兵</h3>-->
+                                <!--<h4>宝象金融联合创始人、董秘</h4>-->
+                                <!--<p>毕业于上海交通大学，上海市政府采购评审专家、中国企业联合会信息工作委员会委员、中国渔业物联网与大数据产业创新联盟副秘书长、上海商会常务理事、上海市信息化青年人才协会理事、上海市管理科学学会理事、上海市青年企业家协会会员、上海市长宁区青年联合会委员、福建省特色现代农业研究院副院长。曾担任国内知名农业信息化企业上农信副总经理，参与创建“菜管家”电子商务平台并曾担任常务副总经理。现任宝象金融联合创始人、董秘。</p>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/7d3d10aa-c516-49bc-9476-2329f5242204.jpg" width="116" height="116">-->
+                                <!--<h3>张若晨</h3>-->
+                                <!--<h4>宝象金融集团资产管理上海公司总经理</h4>-->
+                                <!--<p>北京理工大学信息管理与信息系统学士，管理科学与工程（金融工程方向）硕士，曾任职于交通银行、中国银行业监督管理委员会。7年授信审查经验，熟悉商业银行风险条线的整体运作机制、了解监管部门的工作方式方法，精通对公授信政策、程序，擅长授信业务风险防控。</p>-->
+                            <!--</li>-->
+                        <!---->
+                            <!--<li>-->
+                                <!--<img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/ee4880e9-f3e9-4ec4-84ac-142763a4f41e.jpg" width="116" height="116">-->
+                                <!--<h3>王春嬿</h3>-->
+                                <!--<h4>宝象金融集团风险控制部总监</h4>-->
+                                <!--<p>毕业于上海财经大学会计学专业。先后在两家国际百强银行工作十余年，精熟银行前中后台整条信贷线的操作；之后在某知名集团公司担任风控总监，积累了丰富的银行及民间金融风控管理经验，擅长风控模型的建立、风控政策和制度的建设和完善以及风控方案的设计。从传统金融向互联网金融转型的过程中，总结出了一套从风险识别、风险分析、风险评价和审核到通过风控方案的灵活运用和设计达到降低风险进而规避风险的卓有成效的实践方法。现任宝象集团资产管理风险控制总监，负责贷前、贷中、贷后的一切风控相关工作。</p>-->
+                            <!--</li>-->
+                        <!---->
+                    <!---->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="JQ-slide-nav">-->
+                <!--<a href="javascript:void(0);" class="prev">prev</a>-->
+                <!--<a href="javascript:void(0);" class="next">next</a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<img src="/assets/mobile/images/about/teamBottom.jpg"/>-->
+    <!--</section>-->
+    <section class="famous clearfix">
+        <img src="/assets/mobile/images/about/famous.jpg"/>
+        <p>国际著名的投资家和金融学教授，美国证券界最成功的实践家之一，具有传奇般的投资经历，与索罗斯共同创建量子基金，与巴菲特、索罗斯并称为全球三大金融巨头，被称为“华尔街神话”。</p><p>吉姆•罗杰斯具有投资人天生的敏锐和好奇，宝象金融的专业团队和创新理念吸引了这位华尔街投资大鳄的目光，注册成为宝象金融的用户并首投20万。</p>
+        <div class="famousBtn"><a class="appUrl" href="/lc/invest/list.html" data-app-url="baoxiang://APPProjectList">我要投资</a></div>
+    </section>
+    <section class="bxEvents">
+        <div class="executivesTitle"><img src="/assets/mobile/images/about/eventTitle.png"/></div>
+        <h2><span>宝象大事记</span></h2>
+        <div class="slideEvent">
+            <div class="clearfix aboutEvent">
+                <ul class="JQ-slide-content">
+                    <li>
+                        <img src="./images/about_eventpic07.png">
+                        <strong>互联网典范企业奖</strong>
+                        <p>在第五届财经峰会上，宝象金融斩获“2016互联网典范企业奖”</p>
+                        <time><span><i class="s">2016</i>年07月</span></time>
+                    </li>
+                    <li>
+                        <img src="./images/about_eventpic06.png">
+                        <strong>上海金融信息行业协会（SFIA）</strong>
+                        <p>宝象金融加入上海金融信息行业协会（SFIA）</p>
+                        <time><span><i class="s">2016</i>年07月</span></time>
+                    </li>
+                    <li>
+                        <img src="./images/about_eventpic05.png">
+                        <strong>最佳互联网金融商业模式创新奖</strong>
+                        <p>21世纪中国最佳商业模式高峰论坛暨2015中国最佳商业模式评选颁奖典礼。</p>
+                        <time><span><i class="s">2015</i>年12月</span></time>
+                    </li>
+                    <li>
+                        <img src="./images/about_eventpic04.png" class="change-size">
+                        <strong>上海互联网金融行业协会首批理事单位</strong>
+                        <p>宝象金融任上海互联网金融行业协会首批理事单位</p>
+                        <time><span><i class="s">2015</i>年08月</span></time>
+                    </li>
+                    <li>
+                        <img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/ea68dede-3002-452c-bdbb-5a53dca221cb.png">
+                        <strong>优秀互联网金融创新机构</strong>
+                        <p>中国资产管理年会暨“金贝奖”宝象金融荣膺“2015优秀互联网金融创新机构”。</p>
+                        <time><span><i class="s">2015</i>年08月</span></time>
+                    </li>
+                    <li>
+                        <img src="//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/8dbc4791-0ba0-4433-bc55-e911676801ff.png">
+                        <strong>最具成长价值奖</strong>
+                        <p>第四届中国财经峰会暨“光荣与梦想”盛典宝象金融斩获“2015最具成长价值奖”的殊荣。</p>
+                        <time><span><i class="s">2015</i>年07月</span></time>
+                    </li>
+                    <li>
+                        <img src="./images/about_eventpic01.png">
+                        <strong>中国互联网杰出贡献奖</strong>
+                        <p>中国互联网领袖峰会暨中国互联网企业竞争力高峰论坛宝象金融荣获“2015年度中国互联网杰出贡献奖”</p>
+                        <time><span><i class="s">2015</i>年07月</span></time>
+                    </li>
+                </ul>
+            </div>
+            <div class="JQ-slide-nav">
+                <a href="javascript:void(0);" class="prev">prev</a>
+                <a href="javascript:void(0);" class="next">next</a>
+            </div>
+        </div>
+        <div class="eventBtn"><a class="appUrl" href="/lc/invest/list.html" data-app-url="baoxiang://APPProjectList">我要投资</a></div>
+    </section>
+</article>
+<script type="text/javascript" src="/assets/mobile/js/jq.Slide.js"></script>
+<script type="text/javascript" src="/topic/js/jQuery.link.js"></script>
+<script type="text/javascript" src="/topic/js/wechatLink-1.1.js"></script>
+<script type="text/javascript" src="/topic/js/application.js"></script>
+<script>
+//    $(".aboutH5 .executivesTeam .aboutTeam li").css("width",$(window).width());
+    $(".aboutH5 .bxEvents .aboutEvent li").css("width",($(window).width()-92));
+//    $(".slideTeam").Slide({
+//        effect: "scroolLoop",
+//        autoPlay: false,
+//        speed: "normal",
+//        timer: 3000,
+//        steps: 1
+//    });
+    $(".slideEvent").Slide({
+        effect: "scroolLoop",
+        autoPlay: false,
+        speed: "normal",
+        timer: 3000,
+        steps: 1
+    });
+
+    if (/baoxiang/.test(navigator.userAgent)) {
+        $("header").hide();
+        $("body").css({"paddingTop":"0"})
+    }
+
+    toUpData();
+    function toUpData(){
+        $.post('/wd_api/about/getNoticeDetailByTypeOn', {api_key:0,bt:2,code:'company_profile',ct:1,typeCode:'ddd',sign:'ED59E8401BB9865FCB699C3B3625E620'}, function(json){
+            var conHtml = (json.data.descriptionDetail.split('\r\n')),len = conHtml.length,str = "";
+            for(var i = 0 ;i < len ; i++){
+                var conHtmlList = conHtml[i].length
+                if(conHtmlList != 1 && conHtmlList != 0){
+                    str += "<p>" + conHtml[i] + "</p>";
+                }
+            }
+            $(".conHtml").html(str);
+        },'json');
+    }
+</script>
+
+<span style="display: none;">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var s = document.getElementsByTagName("script")[0];
+        //百度统计
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+        s.parentNode.insertBefore(hm, s);
+        //友盟统计
+        var ym = document.createElement("script");
+        ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+        s.parentNode.insertBefore(ym, s);
+    })();
+    </script>
+</span>
+
+</body>
+</html>

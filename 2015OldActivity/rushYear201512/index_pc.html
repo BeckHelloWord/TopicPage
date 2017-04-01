@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-闯年关</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/logostyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var boxlist = $(".packet-tab-content>div");
+            $(".packet-tab-header li").on("mouseover", function() {
+                var num = $(this).index();
+                $(this).addClass("current").siblings().removeClass();
+                boxlist.eq(num).addClass("packet-content-current").siblings().removeClass();
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="top">
+            <div class="container clearfix">
+                <div class="logo fl">
+                    <a href="/" class="newyear_logo">宝象金融</a>
+                </div>
+                <div class="nav fr">
+                    <a href="/">宝象金融首页</a><span>|</span>
+                    <a href="/lc">理财</a><span>|</span>
+                    <!--<a href="/zc">商品众筹</a><span>|</span>-->
+                    <!--<a href="/gq">股权众筹</a><span>|</span>-->
+                    <a href="/borrow/index.html">借款</a><span>|</span>
+                    <a href="/about/index.html">关于宝象</a><span>|</span>
+                    <a href="/center/home/index">我的账户</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="banner">
+                <img src="./images/rushYear-banner.jpg" />
+            </div>
+            <div class="double-twelve">
+                <a class="bx-year-btn" href="/center/home/index">立即充值</a>
+                <div class="bx-rule pt50 bx-activity-rule">
+                    <p>1.充值金额以活动期间单笔统计为准，在活动后的3个工作日内进行红包发放。</p>
+                    <p>2.红包发放，单笔不累计，活动期间多笔充值可累计。</p>
+                    <p>3.红包需投30天以上标，使用规则以红包定义为准。</p>
+                </div>
+            </div>
+            <div class="bx-present">
+                <div class="bx-rule bx-activity-rule">
+                    <p>1.此红包为系统统一发放，当日最多领取1个，当月可多次领取。</p>
+                    <p>2.回款仅限直投项目，添添金和债权转让回款不参加活动。红包使用规则参见红包定义。</p>
+                </div>
+            </div>
+            <div class="bx-interest">
+                <div class="bx-rule bx-activity-rule">
+                    <p>1.标的加息与否请以标题为准。</p>
+                    <p>2.加息奖励在满标之后由系统自动发放。</p>
+                </div>
+            </div>
+            <div class="bx-packet">
+                <div class="bx-packet-tab">
+                    <ul class="packet-tab-header clearfix">
+                        <li class="current">新人注册即赠888</li>
+                        <li>排名有奖</li>
+                        <li>生日红包</li>
+                    </ul>
+                    <div class="packet-tab-content">
+                        <div class="packet-content-current">
+                            <img src="./images/register.gif" />
+                        </div>
+                        <div>
+                            <img src="./images/bx-ranking.gif" />
+                        </div>
+                        <div>
+                            <img src="./images/bx-birthday.gif" />
+                        </div>
+                    </div>
+                </div>
+                <p class="remind">理财有风险，投资需谨慎</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+
+
+    </div>
+</body>
+
+</html>

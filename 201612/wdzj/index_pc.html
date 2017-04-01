@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网贷之家活动</title>
+    <link rel="stylesheet" href="../../../topic/css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <!--导航区域 start-->
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <!--导航区域 end-->
+    <div class="pc_banner"><img src="images/pc_banner.jpg"/></div>
+    <div class="pc_invite"><img src="images/pc_invite.jpg"/></div>
+    <div class="pc_welfare"><a href="//www.bxjr.com/lc/channel/channel/share?mark=BX_WDZJSD_2016&taskId=PC"  target="_blank"><img src="images/pc_welfare.jpg" /></a></div>
+    <div class="pc_prize"><img src="images/pc_prize.jpg"/></div>
+    <div class="pc_protect">
+        <ul class="clearfix">
+            <li class="li1"><i></i><p>实缴资本1亿元</p><span>超过98%的p2p理财平台</span></li>
+            <li class="li2"><i></i><p>中国太平财险保驾护航</p><span>账户资金安全有保障</span></li>
+            <li class="li3"><i></i><p>沪上互金平台20强</p><span>上海互联网金融行业协会理事单位</span></li>
+            <li class="li4"><i></i><p>100%历史到期兑付</p><span>3层风控审查机制，银行级风控标准</span></li>
+            <li class="li5"><i></i><p>获信达金控亿元级<br />战略投资</p><span></span></li>
+        </ul>
+    </div>
+    <div class="pc_rule">
+        <img src="images/pc_ruleTop.png"  class="pc_ruleTop"/>
+        <ul>
+            <li>1、活动时间：2016年12月20日-2017年1月3日，本活动仅针对活动期间内通过此页面注册的新用户。</li>
+            <li>2、您可在【平台账户中的相应名称】中查看投资红包和新手体验金奖励。</li>
+            <li>3、请选择活动指定直投项目标的，债权转让不参加此活动。红包仅限投资直投项目时减免使用（不含债权转让、月月丰等）。</li>
+            <li>4、新手体验金作为用户的虚拟资金，只能投资新手体验项目（平台可更换），使用后可产生利息收益。新手体验项目（平台可更换）到期后，所得收益归用户所有，可提现或用作投资。</li>
+            <li>5、双旦加息环节仅限新注册用户抢购，每位用户仅有一次抢购机会。</li>
+            <li>6、每位用户仅限参加一次，刷奖、冒用他人身份、银行卡等信息者一经核实，取消活动资格，所得奖励不予承兑。</li>
+            <li>7、所有实物奖品在该活动结束后5个工作日内统一配送。</li>
+            <li>8、理财产品由宝象金融提供，网贷之家不对用户的理财行为承担任何法律责任，活动解释权归宝象金融所有，如有疑问，请咨询客服热线：平台客服电话400-885-1100。</li>
+        </ul>
+        <img src="images/pc_ruleEnd.png"  class="pc_ruleEnd"/>
+    </div>
+    <a href="http://www.wdzj.com/zhuanti/pc2016christmas/?source=bxjr" class="fixed" target="_blank"></a>
+</div>
+
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script>
+var  url = location.href;
+if(url.indexOf("m.") != -1){
+    location.href = url.replace("m.", "www.")
+}
+    $.ajax({
+        url:'//www.bxjr.com/secure/get-login-info.html',
+        cache:false,
+        success:function(json){
+            if(json.isLogin){
+                $(".pc_welfare").html('<a href="//www.bxjr.com/lc/newbie/list.html"  target="_blank"><img src="images/pc_welfare.jpg" /></a>')
+            }
+        }
+    })
+</script>
+<!--统计代码-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.hidden{display:none;}
+.container{width:1002px;}
+.mt10{margin-top:10px;}
+
+.banner{position:relative;left:50%;width:1920px;margin-left:-960px;text-align:center;}
+
+.part{padding:74px 0;background:url(../images/part-bg-01.jpg) no-repeat center top;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.part .hd h3{display:inline-block;width:322px;height:56px;line-height:56px;font-size:30px;font-weight:normal;color:#f3ddff;background-color:#7618ad;}
+.part .hd h3 span{padding-left:56px;background:url(../images/title-01.png) no-repeat left 8px;}
+.part .bd{line-height:2;padding:76px 24px 0;font-size:16px;color:#f3ddff;}
+.part .bd p span{color:#facb00;}
+
+.introduce{position:relative;height:744px;padding-top:36px;}
+.introduce .hd h3 span{background-position-x:8px;}
+.introduce .btn{position:absolute;left:0;bottom:64px;width:100%;}
+.introduce .btn a{display:inline-block;width:298px;height:82px;line-height:68px;font-size:30px;color:#c14cff;background:url(../images/btn.png) no-repeat center center;}
+
+.award{height:638px;background-image:url(../images/part-bg-02.jpg);}
+.award .hd h3 span{background-image:url(../images/title-02.png);}
+.award dl dt{float:left;width:120px;padding-top:80px;background:url(../images/award-01.png) no-repeat center top;}
+.award dl dd{position:relative;margin:40px 0 0 120px;}
+.award dl dd .schedule{position:absolute;left:0;width:100%;height:9px;border:1px solid #c78930;background-color:#facb00;border-radius:5px;-webkit-border-radius:5px;box-sizing:border-box;-webkit-box-sizing:border-box;box-shadow:1px 1px 5px #60058f,-1px -1px 5px #60058f;}
+.award dl dd .schedule-hover{position:absolute;left:0;top:0;height:100%;background:url(../images/award-03.png) repeat-x left center;border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;}
+.award dl dd .per{display:inline-block;position:absolute;left:0;bottom:280%;min-width:32px;height:20px;line-height:20px;padding:0 10px;margin-left:-50px;font-size:14px;color:#9327d3;background-color:#faab00;border-radius:5px;-webkit-border-radius:5px;}
+.award dl dd .per:before{content:"";position:absolute;left:50%;top:100%;margin-left:-3px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid #faab00;}
+.award dl dd .per-01{left:9%;}
+.award dl dd .per-02{left:23%;}
+.award dl dd .per-03{left:100%;}
+.award dl + dl{padding-top:30px;}
+.award dl + dl dt{padding-top:40px;background-image:url(../images/award-02.png);}
+.award dl + dl dd{margin-top:20px;}
+.award dl + dl dd .per{min-width:48px;margin-left:-68px;}
+
+.rule{height:649px;background-image:url(../images/part-bg-03.jpg);}
+.rule .hd h3 span{background-image:url(../images/title-03.png);}

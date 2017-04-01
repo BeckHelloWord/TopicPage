@@ -1,0 +1,292 @@
+.tiny{
+    min-width: 1200px;
+}
+.tiny .header{
+    background: url('../images/header_pc.jpg') no-repeat center center;
+    background-size: 1920px 100%;
+    height: 1028px;
+    position: relative;
+}
+
+.tiny .header .photobox{
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    margin-left: -600px;
+    width: 1200px;
+    padding-left: 64px;
+}
+
+.tiny .header .photobox .photo{
+    width: 500px;
+}
+.tiny .header .photobox .description{
+    width: 630px;
+    font-size: 22px;
+    line-height: 22px;
+}
+.tiny .header .photobox .description p{
+    padding-bottom: 16px;
+}
+.tiny .banner,.tiny .pineapple{
+    background-size: 1920px 100%;
+    position: relative;
+    text-align: center;
+}
+.tiny .wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.tiny .banner02{
+    background: #1dd6c4 url('../images/banner02_pc.jpg') no-repeat center center;
+}
+.tiny .banner02 h2{
+    padding: 60px 0 0 0;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.tiny .banner02 p{
+    font-size:24px;
+    line-height: 48px;
+    text-align: left;
+}
+
+.tiny .banner02 p span{
+    font-weight: bold;
+}
+
+.tiny .banner02 .ticket-group{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.tiny .banner02 .ticket-group .ticket{
+    width: 480px;
+    padding: 56px 56px 56px 46px;    
+    background: #e8eaea;
+    position: relative;
+}
+
+.tiny .banner02 .ticket-group .ticket .gray{
+    position: absolute;
+    left: 536px;
+    top: 212px;
+    width: 96px;
+    height: 96px;
+    z-index: 100;
+    background: url('../images/circus.png') no-repeat;
+}
+
+
+.tiny .banner02 .ticket-group .ticket .pic{
+    background: url('../images/tickets_pc.png') no-repeat;
+    background-size:100% 100%;
+    height: 180px;
+}
+
+.tiny .banner02 .ticket-group .ticket .pic p{
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;    
+}
+.tiny .banner02 .ticket-group .ticket .pic .num{
+    padding-top: 64px;
+    padding-left: 46px;
+}
+.tiny .banner02 .ticket-group .ticket .pic .description{
+    padding-left: 22px;
+    padding-top: 66px;
+}
+.tiny .banner02 .ticket-group .ticket .pic p .symbol{
+    font-size: 48px;
+}
+.tiny .banner02 .ticket-group .ticket .pic p .big{
+    font-size: 107px;
+}
+
+.tiny .banner02 .ticket-group .money{
+    width: 486px;
+    background: #f8f8f8;
+    padding: 76px 32px 28px 100px;
+    height: 188px;
+}
+.tiny .banner02 .ticket-group .money p{
+    padding-bottom: 20px;
+    font-size: 30px;
+    line-height: 30px;
+}
+.tiny .banner02 .ticket-group .money .invest{
+    font-size: 22px;
+    color: #444444;
+    line-height: 22px;
+    padding-top: 56px;
+} 
+.tiny .banner02 .ticket-group .money .invest span{
+    font-size: 68px;
+    color: #f5533b;
+}
+
+.tiny .banner02 .ticket-group .ticket .juice{
+    margin-top: 36px;
+    background: url('../images/fruitJuce_pc.jpg') no-repeat;
+    background-size:100% 100%;
+    height: 191px;
+}
+.tiny .banner02 .ticket-group .money.double{
+    height: 415px;
+}
+
+.tiny .banner02 .ticket-group .money.double .double-margin{
+    margin-top: 80px;
+}
+
+.tiny .banner02 .ticket-group .money.double .label{
+    text-align: left;
+}
+.tiny .banner02 .ticket-group .money.double .label span{
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    background: #ccf1ee;
+    border-radius: 20px;
+    padding: 9px 24px;
+    color: #16bcac;
+}
+.tiny .banner02 .ticket-group .money.double .label span.item01{
+    padding: 9px 38px;
+    margin-right: 20px;
+}
+
+.tiny .banner02 p.rule{
+  text-align: left;
+    font-weight: normal;
+    font-size: 22px;
+    color: #066e64;
+    line-height: 38px;
+}
+
+.tiny .banner02 p.title{
+    margin-top: 16px;
+}
+
+.tiny .pineapple{
+    background: url('../images/pineapple_pc.jpg') no-repeat center center;
+    height: 498px;
+}
+.tiny .orange{
+    background: url('../images/orange_pc.jpg') no-repeat center center;
+    height: 498px;
+}
+
+.tiny .orange .title{
+    color:#0c877b;
+    font-size: 30px;
+    padding-top: 120px;
+    padding-bottom: 28px;
+}
+
+.tiny .orange .paragraph{
+    width:  512px;
+    color: #666666;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.tiny .girl{
+    background: url('../images/girl_pc.jpg') no-repeat center center;
+    height: 716px;
+}
+
+.tiny .girl .star{
+    padding-top: 50px;
+    width: 800px;
+}
+
+.tiny .girl .star .introduce{
+    color: #0c877b;
+    font-size: 30px;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.tiny .girl .star .pic{
+    height: 264px;
+    width: 198px;
+    margin-right: 46px;
+    position: relative;
+    margin-bottom: 38px;
+    background-size: 100% 100%;
+}
+
+.tiny .girl .star .pic .layer{
+    position: absolute;
+    left:0;
+    bottom: 4px;
+    z-index: 100;
+    background: #000000;
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+
+.tiny .girl .star .pic01{
+    background: url('../images/pic01.png') no-repeat center center;
+}
+.tiny .girl .star .pic02{
+    background: url('../images/pic02.png') no-repeat center center;
+}
+.tiny .girl .star .pic03{
+    background: url('../images/pic03.png') no-repeat center center;
+}
+.tiny .girl .star .pic04{
+    background: url('../images/pic04.png') no-repeat center center;
+}
+.tiny .girl .star .pic05{
+    background: url('../images/pic05.png') no-repeat center center;
+}
+.tiny .girl .star .pic06{
+    background: url('../images/pic06.png') no-repeat center center;
+}
+
+
+
+.tiny .girl .star .pic .layer p{
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 20px 0 10px 8px;
+    width: 190px;
+}
+
+.tiny .footer{
+    padding-top: 55px;
+    width: 100%;
+    font-size: 14px;
+    color:#dedede;
+    text-align: center;
+    padding-bottom: 34px;
+}
+
+.btn-border {
+    margin-top : 100px;
+}
+.btn-border .btn {
+    display: inline-block;
+    width: 350px;
+    height: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 70px;
+    color: #b86a0e;
+    border: 10px solid #0db7a6;
+    border-radius: 25px;
+    background: #fce31e;
+}
+.tip {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 20px;
+}

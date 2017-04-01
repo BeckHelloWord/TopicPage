@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>千兆流量，千万红包任性送</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/topic/js/layer.js"></script>
+</head>
+<body class="main">
+<div>
+    <img src="./images/end.jpg">
+</div>
+<div class="mask end-mask"><img src="./images/endLayer.png"></div>
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script>
+    (function(){
+        /*获取后缀*/
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+
+        var dataJson = {
+            noticePage : "/topic/201611/doubleTwelve/attention.html",
+            mobilePage : "/topic/201611/doubleTwelve/register.html",
+            voucherPage : "/topic/201611/doubleTwelve/prize.html"
+        };
+
+        if (getQueryString("oneLogin")) {
+            dataJson["oneLogin"] = true
+        }
+
+        $.ajax({
+            url: "/act-double-twelve/go-auth-link.html",
+            data: dataJson,
+            success: function (json) {
+                if (!json.type) {
+                    if (json.message == "活动已结束" || json.message == "活动不存在" ){
+                        isEnd();
+                        return false;
+                    }
+                    layer.open({
+                        content: json.message
+                    });
+                    return false;
+                }
+                location.href = json.url;
+            }
+        });
+
+        /*活动结束图片*/
+        function isEnd() {
+            $(".mask").css({"height": "100%"});
+            return false;
+        }
+        $(".mask").click(function () {
+            $(this).css({height: "0"});
+        });
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

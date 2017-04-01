@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-象年货节</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/logostyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var timer;
+            var beat=function(){
+                $(".phone12").animate({bottom:"-40px"},600,function(){
+                    $(this).animate({bottom:"-45px"},600);
+                });
+                $(".phone13").animate({bottom:"-30px"},600,function(){
+                    $(this).animate({bottom:"-45px"},600);
+                });
+                $(".phone14").stop().animate({bottom:"-40px"},600,function(){
+                    $(this).stop().animate({bottom:"-45px"},600);
+                });
+            };
+            clearInterval(timer);
+            timer=setInterval(beat,1200);
+            $(".bx-yeargoods-head").on("mouseenter",function(event){
+                event.stopPropagation();
+                $(".phone1").animate({left:"-20px"},500);
+                $(".phone2").animate({left:"20px"},500);
+                $(".phone3").animate({top:"35px"},500);
+                $(".phone4").animate({top:"30px"},500);
+                $(".phone5").animate({top:"70px"},500);
+                $(".phone6").animate({top:"137px"},500);
+            });
+            $(".bx-yeargoods-head").on("mouseleave",function(event){
+                event.stopPropagation();
+                $(".phone1").animate({left:"-13px"},500);
+                $(".phone2").animate({left:"33px"},500);
+                $(".phone3").animate({top:"49px"},500);
+                $(".phone4").animate({top:"38px"},500);
+                $(".phone5").animate({top:"77px"},500);
+                $(".phone6").animate({top:"145px"},500);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="top">
+            <div class="container clearfix">
+                <div class="logo fl">
+                    <a href="/" class="newyear_logo">宝象金融</a>
+                </div>
+                <div class="nav fr">
+                    <a href="/">宝象金融首页</a><span>|</span>
+                    <a href="/lc">理财</a><span>|</span>
+                    <!--<a href="/zc">商品众筹</a><span>|</span>-->
+                    <!--<a href="/gq">股权众筹</a><span>|</span>-->
+                    <a href="/borrow/index.html">借款</a><span>|</span>
+                    <a href="/about/index.html">关于宝象</a><span>|</span>
+                    <a href="/center/home/index">我的账户</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="bx-yeargoods-head">
+
+                <div class="bx-yeargoods-head-img">
+                    <div class="bx-yeargoods-head-phone">
+                        <div class="phone1"></div>
+                        <div class="phone2"></div>
+                        <div class="phone3"></div>
+                        <div class="phone4"></div>
+                        <div class="phone5"></div>
+                        <div class="phone6"></div>
+                        <div class="phone7"></div>
+                        <div class="phone8"></div>
+                        <div class="phone9"></div>
+                        <div class="phone10"></div>
+                        <div class="left-fly"></div>
+                        <div class="right-fly"></div>
+                    </div>
+                    <div class="bx-yeargoods-head-fu">
+                        <div class="phone11"></div>
+                        <div class="phone12"></div>
+                        <div class="phone13"></div>
+                        <div class="phone14"></div>
+                        <div class="phone15"></div>
+                        <div class="gold"></div>
+                    </div>
+                </div>
+                <div class="bx-yeargoods-tracery"></div>
+            </div>
+            <div class="bx-yeargoods-content">
+                <div class="yeargoods">
+                    <div class="quiz">
+                        <h2>如何参加活动?</h2>
+                        <p>活动期间，会员在宝象金融平台“<strong>活动专区</strong>”的年货节专项标的累计投资金额（不含红包金额）达到如下标准，则可获得相应礼品。</p>
+                        <h2>都有什么礼品?</h2>
+                    </div>
+                    <div class="goods-img">
+                        <div class="clearfix">
+                            <div class="fl"><img src="./images/pc_goods3000.jpg" alt=""/></div>
+                            <div class="fr"><img src="./images/pc_goods1.jpg" alt=""/></div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="fl img">
+                                <img src="./images/pc_goods5.jpg" alt=""/>
+                                <img src="./images/pc_goods10.jpg" alt=""/>
+                            </div>
+                            <div class="fr">
+                                <img src="./images/pc_goods50.jpg" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz">
+                        <h2>如何拿到礼品?</h2>
+                        <ul>
+                            <li class="no1">符合条件的宝象会员在个人账户信息中填写寄送地址，宝象金融将按该地址进行礼品寄送，每人限领一件礼品。</li>
+                            <li class="no2">活动奖品将在投资人确认后的一周内寄出，请注意保持联系方式畅通。因个人原因导致未收到礼品，宝象金融不再重复寄送；礼品寄送范围暂不支持非大陆地区。</li>
+                            <li class="no3">如因礼品质量等问题，请联系相应品牌保修机构。如涉及活动规则的咨询、账务查询、配送地址信息等请联系宝象金融客服邮箱：cs-jr@bxjr.com。<br/>
+                                <span>此活动不可叠加网站其他活动，投资标的不可进行债权转让。</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="goods-btn" href="//www.bxjr.com/lc/special/list.html"><img src="./images/btn.png"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+    </div>
+</body>
+
+</html>

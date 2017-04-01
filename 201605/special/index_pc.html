@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-融资租赁业务</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/logostyle.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../iframe/jquery-1.8.2.min.js"></script>
+    <link rel="stylesheet" href="../../iframe/css/style.css" />
+</head>
+<body>
+<div class="bx_head">
+    <div class="bx_top">
+        <div class="w1200">
+            <div class="bx_topbar_right">
+                <div class="bx_topmenu">
+                    <ul class="clearfix">
+                        <script type="text/javascript">
+                            (function(){
+                                var params = {isBalance: 'balance', isRecommend: 'recommend', isValidStatus: 'validStatus', isVoucherCount: 'voucherCount'};
+                                var paramsStr = '?';
+                                for(var item in params){
+                                    if(window[item]){
+                                        paramsStr += params[item] + "=true&";
+                                    }
+                                }
+                                var jrMsgCount = 0;
+                                $.ajax({
+                                    url: "//www.bxjr.com/secure/get-login-info.html" + paramsStr,
+                                    async: false,
+                                    cache: false,
+                                    success: function (data) {
+                                        window.loginInfo = data;
+                                        var newAction = new Date().getTime();
+                                        if (data && data.isLogin) {
+                                            document.write('<li><span>你好，<a href="/center/home/index" class="bx_userName">' + data.callName + '</a></span></li>\
+                                                <li class="bx_login_after bx_showMenu">\
+                                                    <a href="/center/message/index?' + newAction + '" class="bx_msg" target="_blank"><i id="jrMsg">0</i></a>\
+                                                </li>\
+                                                <li class="bx_exit"><a href="/logout/logout.html">[退出]</a></li>');
+                                            // 理财端的消息数
+                                            var nCount = data && data.nCount ? data.nCount : 0;
+                                            $("#wdMsg").text(nCount);
+                                            $("#wdMsg").addClass('msgCount'+nCount);
+                                            jrMsgCount = Number(nCount);
+                                            changeJrMsg();
+                                        } else {
+                                            $.get("/logout/ssoLogout.html");
+                                            document.write('<li class="bx_welcome"><span>欢迎来到宝象金融</span></li><li><a href="//www.bxjr.com/login/index.html">登录</a></li><li><a href="//www.bxjr.com/secure/register.html">免费注册</a></li>');
+                                        }
+                                    }
+                                });
+
+                                // 更新超过3位的数字
+                                function changeJrMsg() {
+                                    if(jrMsgCount > 0){
+                                        $("#jrMsg").addClass("newMsg")
+                                    }
+                                    if(jrMsgCount>99){
+                                        $("#jrMsg").html("...");
+                                        $("#jrMsg").addClass("bx_msg1")
+                                    } else {
+                                        $("#jrMsg").text(jrMsgCount);
+                                    }
+                                }
+                            })();
+                        </script>
+                        <li class="bx_app-jr">
+                            <b></b>
+                            <a href="https://www.bxjr.com/topic/app/" target="_blank">移动客户端</a>
+                        </li>
+                        <li><a href="/sageguard/guide.html">新手指引</a></li>
+                        <li><a href="https://www.bxjr.com/">保险频道</a></li>
+                        <li><a href="http://bbs.bxjr.com" target="_blank">宝象社区</a></li>
+                    </ul>
+                </div>
+                <div class="bx_toplink">
+                    <ul>
+                        <li class="bx_showMenu">
+                            <i class="bx_wx_icon"></i>
+                            <div class="bx_toplink_select">
+                                <s></s>
+                                <img src="images/topbar_wx.png" width="94" height="94"/>
+                                <p>关注宝象金融</p>
+                            </div>
+                        </li>
+                        <li class="bx_showMenu">
+                            <i class="bx_sina_icon"></i>
+                            <div class="bx_toplink_select">
+                                <s></s>
+                                <a rel="nofollow" href="http://weibo.com/bxjr" class="bx_round3">+ 宝象金融</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bx_nav clearfix w1200">
+        <a href="https://www.bxjr.com" class="bx_logo newyear_logo">宝象金融</a>
+        <div class="bx_menu">
+            <ul class="cc">
+                <li><a href="//www.bxjr.com/">首页</a></li>
+                <li class="bx_showMenu"><a href="//www.bxjr.com/lc">我要投资<span id="totalNum">(<i>36</i>)</span><s></s></a></li>
+                <li><a href="//www.bxjr.com/borrow/index.html">我要借款</a></li>
+                <li><a href="/topic/security/">安全保障</a></li>
+                <li><a href="/topic/guide/">新手指引</a></li>
+                <li class="on"><a href="/topic/static/about/">信息披露</a></li>
+            </ul>
+
+            <script type="text/javascript">(function () {
+                var result = 0;
+                try {
+                    result = JSON.parse(localStorage['NavNum']);
+                } catch (e) {
+                }
+                window.inIntNavNum = function (num) {
+                    for (var i in num) {
+                        try {
+                            $('#' + i).html('(<i>' + num[i] + '</i>)');
+                        } catch (e) {
+                        }
+                    }
+                    try {
+                        localStorage['NavNum'] = JSON.stringify(num);
+                    } catch (e) {
+                    }
+                };
+                if (result) {
+                    inIntNavNum(result);
+                }
+                $.getScript("//www.bxjr.com/index/get-borrow-num.html?callback=inIntNavNum");
+            })();</script>
+        </div>
+        <div class="bx_userMenu">
+            <a href="https://www.bxjr.com/center/home/index"><b></b>我的账户</a>
+        </div>
+    </div>
+</div>
+<div class="main">
+        <div class="banner">
+            <img src="images/banner.jpg" alt=""/>
+        </div>
+        <div class="financing">
+            <div class="container pd">融资租赁是指出租人根据承租人对出卖人、租赁物的选择，向出卖人购买租赁物件，提供给承租人使用，向承租人收取租金的交易。一方面，它以出租人保留租赁物的所有权和收取租金为条件；另一方面，使承租人在租赁合同期内对租赁物取得占有、使用和受益的权利。</div>
+        </div>
+        <div class="page functionality">
+            <div class="container">
+                <h2>融资租赁的功能性</h2>
+                <div class="cont">
+                    <dl >
+                        <dt><img src="images/serve02.png"></dt>
+                        <dd>
+                            <h3>服务对象</h3>
+                            <ul>
+                                <li>1、近三年经营稳定，财务状况健康，为扩大生产经营规模或提高产能采购设备。</li>
+                                <li>2、企业及企业主信誉良好，无不良信用记录。</li>
+                                <li>3、通过企业现金流测算，覆盖租金支出及各项成本后仍有盈余。</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><img src="images/serve01.png"></dt>
+                        <dd>
+                            <h3>融资租赁的功能性</h3>
+                            <ul class="box">
+                                <li><span>1、</span><p>融资功能，融资渠道不占用银行授信额度盘活固定资产，促进企业资金周转。</p></li>
+                                <li><span>2、</span><p>促销功能，融资租赁可以用“以租代销”的形式，减少厂家应收账款。</p></li>
+                                <li><span>3、</span><p>资产管理功能，融资租赁将资金运动与实物运动联系起来，能降低使用成本和设备淘汰的风险。</p></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="page sane t_c">
+            <div class="container">
+                <h2>健全的风控体系</h2>
+                <ul class="clearfix">
+                    <li>
+                        <img src="images/icon1.png">
+                        <p>基于第三方征信平台的大数据进行风险识别</p>
+                    </li>
+                    <li>
+                        <img src="images/icon2.png">
+                        <p>专业风控人员现场实地尽调</p>
+                    </li>
+                    <li>
+                        <img src="images/icon3.png">
+                        <p>采用专业风控模型进行客户评级</p>
+                    </li>
+                    <li>
+                        <img src="images/icon4.png">
+                        <p>三级风控审核机制，层层审核，逐步降低风险</p>
+                    </li>
+                    <li>
+                        <img src="images/icon5.png">
+                        <p>运用租赁物抵押等方式，登记手续齐全保障租赁物安全</p>
+                    </li>
+                    <li>
+                        <img src="images/icon6.png">
+                        <p>匹配现金流，逐步回收借款风险逐步降低</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+<div class="bx_foot">
+    <div class="w1200 clearfix">
+        <div class="bx_link bx_fl">
+            <dl class="bx_about">
+                <dt>
+                    <i></i>
+                    <a rel="nofollow" href="https://www.bxjr.com/about/index.html">关于我们</a>
+                </dt>
+                <dd>
+                    <a rel="nofollow" href="https://www.bxjr.com/about/collaboration.html">合作伙伴</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/about/expert.html">专家顾问</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/about/contact.html">联系我们</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/topic/static/sitemap/">网站地图</a>
+                </dd>
+            </dl>
+            <dl class="bx_help">
+                <dt>
+                    <i></i>
+                    <a rel="nofollow" href="https://www.bxjr.com/help/index.html">帮助中心</a>
+                </dt>
+                <dd>
+                    <a rel="nofollow" href="https://www.bxjr.com/help/index.html?helpKey=regLogin">注册与登录</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/help/index.html">常见问题</a>
+                    <a rel="nofollow" href="https://www.bxjr.com/help/explain.html">名词解释</a>
+                    <!--<a href="http://www.bxjr.com/asks/">宝象问答</a>-->
+                    <a href="https://www.bxjr.com/help/expenses.html">资费标准</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="bx_service bx_fl">
+            <h2>400 885 1100</h2>
+            <p class="fl clearfix">服务时间：</p>
+            <div class="fl clearfix">
+                <p>周一至周五 9:00 - 21:00</p>
+                <p>周六、周日 9:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="bx_copyRight bx_fr">
+            <ul>
+                <li class="bx_foot_sina"><a class="f-sina" rel="nofollow" href="http://weibo.com/bxjr" target="_blank" title="新浪微博"></a></li>
+                <li class="bx_foot_qq"><a class="f-qq" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0e905c66d135232a47886a1b5277b159354c4eacf54b13e93b2d084665abccff" title="在线客服"></a></li>
+                <li class="bx_foot_wx"><a href="javascript:void(0)" class="f-wx" title="扫描二维码"><img src="images/card-wx.png"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w1200 clearfix">
+        <p class="bx_footP">Copyright©2014-2016.宝象金融版权所有 <a rel="nofollow" href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备15015289号</a></p>
+    </div>
+
+</div>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

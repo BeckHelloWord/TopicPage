@@ -1,0 +1,19 @@
+﻿body{background-color:#ffe762;}
+.container{width:1187px;}
+
+/* PC */
+.banner{width:1920px;margin-left:-960px;position:relative;left:50%;}
+
+.main .rule{padding:0 30px;margin-bottom:32px;background-color:#fe4a2a;overflow:hidden;}
+.main .rule .cont{padding:30px;font-size:25px;color:#fe4a2a;background-color:#fff;-webkit-border-radius:0 0 8px 8px;-moz-border-radius:0 0 8px 8px;border-radius:0 0 8px 8px;}
+.main .rule .btn{width:374px;height:62px;line-height:62px;margin:60px auto;text-align:center;font-size:30px;color:#fe4a2a;background-color:#ffe762;display:block;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}
+
+.footer{margin:100px 0 180px;text-align:center;font-size:34px;color:#dfbd00;}
+
+/* h5页面的制作 */
+.mobMain{width:100%;overflow:hidden;}
+.mobMain img{max-width:100%;}
+.mobMain .mCont{width:92.9%;padding-left:3.4%;}
+.mobMain .rule{padding:0 4%;margin-bottom:2%;background-color:#fe4a2a;overflow:hidden;}
+.mobMain .rule .cont{padding:1rem;text-align:justify;font-size:1.4rem;color:#fe4a2a;background-color:#fff;-webkit-border-radius:0 0 8px 8px;-moz-border-radius:0 0 8px 8px;border-radius:0 0 8px 8px;}
+.mobMain .rule .btn{width:18rem;height:4rem;line-height:4rem;margin:3rem auto;text-align:center;font-size:1.6rem;color:#fe4a2a;background-color:#ffe762;display:block;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}

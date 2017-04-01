@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>星光环球影院</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<img src="images/cinema.jpg" />
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    (function(){
+        var local = window.localStorage;
+
+        local.setItem("cinema","true");
+
+        var shareData = {
+            title: "赢取2张电影票，还需要你的帮助！",
+            desc: "曾经有1张电影票放在你眼前你没有珍惜，那我这次就放2张！邀请好友，赢取2张电影票，就在宝象嘉年华！",
+            link: "/topic/201608/cinema/",
+            imgUrl: "https://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/90a27cac-4e40-4a56-893b-442a64fff81f.jpg"
+        };
+
+        var shareData2 = {
+            title: "这2张电影票对我很重要，我的朋友请借用我你的洪荒之力，助我完成心愿吧！",
+            desc: "这2张电影票对我很重要，我的朋友请借用我你的洪荒之力，助我完成心愿吧！",
+            link: "/topic/201608/cinema/",
+            imgUrl: "https://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/90a27cac-4e40-4a56-893b-442a64fff81f.jpg"
+        };
+
+        $.get("/wechat/sign.html", {url : location.href}, function (wechatSign) {
+            //配置微信参数
+            wx.config({
+                debug: false,
+                appId: wechatSign.appId,
+                timestamp: wechatSign.timestamp,
+                nonceStr: wechatSign.nonceStr,
+                signature: wechatSign.signature,
+                jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','hideMenuItems']
+            });
+
+            //获得微信回调
+            wx.ready(function () {
+                //获得分享链接
+                $.get("/secure/referrer-url.html",{redirect: "/topic/201608/cinema/"}, function(ret){
+                    shareData.link = ret.data.url;
+                    shareData2.link = ret.data.url;
+
+                    //分享到朋友圈
+                    wx.onMenuShareTimeline(shareData2);
+                    //分享到微信好友
+                    wx.onMenuShareAppMessage(shareData);
+                    //分享到QQ
+                    wx.onMenuShareQQ(shareData);
+                },'json');
+
+                //屏蔽部分功能
+                wx.hideMenuItems({
+                    menuList: [
+                        'menuItem:copyUrl',//复制链接
+                        'menuItem:delete',//删除
+                        'menuItem:originPage',//原网页
+                        'menuItem:readMode',//阅读模式
+                        'menuItem:openWithQQBrowser',//在QQ浏览器中打开
+                        'menuItem:openWithSafari',//在Safari中打开
+                        'menuItem:share:email',//邮件
+                        'menuItem:share:brand',//一些特殊公众号
+                        'menuItem:share:weiboApp',//分享到Weibo
+                        'menuItem:share:facebook',//分享到FB
+                        'menuItem:share:QZone',//分享到 QQ 空间
+                        'menuItem:editTag' //编辑标签
+                    ]
+                });
+            });
+
+        },'json');
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

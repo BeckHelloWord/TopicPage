@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>年末狂欢 现金摇出来</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="h5-main">
+    <img src="images/top.jpg">
+    <img src="images/second.jpg">
+    <img src="images/third.jpg">
+    <a href="baoxiang://APPShakePage" class="btn"><img src="images/btn.jpg"></a>
+</div>
+<div class="mask shareBtn">
+    <img src="./images/share.png" >
+</div><!--分享-->
+<audio id="car_audio"  src="../music/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+<script>
+    if (/MicroMessenger/i.test(navigator.userAgent)) {
+        $(".btn").on("click",function(e){
+            $(".shareBtn").css({"height": "100%"});
+            e.preventDefault();
+        });
+    }else{
+        location.href = "baoxiang://APPShakePage";
+    }
+    var wechatShare=new WeChatShare();
+    var shareData ={
+        shareConfig:{
+            title: "现金摇出来",
+            desc: "超高加息标怎么搞？快来宝象摇一摇！",
+            link: location.href,
+            imgUrl: "http://100cfp.oss-cn-hangzhou.aliyuncs.com/upload/image/d3089272-5838-49cb-a199-281403727f5e.jpg"
+        },
+        menuList:{
+            menuList: [
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl', // 复制链接
+                'menuItem:share:appMessage',
+                'menuItem:openWithQQBrowser',//在QQ浏览器中打开
+                'menuItem:openWithSafari'//在Safari中打开
+            ]
+        },
+        callback:function(){}
+    };
+    wechatShare.init(shareData);
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

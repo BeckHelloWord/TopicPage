@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>2周年庆·好友派对</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style_mobile.css" />
+</head>
+<body class="body-activity">
+
+<div class="main">
+    <img src="images/mobile/banner.jpg" alt="2周年庆·好友派对" />
+    <div class="part introduce">
+        <div class="hd t_c"><h3><span>活动介绍</span></h3></div>
+        <div class="bd">
+            <p>活动期间，<span>用户成功新邀请3名好友注册宝象金融APP，每位好友的有效投资金额大于等于1000元，邀请人可获得66元现金红包奖励！</span></p>
+            <p><span>成功邀请10名好友，且每位好友的有效投资金额大于等于1000元，邀请人可获得额外200元现金红包！（共266元）</span></p>
+            <p><span>成功邀请50名好友，且每位好友的有效投资金额大于等于1000元，邀请人可获得额外1000元现金红包！（共1266元）</span></p>
+            <p class="mt10">有效投资金额为投资平台直投项目的投资本金，不含红包金额。月月丰、个人消费贷、债权转让、添添金均不计入有效投资金额。</p>
+            <p>现金红包以无门槛24K红包的形式发放。</p>
+        </div>
+        <div class="btn t_c"><a class="js-invite" href="">我要邀请</a></div>
+    </div>
+    <div class="part award t_c">
+        <div class="hd"><h3><span>我的奖励</span></h3></div>
+        <div class="bd">
+            <dl class="clearfix">
+                <dt>成功邀请好友</dt>
+                <dd>
+                    <span class="schedule">
+                        <span style="width:30%;" class="schedule-hover"></span>
+                        <span class="per per-01">3</span>
+                        <span class="per per-02">10</span>
+                        <span class="per per-03">50</span>
+                        <span class="unit">（名）</span>
+                    </span>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt>好友投资金额</dt>
+                <dd>
+                    <span class="schedule">
+                        <span style="width:60%;" class="schedule-hover"></span>
+                        <span class="per per-03">1000</span>
+                        <span class="unit">（元）</span>
+                    </span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="part rule">
+        <div class="hd t_c"><h3><span>活动规则</span></h3></div>
+        <div class="bd">
+            <p>1.活动时间：<span>2017年4月17日至5月04日</span>；</p>
+            <p>2.活动奖励实时可查，将以活动结束前的最后数据为准，<span>在7个工作日之内完成发放</span>；</p>
+            <p>3.<span>有效投资金额为投资平台直投项目的投资本金</span>，不含红包金额。月月丰、个人消费贷、债权转让、添添金均不计入有效投资金额。</p>
+            <p>4.如有任何疑问请联系在线客服；</p>
+            <p>5.为保证健康公平的投资环境，一切恶意刷奖行为将被取消获奖资格；</p>
+            <p>6.在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</p>
+        </div>
+        <footer class="footer t_c">市场有风险，投资需谨慎</footer>
+    </div>
+</div>
+    
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script>
+    // 分享
+    var wechatShare=new WeChatShare(),
+        shareData ={
+            shareConfig:{
+                title: "好友就是有钱一起赚！",
+                desc: "宝象嘉年华，邀请好友，赢最高1266元奖金！",
+                link: location.href,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/f2d5345d-4da1-4e2a-9131-ed42cb972049.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl', // 复制链接
+                    'menuItem:share:appMessage'
+                ]
+            },
+            callback:function(){}
+    };
+    wechatShare.init(shareData);
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>
+

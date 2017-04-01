@@ -1,0 +1,98 @@
+/* PC*/
+.banner{width:1920px;margin-left:-960px;position:relative;left:50%;}
+.welfare{background:url(../images/vertical-01.jpg) repeat-y;}
+.welfare .case-img{position: relative;top:-43px;}
+.celebrate{background:url(../images/vertical-02.jpg) repeat-y;padding: 0 0 50px 0;}
+.celebrate .txt-title{text-align: center;background:url("../images/tit_line.png") no-repeat 45px 23px;margin-top:20px;}
+.celebrate .txt-title h2{font-size:35px;color:#ffeec9;text-align: center;}
+.celebrate .container .cl-list{text-align: center;}
+.celebrate .container .box1{width:840px;font-size:24px;color:#dd5548;background-color:#ffeec9;margin:30px auto;padding:20px 40px;border:10px solid #ee5d4f;border-radius:5px;text-align: justify;}
+.celebrate .container .txt-box{width:1000px;font-size:24px;color:#ffeec9;background-color:transparent;margin:30px auto;padding:20px 40px;border:10px solid transparent;border-radius:5px;}
+.celebrate .container .txt-rank{width:1000px;font-size:24px;color:#dd5548;margin:30px auto 0 auto;border:10px solid #ee5d4f;border-radius:5px;}
+.celebrate .container .txt-rank .rank-title{font-size:24px;background-color:#dd5548;text-align: center;color:#ffeec9;font-weight: bolder}
+.celebrate .container .txt-rank .rank-list{font-size:24px;background-color:#ffeec9;text-align: center;color:#dd5548;padding: 20px 30px;height: 200px;overflow: hidden;}
+.celebrate .container .txt-rank .rank-list .rank-list1{;height: 200px;overflow: hidden;position: relative}
+.celebrate .container .txt-rank .rank-list .rank-list1 .rank-area{background-color:#ffeec9;overflow: hidden;position: absolute;top:200px}
+.celebrate .container .txt-rank .rank-list .rank-list1 .rank-area span{width: 49%;display: inline-block;text-align: left;padding-left: 3px }
+.celebrate .container .txt-rank .rank-list .rank-list1 .rank-area span:nth-child(odd){border-right: 1px solid #dd5548}
+.celebrate .container .rank-more{width: 150px;margin: 0 auto;background-color:#ee5d4f;text-align: center;color:#ffeec9;cursor: pointer}
+.rank-move{
+    animation: rankMove 50s linear  infinite;
+    -moz-animation: rankMove 50s linear  infinite;
+    -o-animation: rankMove 50s linear  infinite;
+    -webkit-animation: rankMove 50s linear  infinite;
+}
+@keyframes rankMove{
+    0%   {top:200px}
+    100%{top:-2350px;}
+}
+@-moz-keyframes rankMove{
+    0%   {top:200px}
+    100%{top:-2350px;}
+}
+@-webkit-keyframes rankMove{
+    0%   {top:200px}
+    100%{top:-2350px;}
+}
+@-o-keyframes rankMove{
+    0%   {top:200px}
+    100%{top:-2350px;}
+}
+.celebrate .container .cl-list .invite-btn{width:426px;background-color:#ffe23f;padding:10px 0;display:inline-block;text-align:center;font-size:36px;color:#dd5548;box-shadow:0px -10px 0px 0px #faa30c inset,0px 10px 0px 0px #de5343;border-radius:20px;}
+.item2{background:url(../images/vertical-01.jpg) repeat-y;}
+.container .txt-rule{font-size:24px;color:#ffd400;width:1000px;padding:0px 40px 20px 40px;margin:20px auto;border-bottom:1px solid #d7423b;text-align:justify;}
+.container .activity-rule{text-align: left;padding:10px 0 0 100px;color:#ffeec9;}
+.container .activity-rule h2{font-size:35px;}
+.container .activity-rule ul{font-size:24px;text-align: justify;}
+.container .activity-rule  ul li span{float:left;}
+.container .activity-rule  ul li p{margin-left:45px;}
+.container .word-rule p{width:1000px;font-size:22px;color:#ffeec9;padding-left:60px; }
+.container .word-rule p span{color:#fad60c;}
+.container .t-rule{font-size:30px; color:#f9d30f;margin-top:20px;}
+.container .t-rule img{margin-right:10px;vertical-align:sub;}
+.container .rule-explain{width:1000px;border:1px dashed #ffeec9;text-align: justify;padding:30px 20px;margin:20px auto;}
+.container .title-bg1{background:url("../images/title-bg2.png") no-repeat 45px 23px;margin-top:20px; ;}
+.celebrate .title-bg1 h2{font-size:40px;color:#ffeec9;text-align: center;}
+.container .box1 ul li{text-align: justify;line-height:3;}
+.container .box1 ul li img{margin-right:10px;vertical-align:middle;}
+.container .btn-invite{text-align: center;padding-top:20px;}
+.footer{height:100px;line-height:100px;text-align:center;font-size:34px;color:#f16b60;background-color:#d95146;}
+
+/* h5活动页面 */
+.mobActivity{width:100%;overflow:hidden;}
+.mobActivity img {width:100%;}
+.mobActivity .item2{background:url(../images/vertical-01.jpg) repeat-y;padding: 0 0 3rem 0}
+.mobActivity  .item1.celebrate{background:url(../images/vertical-02.jpg) repeat-y;padding: 0 0 3rem 0}
+.mobActivity .celebrate .order img{width:4rem;margin-left:3%;}
+.mobActivity .celebrate .list{text-align: center;}
+.mobActivity .celebrate .list .list-title{font-size:1.8rem;color:#ffeec9;margin:1rem 0;}
+.mobActivity .celebrate .list .txt-list{width:85%;background-color:#ffeec9;margin:0 auto;border:5px solid #ee5d4f;border-radius:5px;padding:3%;text-align: center;font-size:1.2rem;color:#dd5548;}
+.mobActivity .celebrate .invite-btn{width:60%;background-color:#ffe23f;padding:2%;display:inline-block;font-size:1.6rem;color:#dd5548;text-align:center;margin-top:1.2rem;box-shadow:0px -5px 0px 0px #faa30c inset,0px 5px 0px 0px #de5343;border-radius:.9rem;}
+.mobActivity .celebrate .list .txt-rule{font-size:1.2rem;color:#ffd400;width:90%;margin:0 auto;text-align:justify;padding:1rem;border-bottom:1px solid #d7423b;}
+.mobActivity .celebrate  .txt-list ul li span{float:left;width:1.8rem;height:1.8rem;line-height:1.8rem;}
+.mobActivity .celebrate .list .txt-list ul li{text-align:justify;line-height:2;}
+.mobActivity .celebrate .list .txt-list ul li p {margin-left:30px;}
+.mobActivity .activity-rule .word-rule p{margin-left:30px;font-size:1.2rem;}
+.mobActivity .activity-rule .word-rule span{color:#fad60c;}
+.mobActivity .activity-rule .t-rule{color:#fad60c;}
+.mobActivity .activity-rule .t-rule img{width:8%;vertical-align: sub;margin-right:5px;}
+.mobActivity .activity-rule{text-align: left;color:#ffeec9;margin:0 14px;}
+.mobActivity .activity-rule h2{font-size:1.4rem;}
+.mobActivity .activity-rule ul{font-size:1.2rem;text-align: justify;}
+.mobActivity .activity-rule  ul li span{float:left;}
+.mobActivity .activity-rule  ul li p{margin-left:20px;}
+.mobActivity .activity-rule h2{font-size:1.6rem;color:#ffeec9;margin:0.5rem 0;}
+.mobActivity .rule-explain{margin:20px 0 0 30px;border:1px dashed #ccc;padding:10px;}
+.mobActivity .footer{height:3rem;line-height:3rem;text-align:center;font-size:1.4rem;color:#f16b60;background-color:#d95146;}
+.mobActivity .activity-rule .mInvest{text-align: center;margin: 0 -14px;}
+
+@media screen and (max-width: 300px) {
+    body {
+        background-color:lightblue;
+    }
+}
+@media screen and  (min-width: 301px) and (max-width: 500px) {
+    body {
+        background-color:lightblue;
+    }
+}

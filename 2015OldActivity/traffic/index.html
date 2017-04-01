@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>注册抢流量赢话费</title>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="//m.bxjr.cc/assets/mobile/css/normalize.css" />
+    <link rel="stylesheet" href="//m.bxjr.cc/assets/mobile/css/common.css" />
+    <script type="text/javascript">
+    if(document.domain == 'www.bxjr.cc'){
+        location.href = location.href.replace('www.','m.');
+    }
+    window.hxb={ctx:"//m.bxjr.cc/"};
+    </script>
+    <script type="text/javascript" src="//m.bxjr.cc/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/assets/mobile/js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/js/validation/js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/js/validation/js/jquery.validationEngine-zh_CN.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/topic/js/layer1.9/layer.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/assets/mobile/js/application.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/js/jquery.inputFormat.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/assets/mobile/js/common.js"></script>
+    <script type="text/javascript" src="//m.bxjr.cc/js/jquery.cookie.js"></script>
+
+
+
+    <link rel="stylesheet" href="//m.bxjr.cc/assets/mobile/css/normalize.css?v=2015610" />
+	
+<link rel="stylesheet" href="//m.bxjr.cc/assets/mobile/css/common.css?v=2015610" />
+
+
+
+
+
+
+
+
+
+
+<script>
+    function parseQueryString(url){
+        var obj = {};
+        var start = url.indexOf("?")+1;
+        var str = url.substr(start);
+        var arr = str.split("&");
+        for(var i = 0 ;i < arr.length;i++){
+            var arr2 = arr[i].split("=");
+            obj[arr2[0]] = arr2[1];
+        }
+        return obj;
+    }
+    var obj = parseQueryString(window.location.search);
+    var cookietime = new Date();
+    if(obj.hmsr!=undefined||obj.hmmd!=undefined||obj.hmpl!=undefined||obj.hmkw!=undefined||obj.hmci!=undefined){
+        cookietime.setTime(cookietime.getTime() + (60 * 60 * 1000 * 24));
+        $.cookie("hmsr", obj.hmsr?obj.hmsr:"0",{expires:cookietime,path:'/'});
+        $.cookie("hmmd", obj.hmmd?obj.hmmd:"0",{expires:cookietime,path:'/'});
+        $.cookie("hmpl", obj.hmpl?obj.hmpl:"0",{expires:cookietime,path:'/'});
+        $.cookie("hmkw", obj.hmkw?obj.hmkw:"0",{expires:cookietime,path:'/'});
+        $.cookie("hmci", obj.hmci?obj.hmci:"0",{expires:cookietime,path:'/'});
+    }
+    if(obj.task_id){
+        $.cookie("task_id",obj.task_id,{expires:cookietime,path:'/'})
+    }
+    if(obj.recommend){
+        $.cookie("recommend",obj.recommend,{expires:cookietime,path:'/'})
+    }
+</script>
+	
+	
+	
+</head>
+<body>
+
+<div class="traffic">
+    <p><img src="images/traffic_01.jpg" /></p>
+    <p><img src="images/traffic_02.jpg" /></p>
+    <div class="traffic-form">
+        <form id="mobielForm" action="//m.bxjr.cc/secure/do-register.html" method="post">
+            <label><input type="text" name="mobile" id="mobile" class="i1 validate[required,custom[mobile],ajax[ajaxMobile]]]" maxlength="11" placeholder="请输入您的手机号码" /></label>
+            <label><input type="password" name="password" id="password" class="i1 validate[required,minSize[6],maxSize[16]]" placeholder="请输入您的登录密码" /></label>
+            <label><input type="password" name="repassword" id="repassword" class="i1 validate[required,equals[password]]" placeholder="请再次输入您的登录密码" /></label>
+            <label class="verifyNo-tip">
+                <input type="number" name="verifyNo" id="verifyNo" class="i1 verifyNo fl validate[required,maxSize[6],minSize[6]" maxlength="6" placeholder="请输入验证码" />
+                <input type="button" id="btnSendCode" class=" sendMobile button fr" value="获取验证码" />
+            </label>
+            <div style="clear: both;"></div>
+            <input type="hidden" name="ct" value="6" />
+            <input type="hidden" name="bt" value="0" />
+			<input type="hidden" name="hmsr" id="hmsr" value="" />
+            <input type="hidden" name="hmmd" id="hmmd" value="" />
+            <input type="hidden" name="hmpl" id="hmpl" value="" />
+            <input type="hidden" name="hmkw" id="hmkw" value="" />
+            <input type="hidden" name="hmci" id="hmci" value="" />
+            <label><button type="submit"><img src="images/button.png" /></button></label>
+        </form>
+    </div>
+    <p><img src="images/traffic_04.jpg" /></p>
+</div>
+
+<script>
+    $(function(){
+        $('#traffic-form').validationEngine('attach', {
+            promptPosition: 'inline',
+            showOneMessage: true,
+            maxErrorsPerField: '1',
+            addPromptClass: 'formError-text'
+        });
+		$("#hmsr").val($.cookie("hmsr"));
+    $("#hmmd").val($.cookie("hmmd"));
+    $("#hmpl").val($.cookie("hmpl"));
+    $("#hmkw").val($.cookie("hmkw"));
+    $("#hmci").val($.cookie("hmci"));
+	
+	$(".sendMobile,.sendVoice").sendCode("//m.bxjr.cc/secure/send-register-mobile.html", function () {
+            if(!$('#mobile').val()){
+            layer.alert("请先输入手机号", {icon: 7});
+            return false;
+        }
+        if (!$('#mobile').validationEngine('validate')) {
+            return false;
+        }
+        return {mobile: $("#mobile").val()}
+    });
+
+        $("#mobielForm").ajaxForm(function (status, form, json, options) {
+            if (status) {
+                location.href = "//m.bxjr.cc/lc/invest/list.html";
+            }
+        });
+	
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+</html>

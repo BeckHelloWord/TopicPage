@@ -1,0 +1,17 @@
+*{margin:0; padding:0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+body{padding-top:0 !important;}
+
+img{max-width:100%; vertical-align: middle;}
+a:focus,input:focus{outline:0;}
+.fl{float: left;}
+.fr{float: right;}
+
+.traffic-form{padding: 20px 10%; background: url(../images/traffic_bg.jpg) repeat-y; background-size: contain;}
+.traffic-form label{display:block; margin-bottom:12px; overflow: hidden;}
+.traffic-form label .i1{width:100%; padding-left:15px; height:60px; line-height: 60px; color:#8d8d8d; font-size:20px; border: 1px solid #5f605f; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; box-shadow: inset 0px 0px 15px rgba(0,0,0,.8);}
+.traffic-form label .verifyNo{width: 60%;}
+.traffic-form label .button{height: 50px; line-height: 50px; padding: 0 10px; margin-top:5px; background: #ffd75f; color:#ca1946; font-size: inherit; text-align:center; width: 35%; border: 0; cursor: pointer; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; box-shadow: -1px 0px 5px rgba(0,0,0,.8);}
+.traffic-form label button{border: 0; background: none; cursor: pointer; width: 80%; margin: 25px auto 0; display: block;}
+.verifyNo-tip{position:relative; overflow: visible !important;}
+.verifyNo-tip .formError-text{position: absolute !important; top: 60px !important;}

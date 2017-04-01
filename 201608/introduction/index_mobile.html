@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>月月丰</title>
+      <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="mobActivity">
+
+    <div class="mBanner">
+        <img src="images/H5-banner.jpg" alt="">
+        <div class="introduction">
+            <p>—————◆<span>产品介绍</span>◆—————</p>
+            <p>“月月丰”是宝象金融为帮助投资人更方便省心的投资而推出的快速分散投资工具。用户加入”月月丰”后，系统将资金分散投资到获得用户认可符合要求的优质项目。到期后系统自动以债权转让的方式发起申请，由新加入的投资人接手后成功退出。全方位满足用户的多样化投资需求。</p>
+        </div>
+    </div>
+
+    <div class="characteristic">
+        <p>—————◆<span>3大特色</span>◆—————</p>
+        <img class="load" data-original="images/H5-characteristic.jpg" alt="">
+    </div>
+
+    <div class="advantage">
+        <p>—————◆<span>5大优势</span>◆—————</p>
+        <div class="advantage_first">
+            <ul>
+                <li>
+                 <img class="load" data-original="images/H5-advantage1.jpg" alt="">
+                      <h1>简便省心</h1>
+                   <p>安心投资 轻松加入 省心省力 坐享收益</p>
+                </li>
+                <li>
+                  <img class="load" data-original="images/H5-advantage2.jpg" alt="">
+                       <h1>透明投资</h1>
+                     <p>项目来源真实，信息公开；加入后实投信息完全公开，透明可查。</p>
+                </li>
+            </ul>
+        </div>
+        <div class="advantage_second">
+            <ul>
+                <li>
+                    <img class="load" data-original="images/H5-advantage3.jpg" alt="">
+                    <h1>分散风险</h1>
+                    <p>投资组合资产严格区分风险等级，提高收益率同时严控资产风险；智能分散投资，极大降低投资风险。</p>
+                </li>
+                <li>
+                    <img class="load" data-original="images/H5-advantage4.jpg" alt="">
+                    <h1>优选资产</h1>
+                    <p>专注抵押类、供应链优选资产；自主研发银行级标准“象牙风控系统”，严控资产质量。</p>
+                </li>
+                <li>
+                    <img class="load" data-original="images/H5-advantage5.jpg" alt="">
+                    <h1>多重保障</h1>
+                    <p>10大安全保障为您的投资保驾护航。专业反欺诈系统，运用大数据和专业分析工具让欺诈无处遁形。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="joinus">
+        <p>—————◆<span>3步加入</span>◆—————</p>
+        <img class="load" data-original="images/H5-joinus.jpg" alt="">
+    </div>
+
+    <div class="problem">
+        <p>—————◆<span>常见问题</span>◆—————</p>
+        <div class="text">
+            <div class="black">1.加入月月丰收益如何计算？</div>
+            收益由实际投资的项目收益决定，为投资于各项目的实际收益之和。收益=投资到各投资项目的实际投资金额*各项目的折让预期年利率/360*持有期限。
+        </div>
+        <div class="text">
+            <div class="black">2.到期如何退出？</div>
+            到期后系统自动发起债权转让，由新加入的投资人接手后即可成功退出。一般退出1～2个工作日内完成，具体视市场的实际交易情况而定。
+
+        </div>
+        <div class="text">
+            <div class="black">3.月月丰投资的项目安全吗？</div>
+            <ul>
+                <li>平台专注于抵押类、供应链资产：抵押借款提供足额、优质、易处理抵押品；供应链借款核心企业增信，物流、信息流、资金流、商流四流全程监控。</li>
+                <li>平台将每一笔借款按借款人的资质和违约风险进行严格区分，划分不同的风险等级，按一定的比例组合为投资项目组。提高组合收益率的同时严格控制风险。</li>
+                <li>宝象智能分散投资系统将每笔金额智能分散投资到项目组中，极大降低投资风险。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <h2>马上下载宝象金融APP</h2>
+        <p>尊享月月丰带给您的轻松财富体验~！</p>
+        <img class="load" data-original="images/H5-wechat.jpg" alt="">
+    </div>
+</div>
+
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/jQuery.link.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="js/lazyload.js"></script>
+<script type="text/javascript">
+    $("img.load").lazyload({
+        threshold : 200
+    });
+</script>
+<script>
+    (function(){
+        var wechatShare = new WeChatShare();//创建对象
+        // 分享
+        var shareData = {
+            shareConfig:{
+                title: "分散投资 悦享红利",
+                desc: "宝象金融新产品，帮您的资金智能分散投资到优质项目，月月有收益。",
+                link: location.href,
+                imgUrl: "https://www.bxjr.com/topic/201608/introduction/images/h5-share.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            }
+        }
+        wechatShare.init(shareData);//创建分享 自定义菜单
+    }());
+</script>
+
+<div style="display:none">
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var s = document.getElementsByTagName("script")[0]; 
+  //百度统计
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+  s.parentNode.insertBefore(hm, s);
+  //友盟统计
+  var ym = document.createElement("script");
+  ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+  s.parentNode.insertBefore(ym, s);
+})();
+</script>
+</div>
+</body>
+</html>

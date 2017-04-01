@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融也发烧美好的事情就在宝象理财</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="mobinvite">
+    <section><img src="images/H5crmBanner.jpg" alt="" /></section>
+    <section><img src="images/H5crmRule1.jpg" alt="" /></section>
+    <section class="H5crmRule">
+        <h4>活动规则</h4>
+
+        <ul>
+            <li>1、活动期间，所有注册并开通添添金的宝象金融会员均可参加此活动。</li>
+            <li>2、会员累计投资“投资有礼”专享标的新增投资金额<span>（专享标投资总额-账户回款总额-使用红包金额）</span>大于10000元，将获赠价值79元的小米手环1只（每人最多2只）；新增投资额大于30万，将获赠价值1999元的小米NOTE手机一部（每人最多1部）。手环限量10000只，手机限量100部，每位会员最多可获得1部手机+2只手环。</li>
+            <li>3、新增投资额指11月当月累计“投资有礼”专享标的投资金额大于11月账户回款总金额。（例：投资人11月回款总金额为1万元，其在“投资有礼”专享标累计投资金额达2万元，则可获得小米手环一只；如累计投资金额达31万，则可获得小米NOTE手机一部；如累计投资金额达1.5万元，则不符合获赠奖品的要求。）</li>
+            <li>4、“投资有礼”专享标在投资期间，不能债权转让。</li>
+            <li>5、符合条件的宝象会员在账户信息中填写寄送地址，活动结束后宝象金融将按该地址进行礼品寄送。</li>
+            <li>6、活动奖品将在活动结束后一周内寄出，请注意保持联系方式畅通。因个人原因导致未收到礼品，宝象金融不再重复寄送；礼品寄送范围暂不支持非大陆地区。</li>
+            <li>7、如因礼品质量等问题，请联系小米官方维修站。如涉及活动规则的咨询、账务查询、配送地址信息等请联系宝象金融客服邮箱：<a href="mailto:cs-jr@bxjr.com">cs-jr@bxjr.com</a>。</li>
+        </ul>
+
+    </section>
+    <section><img src="images/H5crmRule3.jpg" alt="" /></section>
+    <section><img src="images/H5crmPayment.jpg" alt="" /></section>
+    <div class="H5crmBtn"><a href="https://www.bxjr.com/lc" target="_blank"><img src="images/H5crmBtn.jpg" alt="" /></a></div>
+    <footer>友情提示：理财有风险，投资需谨慎！</footer>
+
+
+</div>
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script>
+    $(function(){
+        $(".invitetab h3 a").click(function(){
+            $(this).addClass("curr").siblings().removeClass("curr");
+
+            var ind = $(this).index();
+            $(".invitetab p").eq(ind).show().siblings("p").hide();
+        });
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+    <script>
+(function(){
+    window.setInterval(go, 1000);
+    function go() {
+        var now = new Date();
+        var myDate = new Date(2015, 10, 1, 9, 0);  //注意，月份是从0开始的，9代表10月
+        if (now.getTime() >= myDate.getTime()) {
+            $(".H5crmBtn").css("display","block");
+        }
+        else {
+            $(".H5crmBtn").css("display","none");
+        }
+    }
+})();
+</script>
+</div>
+</body>
+</html>

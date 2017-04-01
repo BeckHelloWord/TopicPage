@@ -1,0 +1,50 @@
+/*主题活动PC*/
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.hidden{display:none;}
+.main{width:1920px;position: relative;left: 50%;margin-left: -960px;z-index: 0;}
+.container{width:1000px; margin:0 auto;}
+.main .list1{height:771px;background:url("../images/pc-list1.jpg") no-repeat;}
+.main .list1 ul{padding-top:30px;font-size:24px;color:#fff;}
+.main .list1 ul li{padding:5px 0\9;}
+.main .list1 ul li span{float:left;line-height:35px;color:#fee433;font-size:40px;}
+.main .list1 ul li p{margin-left:30px;}
+
+.main .list2{text-align:center;height:330px;background:url("../images/pc-list2.jpg") no-repeat;}
+.main  .invite-btn{width:426px;margin-top:30px;background-color:#ffe23f;padding:10px 0;display:inline-block;text-align:center;font-size:36px;color:#dd5548;box-shadow:0px -10px 0px 0px #faa30c inset,0px 10px 0px 0px #e23730;-webkit-border-radius:20px;border-radius:20px;}
+
+.main .list3{height:912px;background:url("../images/pc-list3.jpg") no-repeat;}
+.main .list3 ul{padding-top:20px;font-size:24px;color:#fff;}
+.main .list3 ul li{padding:5px 0\9;}
+.main .list3 ul li span{float:left;line-height:35px;color:#fee433;font-size:40px;}
+.main .list3 ul li p{margin-left:30px;}
+
+.main .footer{height:253px;text-align:center;background:url("../images/pc-footer.jpg") no-repeat;}
+.main .footer p{padding-top:80px;padding-top:100px\9;font-size:24px;color:#f7ea00;}
+
+
+/*主题活动H5*/
+
+.mobMain img{max-width:100%;}
+
+.mobMain .birthday{background:url("../images/h5-repeatY.jpg") repeat-y;background-size:100%;}
+.mobMain .birthday{padding:6% 10%;position:relative;}
+.mobMain .birthday .icon{width:13%;position: absolute;top:20%;right:5%;}
+
+.mobMain .birthday ul{font-size:1.4rem;color:#fff;text-align:justify;}
+.mobMain .birthday ul li span{float:left;line-height:2rem;margin-right:2%;color:#ffd633;font-size:2rem;}
+.mobMain .birthday ul li p{margin-left:5%;}
+
+.mobMain .inviteBtn{text-align:center;padding:0 10%;}
+.mobMain .inviteBtn .invite-btn{width:70%;background-color:#ffe23f;padding:2%;margin-top:5%;font-size:1.6rem;color:#dd5548;text-align:center;box-shadow:0px -5px 0px 0px #faa30c inset,0px 5px 0px 0px #de5343;border-radius:.9rem;-webkit-border-radius:.9rem;display:inline-block;}
+.mobMain .inviteBtn .packet{width:80%;padding-top:15%;}
+
+.mobMain .inviteBtn ul{padding:7% 0 0 0;font-size:1.4rem;color:#fff;text-align:justify;}
+.mobMain .inviteBtn ul li span{float:left;line-height:2rem;margin-right:2%;color:#ffd633;font-size:2rem;}
+.mobMain .inviteBtn ul li p{margin-left:5%;}
+
+.mobMain .promptly{text-align:center;}
+.mobMain .promptly .invite-btn{width:70%;background-color:#ffe23f;padding:2%;display:inline-block;font-size:1.6rem;color:#dd5548;text-align:center;box-shadow:0px -5px 0px 0px #faa30c inset,0px 5px 0px 0px #de5343;border-radius:.9rem;}
+
+.mobMain .footer{position:relative;}
+.mobMain .footer p{position:absolute;bottom:0;left: 25%;font-size:1.4rem;color:#f7ea00;}

@@ -1,0 +1,102 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+a{color:#666; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+.hidden{display:none;}
+
+.ml20{margin-left:20px;}
+.yellow{color:#fae572;}
+
+/* pc端 */
+
+.wrapper{width:100%; min-width:1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+.banner{width:1920px;margin-left:-960px;position:relative;left:50%;z-index:999;}
+.banner .banner_btn{width:100%;position:absolute;left:0;bottom:80px;}
+.banner .btn{width:300px;height:90px;line-height:90px;margin:0 20px;font-size:36px;color:#f60;background:url(../images/btn.png) no-repeat;display:inline-block;}
+
+.main{}
+
+.move{position:absolute;opacity: 0;filter: alpha(opacity=0);}
+
+.page{background-repeat:no-repeat;background-position:center center;position:relative;}
+.page .container{height:730px;position:relative;}
+.page .text{width:350px;padding-top:147px;}
+.page .text h3{line-height:1;padding-bottom:28px;border-bottom:1px solid #cacaca;margin-bottom:10px;color:#1a0a00;font-size:30px;font-weight:normal;}
+.page .text p{color:#838383;font-size:22px;}
+
+.page1{background-image:url(../images/page_01.jpg);background-color:#f5f5f5;z-index:0;}
+.page1 .move1{right:29px;top:-100px;}
+
+.page2{background-image:url(../images/page_02.jpg);background-color:#fff;z-index:1;}
+.page2 .text{margin:4px 78px 0 0;}
+.page2 .move2{left:-6px;top:240px;z-index:10;}
+.page2 .move3{left:276px;top:374px;z-index:0;}
+.page2 .move4{left:590px;top:638px;z-index:5;}
+
+.page3{background-image:url(../images/page_03.jpg);background-color:#f5f5f5;z-index:2;}
+.page3 .text{padding:150px 0 0 8px;}
+.page3 .move5{left:646px;top:240px;z-index:10;}
+.page3 .move6{right:-24px;top:350px;z-index:0;}
+
+.page4{background-color:#fff;z-index:3;}
+.page4 .text{padding-left:30px;padding-right:100px;background:url(../images/dot.png) no-repeat 0 195px;}
+.page4 .move7{left:-30px;bottom:-356px;z-index:0;}
+.page4 .move8{left:0;bottom:-140px;z-index:1;}
+.page4 .move9{left:72px;bottom:-14px;z-index:2;}
+.page4 .move10{left:326px;bottom:190px;z-index:3;}
+
+.page5{height:722px;color:#fff;background-image:url(../images/page_05.jpg);z-index:3;}
+.page5 h3{padding:170px 0 66px;font-size:36px;font-weight:normal;}
+.page5 ul li{margin:0 80px;display:inline-block;}
+.page5 ul li p{font-size:16px;padding-top:15px;}
+
+.erweiDownload{width: 820px;height: 510px;background: #fff;position: fixed;top: 150px;left: 20%;z-index: 999;display: none}
+.HBcloser{width: 90px;height: 90px;background: url(../images/closer.png) no-repeat center center #ffba00;position: absolute;top: 0px;right: -90px;cursor:pointer;}
+.erweiDownload h3{font-size: 28px;text-align: center;line-height: 40px;padding-top: 50px;}
+.erweiDownload p{font-size: 20px;color: #848484;line-height: 25px;text-align: center;padding-top: 10px;}
+.erwei226{width:234px;height: 234px;margin: 30px auto;display: block;}
+.HBshadow{width: 100%;height: 100%;position: fixed;left:0;top:0;background: #111;opacity: 0.5;display: none;z-index: 998}
+
+.content_ie8{display:block\9;}
+.page1,.page2,.page3,.page4{display:none\9;}
+
+/* h5页面 */
+.mob_wrapper{}
+.mob_wrapper img{max-width:100%;}
+.mob_wrapper section{position:relative;}
+
+.mob_btn{width:100%;position:absolute;left:0;bottom:4%;}
+.mob_btn a{width:50%;display:inline-block;}
+.erweima{font-size: 0;}
+.erweima a{display: inline-block;width:50%;}

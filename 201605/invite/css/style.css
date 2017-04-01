@@ -1,0 +1,33 @@
+/*5-6月主题活动PC*/
+.main{width: 1920px;position: relative;left: 50%;margin-left: -960px;z-index: 0;}
+
+.activity{position:relative;}
+.activity .activity_word{width:600px;position:absolute;top:25px;left:640px;font-size:24px;text-align:justify;}
+.activity .word1{font-size:24px;color:#864900;font-family: '宋体', 'SC';}
+.activity .word1 span{font-weight:bold;}
+.activity .word2{font-size:28px;color:#864900;font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";}
+
+.activity_rule{position:relative;}
+.activity_rule .rule_btn{position:absolute;top:50px;left:700px;}
+.activity_rule .rule{width:712px;position:absolute;top:330px;left:600px;font-size:18px;color:#864900;}
+.activity_rule .rule i{font-style:normal;}
+.activity_rule .rule ul li{padding:8px 0;line-height:34px;}
+.activity_rule .rule ul li span{float:left;width:34px;height:34px;line-height:34px;background-color: #864900;color:#fff;text-align:center;border-radius:34px;-webkit-border-radius:34px;}
+.activity_rule .rule ul li p{margin-left:60px;}
+.activity_rule .rule .date{font-size:24px;font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体";}
+
+/*5-6月主题活动H5*/
+.invitation img{width:100%;}
+.invitation .active{position:relative;}
+.active .active_word{width:78%;position: absolute;top: 0;left: 11%;font-size: 1.2rem;text-align: justify;}
+.active .active_word .wd1{font-size:1.2rem;color:#864900;}
+.active .active_word .wd1 span{font-weight:bold;}
+.active .active_word .wd2{font-size:1.2rem;color:#864900;font-weight:bold;}
+.active .active_rule{position:relative;}
+.active .active_rule .btn_rule{width: 70%;position:absolute;top:0;left:13%;text-align:center;color:#fff9e0;display: block;border-radius:4px;-webkit-border-radius:4px;font-size:2rem;cursor:pointer;background-color:#fa4937; margin:3% auto 0;padding:2%;-moz-box-shadow:0px -5px 0px #e5402f inset;-webkit-box-shadow:0px -5px 0px #e5402f inset;box-shadow:0px -5px 0px #e5402f inset;}
+.active .active_rule .rule_ul{width:80%;position:absolute;top:36%;left:12%;font-size:1.2rem;color:#864900;}
+.active .active_rule .rule_ul i{font-style:normal;}
+.active .active_rule .rule_ul ul li{line-height:1.8;}
+.active .active_rule .rule_ul ul li span{float:left;width:1.6rem;height:1.6rem;line-height:1.6rem;margin-top:1%;background-color: #864900;color:#fff;text-align:center;border-radius:50%;-webkit-border-radius:50%;}
+.active .active_rule .rule_ul ul li p{margin-left:30px;}
+.active .active_rule .rule_ul .date{font-size:1.2rem;font-weight:bold;}

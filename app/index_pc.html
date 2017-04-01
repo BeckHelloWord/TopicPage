@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="宝象金融app,宝箱金融app,宝像金融app">
+    <meta name="Description" content="宝象金融app正式上线，随时随地随心所欲想投就投，更多app福利已经上线，您的口袋理财神器！">
+    <title>宝象金融app下载 - 宝象金融官方APP下载地址，宝箱金融和宝像金融都是错别字啊亲</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/logostyle.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <!--<a href="/zc">商品众筹</a><span>|</span>-->
+                <!--<a href="/gq">股权众筹</a><span>|</span>-->
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <div class="banner t_c">
+        <img src="images/banner.jpg" alt="下载宝象APP" />
+        <div class="banner_btn">
+            <a id="download" class="btn t_c" href="javascript:void(0);">下载宝象APP</a>
+        </div>
+    </div>
+	<div class="content_ie8 hidden">
+		<p><img src="images/app_02.jpg" /><p>
+        <p><img src="images/app_03.jpg" /><p>
+        <p><img src="images/app_04.jpg" /><p>
+		<p><img src="images/app_05.jpg" /><p>
+	</div>
+    <div class="main">
+		<div class="page page1">
+            <div class="container">
+                <div class="text">
+                    <h3>高收益 低门槛</h3>
+                    <p>添添金 不浪费1分收益</p>
+                    <p>商汇易站 两级风控 投资0风险</p>
+                </div>
+                <div class="move move1"><img src="images/img_01.png" /></div>
+            </div>
+        </div>
+        <div class="page page2 clearfix">
+            <div class="container">
+                <div class="fr t_r text">
+                    <h3>财富管理 尽在掌中</h3>
+                    <p>投资收益  随时查看</p>
+                    <p>交易明细  一目了然</p>
+                </div>
+                <div class="move move2"><img src="images/img_02.png" /></div>
+                <div class="move move3"><img src="images/img_03.png" /></div>
+                <div class="move move4"><img src="images/img_04.png" /></div>
+            </div>
+        </div>
+        <div class="page page3">
+            <div class="container">
+                <div class="text">
+                    <h3>随时提取，方便灵活</h3>
+                    <p>1元起投，收益秒杀XX宝</p>
+                    <p>收益稳健，傻瓜式理财</p>
+                </div>
+                <div class="move move5"><img src="images/img_05.png" /></div>
+                <div class="move move6"><img src="images/img_06.png" /></div>
+            </div>
+        </div>
+        <div class="page page4">
+            <div class="container">
+                <div class="fr t_r text">
+                    <h3>发现 未知的未来</h3>
+                    <p>打开了才知道 里面多有料</p>
+                </div>
+                <div class="move move7"><img src="images/img_07.png" /></div>
+                <div class="move move8"><img src="images/img_08.png" /></div>
+                <div class="move move9"><img src="images/img_09.png" /></div>
+                <div class="move move10"><img src="images/img_10.png" /></div>
+            </div>
+        </div>
+        <div class="page page5 t_c">
+            <h3>感谢每一个你，期待下一个你</h3>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/qcode_01.jpg" width="234" /></a>
+                    <p>下载宝象</p>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/qcode_02.jpg" width="234" /></a>
+                    <p>关注宝象</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="erweiDownload" id="xiazai">
+    <h3>扫一扫二维码下载</h3>
+    <p>用手机上的二维码扫描软件拍摄以下二维码即可立即下载</p>
+    <span class="erwei226"><img src="images/qcode_03.png" width="226" /></span>
+    <div class="HBcloser"></div>
+</div>
+<div class="HBshadow"></div>
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script>
+    $(function(){
+        var a=true,b=true,c=true,d=true;
+
+        $('body').bind('mousewheel', function(event){
+            var h=$("html,body").scrollTop();
+            scrollAnimation(h);
+        });
+        $('#download').bind('click',function(){
+            $('#xiazai').css('left',($(window).width()-820)/2).fadeIn();
+            $('.HBshadow').fadeIn();
+        })
+        $('.HBcloser').click(function(){
+            $('.erweiDownload,.HBshadow').fadeOut();
+        })
+        $(window).resize(function() {
+            $('.erweiDownload').css('left',($(window).width()-820)/2);
+        })
+        var checkTimers=setInterval(function(){
+            var h=$('body').scrollTop();
+            scrollAnimation(h);
+        },1000);
+
+        function scrollAnimation(offsetY){
+            var timer=700;
+            if(offsetY<132) return;
+            if(a){	if(offsetY>132&&offsetY<862){
+                $('.move1').animate({top:'-149px',right:'-26px',opacity:1},timer);
+                a=false;return;}
+            }
+            if(b){
+                if(offsetY>862&&offsetY<1592){
+                    $('.move2').animate({top:"90px",opacity:1},timer);
+                    setTimeout(function(){
+                        $('.move3').animate({top:"224px",opacity:1},timer);
+                    },400);
+                    setTimeout(function(){
+                        $('.move4').animate({top:"488px",opacity:1},timer);
+                    },800);
+                    b=false;return;}
+            }
+            if(c){	if(offsetY>1592&&offsetY<2322){
+                $('.move5').animate({top:"90px",opacity:1},timer);
+                setTimeout(function(){
+                    $('.move6').animate({top:"200px",opacity:1},timer);
+                },400);
+                c=false;return;}
+            }
+            if(d){	if(offsetY>2322&&offsetY<3052){
+                $('.move7').animate({bottom:"-206px",opacity:1},timer);
+                setTimeout(function(){
+                    $('.move8').animate({bottom:"10px",opacity:1},timer)
+                },400);
+                setTimeout(function(){
+                    $('.move9').animate({bottom:"136px",opacity:1},timer);
+                },800);
+                setTimeout(function(){
+                    $('.move10').animate({bottom:"340px",opacity:1},timer);
+                },1200);
+                d=false;return;}
+            }
+        }
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

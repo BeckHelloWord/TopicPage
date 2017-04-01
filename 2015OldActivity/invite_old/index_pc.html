@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" /><meta name="renderer" content="webkit">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>好友邀请</title>
+    <g:render template="/layouts/requireJS"/>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="invite">
+    <p><img src="images/invite1.jpg" /></p>
+    <p><img src="images/invite2.jpg" /></p>
+    <p><img src="images/invite3.jpg" /></p>
+    <p><img src="images/invite4.jpg" /></p>
+    <a class="backhome" href="//www.bxjr.cc/lc">< 返回首页</a>
+    <a class="friendinvite" href="javascript:void(0);"></a>
+    <div class="invitetab">
+        <div class="container">
+            <h3>
+                <a class="curr" href="javascript:void(0);">微信端推荐流程</a>
+                <a href="javascript:void(0);">PC端推荐流程</a>
+                <span></span>
+            </h3>
+            <p class="p1"><img src="images/inviteweixin.png" /></p>
+            <p class="p2" style="display:none;"><img src="images/invitepc.png" /></p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $.ajax({
+                    url: "/secure/get-login-info.html",
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (data && data.isLogin) {
+                            $(".friendinvite").attr("href","//www.bxjr.cc/center/recommend/index")
+                        }else{
+                            $(".friendinvite").attr("href","//www.bxjr.cc/secure/register.html")
+                        }
+                    }
+            });
+            $(".invitetab h3 a").click(function(){
+                $(this).addClass("curr").siblings("a").removeClass("curr");
+                var ind = $(this).index();
+                $(".invitetab p").eq(ind).show().siblings("p").hide();
+            });
+        });
+    </script>
+</div>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>手气任务</title>
+    <link rel="stylesheet" href="https://www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        html,body{background:url(images/bottom.jpg) no-repeat center bottom #fefaef;font:12px Helvetica,'Microsoft YaHei','Heiti','SC'\0;+overflow-x:hidden;}
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <!--导航区域 start-->
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <!--导航区域 end-->
+<div class="main">
+    <div class="banner"><img src="images/banner.jpg" class="bannerImg"></div>
+    <div class="wrapper">
+        <div class="part01">
+            <div class="plan w1200">
+                <h2><i class="h2Before"></i>&nbsp;&nbsp;&nbsp;&nbsp;金苹果投资计划&nbsp;&nbsp;&nbsp;&nbsp;<i class="h2After"></i></h2>
+                <ul class="clearfix">
+                    <li>
+                        <i class="li1"></i>
+                        <p>收益稳定</p>
+                        <span>收益远超银行以及某宝类</span>
+                    </li>
+                    <li>
+                        <i class="li2"></i>
+                        <p>优质资产</p>
+                        <span>象牙风控体系筛选优质资产支撑</span>
+                    </li>
+                    <li>
+                        <i class="li3"></i>
+                        <p>期限多样</p>
+                        <span>90天／180天灵活选择</span>
+                    </li>
+                    <li>
+                        <i class="li4"></i>
+                        <p>省心便捷</p>
+                        <span>固定金额／固定期限／便捷理财</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="part02">
+            <div class="task w1120">
+                <div class="luckyTask">
+                    <h3>手气任务：<span class="cycleDay">0</span>天</h3>
+                    <div class="clearfix timerAmount">
+                        <div class="timer fl">
+                            <span>距活动结束时间还剩：</span>
+                            <p><i id="time_d">0</i>&nbsp;天&nbsp;<i id="time_h">0</i>&nbsp;时&nbsp;<i id="time_m">0</i>&nbsp;分&nbsp;<i id="time_s">0</i>&nbsp;秒</p>
+                        </div>
+                        <div class="amount fl">
+                            <span>剩余可投金额：</span>
+                            <p><i class="canInvestMoney">0</i> 元</p>
+                        </div>
+                    </div>
+                    <div class="groupAmount">
+                        <span class="groupMoney">参团金额：</span>
+                            <span class="login">您还未登录：<a href="javascript:void(0)" class="js-login-btn groupLogin">登录</a><a href="/secure/register.html" class="groupRegister" target="_blank">注册</a></span>
+                            <span class="group">账户余额(含添添金)： <i class="canUsedMoeny">0</i>元<a href="/center/recharge/index" class="" target="_blank">充值</a></span>
+                    </div>
+                    <div class="mustAmount"><span class="investMoney">0</span> 元</div>
+                    <div class="btnDiv"><a href="javascript:void(0)" class="btnGroup" target="_blank">立即投资</a></div>
+                </div>
+                <div class="luckyImg">
+                    <div class="luckyImgW">
+                        <p class="luckyAmount t_c">&yen;<span class="voucherTotal">0</span>元</p>
+                        <p class="t_c">当前为拼手气红包</p>
+                        <div class="numberAmount clearfix">
+                            <p class="fl">已领取红包个数</p>
+                            <p class="fr"><span class="voucherSendCount">0</span>个</p>
+                        </div>
+                        <p class="totalAmount">红包总数<span class="voucherCount">0</span>个</p>
+                        <div class="numberAmount laveAmount">
+                            <p class="fl">红包剩余金额</p>
+                            <p class="fr"><span class="voucherCanUsedAmount">0</span>元</p>
+                        </div>
+                        <a href="javascript:void(0)" class="btnlucky">开始抢红包</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part03">
+            <div class="note w1200">
+                <h2 class="t_c"><i class="h2Before"></i>&nbsp;&nbsp;&nbsp;&nbsp;红包记录&nbsp;&nbsp;&nbsp;&nbsp;<i class="h2After"></i></h2>
+                <ul class="noteTitle clearfix">
+                    <li class="clearfix fl"><span class="s1">用户名</span><span class="s2">抢购金额</span><span class="s3">获得时间</span><span class="s4">红包奖励</span></li>
+                    <li class="clearfix fl noteTitleLi02"><span class="s1">用户名</span><span class="s2">抢购金额</span><span class="s3">获得时间</span><span class="s4">红包奖励</span></li>
+                </ul>
+                <ul class="clearfix noteUl"></ul>
+            </div>
+        </div>
+        <div class="part04">
+            <div class="rule w1200">
+                <div class="ruleBorder ruleul m40">
+                    <h2 class="t_c"><i class="h2Before"></i>&nbsp;&nbsp;&nbsp;&nbsp;活动规则&nbsp;&nbsp;&nbsp;&nbsp;<i class="h2After"></i></h2>
+                    <ul>
+                        <li>本活动售出的理财产品为宝象金苹果计划，执行<b>8.5% + 0.8%年化收益率，限额20</b>万，售完即止，90天标期；</li>
+                        <li>本活动每次购买金额为2000元，每次投资成功后可以得到拼手气红包（得到红包的概率为100%），单个用户可多次购买，上限100人次参加;</li>
+                        <li>本次活动总计奖励为3000元24K现金红包，有100次拼手气红包机会，每个拼手气红包金额随机，投资成功次数越多可获得拼手气红包数量越多；</li>
+                        <li><b>秒速奖：</b>第一个成功参与本活动的用户，可获得100元现金奖励；</li>
+                        <li><b>土豪奖：</b>本活动累计投资金额最多的用户（需为多笔投资）可获得200元现金奖励（若金额相同，则奖励给最先达到此额度的用户）；</li>
+                        <li>用户投资成功后需返回活动页面拼手气抢红包，红包信息以弹出框的形式告知成功用户并即时到帐。用户可以在“我的”-“我的红包”内查看；</li>
+                        <li>用户只可通过本活动页面入口购买，方可参与生效本次团购活动，通过其他入口购买的用户不计入本次活动；</li>
+                        <li>如有任何疑问请联系<b>客服电话：400-885-1100</b>；</li>
+                        <li>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+                    </ul>
+                </div>
+                <!--<div class="ruleBorder ruleGroup m40">-->
+                    <!--<h2 class="t_c"><i class="h2Before"></i>&nbsp;&nbsp;&nbsp;&nbsp;本期团购组合资金投向&nbsp;&nbsp;&nbsp;&nbsp;<i class="h2After"></i></h2>-->
+                    <!--<ul>-->
+                        <!--<li class="ruleLi01"><span>资产种类</span><span>资产数量</span><span>资产总额</span><span>资产来源</span></li>-->
+                        <!--<li><span>车辆质押贷</span><span>6个</span><span>100万</span><span>宝象金融</span></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="tips">市场有风险，投资需谨慎</div>
+    </div>
+</div>
+</div>
+<audio id="car_audio"  src="../music/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/layer1.9/layer.js"></script>
+<script src="../../js/public.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+loginFun();//未登录
+
+function loginSuccess(){/*登录成功*/
+    location.reload();
+}
+function loginLayer(){/*未登录弹窗*/
+    var loginLayer;
+    loginLayer = layer.open({
+        type: 2,
+        area: ['489px', '454px'],
+        shade: [0.6, '#000'],
+        closeBtn: true,
+        title:false, //不显示标题
+        content: "/index/login-layer.html" //捕获的元素
+    });
+}
+function loginFun(){
+    $.ajax({
+        url:'/secure/get-login-info.html',
+        cache:false,
+        success:function(json) {
+            if (!json.isLogin) {
+                $(".group").hide();
+                $(".login").show();
+                loginLayer();
+                return false;
+            }else{
+                $(".group").show();
+                $(".login").hide();
+            }
+        }
+    });
+}
+$(".js-login-btn").on("click",function(e){
+    loginLayer();
+    e.preventDefault();
+});
+var bol = true;
+$(".btnlucky").on("click",function(){
+    var $this = $(this);
+
+    if(!bol){
+        return false;
+    }
+
+    bol = false;
+    $this.addClass("end").text("抢红包中");
+
+    $.ajax({
+        url:'/act-year-end-lucky/second-kill.html',
+        cache:false,
+        success:function(json){
+            bol = true;
+            $this.removeClass("end").text("开始抢红包");
+            if(!json.success){
+                loginFun();
+                return false;
+            }
+
+            if(json.killType == 0){//秒杀失败
+                layer.open({
+                    content: json.message
+                });
+                return false;
+            }
+
+            if(json.killType == 1){//秒杀成功
+                var suc;
+                suc = layer.open({
+                    type:1,
+                    area:'627px',
+                    shade: [0.6, '#000'],
+                    closeBtn: true,
+                    title:false, //不显示标题
+                    content:'<div class="suc layer"><h5>拼手气红包</h5><p class="suc_count layer_count"><span>'+ json.giftMoney +'</span>元</p><p class="suc_message layer_message">恭喜你获得拼手气红包&nbsp;&nbsp;<span>'+ json.giftMoney +'元</span>！<br />好运就在下一次机会等着你哦！</p><div class="suc_btn layer_btn clearfix"><a href="javascript:void(0)" class="suc_close layer_close">知道了</a><a href="javascript:void(0)" class="suc_invest layer_invest">再拼一次</a></div></div>'
+                });
+
+                $(".suc_btn").html('<a href="javascript:void(0)" class="suc_close layer_close">知道了</a><a href="/lc/invest/detail/'+ json.investId +'.html" target="_blank"  class="suc_invest layer_invest">再拼一次</a>');
+                $(".suc_close").on("click",function(e){
+                    layer.close(suc);
+                    e.preventDefault();
+                });
+                $(".voucherSendCount").text(json.voucherSendCount);
+                $(".voucherCanUsedAmount").text(json.voucherCanUsedAmount);
+
+                return false;
+            }
+
+            if(json.killType == 2){//没有机会
+                var noChance;
+                noChance = layer.open({
+                    type:1,
+                    area:'627px',
+                    shade: [0.6, '#000'],
+                    closeBtn: true,
+                    title:false, //不显示标题
+                    content:'<div class="noChance layer"><p class="noChance_message layer_message">您当前没有机会，现在投资得抢红包机会</p><div class="noChance_btn layer_btn clearfix"><a href="javascript:void(0)" class="noChance_close layer_close">再想想</a><a href="javascript:void(0)" class="noChance_invest layer_invest">去投资</a></div></div>'
+                });
+
+                $(".noChance_btn").html('<a href="javascript:void(0)" class="noChance_close layer_close">再想想</a><a href="/lc/invest/detail/'+ json.investId +'.html" target="_blank"  class="noChance_invest layer_invest">去投资</a>');
+                $(".noChance_close").on("click",function(e){
+                    layer.close(noChance);
+                    e.preventDefault();
+                });
+
+                return false;
+            }
+
+            if(json.killType == 3){//活动结束
+                layer.open({
+                    content: '尊敬的客户，活动已结束'
+                });
+                return false;
+            }
+
+
+        }
+    })
+});
+
+</script>
+<!--统计代码-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

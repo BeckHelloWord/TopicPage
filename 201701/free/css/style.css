@@ -1,0 +1,144 @@
+*{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:text;-user-select:text;}
+img{max-width:100%;}
+.clearfix:before,.clearfix:after {content: " "; /* 1 */display: table; /* 2 */}
+.clearfix:after{clear:both;}
+a{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none;}
+a:focus,input:focus{outline:0;}
+i{font-style:normal;}
+.fl{float:left;}
+.fr{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.hidden{display:none;}
+.br{-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;}
+
+body.noBody{background:#e1e0de;top:0;text-align:center;}
+body.noBody img{width:70%;}
+
+.main,.prizeMain{width:100%;max-width:750px;height:100%;margin:0 auto;overflow:hidden;background:url(../images/bgReport.jpg) repeat-y;background-size:100%;}
+/*index*/
+.main .bgBottom{width:60%;margin:0 auto;text-align:center;position:absolute;left:20%;bottom:10%;}
+.main .bgBottom .box{padding:10% 0 6%;border:2px solid #ff4f2d;background:url(../images/contBg.png) no-repeat;background-size:100% 100%;}
+/*二维码*/
+.attentionBox img{width:60%;}
+.attentionBox p{padding-top:4px;color:#e53b15;font-size:1.2rem;}
+/*登录注册*/
+.main .registerBottom{width:90%;left:5%;}
+.registerBottom .register-form{width:80%;margin:0 auto;font-size:1.4rem;}
+.registerBottom .box{padding:6% 0;}
+.registerBottom .register-form label input,.registerBottom .register-form .btn,.registerBottom .register-form .send_code{height:4rem;line-height:2rem;padding:1rem 0;border-radius:2px;-webkit-border-radius:2px;}
+.registerBottom .register-form label .inputBox{width:100%;border:0;padding-left:10px;}
+.registerBottom .register-form .mobile_code .inputBox{width:60%;}
+
+.registerBottom .register-form .mobile_code .send_code{width:38%;border:0;background-color:#e53b15;color:#fdebb2;font-size:12px;}
+.registerBottom .register-form .mobile_code .send_code[disabled]{background:#ccc;color:#999;}
+
+.registerBottom .register-form .btn{width:100%;border:0;background:#e53b15;color:#fdebb2;display:block;outline:0;}
+.registerBottom .register-form .btn[disabled] {background: #ccc;box-shadow:none;color:#fff !important;}
+.registerBottom .register-form .Validform_checktip{width:100%;height:20px;line-height:20px;color:#e53b15;text-align:left;display:block;font-size:10px;}
+.registerBottom .register-form .loginButton{color:#e58a15;font-size:1.4rem;display:none;}
+.registerBottom .register-form .loginButton a{color:#e53b15;font-size:1.6rem;text-decoration:underline;}
+
+/*注册协议*/
+.agreement{text-align:center;color:#e53b15;display:none;}
+.agreement a{color:#e53b15;}
+.agreement .cka{}
+.agreement .checkAgreement{display:none;}
+.agreement .checkAgreement + label:before{content:'';width:1rem;height:1rem;line-height:1rem;background:url(../images/agreement.png) no-repeat;background-size:100%;display:inline-block;}
+.agreement .checkAgreement:checked + label:before{content: '';background:url(../images/agreementRight.png) no-repeat;background-size:100%;}
+.agreement .agBtn img{width:50%;}
+/*活动最终解释权归宝象金融所有*/
+.main .tips{position:absolute;bottom:0;left:0;}
+.tips{width:100%;height:20px;line-height:20px;text-align:center;color:#f19c51;font-size:10px;}
+.prizeMain .tips{padding-bottom:6rem;}
+
+/*分享*/
+.share_mask{width:100%;height:0;text-align: center;background-color:rgba(0,0,0,.8);position:fixed;left:0;bottom:0;overflow:hidden;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition:all 0.5s;z-index:9999;}
+.share_mask img{width:70%;}
+
+/*产品*/
+.prizeBottom{color:#fdebb2;text-align:center;font-size:1.4rem;}
+.prizeBottom a{color:#fdebb2}
+.prizeBottom ul li{width:90%;margin:0 auto;box-sizing:border-box;}
+.prizeBottom ul li.prizeTitle{width:70%;height:4rem;line-height:4rem;border:2px solid #f4320c;margin:0 auto;background:rgba(151,43,12,.8);font-size:1.6rem;}
+.prizeBottom ul li.prizeTitle span{color:#ffcd02;}
+.prizeBottom ul li table{width:100%;border:2px solid #f4320c;padding:14px;margin:10px auto;background:rgba(151,43,12,.8);}
+.prizeBottom ul li table tr td{padding-left:14px;text-align:center;}
+.prizeBottom ul li table tr td.tdImg{width:30%;padding:0 14px 0 0;border-right:1px solid #e53b15;}
+.prizeBottom ul li table tr td.tdImg .img{width:100%;height:8rem;line-height:8rem;text-align:center;}
+.prizeBottom ul li table tr td.tdImg .img img{max-width:100%;max-height:90%;}
+.prizeBottom ul li table tr td.message{width:70%;height:3rem;line-height:3rem;font-size:1.2rem;}
+.prizeBottom ul li table tr td.message span i{color:#ffcd02;}
+.prizeBottom ul li table tr td .allBtn{height:3rem;line-height:3rem;background:#e53b15;border-radius:2px;-webkit-border-radius:2px;display:block;}
+.prizeBottom ul li table tr td .allBtn.on{background:#ccc;color:#999;}
+.prizeBottom ul li table tr td .inviteBtn{color:#ffcd02;}
+
+.prizeBottom .part05{width:90%;margin:0 auto;}
+.prizeBottom .part05 .prizeTitle{font-weight:bold;}
+.prizeBottom .part05 ol{margin-top:10px;text-align:left;}
+.prizeBottom .part05 ol li{margin-bottom:4px;font-size:1.3rem;}
+.prizeBottom .part05 ol li span{color:#ffcd02;}
+
+.whetherLogin{width:100%;height:4rem;line-height:4rem;padding:0 14px;border-top:2px solid #f4320c;border-bottom:2px solid #f4320c;color:#bc7150;background:#fff3ce;position:fixed;bottom:0;left:0;font-size:1.2rem;}
+.whetherLogin .notLogin,.whetherLogin .hasLogin{height:2rem;line-height:2rem;margin-top:1rem;}
+.whetherLogin .notLogin a{width:50%;font-weight:bold;text-align:center;display:block;float:left;color:#e53b15;}
+.whetherLogin .notLogin a:first-child{border-right:1px solid #f4320c;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.whetherLogin .hasLogin span{color:#e53b15;}
+.whetherLogin .hasLogin  .invest{padding:0 10px;border-radius:2px;-webkit-border-radius:2px;background:#e53b15;color:#ffcd02;font-size:1.2rem;}
+
+/*主活动页面接口*/
+.a_layerBox{width:100%;position:relative;z-index:999;display:none;}
+.a_layerBg{width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,.6);}
+.a_layerBox .a_layerCon{width:90%;font-size:1.4rem;position:fixed;top:28%;left:5%;text-align:center;background:#fff3ce;color:#bc7150;}
+.a_layerBox .a_layerCon .a_addressTitle{padding:10px;background:#fdebb2;}
+.a_layerBox .a_layerCon .a_addressTitle h2{font-weight:normal;}
+.a_layerBox .a_layerCon .a_addressConfirm{margin:3rem 0;color:#e53b15;}
+.a_layerBox .a_layerCon .a_addressCont{padding:0 14px;}
+.a_layerBox .a_layerCon .a_addressCont label{height:4rem;line-height:4rem;display:block;text-align:left;}
+.a_layerBox .a_layerCon .a_addressCont .label i{width:26%;}
+.a_layerBox .a_layerCon .a_addressCont .label span,.a_layerBox .a_layerCon .a_addressCont .label input{width:74%;}
+.a_layerBox .a_layerCon .a_addressCont .label input{height:3rem;line-height:3rem;padding-left:4px;border:0;margin-top:0.5rem;background:#fff;}
+.a_layerBox .a_layerCon .a_addressCont .label ::-webkit-input-placeholder {font-size:1rem;color:#e1d6b4;}
+/*提交收货地址*/
+.a_formBox{}
+.a_formBox .a_layerCon{top:10%;}
+.a_formBox .a_layerCon .a_addressConfirm{margin:1rem 0 0 0;}
+/*白拿成功*/
+.a_successBox{}
+/*白拿失败 需要投资*/
+.a_failBox{}
+.a_failBox .a_layerCon .a_addressNeed{margin-top:2rem;color:#cd956d;}
+.a_failBox .a_layerCon .a_addressConfirm{margin:0;}
+/*白拿失败 没有奖品*/
+.a_noPrizeBox{}
+/*白拿失败 已经拿过*/
+.a_alreadyBox{}
+
+/*关闭*/
+.a_layerBox .layerClose{width:2rem;height:2rem;position:absolute;right:10px;top:10px;display:block;transform:rotate(45deg);-webkit-transform:rotate(45deg);}
+.a_layerBox .layerClose .before{width:2rem;height:.2rem;background:#bc7150;position:absolute;top:1rem;left:.1rem;}
+.a_layerBox .layerClose .after{width:.2rem;height:2rem;background:#bc7150;position:absolute;top:.1rem;left:1rem;}
+/*按钮*/
+.a_formBox .submit.redBtn{width:100%;}
+.a_layerBox .redBtn{width:48%;height:3rem;line-height:3rem;margin:3rem auto;border:0;border-radius:2px;-webkit-border-radius:2px;background:#e53b15;color:#fff;display:block;}
+.a_layerBox .yellowBtn{width:48%;height:3rem;line-height:3rem;margin:3rem auto;border:0;border-radius:2px;-webkit-border-radius:2px;background:#ecb81c;color:#fff;display:block;}
+.layermbtn span:first-child{background:none !important;}
+/*错误提示*/
+.empty{display:none;color:red;font-size:1.2rem;}
+@media screen and (min-width:750px) {
+    html{font-size:16px}
+    .main{width:84%;}
+    .main .registerBottom{bottom:28px;width:80%;left:10%;}
+    .main .registerBottom .register-form .mobile_code .send_code{font-size:1.4rem;}
+    .main .registerBottom .register-form .Validform_checktip{height:2rem;line-height:2rem;font-size:1.2rem;}
+    .tips{font-size:1.2rem;}
+    .account{width:750px;left:1.2%;}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)and (orientation : landscape)and (-webkit-min-device-pixel-ratio: 1){
+    .main{width:44%;}
+    .main .registerBottom{bottom:28px;width:40%;left:30%;}
+    .account{width:750px;left:13.4%;}
+    .share_mask img{width:40%;}
+}
+

@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no" />
+    <title>千兆流量，千万红包任性送</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/js/validform/js/validform_v5.3.2.js?v=${g.version()}"></script>
+    <script src="//www.bxjr.com/topic/js/layer.js"></script>
+    <script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+    <style>
+        .layermcont{padding:0 !important;}
+        .layermchild{background:none !important;}
+    </style>
+</head>
+<body class="main prize">
+<img src="./images/prizeBg.jpg">
+<div class="ruleBtn greenShadow">活动说明</div>
+<div class="content" style="top:50%;">
+
+<div class="allIcon oldUser clearfix">
+    <div class="redIcon sameIcon fl redShadow">
+        <div class="redIconCon sameIconCon">
+            <span class="redNum">128</span>
+        </div>
+        <p class="yellowShadow"><span class="redNum">128</span>元红包</p>
+    </div>
+    <div class="addIcon fl"><img src="./images/addIcon.png"></div>
+    <div class="blueIcon sameIcon fr blueShadow">
+        <div class="blueIconCon sameIconCon">
+            <img src="./images/blueIconSmall.png">
+        </div>
+        <p class="yellowShadow">30M-50M流量</p>
+    </div>
+</div><!--老用户-->
+<div class="allIcon newUser">
+    <div class="blueIcon sameIcon fl blueShadow">
+        <div class="blueIconCon sameIconCon">
+            <img src="./images/blueIconSmall.png">
+        </div>
+        <p class="yellowShadow">70M-100M流量</p>
+    </div>
+    <div class="addIcon fl"><img src="./images/addIcon.png"></div>
+    <div class="redIcon sameIcon fr redShadow">
+        <div class="redIconCon sameIconCon">
+            <span class="redNum">12</span>
+        </div>
+        <p class="yellowShadow"><span class="redNum">12</span>元红包</p>
+    </div>
+</div><!--新用户-->
+<div class="again">
+    <img src="./images/prizeM.png" >
+</div><!--已经获得用户-->
+
+<a href="javascript:void(0)" class="bgStyle shareBtn"><span>分享领取礼包</span><i></i></a>
+<a href="/center/packet/list" class="bgStyle receiveBtn"><span>使用红包去投资</span><i></i></a>
+
+<p class="phoneNum purpleShadow">当前账户：<span>13000000000</span></p>
+</div>
+
+<div class="tips">活动最终解释权归宝象金融所有</div>
+<div class="oldUserMask mask sameMask">
+    <img src="./images/layer.png" class="layer-bg">
+    <p class="orangeShadow">获得<span class="redNum amountNum"></span>元红包+<span class="blueNum trafficNum"></span>流量</p>
+    <div class="clearfix allIconLayer">
+        <div class="sameIcon fl redShadow">
+            <div class="redIconCon sameIconCon">
+                <span class="redNum amountNum"></span>
+            </div>
+        </div>
+        <div class="addIcon fl"><img src="./images/addIcon.png"></div>
+        <div class="sameIcon fr blueShadow">
+            <div class="blueIconCon sameIconCon blueIconConImg">
+                <span class="blueNum trafficNum"></span>
+                <img src="./images/blueIconSmall.png">
+            </div>
+        </div>
+    </div>
+</div><!--老用户-->
+<div class="newUserMask mask sameMask">
+    <img src="./images/layer.png" class="layer-bg">
+    <p class="orangeShadow">获得<span class="blueNum trafficNum"></span>流量+<span class="redNum amountNum"></span>元红包</p>
+    <div class="clearfix allIconLayer">
+        <div class="sameIcon fl blueShadow">
+            <div class="blueIconCon sameIconCon blueIconConImg">
+                <span class="blueNum trafficNum"></span>
+                <img src="./images/blueIconSmall.png">
+            </div>
+        </div>
+        <div class="addIcon fl"><img src="./images/addIcon.png"></div>
+        <div class="sameIcon fr redShadow">
+            <div class="redIconCon sameIconCon">
+                <span class="redNum amountNum"></span>
+            </div>
+        </div>
+    </div>
+</div><!--新用户-->
+<div class="mask share-mask">
+    <img src="./images/share.png" >
+</div><!--分享-->
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script>
+    (function() {
+        if (!/MicroMessenger/i.test(navigator.userAgent)) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+        } else {
+            $.ajax({
+                url:"/act-double-twelve/user-judge.html",
+                success:function(json){
+                    if (!json.success) {
+                       location.href = "index.html";
+                        return false
+                    }
+                    if (!json.type) {
+                        layer.open({
+                            content: json.message
+                        });
+                        return false
+                    }
+                    if(json.oldUser){
+                        $(".oldUser").show();
+                    }else{
+                        $(".newUser").show();
+                    }
+                }
+            });
+            /*获得当前账户手机号*/
+            getTel();
+            function getTel(){
+                $.ajax({
+                    url: "/secure/get-login-info.html",
+                    data:{isBalance:true,isRecommend:true,isValidStatus:true,isVoucherCount:true},
+                    type:'get',
+                    success: function (data) {
+                        $(".phoneNum span").text(data.mobile);
+                    }
+                });
+            }
+            $(".shareBtn").on("click",function(e){
+                $(".share-mask").css({"height": "100%"});
+                e.preventDefault();
+            });
+            /*规则*/
+            $(".ruleBtn").on("click",function(){
+                openLayer = layer.open({
+                    content:'<div class="rule"><img src="./images/ruleT.png" /><div class="ruleBg"><h2>活动规则</h2><ul><li class="ruleTitle">红包说明</li><li><img src="./images/ruleIcon.png"/> 需投资 ≧5888元   投资标的时长 ≧3个月</li><li><img src="./images/ruleIconOne.png"/> 需投资 ≧1588元   投资标的时长 ≧1个月</li><li class="ruleTitle">流量发放说明</li><li>第1步：流量自动领取，流量发放受网络情况影响，请大家耐心等待。</li><li>第2步：使用12元红包领500兆流量手动发放，五个工作日到账，所有参与用户每个ID号只能领取一次，所有用户以到达流量为准。</li><li class="ruleTitle">用户投资路径说明</li><li>参与用户分享获得礼包后，需再次分享方可进入投资流程。</li><li class="ruleTitle">返回首页路径说明</li><li>分享后进入使用红包投资页—页面底部我要投资—页面右上角用户头像—账户设置—退出登录。</li></ul></div><img src="./images/ruleB.png" class="ruleClose"/></div>'
+                });
+                $(".ruleClose").on("click", function (e) {
+                    layer.close(openLayer);
+                    e.preventDefault()
+                });
+            });
+            /*蒙层*/
+            $(".mask").on("click",function(){
+                $(this).css("height","0")
+            });
+            /*微信分享*/
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "千兆流量，千万红包任性送",
+                    desc: "宝象12.12，一起狂欢吧！",
+                    link: location.host + "/topic/201611/doubleTwelve/index.html",
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1611/d8e7a807-4fa4-4488-ad70-0ae225adf75d.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode',
+                        'menuItem:share:timeline',
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){
+                    $.ajax({
+                        url:'/act-double-twelve/share.html',
+                        async: false,
+                        cache: false,
+                        success:function(json){
+                            if(!json.success){
+                                location.href = "register.html";
+                                return;
+                            }
+                            if (!json.type) {
+                                layer.open({
+                                    content: json.message
+                                });
+                                return;
+                            }
+                            /*是否关注*/
+                            if(!json.hasNoticed){
+                                location.href = "attention.html";
+                                return;
+                            }
+                            $(".share-mask").css("height","0");
+
+                            if(json.hasShared){
+                                $(".oldUser").hide();
+                                $(".newUser").hide();
+                                $(".again").show();
+                                $(".shareBtn").hide();
+                                $(".receiveBtn").css("display","block");
+                                $(".ruleBtn").hide();
+                            }else{
+                                if(json.oldUser){
+                                    $(".oldUserMask").css("height","100%");
+                                }else{
+                                    $(".newUserMask").css("height","100%");
+                                }
+                                $(".trafficNum").text(json.flowCount);/*流量*/
+                                $(".amountNum").text(json.voucherCount);/*红包*/
+                            }
+                        }
+                    });
+
+                }
+            };
+            wechatShare.init(shareData);
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

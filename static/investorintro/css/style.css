@@ -1,0 +1,3 @@
+.bx_wrap .bx_body {position: relative;background: url("../images/intro-banner.jpg") no-repeat;width: 1920px;height: 340px;padding-top: 260px;top: 0;left: 50%;margin-left: -960px;}
+.bx_wrap .bx_body p.intro {width: 962px;font-size: 16px;color: #fff;line-height: 31px;margin: 0 auto;text-align: justify;}
+.bx_wrap .bx_body p.src {font-size: 14px;color: #fff;margin: 0 auto;text-align: center;margin-top: 50px;}

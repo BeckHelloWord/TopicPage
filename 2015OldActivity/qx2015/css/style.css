@@ -1,0 +1,83 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+.wrap{width: 100%; min-width: 1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+
+.footer{text-align: center; margin:40px 0; font-size: 16px;}
+footer{text-align:left;width:90%; margin-left:5%;font-size:12px; padding:20px 0;}
+
+
+/* h5页面 */
+.qx{}
+.qx img{max-width:100%;}
+.qx section{position:relative;}
+.qx .bottom{width:100%;font-size: 12px;background-color: #fff7c1;}
+.qx .bottom ol{padding:0 3% 0 8%;}
+.qx .bottom li,.qx .bottom li li{padding-bottom: 5%;}
+.qx .bottom ol ol{padding-left:8%;}
+.qx .h5inviteFriend{width: 100%;margin: 0 auto;text-align: center;left: 0;position: absolute;top: 5%;}
+.qx .h5inviteFriend a{color:#3883e9;text-decoration: underline;font-size: 14px;}
+.qx .h5inviteFriend1 a{display: block;position: absolute;width:60%;left:20%;bottom:40%;}
+
+/* PC */
+.main{width: 1920px; position: relative; left: 50%; margin-left: -960px;background-color: #fff7c1;}
+.main .btn{display: block;position: absolute;left: 50%;}
+.main .btn1{background:url(../images/pcbtn_01.png) no-repeat;width:248px;height:64px;margin-left: 136px;margin-top: -310px;}
+.main .btn2{background:url(../images/pcbtn_02.png) no-repeat;width:470px;height:130px;margin-left:-235px;margin-top: -310px;}
+.main .btn4{background:url(../images/pcbtn_04.png) no-repeat;width:450px;height:116px;margin-left:-225px;margin-top: -270px;}
+.bottom{width:1000px;margin: 0 auto;text-align: center;font-size: 20px;}
+.bottom ol {text-align: left;line-height: 2;}
+.bottom ol.bottom_1 li{list-style-type: decimal;}
+.bottom ol.bottom_2{padding-left:42px;}
+.bottom ol.bottom_2 li{list-style-type:decimal-leading-zero}
+.bottom li span{color:#fc6f11}
+.main .inviteFriend{text-align: center;margin: 40px 0;}
+.main .inviteFriend a{color:#3883e9;text-decoration: underline;left: 0;width: 100%;font-size: 31px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

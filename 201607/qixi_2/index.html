@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>七夕，有人为你写了情诗</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+
+<body>
+<div class="loading"><img src="./images/loading.gif"></div>
+<div class="wrapper">
+    <div id="pagepiling" class="main">
+        <div id="part_01" class="section part">
+            <div class="top">
+                <img src="./images/top.jpg">
+                <div class="star">
+                    <div class="star01"></div><div class="star02"></div><div class="star03"></div><div class="star04"></div><div class="star05"></div><div class="star06"></div>
+                </div>
+                <ul class="cont">
+                    <li class="l1"><span>七夕献礼</span></li><li class="l2">有人为你写下了一句情诗</li><li class="l3">让你无法拒绝的满满爱意</li>
+                </ul>
+                <div class="birdLeft fly"><img src="./images/bird.png"></div>
+                <div class="clearfix animate">
+                    <img src="./images/bridgeTop.png">
+                    <div class="fl"><img src="./images/boy.png"></div>
+                    <div class="fr"><img src="./images/girl.png"></div>
+                </div>
+            </div>
+            <div class="bottom">
+                <img src="./images/bottom.jpg">
+                <div class="star"><div class="star07"></div></div>
+                <div class="clearfix animate animateInverted">
+                    <img src="./images/bridgeBottom.png">
+                    <div class="fl"><img src="./images/boyInverted.png"></div>
+                    <div class="fr"><img src="./images/girlInverted.png"></div>
+                </div>
+            </div>
+        </div>
+        <div id="part_02" class="section part hidden">
+            <div class="top fourRow">
+                <img src="./images/top01.jpg"/>
+                <div class="star">
+                    <div class="star01"></div><div class="star02"></div><div class="star03"></div><div class="star04"></div><div class="star05"></div><div class="star06"></div>
+                </div>
+                <ul class="cont">
+                    <li><span>我喜欢你</span></li>
+                    <li>喜欢看你认真的样子</li>
+                    <li>喜欢听你泉水叮咚一般的声音</li>
+                    <li>忍不住想要永远拥有你的微笑</li>
+                </ul>
+                <div class="birdLeft fly"><img src="./images/bird.png"></div>
+                <div class="walk"><img src="./images/boy01.png"></div>
+            </div>
+            <div class="bottom">
+                <img src="./images/bottom01.jpg"/>
+                <div class="bottle"><img src="./images/bottle.png"/></div>
+            </div>
+        </div>
+        <div id="part_03" class="section part hidden">
+            <div class="top fourRow">
+                <img src="./images/top02.jpg"/>
+                <div class="star">
+                    <div class="star01"></div><div class="star02"></div><div class="star03"></div><div class="star04"></div><div class="star05"></div><div class="star06"></div>
+                </div>
+                <ul class="cont">
+                    <li><span>我想你</span></li>
+                    <li>我用思念的时间养了一池的芙蓉</li>
+                    <li>夜夜思量，你的模样</li>
+                    <li>喜欢你从来都不是雨后便消失的彩虹</li>
+                </ul>
+                <div class="birdLeft fly"><img src="./images/bird.png"></div>
+                <div class="birdRight fly"><img src="./images/bird.png"></div>
+                <div class="rainbow"><img src="./images/rainbow.png"/></div>
+            </div>
+            <div class="bottom">
+                <img src="./images/bottom02.jpg"/>
+                <div class="lotus">
+                    <div class="lotus01"><img src="./images/lotus01.png"/></div>
+                    <div class="lotus02"><img src="./images/lotus02.png"/></div>
+                    <div class="lotus03"><img src="./images/lotus03.png"/></div>
+                </div>
+                <div class="bridge">
+                    <div class="all">
+                        <img class="body" src="./images/body.png" />
+                        <img class="handL hands" src="./images/handL.png" />
+                        <img class="handR hands" src="./images/handR.png" />
+                    </div>
+                    <img src="./images/bridge.png" />
+                </div>
+            </div>
+        </div>
+        <div id="part_04" class="section part hidden">
+            <div class="top fourRow">
+                <img src="./images/top03.jpg"/>
+                <ul class="cont">
+                    <li><span>我爱你</span></li>
+                    <li>想与你一起 看每一场电影</li>
+                    <li>能想到最浪漫的事，就是与你相守一生</li>
+                    <li>千言万语，也抵不过一句“我爱你”</li>
+                </ul>
+                <div class="cartoon">
+                    <img class="cover" src="./images/cartoon.png"/>
+                    <img src="./images/qixi.gif"/>
+                </div>
+                <div class="gb"><img src="./images/boyGirl02.png"/></div>
+            </div>
+            <div class="bottom">
+                <img src="./images/bottom03.png"/>
+            </div>
+        </div>
+        <div id="part_05" class="section part hidden">
+            <div class="top">
+                <img src="./images/envelope01.jpg"/>
+                <div class="fp_box">
+                    <form id="" action="" method="post">
+                        <input id="loveWord" name="loveWord" class="write_Text" maxlength="15" type="text" />
+                        <input id="likeWord" name="likeWord" class="write_Text" maxlength="15" type="text" />
+                        <input id="missWord" name="missWord" class="write_Text" maxlength="15" type="text" />
+                        <input id="share_btn" class="btn" disabled type="button" value="分享爱的宣言" />
+                        <p>每行限制15字</p>
+                    </form>
+                </div>
+            </div>
+            <div class="bottom">
+                <img src="./images/envelope02.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="next"><img src="./images/next.png"></div>
+<audio id="car_audio" src="./images/audio.mp3" autoplay="autoplay" loop="loop"></audio>
+<div class="share_mask"><img src="./images/share.png"></div>
+<script src="./js/jquery.pagepiling.min.js"></script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    $("body").height($(window).height());
+    /*音乐*/
+    var audio = $('#car_audio');
+    var isPlaying = false;
+    function playAudio() {
+        var audio = $('#car_audio');
+        if (audio.attr('src') == undefined) {
+            audio.attr('src', audio.data('src'));
+        }
+        audio[0].play();
+        isPlaying = true;
+    }
+    $(function(){
+        playAudio();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                network = e.err_msg.split(":")[1];  //结果在这里
+                playAudio();
+            });
+        }, false);
+    });
+
+    var hostUrl = location.host + location.pathname;
+
+    var shareData = {
+        title: "七夕，有人为你写了情诗",
+        desc: "今天，我想对你表白",
+        link: hostUrl,
+        imgUrl: "https://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/7bc2cb56-32b4-41d1-984e-a6d00ee48b40.jpg"
+    };
+    $(function () {
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var qixiCode=getQueryString("qixiCode");
+        if(qixiCode){
+            $.ajax({
+                url: "/qixi/index.html",
+                data:{"qixiCode": qixiCode},
+                success: function(data){
+                    $(".l1").html(data.loveWord.split("").join("<br />"));
+                    $(".l2").html(data.likeWord.split("").join("<br />"));
+                    $(".l3").html(data.missWord.split("").join("<br />"));
+                }
+            });
+        }
+        if (/MicroMessenger/i.test(navigator.userAgent) == false) {
+            var html = '<img src="/activity/wechat201509/images/wechat.jpg" />';
+
+            $("body").addClass("noBody").html(html);
+        }
+        else {
+            var indexLi = $('.cont li');
+            var birdL1 = $("#part_01").find(".birdLeft");
+            var birdR1 = $("#part_01").find(".birdRight");
+            setTimeout(function () {
+                $(".animate").addClass("curr");
+            }, 2600);
+            setTimeout(function () {
+                birdL1.addClass("curr");
+            }, 2100);
+            setTimeout(function () {
+                $(".birdRight").eq(0).addClass("curr");
+            }, 3600);
+            setTimeout(function () {
+                indexLi.eq(0).addClass("curr");
+            }, 2000);
+            setTimeout(function () {
+                indexLi.eq(1).addClass("curr");
+            }, 2500);
+            setTimeout(function () {
+                indexLi.eq(2).addClass("curr");
+            }, 3000);
+            $('#pagepiling').pagepiling({
+                afterLoad: function (anchorLink, index) {
+                    var li = $("#part_0" + index + " ul").find("li");
+                    var birdL = $("#part_0" + index).find(".birdLeft");
+                    var birdR = $("#part_0" + index).find(".birdRight");
+
+                    var page = $(".part").eq(index - 1);
+                    if (index == 2 || index == 3 || index == 4) {
+                        page.find("li").eq(0).addClass("curr");
+
+                        setTimeout(function () {
+                            page.find("li").eq(1).addClass("curr");
+                        }, 500);
+                        setTimeout(function () {
+                            page.find("li").eq(2).addClass("curr");
+                        }, 1000);
+                        setTimeout(function () {
+                            page.find("li").eq(3).addClass("curr");
+                        }, 1500);
+                    }
+
+                    if (index == 2) {
+                        setTimeout(function () {
+                            $(".walk").addClass("curr");
+                        }, 600);
+                        setTimeout(function () {
+                            birdL.addClass("curr");
+                        }, 100);
+                        setTimeout(function () {
+                            $(".bottle").addClass("curr");
+                        }, 10);
+                    }
+                    if (index == 3) {
+                        setTimeout(function(){
+                            $(".hands").addClass("curr");
+                        },200);
+                        setTimeout(function () {
+                            $(".rainbow").addClass("curr");
+                        }, 200);
+                        setTimeout(function () {
+                            birdL.addClass("curr");
+                            birdR.addClass("curr");
+                        }, 400);
+                    }
+                }
+            });
+
+            $(".next").on("click", function(){
+                $.fn.pagepiling.moveSectionDown()
+            });
+            setTimeout(function(){
+                $(window).scrollTop(1);
+            },0);
+        }
+        var btn = $("#share_btn");
+        btn.click(function () {
+            btn.disabled = true;
+            $.ajax({
+                url: "/qixi/save-three-word.html",
+                data: {
+                    loveWord: $("#loveWord").val(),
+                    likeWord: $("#likeWord").val(),
+                    missWord: $("#missWord").val()
+                },
+                async: true,
+                success: function (data) {
+                    if (data.status == "success") {
+                        shareData.link = hostUrl + "?qixiCode=" + data.qixiCode;
+
+                        //执行微信分享监听
+                        wxListener();
+                        $(".share_mask").css({"height": "100%"});
+                    } else {
+                        btn.disabled = false;
+                        if(data.status.length>40){
+                            alert("保存失败，含有特殊字符，请重新输入");
+                            return
+                        }
+                        alert("保存失败，"+data.status);
+                    }
+                },
+                error: function (data) {
+                    btn.disabled = false;
+                    alert("分享失败！")
+                }
+            });
+        });
+        //执行微信分享监听
+        wxListener();
+        $("input").on("keyup input propertychange", function(){
+            if($(this).val() == ""){
+                btn.attr("disabled","true");
+            }else{
+                btn.removeAttr("disabled");
+            }
+        });
+        $("input").focus(function(){
+            $(".next").hide();
+        }).blur(function(){
+            $(".next").show();
+        });
+        $(".share_mask").click(function(){
+            $(this).css({height:"0"});
+        });
+    });
+
+    var wxListener = function(){
+        $.ajax({
+            url: "/wechat/sign.html",
+            data: {url: location.href},
+            success: function (data) {
+                // 微信分享事件监听
+                wx.config({
+                    debug: false,
+                    appId: data.appId, // 公众号的唯一标识
+                    timestamp: data.timestamp, // 生成签名的时间戳
+                    nonceStr: data.nonceStr, // 生成签名的随机串
+                    signature: data.signature, // 签名
+                    jsApiList: [
+                        // 所有要调用的 API 都要加到这个列表中
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'hideMenuItems',
+                        'hideAllNonBaseMenuItem',
+                        'hideOptionMenu',
+                        'hideMenuItem'
+                    ]
+                });
+            }
+        });
+        wx.ready(function () {
+            //全部屏蔽掉
+            wx.hideMenuItems({
+                menuList: [
+                    'menuItem:copyUrl',//复制链接
+                    'menuItem:delete',//删除
+                    'menuItem:originPage',//原网页
+                    'menuItem:readMode',//阅读模式
+                    'menuItem:openWithQQBrowser',//在QQ浏览器中打开
+                    'menuItem:openWithSafari',//在Safari中打开
+                    'menuItem:share:email',//邮件
+                    'menuItem:share:brand',//一些特殊公众号
+                    'menuItem:share:qq',//分享到QQ
+                    'menuItem:share:weiboApp',//分享到Weibo
+                    'menuItem:favorite',//收藏
+                    'menuItem:share:facebook',//分享到FB
+                    'menuItem:share:QZone',//分享到 QQ 空间
+                    'menuItem:editTag']//编辑标签
+            });
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    }
+    $(function(){
+        setTimeout(function () {
+            $(".loading").hide();
+            $(".wrapper").show();
+        }, 2000);
+        $(".cont li").each(function(){
+            if($(this).find("span").length == 0){
+                var txt=$(this).text().split("").join("<br />");
+                $(this).html(txt);
+            }
+        });
+
+    })
+
+</script>
+
+</body>
+</html>

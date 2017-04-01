@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>团圆节晒团圆照</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <section class="list"><ul></ul></section>
+</div>
+
+<script src="js/layer.js"></script>
+<script src="../../js/wechatLink.js"></script>
+<script src="/js/jquery.lazyload.min.js"></script>
+<script>
+    $(function () {
+        var list = $(".list ul");
+        $.ajax({
+            url:'/lottery-midfestival/index.html',
+            success:function(json){
+                if(!json.type){
+                    tips = layer.open({
+                        content:'<div class="voteClose"><p>'+json.message+'</p><a class="close" href="javascript:;"></a></div>'
+                    });
+                    $(".close").on("click",function(e){
+                        layer.close(tips);
+                        e.preventDefault()
+                    });
+
+                    return false;
+                }
+
+                var html = "";
+
+                for(var i = 0, len = json.list.length; i < len; i++){
+                    var imgUrl = json.list[i].img , imgHostName = imgUrl.slice(0,39),imgStr = "http://bxwd-img.img-cn-hangzhou.aliyuncs.com";
+                    imgUrl = imgUrl.replace(imgHostName, imgStr) + "@2o_0l_200w_90q.src";
+
+                    html += '<li data-id="'+ json.list[i].photoId +'" class="listLi"><a class="listLiTop"><div class="titleB titleList imgList"><img class="lazy"  data-original="' + imgUrl + '" src="images/default.gif"/></div><div class="num numList">编号:<span>' + json.list[i].photoId + '</span>&nbsp;&nbsp;投票数:<span class="count">' + json.list[i].count + '</span></div></a><div class="btn"><a href="javascript:;" class="btnVote fl bx_round5"><i class="before"></i>立即投票<i class="after"></i></a></div></li>';
+                }
+
+                list.html(html);
+                $(".list li:even").addClass("fl");
+                $(".list li:odd").addClass("fr");
+
+                $(".btn").on("click",function(e){
+                    var $this = $(this), id = $this.parents("li").attr("data-id");
+
+                    vote($this, id);
+
+                    e.preventDefault();
+                });
+
+                $(".listLi .listLiTop").on("click",function(e){
+                    var $this = $(this), id = $this.parent("li").attr("data-id"), href = "/topic/201608/autumn/vote.html?photoId=" + id;
+
+                    location.href = href;
+
+                    e.preventDefault();
+                })
+
+                $("img.lazy").lazyload({
+                    effect: "fadeIn",
+                    failure_limit: 30
+                });
+            }
+        });
+
+        function vote(obj, id){
+            $.ajax({
+                url:"/lottery-midfestival/vote.html",
+                data: {"photoId": id},
+                success:function(json){
+                    if(!json.success){
+                        window.location.href = "/lc/channel/channel/share?mark=bxshequ&taskId=PC&redirect=/topic/201608/autumn/list.html";
+                        return false;
+                    }
+
+                    if(!json.type){
+                        tips = layer.open({
+                            content:'<div class="voteClose"><p>'+json.message+'</p><a class="close" href="javascript:;"></a></div>'
+                        });
+                        $(".close").on("click",function(e){
+                            layer.close(tips);
+                            e.preventDefault()
+                        });
+
+                        return false;
+                    }
+
+                    var successTips = layer.open({
+                        type:1,
+                        time:8,
+                        closeBtn: false,
+                        title:  false,
+                        shadeClose: false,
+                        style: 'background:none',
+                        content: '<div class="success"><div class="successL"><img src="images/success.png" /><p><span>100</span>元体验金</p></div><div class="tips"><p class="t1">投票成功</p><p class="t2">您已获得100元体验金</p><p class="t3">请至宝象金融账户查看！</p></div></div>'
+                    });
+
+                    $(".success").on("click",function(){
+                        location.href = "/topic/201608/autumn/list.html";
+                        layer.close(successTips);
+                    });
+
+                    setTimeout(function(){
+                        location.href = "/topic/201608/autumn/list.html";
+                    }, 8000);
+                }
+            })
+        }
+            var wechatShare=new WeChatShare();//创建对象
+            var shareData = {
+                title: "中秋节，晒团圆照 ",
+                desc: "宝象金融与你共团圆",
+                link: location.href,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1608/f4717d06-6369-4b6a-a7dc-c9fe1af3b835.jpg"
+            };
+            var showList = {//创建显示菜单列表，默认全部关闭
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            };
+            wechatShare.init(shareData,showList);//创建分享 自定义菜单
+
+        setTimeout(function(){
+            $('html, body').animate({
+                scrollTop: 10
+            })
+        },1000)
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

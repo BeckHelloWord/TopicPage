@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>投资嘉年华·收益乐翻天</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style_mobile.css" />
+</head>
+<body class="body-activity">
+
+<div class="main">
+    <img src="images/mobile/banner.jpg" alt="投资嘉年华·收益乐翻天" />
+    <div class="activity-list padding-content">
+        <ul>
+            <li>
+                <a href="../free/index_mobile.html"><img src="images/mobile/activity-list-02.png" alt="" /></a>
+            </li>
+            <li>
+                <a href="../chest/index_mobile.html"><img src="images/mobile/activity-list-03.png" alt="" /></a>
+            </li>
+            <!--<li>-->
+                <!--<a href="../main/index_mobile.html"><img src="images/mobile/activity-list-04.png" alt="" /></a>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<a href="../invite/index_mobile.html"><img src="images/mobile/activity-list-05.png" alt="" /></a>-->
+            <!--</li>-->
+            <li>
+                <a href="../wish/index_mobile.html"><img src="images/mobile/activity-list-06.png" alt="" /></a>
+            </li>
+            <!--<li>-->
+                <!--<a href="../fight/index_mobile.html"><img src="images/mobile/activity-list-07.png" alt="" /></a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <div class="introduce activity-content padding-content">
+        <div class="activity-title t_c">活动介绍</div>
+        <div class="cont">
+            <p>用户在活动期间投资平台指定直投标的获取欢乐券（1000元现金投资投360天标的，计入1000欢乐券，若投 180天则计入500欢乐券，以此类推，四舍五入）；</p>
+            <p>欢乐券可以在活动期间通过欢乐商城兑换实物奖励、红包；</p>
+            <p>活动期间，用户可以通过签到、投资获得欢乐券，参与开宝箱、幸运转盘等需要消耗一定的欢乐券；</p>
+            <p>用户的欢乐券会显示在欢乐英雄榜上，榜单前10名以及前50名会得到丰厚的奖励！并且活动期间，每日早8点18分，以及晚8点18分，投资90天以上标的5000元现金以上的用户可以额外得到惊喜奖励！</p>
+        </div>
+    </div>
+    <div class="rule activity-content padding-content">
+        <div class="activity-title t_c">活动规则</div>
+        <div class="cont">
+            <ul>
+                <li>活动时间：<span>2017年4月17日至5月04日</span>；</li>
+                <li>用户通过投资平台指定直投标的获得欢乐券，参与活动（不含月月丰、债权转让以及个人消费贷）;</li>
+                <li>每日<span>早8点18分</span>，以及<span>晚8点18分</span>，投资90天以上标的5000元现金以上的用户可以额外得到惊喜奖励，以时刻后最接近的为准，每位用户活动期间最多领取3次；</li>
+                <li>所有实物奖品的发放将在活动结束后7个工作日之内发出；</li>
+                <li>用户在欢乐英雄榜单的前10名用户，将得到惊喜大礼；前50名用户得到2017限量版宝象新年公仔1个；</li>
+                <li>各个版块规则以活动落地页面为准；</li>
+                <li>如有任何疑问请联系在线客服；</li>
+                <li>为保证健康公平的投资环境，一切恶意刷奖行为将被取消获奖资格；</li>
+                <li>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sign-in t_c"><a href="sign.html">签到</a></div>
+    <footer class="footer t_c">市场有风险，投资需谨慎</footer>
+</div>
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script>
+    // 分享
+    var wechatShare=new WeChatShare(),
+        shareData ={
+            shareConfig:{
+                title: "投资嘉年华，收益乐翻天",
+                desc: "抢8点18分投资得小米3C路由器！",
+                link: location.href,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/dee81c02-5f3e-4509-91ef-4c73cfb384ab.jpg"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl', // 复制链接
+                    'menuItem:share:appMessage'
+                ]
+            },
+            callback:function(){}
+    };
+    wechatShare.init(shareData);
+    /*音乐*/
+    var audio = $('#car_audio')[0];
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        WeixinJSBridge.invoke('getNetworkType', {}, function (res) {
+            // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
+            audio.play();
+        });
+    }, false);
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+CACHE MANIFEST
+#version 1.0.0.1
+# manifest="bx.appcache"
+CACHE:
+
+#framework
+static/lib/sea.js
+static/lib/zepto.min.js
+static/lib/vue.min.js
+static/lib/vue-router.min.js
+static/lib/md5.js?v=1.0
+
+#program
+static/app.js?v=1.0
+static/components/public.js?v=1.0
+
+#css
+static/src/public.css?v=1.0
+
+
+#img
+static/images/nodata.png
+
+
+
+NETWORK:
+*
+

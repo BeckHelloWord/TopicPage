@@ -1,0 +1,119 @@
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 去除iPhone中默认的input样式 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+    -webkit-appearance: none;
+    resize: none;
+}
+
+/* 取消链接高亮  */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+
+/* 图片自适应 */
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    -ms-interpolation-mode: bicubic;/*为了照顾ie图片缩放失真*/
+}
+
+/* 初始化 */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+body {
+    font: 12px Microsoft YaHei,Tahoma, Arial, sans-serif;
+    color: #555;
+    background-color: #F7F7F7;
+}
+em, i {
+    font-style: normal;
+}
+strong {
+    font-weight: normal;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+a {
+    text-decoration: none;
+    color: #969696;
+    font-family: Microsoft YaHei, Tahoma, Arial, sans-serif;
+}
+a:hover {
+    color: #FED503;
+    text-decoration: none;
+}
+ul, ol {
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-family: Microsoft YaHei;
+}
+img {
+    width:100%;
+    border: none;
+    vertical-align: middle;
+}
+/*手机端初始化*/
+
+html{font-size:10px !important}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px !important}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px !important}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px !important}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px !important}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px !important}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px !important}}
+@media screen and (min-width:800px){html{font-size:25px !important}}
+
+.bx-highYield{font-family: Microsoft YaHei, Tahoma, Arial, sans-serif;}
+.bx-highYield  h2{padding:12px 0;text-align: center;font-size:1.6rem;line-height:1.7;color:#fff;}
+.bx-highYield  h5{padding:8% 0;color:#c35e10;font-size:1.2rem;text-align: center;background: #fd760d;}
+.bx-highYield .bx-banner{position: relative;}
+.bx-highYield .bx-banner .bx-banner-txt{position: absolute;bottom:10%;left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%);width:80%;color:#333;}
+.bx-highYield .bx-banner .bx-banner-txt h4{font-size:1.6rem;line-height:1.7;padding:12px 0;text-align: center;color:#1857b9;}
+.bx-highYield .bx-banner .bx-banner-txt p{text-align: justify;font-size:1.4rem;line-height:1.5;}
+.bx-highYield .bx-banner .bx-banner-txt strong{color:#1857b9;}
+.bx-highYield .bx-activity{padding:3% 10% 3% 15%;color:#fff;background:#fd760d;}
+.bx-highYield .bx-activity strong{color:#ffe400;}
+.bx-highYield .bx-activity ol li{position:relative;margin-bottom: 30px;font-size:1.4rem;}
+.bx-highYield .bx-activity ol li span{width:8%;padding-top:8%;position:absolute;top:0;left:-12%;color:#ffa967;background: #e3690b;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);box-shadow:inset rgba(0,0,0,.3) 0px 1px 1px; }
+.bx-highYield .bx-activity ol li span::before{content: "1";position: absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%) rotate(45deg);-moz-transform:translate(-50%,-50%) rotate(45deg);-ms-transform:translate(-50%,-50%) rotate(45deg);-o-transform:translate(-50%,-50%) rotate(45deg);transform:translate(-50%,-50%) rotate(45deg);}
+.bx-highYield .bx-activity ol li:nth-child(2) span::before{content: '2';}
+.bx-highYield .bx-activity ol li:nth-child(3) span::before{content: '3';}
+.bx-highYield .bx-activity ol li:nth-child(4) span::before{content: '4';}
+.bx-highYield .bx-activity ol li:nth-child(5) span::before{content: '5';}
+.bx-highYield .bx-activity .btn{display:block;width:80%;margin:20px auto;}
+.bx-highYield .shading{height:6px;background: url('../images/shading.png') repeat-x;}
+.bx-highYield .base{height:6px;background:url('../images/base.png') repeat-x;}
+.bx-highYield .case{padding:7% 5%;background: #f3ac31;color:#fff;}
+.bx-highYield .case .example{position:relative;padding:10% 4% 5%;margin:50px 0; border:1px solid #e36b00;font-size:1.4rem;line-height:1.5;text-align: justify; }
+.bx-highYield .case .example strong{color:#9f5a22;}
+.bx-highYield .case .example .tips{position:absolute;top:-17%;left:50%;width:130px;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%)}
+.bx-highYield .award{padding:5% 0 0 0;background: #fd760d;color:#ffe210;}
+.bx-highYield .award table{width:100%;border-collapse:collapse;font-size:1.4rem;line-height:1.5;}
+.bx-highYield .award table th {color:#fff;padding:3% 0;border-right:1px solid #fe9127;background: rgba(255,255,255,.1);}
+.bx-highYield .award table td{width:18%;text-align: center;padding:3% 0;border:1px solid #fe9127;}
+.bx-highYield .award table td strong{color:#fff;}
+.bx-highYield .award table .title{width:46%;}

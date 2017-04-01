@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>你的国庆去哪儿了？</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/topic/js/wechatLink.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/swiper.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <section class="vote">
+        <div class="swiper-container">
+            <div class="swiper-wrapper"></div>
+            <div class="pagination"></div>
+        </div>
+        <div class="clearfix moreOut"><div class="fr"><div class="more"><a href="list.html">更多照片</a></div></div></div>
+        <div class="btnOne btn">
+            <a href="javascript:void(0);" class="bx_roundAll isEndBtn"><i class="before"></i>立即投票<i class="after"></i></a>
+        </div>
+        <div class="share clearfix">
+            <a href="index.html" class="fl">&lt;返回首页</a>
+            <a href="javascript:;" class="fr">分享</a>
+        </div>
+    </section>
+</div>
+
+<div class="share_mask"><img src="./images/wx.png"></div>
+<div class="attention"><img src="./images/public.png"></div>
+
+<script>
+    $(function () {
+        var list = $(".swiper-wrapper"), photoId = getQueryString('photoId'),jsonObj={},allJson = [];
+        /*获取后缀*/
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+
+        function getHtml(obj, index) {
+            if(jsonObj.hasVoted){
+                return '<div class="swiper-slide titleB titleList imgVote vote' + obj.photoId + '" data-id="' + obj.photoId + '"  data-count="' + obj.count + '" data-index="' + index + '"  ><img data-src="' + getNewImage(obj.img) + '" class="swiper-lazy"/><span  class="rankVote">排名第' + obj.countNo + '</span><div class="num numVote"><p class="number fl"><i>编号：</i><span>'+ obj.photoId +'</span></p><span class="count fr showCount">'+ obj.count +'票</span><span class="addOne">+1</span></div></div>';
+            }else{
+                return '<div class="swiper-slide titleB titleList imgVote vote' + obj.photoId + '" data-id="' + obj.photoId + '"  data-count="' + obj.count + '" data-index="' + index + '"  ><img data-src="' + getNewImage(obj.img) + '" class="swiper-lazy"/><span  class="rankVote">排名第' + obj.countNo + '</span><div class="num numVote"><p class="number fl"><i>编号：</i><span>'+ obj.photoId +'</span></p><span class="count fr">'+ obj.count +'票</span><span class="addOne">+1</span></div></div>';
+            }
+
+        }
+        /*上一张*/
+        function getPre(index) {
+            var pre = index - 1;
+            if (pre < 0) {
+                pre = allJson.length - 1;
+            }
+            return pre;
+        }
+        /*下一张*/
+        function getNext(index) {
+            var next = index + 1;
+            if (next > allJson.length - 1) {
+                next = 0;
+            }
+            return next;
+        }
+        //
+        function initSwiper() {
+            var currentIndex = 0;
+            var html = "";
+
+            //取出当前photoId的index
+            for (var i = 0; i < allJson.length; i++) {
+                if (allJson[i].photoId == photoId) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+
+            var prev = getPre(currentIndex);
+            html += getHtml(allJson[prev], prev);
+            html += getHtml(allJson[currentIndex], currentIndex);
+            if (allJson.length > 2) {
+                var next = getNext(currentIndex);
+                html += getHtml(allJson[next], next);
+            }
+            list.html(html);
+            var first = true;
+
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 1.5,
+                centeredSlides: true,
+                paginationClickable: true,
+                spaceBetween: 0,
+                loop: true,
+                preloadImages: true,
+                updateOnImagesReady: true,
+                lazyLoading : true,
+
+                onSlideChangeEnd: function (swiper) {
+                    var currentObj = $(swiper.slides[swiper.activeIndex]);
+                    var id = currentObj.attr("data-id");
+                    photoId = id;
+                    initWeChatShare(id);
+                }
+            });
+
+            swiper.slideTo(2);
+            swiper.on("onSlideNextEnd", function (swiper) {
+                if (first) {
+                    return;
+                }
+                var currentObj = $(swiper.slides[swiper.activeIndex]);
+                var index = currentObj.attr("data-index");
+                var next = getNext(parseInt(index));
+                swiperAppend(next, true);
+            });
+
+            swiper.on("onSlidePrevEnd", function (swiper) {
+                if (first) {
+                    return;
+                }
+                var currentObj = $(swiper.slides[swiper.activeIndex]);
+                var index = currentObj.attr("data-index");
+                var pre = getPre(parseInt(index));
+                swiperAppend(pre, false);
+            });
+
+            first = false;
+
+            function swiperAppend(index, isNext) {
+                var exsit = $("div[data-index='" + index + "']").length;
+                if (index >= 0 && index <= allJson.length && exsit == 0) {
+                    if (isNext) {
+                        swiper.appendSlide([getHtml(allJson[index], index)]);
+                    }
+                    else {
+                        swiper.prependSlide([getHtml(allJson[index], index)]);
+                    }
+
+                }
+            }
+
+            isEndBtnClick();
+
+            $(".btn").on("click", function (e) {
+                if(/MicroMessenger/i.test(navigator.userAgent) == false){
+                    layer.open({
+                        content:"请用微信打开投票，谢谢!"
+                    });
+                    e.preventDefault();
+                }else {
+                    var $this = $(this);
+                    vote($this, photoId);
+                    e.preventDefault();
+                }
+            });
+        }
+
+        $.ajax({
+            url: '/lottery-national-day/index.html',
+            data: {"photoId": photoId},
+            success: function (json) {
+                if (!json.type) {
+                    tips = layer.open({
+                        content: '<div class="voteClose"><p>' + json.message + '</p><a class="close" href="javascript:;"></a></div>'
+                    });
+                    $(".close").on("click", function (e) {
+                        layer.close(tips);
+                        e.preventDefault()
+                    });
+
+                    return false;
+                }
+                if(json.hasVoted){
+                    $(".isEndBtn").addClass("dis");
+                }
+                jsonObj = json;
+                allJson = json.list;
+                initSwiper();
+            }
+        });
+
+        /*投票*/
+        function vote(obj, id) {
+            $.ajax({
+                url:"/lottery-national-day/vote.html",
+                data: {"photoId": id},
+                success:function(json){
+                    /*错误信息*/
+                    if (!json.type){
+                        layer.open({
+                            content:json.message
+                        });
+                        return false;
+                    }
+                    /*授权*/
+                    if(!json.hasOpenId ){
+                        getAuthLink(id);
+                        return false;
+                    }
+                    /*关注*/
+                    if(!json.hasNoticed){
+                        attention();
+                        localStorage.setItem("pageid",id);
+                        return false;
+                    }
+                    /*投票成功*/
+                    getVote(obj,id);
+                }
+            });
+        }
+        /*点击投票之后获取当前票数*/
+        function getVote(obj,id){
+            $.ajax({
+                url:"/lottery-national-day/get-count.html",
+                data: {"photoId": id},
+                success:function(json){
+                    $(".isEndBtn").addClass("dis");
+                    $(".count ").show();
+                    setTimeout(function () {
+                        $(".vote" + id).find(".addOne").addClass("on")
+                    }, 200);
+                    setTimeout(function () {
+                        $(".vote" + id).find(".count").html(json.count+"票");
+                    }, 500);
+                }
+            });
+        }
+        /*授权*/
+        function getAuthLink(id){
+            $.ajax({
+                url: "/lottery-national-day/go-auth-link.html",
+                data: {redirectUrl: "/topic/201609/october/vote.html?photoId=" + id},
+                success: function (json) {
+                    if (!json.type) {
+                        layer.open({
+                            content:json.message
+                        });
+                        return false;
+                    }
+                    location.href = json.url;
+                }
+            })
+        }
+
+        /*分享*/
+        $(".share .fr").click(function (e) {
+            $(".share_mask").css({"height": "100%"});
+            e.preventDefault();
+        });
+        $(".share_mask").click(function () {
+            $(this).css({height: "0"});
+        });
+        /*微信分享*/
+        function initWeChatShare(photoId){
+            var url = photoId == 0 ? location.href:location.protocol + '//' + location.host + location.pathname+'?photoid='+photoId;
+            var wechatShare=new WeChatShare();//创建对象
+            var shareData = {
+                title: "晒旅行照，赢护肤好礼",
+                desc: "长假结束不在状态？宝象为你fresh回来！",
+                link: url,
+                imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1609/c523c83d-9773-4ecd-a145-363480cb0baa.jpg"
+            };
+            var showList = {//创建显示菜单列表，默认全部关闭
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            };
+            wechatShare.init(shareData,showList);//创建分享 自定义菜单
+        }
+        initWeChatShare(0);
+
+    });
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

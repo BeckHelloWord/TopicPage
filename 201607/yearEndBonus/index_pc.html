@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>宝象发年中奖</title>
+<style type="text/css">
+body{background-color:#e92e29;}
+.Popover_img{width:500px;position:relative;margin:200px auto}
+.Popover_img h3{font-size:1.2rem;color:#febd2a;position:absolute;left:180px;top:4%;}
+.Popover_img table{width:240px;position:absolute;left:182px;top:124px;}}
+</style>
+	<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="Popover_img">
+	<img class="bg_code" src="images/bx-capacity.png" alt="">
+	<h3>请扫描二维码进入活动！</h3>
+</div>
+
+<script type="text/javascript">
+(function(){
+
+	var url = 'http://www.bxjr.com/topic/201607/yearEndBonus/';
+
+	$(".Popover_img").qrcode({
+		render: "table", //table方式
+		width: 200, //宽度
+		height:200, //高度
+		text: url //任意内容
+	});
+
+})();
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+</html>

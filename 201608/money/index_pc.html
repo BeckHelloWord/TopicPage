@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>欢乐英雄榜</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <div class="banner"><img src="images/banner.jpg" alt="" /></div>
+    <div class="part part_01">
+        <div class="container">
+            <div class="exchange clearfix">
+                <div class="left">
+                    <img src="images/packet.png" alt=""/>
+                    <div class="roll">
+                        <p>欢乐卷<span>限兑换：<i>10次/天</i></span></p>
+                        <p>兑换1张欢乐券将消耗您的10宝象币</p>
+                    </div>
+                    <a href="#" class="joyBtn"><img src="images/joyBtn.png" alt=""/><span id="num"></span></a>
+                </div>
+                <div class="right">
+                    <p>你的宝象币：<span class="js-integralTotal"></span>，排名：<span class="js-integralNo"></span>；</p>
+                    <p>你的欢乐券：<span class="js-ticketTotal"></span>， 排名：<span class="js-ticketNo"></span>。</p>
+                </div>
+            </div>
+            <div class="ranking clearfix">
+                <div class="left">
+                    <h3>宝象币英雄榜</h3>
+                    <div class="list">
+                        <div class="tit clearfix">
+                            <span class="s1">名次</span>
+                            <span class="s2">用户名</span>
+                            <span class="s3">宝象币(枚)</span>
+                        </div>
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="center fl">
+                    <h3>欢乐券英雄榜</h3>
+                    <div class="list">
+                        <div class="tit clearfix">
+                            <span class="s1">名次</span>
+                            <span class="s2">用户名</span>
+                            <span class="s3">欢乐券(张)</span>
+                        </div>
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <h3>幸运星达人榜</h3>
+                    <div class="list">
+                        <div class="tit clearfix">
+                            <span class="s2">用户名</span>
+                            <span class="s3">奖品</span>
+                        </div>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="part part_02">
+        <div class="container">
+            <!--<div class="store t_c">-->
+                <!--<div class="hd">兑换商城</div>-->
+                <!--<ul class="clearfix">-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/prize_01.png" alt="" />-->
+                            <!--<p><span>288元</span>红包</p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>50</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/prize_02.png" alt="" />-->
+                            <!--<p><span>8倍</span>日化</p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>40</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/prize_03.png" alt="" />-->
+                            <!--<p>精美礼品</p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>100</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/prize_04.png" alt="" />-->
+                            <!--<p>收益<span>+0.8%</span></p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>110</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/prize_06.png" alt="" />-->
+                            <!--<p>神秘奖品</p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>500</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="img">-->
+                            <!--<img src="images/film.png" alt="" />-->
+                            <!--<p>电影兑换券</p>-->
+                        <!--</div>-->
+                        <!--<div class="cont">价值: <span>660</span>张欢乐券</div>-->
+                        <!--<a class="btn" href="">立即兑换</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div class="explain">
+                <div class="hd t_c">说明</div>
+                <ul class="clearfix">
+                    <li>
+                        <h3>宝象币使用/获取方式：</h3>
+                        <p><span>1、</span><font>活动期间在活动首页首次签到可以领取30枚宝象币；</font></p>
+                        <p><span>2、</span><font>活动期间每日上下午在活动首页签到可以分别领取10枚宝象币；</font></p>
+                        <p><span>3、</span><font>投资金额每100元可以获得1枚宝象币；</font></p>
+                        <p><span>4、</span><font>参与每个活动都需要消耗10枚宝象币；</font></p>
+                    </li>
+                    <li>
+                        <h3>欢乐券使用/获取方式：</h3>
+                        <p><span>1、</span><font>活动期间参与任意嘉年华项目可获得1张欢乐券；</font></p>
+                        <p><span>2、</span><font>部分活动可以直接抽取一定数量欢乐券；</font></p>
+                        <p><span>3、</span><font>欢乐英雄榜页面可以使用宝象币兑换欢乐券（10：1）<br />每日限量100个宝象币；</font></p>
+                        <p><span>4、</span><font>欢乐券可以直接在兑换商店兑换投资红包等礼品；</font></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer t_c">理财有风险，投资需谨慎</div>
+        </div>
+    </div>
+</div>
+
+<!-- 弹出框 -->
+<div class="pop errPop">
+    <div class="cont">
+        <a class="close" href="#"><img  src="images/close.png" alt=""/></a>
+        <div class="txt-title"><h2>兑换成功</h2></div>
+            <div class="pic fl">
+                <img src="images/packet2.png" alt=""/>
+                <p>可以直接在兑换商店</p>
+                <p>兑换投资红包等礼品</p>
+            </div>
+            <div class="txtExplain">
+                <p>成功兑换一张欢乐券！</p>
+                <div class="btnGroup">
+                    <a class="returnBtn" href="/topic/201607/carnival/index_pc.html">回嘉年华首页</a>
+                    <a class="close knowBtn" href="#">我知道了</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+<script>
+    (function(){
+        $.ajax({
+            url: "/lottery-armory/index.html",
+            success: function(json){
+                if(!json.success){
+                    window.location.href = "/login/index.html?redirect=/topic/201608/heroList/";
+
+                    return false;
+                }
+
+                $(".js-integralTotal").text(json.integralTotal);
+                $(".js-integralNo").text(json.integralNo);
+                $(".js-ticketTotal").text(json.ticketTotal);
+                $(".js-ticketNo").text(json.ticketNo);
+                $("#num").text(json.remainChoice);
+
+                var html = "";
+                var html2 = "";
+                var html3 = "";
+
+                for(var i = 0, len = json.integralTop.length; i < len; i ++){
+                    html += '<li class="li' + (i + 1) + '">';
+                    html += '<span class="s1">' + (i + 1) + '</span>';
+                    html += '<span class="s2">' + json.integralTop[i].nickName + '</span>';
+                    html += '<span class="s3">' + json.integralTop[i].count + '</span>';
+                    html += '</li>';
+                }
+                for(var j = 0, len = json.happyTicketTop.length; j < len; j ++){
+                    html2 += '<li class="li' + (j + 1) + '">';
+                    html2 += '<span class="s1">' + (j + 1) + '</span>';
+                    html2 += '<span class="s2">' + json.happyTicketTop[j].nickName + '</span>';
+                    html2 += '<span class="s3">' + json.happyTicketTop[j].count + '</span>';
+                    html2 += '</li>';
+                }
+                for(var k = 0, len = json.wishStartTop.length; k < len; k ++){
+                    html3 += '<li>';
+                    html3 += '<span class="s2">' + json.wishStartTop[k].nickName + '</span>';
+                    html3 += '<span class="s3">' + json.wishStartTop[k].giftName + '</span>';
+                    html3 += '</li>';
+                }
+
+                $(".ranking .left ul").html(html);
+                $(".ranking .center ul").html(html2);
+                $(".ranking .right ul").html(html3);
+            }
+        });
+
+        $(".joyBtn").on("click", function(e){
+            $.ajax({
+                url: "/lottery-armory/to-ticket.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201607/crystalBall/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".errPop").show().find("h2").text("兑换失败")
+                        $(".errPop").show().find(".txtExplain p").addClass("small").text(json.message);
+
+                        return false;
+                    }
+
+                    $(".pop").show();
+                    $("#num").text(json.remainChoice);
+                }
+            });
+
+            e.preventDefault();
+        });
+
+        $(".close").on("click", function(e){
+            $(".pop").hide();
+
+            e.preventDefault();
+        })
+    }())
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

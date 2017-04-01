@@ -1,0 +1,25 @@
+/*  h5宝象发年中奖 */
+.mobMain{width:100%;overflow:hidden;}
+.mobMain img{width:100%;}
+.mobMain .mPacket{background:url(../images/bx-rule2_02.jpg)repeat-y;background-size:100%;-webkit-background-size:100%;;-moz-background-size:100%;}
+.mobMain .mPacket ul li{float:left;width:34.33%;margin:3% 0  0 10%;}
+.mobMain .mPacket ul li a{cursor:pointer;}
+.mobMain .mPacket ul li p{margin-bottom:5px;font-size:1.2rem;color:#febd2a;}
+.mobMain .mRule{background:url(../images/bx-rule2_02.jpg)repeat-y;background-size:100%;-webkit-background-size:100%;-moz-background-size:100%;position: relative;}
+.mobMain .mRule ul{width:83%;padding:2% 0;font-size: 1.3rem;color:#eeb91d;line-height: 1.6;margin-left:9%;}
+.mobMain .mRule ul li{margin-bottom:5%;}
+.mobMain .mRule ul li span{float:left;color:#fff;line-height: 1.6rem;text-align: center;position:relative;z-index: 2;}
+.mobMain .mRule ul li span:before{content:"";width:1.4rem;height:1.4rem;background-color:#eeb91d;transform:rotate(45deg);-webki-transform:rotate(45deg);-moz-transform:rotate(45deg);position:absolute;left:-5px;z-index:-1;}
+.mobMain .mRule ul li p{margin-left:30px;text-align: justify;}
+.mBtn{position:relative;}
+.mBtn a{display: inline-block;}
+.mBtn a img{width:60%;position:absolute;top:10px;}
+
+
+/* 弹出框 */
+.Popover{width:100%;height:100%;background-color:rgba(0,0,0,.6);position:fixed;top:0;left:0;z-index:99999;display: none;}
+.Popover .Popover_img{position:absolute;top:30%;left:7%;right:0;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.Popover .Popover_img img{max-width:100%;}
+.Popover .Popover_img h3{font-size:1.2rem;color:#febd2a;position:absolute;left:23%;top:6%;}
+.Popover .Popover_img .qrcode{width:39%;position:absolute;left:25.7%;top:22%;}
+

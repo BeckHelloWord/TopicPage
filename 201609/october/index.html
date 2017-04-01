@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>你的国庆去哪儿了？</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="main mainI">
+    <section class="mainIndex">
+        <div class="indexTop">
+            <img class="topImg" src="images/indexTop.png" />
+            <img class="indexImg" src="images/index.png" />
+        </div>
+        <div class="topTitle">
+            <div class="topFly"><img src="images/fly.png" /></div>
+        </div>
+        <!--规则-->
+        <div class="rule clearfix"><a href="javascript:void(0)" class="fr"><span>活动<br />规则</span></a></div>
+        <!--奖品-->
+        <div class="clearfix gifts">
+            <ul>
+                <li><img src="images/slide01.png" /><span>400元购物卡</span></li>
+                <li><img src="images/slide02.png"  class="on"/><span>fresh面膜</span></li>
+                <li><img src="images/slide03.png" /><span>1G全国流量</span></li>
+            </ul>
+        </div>
+        <!--活动时间-->
+        <div class="sequence">
+            <p class="timer">活动期间（10月9日—10月16日），<br />晒国庆旅行照，fresh面膜+百元购物卡一送到底！</p>
+        </div>
+        <!--按钮-->
+        <div class="btn btnIndex">
+            <a href="list.html" class="btnVote fl bx_roundAll"><i class="before"></i>我要投票<i class="after"></i></a>
+            <a href="javascript:void(0)" class="btnShine fr bx_roundAll"><i class="before"></i><i class="before before1"></i>我要晒照<i class="after"></i></a>
+        </div>
+    </section>
+</div>
+<div class="share_mask"><img src="./images/end.png"></div>
+
+<script src="js/layer.js"></script>
+<script src="../../js/wechatLink.js"></script>
+<script src="js/public.js"></script>
+<script>
+$(function () {
+    /*我要晒照按钮*/
+    $(".btnShine").on("click", function (e) {
+        if ($("body").hasClass("isEnd")) {
+            isEnd();
+            return false;
+        } else {
+            $.ajax({
+                url:"/secure/get-login-info.html",
+                success:function(json){
+                    if(!json.isLogin){
+                        window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbfd7c3d589090b70&redirect_uri=http%3A%2F%2Fm.bxjr.com%2Flogin%2Findex.html?redirect=%2Ftopic%2F201609%2Foctober%2Fphoto.html&response_type=code&scope=snsapi_userinfo&state=wechat#wechat_redirect"
+                    }else{
+                        window.location.href = "/topic/201609/october/photo.html";
+                    }
+                }
+            });
+        }
+        e.preventDefault();
+    });
+    /*活动结束图片*/
+    function isEnd() {
+        $(".share_mask").css({"height": "100%"});
+        return false;
+    }
+    $(".share_mask").click(function () {
+        $(this).css({height: "0"});
+    });
+
+    /*添加动画 */
+    setTimeout(function () {
+        $(".indexImg").addClass("curr");
+    }, 100);
+    setTimeout(function () {
+        $(".topFly").addClass("curr");
+    }, 500);
+
+    /*活动规则*/
+    $(".rule a").on("click", function (e) {
+        openLayer = layer.open({
+            type: 1,
+            className: 'openLayerCss',
+            closeBtn: false,
+            title: false,
+            content: '<a class="indexClose close" href="javascript:;"></a><div class="openLayer"><h1>活动规则</h1><div class="openCont"><h4>参加活动用户</h4><ul><li>1. 所有参与活动用户需关注宝象金融服务号（bxjrccs）</li><li>2. 活动期间，每位用户只能上传一次晒国庆旅行照片</li><li>3. 参赛作品根据投票数进行排名，前10名用户都有礼品赠送</li><li>4. 参与晒照用户，请上传符合活动主题照片，否则视为晒照失败投票用户</li></ul><h4>投票用户</h4><ul><li>投票用户只可给一张照片投票，活动期间每天都可投票一次</li></ul><h4>社区联合推进活动</h4><ul><li>除去前十名获奖用户，转发此文章至朋友圈，截图回帖至社区或宝象金融，即可获得10—20兆流量</li></ul><h4>活动说明</h4><ul><li>1. 活动拒绝作弊刷票，一经查证将取消获奖资格</li><li>2. 所有奖品的发放将在活动结束后<span class="seven">7个工作日</span>之内完成</li></ul></div></div>'
+        });
+
+        $(".close").on("click", function (e) {
+            layer.close(openLayer);
+            e.preventDefault()
+        });
+    });
+    /*微信分享*/
+    shareWeChat();
+});
+
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

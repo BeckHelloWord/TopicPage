@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="尽情投资，尽在宝象">
+    <meta name="Description" content="尽情投资，尽在宝象">
+    <title>尽情投资,尽在宝象</title>
+    <link rel="stylesheet" href="//www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="//www.bxjr.com/topic/js/need/layer.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/js/validform/js/validform_v5.3.2.js?v=${g.version()}"></script>
+    <script src="//www.bxjr.com/topic/js/layer.js"></script>
+    <script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+</head>
+<body class="main prize content">
+<div class="rule">
+    <img src="images/description.png">
+</div>
+<div class="prizeGet">
+    <img src="images/prize.png">
+    <p class="voucher">恭喜您获得50元红包</p>
+    <p class="phoneNum">红包已存入您的<span></span>账户中</p>
+</div>
+<p class="flow">转发活动即可获得20—30兆全国流量，具体以到达流量为准，每个手机号限领一次，先到先得。</p>
+<a href="/center/packet/list" class="bgStyle"><span>去使用红包再得10-30元话费</span><i></i></a>
+<ul class="call">
+    <li>
+        <span>10元</span><i>话费</i>5000≦ 投资额 <10000元
+    </li>
+    <li>
+        <span>30元</span><i>话费</i>投资额 ≧10000元
+    </li>
+</ul>
+<div class="tips">活动最终解释权归宝象金融所有</div>
+
+<div class="layer-mask mask">
+    <img src="./images/layer-mask.png" class="layer-bg">
+    <div class="h2">
+        <div class="layer-top"><span class="howGet">20</span>M<img src="./images/mask-signal.png" class="icon"><p>全国流量</p></div>
+        <div class="layer-get"><img src="./images/get.png"></div>
+    </div>
+    <div class="get-tips">
+        <p class="lucky">恭喜您<br />已经获得<span class="howGet">20</span>M流量</p>
+        <p class="get-lucky">您已经<br />获得过<span class="howGet">20</span>M流量</p>
+    </div>
+</div>
+<div class="tip-mask mask">
+    <img src="./images/tip-mask.png" class="layer-bg">
+    <div class="shareBtn">
+        <a href="/center/packet/list" class="cruelLeave fl">离开去投资</a>
+        <a href="javascript:void(0)" class="happyShare fr">分享领流量</a>
+    </div>
+</div>
+<div class="share-mask mask"><img src="./images/share-mask.png"  class="layer-bg"></div>
+
+<script>
+    (function(){
+        if (/MicroMessenger/i.test(navigator.userAgent) == false) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+        }else{
+            $.ajax({
+                url:"/act-singles-day/has-noticed.html",
+                success:function(json){
+                    if (!json.type) {
+                        layer.open({
+                            content: json.message
+                        })
+                        return;
+                    }
+                    if(!json.hasNoticed){
+                        location.href = "attention.html";
+                        return;
+                    }
+                }
+            })
+            /*是否获取红包*/
+            getVoucher();
+            function getVoucher(){
+                $.ajax({
+                    url:"/act-singles-day/share-get-voucher.html",
+                    success:function(json){
+                        if(!json.success){
+                            location.href = "register.html";
+                            return;
+                        }
+                        if (!json.type) {
+                            layer.open({
+                                content: json.message
+                            })
+                            return;
+                        }
+                        /*是否关注*/
+                        if(!json.hasNoticed){
+                            location.href = "attention.html";
+                            return
+                        }
+                        /*是否领取红包*/
+                        if(json.isSecondGet){
+                            $(".voucher").text("您已经获得50元红包");
+                        }else{
+                            $(".voucher").text("恭喜您获得50元红包");
+                        }
+
+
+                        $(".bgStyle").on("click",function(e){
+                            if(json.hasGetFlow){// 已经取得流量
+                                location.href="/center/packet/list";
+                                return;
+                            }else{
+                                $(".tip-mask").css({"height": "100%"});
+                                e.preventDefault();
+                                /*开心分享*/
+                                $(".happyShare").on("click",function(){
+                                    $(".share-mask").css({"height": "100%"});
+                                    e.preventDefault();
+                                });
+                            }
+
+                        });
+                    }
+                })
+            }
+
+            /*蒙层*/
+            $(".mask").on("click",function(){
+                $(this).css("height","0")
+            });
+
+            getTel();
+            function getTel(){
+                var params = {isBalance: 'balance', isRecommend: 'recommend', isValidStatus: 'validStatus', isVoucherCount: 'voucherCount'};
+                var paramsStr = '?';
+                for(var item in params){
+                    if(window[item]){
+                        paramsStr += params[item] + "=true&";
+                    }
+                }
+                $.ajax({
+                    url: "/secure/get-login-info.html" + paramsStr,
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        $(".phoneNum span").text(data.mobile);
+                    }
+                });
+
+            }
+            /*活动规则*/
+            $(".rule").on("click", function (e) {
+                openLayer = layer.open({
+                    type: 1,
+                    closeBtn: false,
+                    title: false,
+                    content: '<a class="indexClose close" href="javascript:;"></a><div class="openLayer"><h1>iwatch 抽奖说明</h1><div class="openCont"><ul><li>将在活动结束后，根据用户使用红包投资后的总投资额，统一进行抽奖；</li><li>以十万元为起点开始抽奖，每增加十万元投资额，增加一次抽奖机会，增加一名获奖用户；例如：<br />投资总额达到30万元，则抽奖3次，抽出3名获奖用户<br />投资总额达到50万元，则抽奖5次，抽出5名获奖用户<br />投资总额达到100万元，则抽奖11次，抽出11名获奖用户</li><li>当10万元≦投资总额<100万元，赠送的奖品为iwatch1代；</li><li>当投资总额≧100万元，获奖用户的奖品全部升级为iwatch2代；</li><li>本活动限量11台 iwatch，每位投资用户最多获得一台。</li></ul></div></div>'
+                });
+                $(".close").on("click", function (e) {
+                    layer.close(openLayer);
+                    e.preventDefault()
+                });
+            });
+
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "尽情投资，尽在宝象双11",
+                    desc: "iWatch疯狂抽不停，更有无限流量免费送！",
+                    link: location.host + "/topic/201610/doubleEleven/index.html",
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1610/4e66d3eb-c58f-4dc1-93fa-a35445a471a9.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){
+                    $.ajax({
+                        url: "/act-singles-day/share-get-traffic.html",
+                        success: function (json) {
+                            $(".tip-mask").css({"height": "0"});
+                            $(".share-mask").css({"height": "0"});
+                            $(".layer-mask").css({"height": "100%"});
+                            if(!json.success){
+                                location.href = "register.html";
+                                return;
+                            }
+                            if (!json.type) {
+                                layer.open({
+                                    content: json.message
+                                });
+                                return;
+                            }
+                            /*是否关注*/
+                            if(!json.hasNoticed){
+                                location.href = "attention.html";
+                                return;
+                            }
+                            /*是否领取红包*/
+                            if(json.isSecondGet){//已经领取
+                                $(".layer-get").show();//img获得过流量hide
+                                $(".get-lucky").show();//获得过流量hide
+                                $(".lucky").hide();//获得过流量hide
+                                $(".howGet").text(json.flowCount.substring(0,2));/*具体多少流量*/
+                                e.preventDefault();
+                            }else{
+                                $(".layer-get").hide();//img获得过流量hide
+                                $(".get-lucky").hide();//获得过流量hide
+                                $(".lucky").show();//获得过流量hide
+                                $(".howGet").text(json.flowCount.substring(0,2));/*具体多少流量*/
+                                e.preventDefault();
+                            }
+                        }
+                    });
+                }
+            }
+            wechatShare.init(shareData);
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

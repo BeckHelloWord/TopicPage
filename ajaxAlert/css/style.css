@@ -1,0 +1,39 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.ml20{margin-left:20px;}
+.yellow{color:#fae572;}
+
+/* pc端 */
+html,body{height:100%;}
+.main{position:relative;width:100%;height:100%;}
+.close{width:44px;height:44px;background:url(../images/close.png) no-repeat;position:absolute;top:50%;margin-top:-200px;left:50%;margin-left:220px;display:block;}
+.investSuccess{width:420px;height:330px;background:url(../images/bg.png) no-repeat;margin:0 auto;position:absolute;top:50%;margin-top:-165px;left:50%;margin-left:-210px;text-align:center;color:#fff;font-size:20px;filter:alpha(Opacity=100);-moz-opacity:1;opacity:1;}
+.investSuccess h3{color:#fce948;font-weight:normal;font-size:30px;margin-top:140px;}
+.investSuccess p{line-height:1.3;}
+.investSuccess a{background:#fce948;margin-top:5%;color:#df2f1a;padding:5px 110px;display:inline-block;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius: 5px;}
+
+
+

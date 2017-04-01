@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>话费充值</title>
+    <meta id="viewport" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="style/style.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/topic/js/wechatLink-1.1.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<script id="template" type="text">
+    <div class="fare">
+        <p class="title">当前充值号码</p>
+        <p class="phone"><span class="fl phoneNumber"></span><span class="carrieroperator fl"></span></p>
+        <div class="line"></div>
+        <div class="choose-title">请选择面值<a href="javascript:;" class="fr rule" id="rule">规则说明</a></div>
+        <div class="choose clearfix">
+        </div>
+        <div class="warning">
+            <img src="./images/warning.jpg" alt="提示">&nbsp;&nbsp;<span>您正在使用本月的话费<strong></strong>折充值权益</span>
+        </div>
+        <button type="button" class="button" id="btn" disabled>充值<span></span>元话费</button>
+    </div>
+    <div class="error"></div>
+    <div class="fare-img">
+        <img src="./images/reward_nopadding.jpg" alt="红包图片">
+        <p class="title">充值后立得</p>
+        <p class="money"><span></span>元</p>
+        <p class="detail">现金投资红包</p>
+    </div>
+    
+    <p class="pay"><nobr>话费充值服务由<img src="./images/pay.jpg" alt="">提供</nobr></p>
+
+    <div class="footer">
+        当前账户余额 <span class="money"></span>元
+        <a class="fr invest btn appUrl" href="/center/recharge/index" data-app-url="baoxiang://APPTopUp"><nobr>账户余额充值</nobr></a>
+    </div>
+
+    <div class="layer">
+        <h2>充值话费说明：</h2>
+        <p>1.话费充值仅支持当前帐号的注册手机号</p>
+        <p>2.宝象金融VIP每月均可享受优惠充值权益</p>
+        <p>3.话费返现红包本身无任何限制(平台规则限制除外)</p>
+        <p>4.话费充值功能由通联支付提供，若话费长时间不到账请联系：95156</p>
+        <p>5.本活动最终解释权归宝象金融所有</p>
+        <div class="close"><a href="javascript:;" id="close"><img src="./images/close.png" alt=""></a></div>
+    </div>
+    <div class="success">
+    </div>
+    <div class="weight" id="weight1">
+        <h3>充值成功</h3>
+        <p class="free">充值话费:<span>300元</span></p>
+        <p class="redPack">获得红包:<span>30元</span></p>
+        <div class="btn-group">
+            <a class="more">知道了</a>
+            <a id="review" class="review btn appUrl"  href="/center/packet/list"  data-app-url="baoxiang://APPRedPacketList">查看红包</a>
+        </div>
+    </div>
+    <div class="alertBody">
+       <p></p>
+    </div>
+</script>
+</body>
+</html>

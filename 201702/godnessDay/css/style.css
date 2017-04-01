@@ -1,0 +1,86 @@
+body{
+    min-width: 1200px;
+}
+.godnessDay-wrap{
+    position: relative;
+    background: url("../images/bodyBg.jpg") no-repeat top center;
+    background-size: 1920px 100%;
+    padding-top: 602px;
+    text-align: center;
+    padding-bottom: 170px;
+}
+.godnessDay-content{
+    background: url("../images/contentBg.png") no-repeat top center;
+    background-size: 1200px 100%;
+    padding-bottom: 60px;
+    text-align: center;
+    position: relative;
+    background-color:transparent;
+}
+.godnessDay-content .content-title{
+    margin-top: 358px;
+    padding-top: 46px;
+    font-size:40px;
+    line-height: 40px;
+    color: #fff;
+}
+.godnessDay-content .content-wrap{
+    position: relative;
+    width: 936px;
+    margin: 0 auto;
+    padding-top: 56px;
+}
+.godnessDay-wrap .film{
+    width:  100%;
+    position:  absolute;
+    text-align: center;
+    left: 0;
+    top: 548px;
+    z-index: 0;
+}
+.godnessDay-wrap .film .film-content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.godnessDay-content .content-wrap .rec{
+    text-align: left;
+    padding-left: 40px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    background: url("../images/rectangular.png") no-repeat top left;
+}
+.godnessDay-content .content-wrap .rec-btom{
+    margin-bottom: 30px;
+}
+
+.godnessDay-content .content-wrap .rule{
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.godnessDay-wrap .godnessDay-bottom{
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    color: #77787c;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.godnessDay-content .left-marginal,
+.godnessDay-content .right-marginal{
+    position: absolute;
+}
+.godnessDay-content .left-marginal{
+    left: -300px;
+    top: -20px;
+}
+
+.godnessDay-content .right-marginal{
+    right: -295px;
+    top: 100px;
+}

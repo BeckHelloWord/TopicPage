@@ -1,0 +1,125 @@
+﻿
+/*落地页*/
+/*头部*/
+.xubox_layer{top:50%!important;}
+.headerindex{color: #F2F2F2;background: #ffffff}
+.headerindex .headermid{width:1000px;padding:10px 0;margin:0 auto;position: relative;}
+
+
+
+.ac-login{height:69px;line-height:69px;position:absolute;right: 0;z-index: 2;top:50%;margin-top: -35px;font-size: 14px;color:#ff9900}
+.ac-login span{color: #333;}
+.headermid .ac-login a{color:#ff9900}
+.ac-login .ac-phone{color: #798cd9;font-size: 18px;}
+.ac-login i{background:url(http://www.bxjr.com/activity/generalize2/images/phone.png) no-repeat;width:17px;height:14px;display:inline-block;margin-right:5px;margin-left:70px;}
+/*主体部*/
+.main1{padding: 0px;font-size: 14px;}
+.zl-a1{display: block;z-index:1;position:absolute;width:100%;height:450px;}
+.main1 .mian1warp{width:1920px;position:relative;left: 50%;margin-left: -960px;z-index:1}
+.ac-banner{ width: 1920px; height: 496px;}
+.main1 .mian1warp .img_link{display:block;height:450px;}
+.main1 .iconan{width:1000px;margin:0 auto;/*居中*/height:350px;}
+/*banner*/
+.main1 .bannerTop{min-width:1000px;margin:0 auto;position:absolute;z-index:2;top:0;left: 50%;margin-left: -500px}
+.main1 .bannerTop img{top:0;z-index: -22;}
+.zl-a{display: block;z-index:1;position:absolute;width:100%;height:450px;}
+/*注册状态*/
+/*修改*/
+.main1 .bannerTop .zllogin{right:50%;top:50px;width:350px;height: 402px;background-color: #FFFFFF;position: absolute;opacity: 0.93;margin-right: -500px}
+.zllogin input{font-size: 14px;}
+.main1 a{cursor: pointer;}
+.main1 .bannerTop .zllogin .sendMobile{width: 80px;height:28px;line-height: 28px;color:#FFFFFF;text-align:center;background-color:#FFB400;}
+.main1 .bannerTop .zllogin p{font-size:22px;line-height:70px;color:#666666;text-align: center;letter-spacing:4px;}
+.main1 .bannerTop .zllogin a{color:#798cd9;}
+.main1 .bannerTop .zllogin .username1{padding-left:10px;padding-right:10px;width: 280px;height: 36px;line-height:20px;border: 1px solid #e3ddd3;padding:10px 0 10px 4px;}
+.main1 .bannerTop .zllogin .psw1{border: 1px solid #e3ddd3;padding-left:10px;padding-right:10px;width: 280px;height: 36px;line-height:36px}
+.main1 .bannerTop .zllogin .tel{display:inline-block;border: 1px solid #e3ddd3;margin-right:10px;padding-left:10px;padding-right:10px;width: 135px;height: 36px;line-height:36px}
+.main1 .bannerTop .zllogin ul{list-style-type: none;padding-left:35px;width:284px;}
+.main1 .bannerTop .zllogin li .labelWrap{float:left;}
+.main1 .bannerTop .zllogin .buttonblue{width: 280px;height: 40px;color:#FFFFFF;text-align: center;background-color:#ff9900;font-size:20px;border: none;cursor: pointer;}/*登入页结束*/
+.bannerTop .zllogin input[type="submit"][disabled]{background:#dcdcdc;cursor: default;}
+.main1 .bannerTop .zllogin .loginingyellow{width:135px;height:35px;line-height:35px;cursor:pointer;border:0;text-align:center;background-color:#798cd9;color:#FFFFFF;display:inline-block;}
+/*已经登入 start*/
+.main1 .bannerTop .logined{margin:0px 1100px;border-top: 12px solid #006496;width: 350px;height:300px;background-color:#FFFFFF;	}
+.main1 .bannerTop .logined h1{line-height:56px;text-align:center;}
+.main1 .bannerTop .logined p{line-height:56px;font-size:18px;text-align: center;color:#033b88;}
+.main1 .bannerTop .logined a{font-size:14px;text-align:center;color:#033b88;}
+.main1 .bannerTop .logined p{line-height:56px;font-size:18px;text-align: center;color:#033b88;}
+.main1 .bannerTop .logined ul{list-style-type: none;padding-left:35px;}
+.main1 .bannerTop .logined li{padding-bottom: 20px;}
+.fl{float:left;}
+.main1 .bannerTop .logined .buttonyellow{width: 280px;height: 46px;border-radius: 4px;font-size:20px;text-align: center;color:#FFFFFF;border: none;background-color:#ffb400;}
+
+.ac-generalize{text-align: center;position: relative;width: 1920px;left: 50%;margin-left: -960px;background:#ffffff}
+.ac-generalize .ac-list{width: 1200px;margin:0 auto;float:none;padding: 40px !important;}
+
+/*已经登入 end*/
+/*move up 特效交互 开始*/
+/*move up 特效交互 开始*/
+.container1{margin-bottom:30px;width:200px;height:150px;overflow:hidden;position:relative;}
+.imgCon{width:200px;height:300px;position:absolute;top:0px;left:0px;z-index: 2;}
+/*move up 特效交互 结束*/
+.main1 .iconan ul{list-style-type:none;}
+.main1 .iconan .ulWord{padding-bottom: 73px;font-size: 20px;text-align:center;color:#333333;}
+.main1 .iconan p{line-height: 85px;font-size: 24px;color: #e8b92a;}
+.main1 .iconan li{width: 200px;overflow: hidden;float: left;}/*交互要js写层级*/
+.main1 .bannerInfo{background-color:#f2f2f2;}
+.main1 .bannerInfo1{width:1000px;margin:0 auto;}
+.main1 .bannerOpacity{height:450px;margin:0 auto;/*居中*/background-color: #01b6b8;}
+.main1 .redPacket{height:440px;background-color:#f2f2f2;position: relative;padding-bottom: 100px;}
+/*4个红包样式 redPacket4*/
+.main1 .redPacket p{margin:0 auto;width: 1000px;line-height: 105px;font-size: 24px;color: #e8b92a;}
+.main1 .redPacket-wd{margin:0 auto;width:1000px;}
+.main1 .redPacket-wd table{width: 100%;text-align:center;}
+.main1 .redPackets td{text-align:center;padding:40px 0 40px 0;border: 0;position:relative;bottom: 0;}
+.main1 .redPackets td img{display:inline-block;margin: 0;padding: 0; max-height: 258px; height: 258px; height: auto;}
+/*4个红包下对应的按钮样式*/
+
+.main1 .button41,
+.main1 .button42,
+.main1 .button43,
+.main1 .button44{margin:28px 0px 30px 0px;width:180px;height:40px;line-height:40px;font-size:20px;text-align:center;color: #FFFFFF;background-color:#033b88;border-radius:5px;border:none;display:inline-block;}
+
+.main1 .button41{}
+.main1 .button42{background-color:#01b6b8;}
+.main1 .button43{background-color:#eb8b6a;}
+.main1 .button44{background-color:#cb7be6;}
+/*4个红包下对应的按钮样式结束*/
+/* 首页轮播 */
+.main_visual{width:100%;min-width:1000px;height:450px;margin:0 auto;position:relative;overflow:hidden;}
+.main_image {width:100%; height:450px;border-top:1px solid #f4f4f4;overflow:hidden;position:absolute;z-index:1;}
+.main_image ul {width:9999px; height:450px; overflow:hidden; position:absolute; top:0; left:0}
+.main_image li {float:left; width:100%; height:450px;}
+.main_image li span {display:block; width:100%; height:450px}
+.main_image li a {display:block; width:100%; height:450px;background:url('../images/transparent.gif') center 0 no-repeat;}
+.main_image li .img_1,
+.main_image li .img_2,
+.main_image li .img_3,
+.main_image li .img_4,
+.main_image li .img_5 {background: url('../images/transparent.gif') center top no-repeat}
+.main_visual .flicking_bar {display:none;width:1000px;height:21px;bottom:0px;left:50%;margin-left:-500px;text-align:center;position:absolute;z-index:2;padding:10px 0;background-color:rgba(0,0,0,0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000,endColorstr=#19000000);}
+.main_visual .flicking_bar a {display:inline-block;width:21px; height:21px; margin:0 5px; padding:0; background:url('../images/btn_main_img.png') 0 0 no-repeat;line-height:999px;overflow:hidden;}
+.main_visual .flicking_bar a.on {background-position:0 -21px}
+#btn_prev,#btn_next{z-index:11111;position:absolute;display:block;width:93px!important;height:93px;top:50%;margin-top:-37px;opacity: 0;filter:alpha(opacity=0);}
+#btn_prev{background:url(../images/left.png) no-repeat;left:50px;}
+#btn_next{background:url(../images/right.png) no-repeat;right:50px;}
+
+/*轮播样式 end*/
+.foot .footing{margin:0 auto;width: 1000px;height:302px;background-color:#FFFFFF;	}
+.foot .footing img{border: none;}
+.foot .footing ul{list-style-type: none;overflow:hidden;width:720px;margin-left:auto;margin-right: auto;}
+.foot .footing .li1{padding-top:52px;width: 476px;float: left;text-align: left;}
+.foot .footing .li1 p{padding-left:45px;line-height: 30px;font-size:14px;color:#929292;clear: both;}
+.foot .footing .li1 ul{list-style-type: none;padding-left:45px;}
+.foot .footing .li1 li{padding-top:22px;padding-right:15px;padding-bottom: 25px;float: left;}
+.foot .footing .li2{padding-left: 82px;padding-top:52px;float: left;}
+
+.imgVerify .imgVerifyForm label input[type="text"]{text-indent:0px;}
+
+
+/*落地样式end*/
+/*公用注册按钮*/
+.bx_round3{-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;-ms-border-radius:3px;border-radius:3px;}
+.bx_orange_btn{width:100%;display:block;height:44px;text-align:center;background:#f90;color:#fff;font:22px/44px Helvetica,'Microsoft YaHei','Heiti','SC' !important;border:0;cursor:pointer;}
+.bx_orange_btn:hover{background-color:#f70;color:#fff;}
+

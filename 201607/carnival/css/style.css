@@ -1,0 +1,135 @@
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+a,button{-webkit-tap-highlight-color: transparent;}
+
+.carnival{width:1920px;margin-left:-960px;position:relative;left:50%;}
+.carnival .content{width:1000px;height:100%;margin-left:-500px;position:absolute;left:50%;top:0;}
+.carnival .content .index_logo{position:absolute;left:265px;top:44px;}
+.carnival .content > div{width:191px;height:250px;background-repeat:no-repeat;position:absolute;left:0;top:0;cursor:pointer;-webkit-transition:all 1s;transition:all 1s;}
+.carnival .content > div a{width:100%;height:100%;display:block;}
+.carnival .content .game_01{background-image:url(../images/game_01.png);left:-54px;top:412px;z-index:10;}
+.carnival .content .game_01:hover{background-image:url(../images/game_01_hover.png);}
+.carnival .content .game_02{width:183px;height:120px;background-image:url(../images/game_02.png);left:196px;top:565px;}
+.carnival .content .game_02:hover{background-image:url(../images/game_02_hover.png);}
+.carnival .content .game_03{width:186px;height:197px;background-image:url(../images/game_03.png);left:182px;top:322px;z-index:9;}
+.carnival .content .game_03:hover{background-image:url(../images/game_03_hover.png);}
+.carnival .content .game_04{width:145px;height:155px;background-image:url(../images/game_04.png);left:325px;top:424px;}
+.carnival .content .game_04:hover{background-image:url(../images/game_04_hover.png);}
+.carnival .content .game_05{width:193px;height:207px;background-image:url(../images/game_05.png);left:440px;top:440px;}
+.carnival .content .game_05:hover{background-image:url(../images/game_05_hover.png);}
+.carnival .content .game_06{width:174px;height:202px;background-image:url(../images/game_06.png);left:480px;top:244px;}
+.carnival .content .game_06:hover{background-image:url(../images/game_06_hover.png);}
+.carnival .content .game_07{width:207px;height:229px;background-image:url(../images/game_07.png);left:604px;top:272px;}
+.carnival .content .game_07:hover{background-image:url(../images/game_07_hover.png);}
+.carnival .content .game_08{width:285px;height:184px;background-image:url(../images/game_08.png);left:736px;top:425px;}
+.carnival .content .game_08:hover{background-image:url(../images/game_08_hover.png);}
+.carnival .content .game_09{width:377px;height:470px;background-image:url(../images/game_09.png);left:22px;top:122px;z-index:0;}
+.carnival .content .game_09:hover{background-image:url(../images/game_09_hover.png);}
+.carnival .content .game_10{width:200px;height:200px;background-image:url(../images/sign.gif);left:810px;top:136px;}
+
+.mask{width:100%;height:100%;background:url(../images/black.png) repeat;position:fixed;left:0;top:0;z-index:999;display:none;}
+.mask .cont{width:800px;height:600px;padding:40px 60px;margin:-300px 0 0 -400px;font-size:16px;background-color:#fff;position:absolute;left:50%;left:0\9;top:50%;display:none;}
+.mask .cont .hd{height:60px;line-height:60px;text-align:center;font-size:30px;color:#2d449f;background:url(../images/title_bg.png) no-repeat center center;position:relative;}
+.mask .cont .hd h3{font-size:30px;font-weight:lighter;}
+.mask .cont .hd .close{width:20px;height:20px;background:url(../images/close.png) no-repeat center center;position:absolute;top:-20px;right:-40px;}
+.mask .cont .bd > div{margin-top:10px;}
+.mask .cont .bd > div > p,.mask .cont .bd > div > font{color:#f42f2b;}
+.mask .cont .bd > div > span{color:#ecb81c;}
+
+.prize{text-align:center;}
+.prize .left{width:400px;}
+.prize .right{width:280px;}
+.prize .left ul li{float:left;width:118px;border:1px solid #e1e8f2;margin:0 15px 15px 0;}
+.prize .left ul li p{padding:10px 0;}
+.prize .left ul li p span{color:#f42f2b;}
+.prize .left dl{width:286px;height:110px;padding:10px 15px;border:1px solid #e1e8f2;}
+.prize .left dl + dl{margin-top:10px;}
+.prize .left dl dt{float:left;margin-right:15px;}
+.prize .left dl dd{text-align:left;}
+.prize .left dl dd h3{line-height:1.4;font-size:16px;font-weight:normal;color:#f42f2b;}
+.prize .left dl dd h3 span{padding-right:5px;font-size:36px;}
+.prize .left .tit{padding:20px 0;text-align:left;color:#f42f2b;}
+.prize .left .film{width:250px;height:164px;padding-top:35px;border:1px solid #e1e8f2;}
+.prize .left .film p{padding-top:12px;font-size:24px;font-weight:lighter;}
+.prize .left .film p span{color:#f42f2b;}
+.prize .left .s_tit{margin-bottom:20px;}
+.prize .left .s_tit span{color:#ecb81c;}
+.prize .right{font-size:24px;color:#2d449f;}
+
+.wish_cont .prize .left ul li{width:160px;}
+
+.sign .sign_top{padding:50px 0;border-bottom:1px solid #e1e8f2;margin-bottom:50px;}
+.sign .sign_top .right{width:380px;height:202px;display:table;}
+.sign .sign_top .right .table-cell{vertical-align:middle;font-size:24px;display:table-cell;}
+.sign .sign_top .right .table-cell span{font-size:30px;color:#e71c18;}
+.sign .sign_top .right .table-cell p{display:none;}
+.sign .sign_bot{position:relative;}
+.sign .sign_bot span{color:#ecb81c;}
+.sign .sign_bot font{color:#e71c18;}
+.sign .sign_bot a{width:145px;height:50px;line-height:50px;border:1px solid #ecb81c;text-align:center;font-size:24px;color:#ecb81c;position:absolute;right:0;top:5px;-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.mask .cont .bd .sign_bot p{font-size:18px;color:#666;}
+
+.expect{margin-top:100px;}
+.expect .right{width:340px;height:202px;display:table;}
+.expect .right .table-cell{vertical-align:middle;font-size:24px;display:table-cell;}
+.expect .right .table-cell span{color:#e71c18;}
+.expect .right a{width:145px;height:50px;line-height:50px;border:1px solid #ecb81c;margin-top:30px;text-align:center;font-size:24px;color:#ecb81c;display:block;-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+.shake{-webkit-animation:shake 1s 1;animation:shake 1s 1;}
+
+@keyframes shake{
+    0% {transform:translateY(5px);}
+    50% {transform:translateY(-5px);}
+    100%{transform:translateY(0);}
+}
+@-webkit-keyframes shake{
+    0% {-webkit-transform:translateY(5px);}
+    50% {-webkit-transform:translateY(-5px);}
+    100%{-webkit-transform:translateY(0);}
+}
+
+.body_blue{background-color:#2d449f;}
+
+.mobile{width:100%;color:#7e8ecc;font-size:1.4rem;}
+.mobile img{max-width:100%;}
+.mobile .part{padding:3rem 0 2rem;margin:4rem 14px 0;background:url(../images/part_bg.png) no-repeat;-webkit-background-size:100% 100%;background-size:100% 100%;position:relative;}
+.mobile .part h3{width:100%;height:5rem;line-height:2.4rem;text-align:center;font-size:1.8rem;text-shadow:0 1px 0 #9e7600;font-weight:normal;color:#fff;background:url(../images/mob_tit.png) no-repeat center top;-webkit-background-size:auto 100%;background-size:auto 100%;position:absolute;left:0;top:-2.5rem;}
+.mobile .part .bd{padding:0 1rem;}
+.mobile .part .bd a{color:#7e8ecc;}
+.mobile .part .bd .left{padding-top:20px;width:24%;text-align:center;}
+.mobile .part .bd .left img{width:80%;}
+.mobile .part .bd .left p{padding:1rem 0;}
+.mobile .part .bd .left p img{width:80%;}
+.mobile .part .bd .right{width:76%;min-height:12rem;padding:0 1rem 0 2rem;text-align:justify;justify-content:center;}
+
+
+.mob_top{padding:0 5%;margin-top:-9rem;position:relative;z-index:10;}
+.mob_top ul li{float:left;width:33.33%;}
+.mob_top ul li a{display:block;}
+.mob_top ul li img{width:80%;}
+
+footer{padding:2rem 0;text-align:center;}
+footer img{width:24%;}
+
+#msg{width:100%;height:100%;background-color:rgba(0,0,0,.8);position:fixed;left:0;bottom:0;z-index:9999;display:none;}
+#msg .cont{width:90%;;background-color:#fff;position:absolute;left:5%;top:20%;}
+#msg .cont .hd p img{height:10rem;}
+#msg .cont .bd{height:4.6rem;line-height:2.6rem;padding:1rem 0;background-color:#f2f2f8;}
+#msg .cont .bd a{width:40%;margin:0 2%;font-size:1.4rem;color:#fff;background-color:#ecb81c;display:inline-block;-webkit-border-radius:3px;border-radius:3px;}
+#msg .cont .bd a:first-child{background-color:#2d449f;}
+
+#msg .cont .message{line-height:1.6;padding:1rem;font-size:1.6rem;color:#666;}
+#msg .cont .message span{color:#e71c18;}
+
+#msg .cont .sign_bot{line-height:1.6;padding:1rem;font-size:1.3rem;color:#999;}
+#msg .cont .sign_bot span{color:#ecb81c;}
+#msg .cont .sign_bot font{color:#e71c18;}
+
+.billion{padding:0 14px;margin-top:2rem;}
+
+@media only screen and (max-height:480px){
+    #msg .cont{top:14%;}
+}
+@media only screen and (max-width:320px){
+    #msg .cont .sign_bot{font-size:1.2rem;}
+}

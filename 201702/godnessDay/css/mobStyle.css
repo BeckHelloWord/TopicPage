@@ -1,0 +1,51 @@
+.mob_main{
+    position: relative
+}
+.mob_container{
+    width: 100%;
+    background: url("../images/bg_mobile.jpg") 100% 100%;
+    padding-top: 13rem;
+    color:white;
+}
+.mob_title{
+    text-align: center;
+    font-size: 2rem;
+}
+.mob_txt{
+    width: 80%;
+    margin: 0 auto;
+    font-size:1rem;
+    padding-left: 2.2rem;
+    position: relative;
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+}
+.mob_txt:before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    margin-left: 0.2rem;
+    top:0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../images/mob_rectangular.png");
+    background-size: 100%
+}
+.mob_ticket{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+.mob_ticket img{
+    width: 100%;
+}
+.mob_rule{
+    margin: 0 6.66667%
+}
+.mob_tips{
+    text-align: center;
+    color: #b3b3b3;
+    padding: 1rem 0
+}

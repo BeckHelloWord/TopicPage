@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-年终回馈季宝象有你</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <!--<script type="text/javascript" src="https://www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>-->
+    <script type="text/javascript">
+        $(function() {
+            $(".bx-mob-tab li").click(function() {
+                var num = $(this).index();
+                $(this).addClass("current-tab").siblings().removeClass();
+                $(".bx-mob-tab-con div").eq(num).addClass("bx-mob-current").siblings().removeClass();
+            });
+            var str=navigator.userAgent;
+            var reg=new RegExp(/(baoxiang)+[(iOS)|(Android)]+/);
+            if(reg.test(str)){
+                $(".bx-mob-recharge a").attr({"href":"baoxiang://APPTopUp"});
+            }
+        })
+
+    </script>
+</head>
+
+<body>
+    <section class="bx-mob-main">
+        <div>
+            <img src="./images/feedback_mob_1.jpg"/>
+            <img src="./images/feedback_mob_2.jpg" />
+        </div>
+        <div class="bx-mob-recharge">
+            <a href="/center/home/index">立即充值</a>
+            <div class="bx-mob-rule activity-rule">
+                <p>1.充值金额以活动期间单笔统计为准，在活动后的3个工作日内进行红包发放。</p>
+                <p>2.红包发放，单笔不累计，活动期间多笔充值可累计。</p>
+                <p>3.红包需投30天以上标，使用规则以红包定义为准。</p>
+            </div>
+        </div>
+        <div class="bx-mob-money">
+            <div class="activity-rule money-mob">
+                <p>1.此红包为系统统一发放，当日最多领取1个，当月可多次领取。</p>
+                <p>2.回款仅限直投项目，添添金和债权转让回款不参加活动。红包使用规则参见红包定义。</p>
+            </div>
+        </div>
+        <div>
+            <img src="./images/bx-mob-gift-gap.gif" />
+        </div>
+        <div class="bx-mob-weekend">
+            <div class="activity-rule">
+                <p>1.标的加息与否请以标题为准。</p>
+                <p>2.加息奖励在满标之后由系统自动发放。</p>
+            </div>
+        </div>
+        <section class="bx-mob-tab">
+            <ul>
+                <li class="current-tab">新人注册即赠888</li>
+                <li>排名有奖</li>
+                <li>生日红包</li>
+            </ul>
+            <div class="bx-mob-tab-con">
+                <div class="bx-mob-current">
+                    <img src="./images/bx-mob-register.gif" />
+                </div>
+                <div>
+                    <img src="./images/bx-mob-ranking.gif" />
+                </div>
+                <div>
+                    <img src="./images/bx-mob-birthday.gif" />
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+
+
+    </div>
+</body>
+
+</html>

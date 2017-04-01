@@ -1,0 +1,42 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+em,i{font-style:normal;}
+
+body{font:22px/1.6 Helvetica,'Microsoft YaHei','Heiti','SC';background-image:linear-gradient(#0c0a52, #210ee4);}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.wrapper{width:100%;overflow:hidden;}
+
+.side{padding:5% 0 0 5%;}
+
+.logo img{width:20%;}
+.logo span{line-height:1;padding-left:30px;font-size:30px;color:#968eff;vertical-align:bottom;}
+
+.num_cont{padding-top:8%;color:#968eff;}
+.num_cont h3{margin-bottom:20px;font-size:40px;font-weight:normal;}
+.num_cont p{line-height:1;font-size:66px;letter-spacing:10px;}
+.num_cont .number{height:120px;margin-top:10px;text-align:center;font-size:80px;color:#f05840;overflow:hidden;}
+.num_cont .number .num_visit{float:left;width:85px;text-align:center;-webkit-transition:all 1s;transition:all 1s;}
+.num_cont .number .num_visit + .num_visit{margin-left:20px;}
+.num_cont .number span{float:left;width:100%;height:120px;line-height:120px;position:relative;background:#1f152a;-webkit-border-radius:10%;-moz-border-radius:10%;border-radius:10%;}
+.num_cont .number .comma{width:auto;line-height:96px;font-size:80px;}
+
+

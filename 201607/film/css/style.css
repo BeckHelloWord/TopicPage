@@ -1,0 +1,11 @@
+/*  h5宝象发年中奖 */
+.mobMain{width:100%;overflow:hidden;}
+.mobMain img{width:100%;}
+
+.mt20{margin-top:20px;}
+
+.signUp{padding:1rem 0 5rem;text-align:center;font-size:1.4rem;background-color:#f0faf8;}
+.signUp h3{font-size:1.8rem;font-weight:normal;color:#333;}
+.signUp .small{font-size:1.2rem;}
+
+.btn{width:100%;height:4rem;line-height:4rem;text-align:center;font-size:2rem;color:#fff;background-color:#69d0bf;position:fixed;left:0;bottom:0;}

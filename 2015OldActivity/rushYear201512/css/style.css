@@ -1,0 +1,404 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+q:before,
+q:after {
+    content: '';
+}
+
+/* 消除q前后的内容 */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+body {
+    /*    font: 12px/1.8 "Microsoft YaHei", "微软雅黑";*/
+    font: 12px/1.5 "黑体", "Microsoft YaHei", "微软雅黑";
+    color: #666;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+/*
+a:hover {
+    color: #f90;
+    text-decoration: none;
+}
+*/
+
+a:focus,
+input:focus {
+    outline: 0;
+}
+.fl,
+.left {
+    float: left;
+}
+.fr,
+.right {
+    float: right;
+}
+.t_l {
+    text-align: left;
+}
+.t_c {
+    text-align: center;
+}
+.t_r {
+    text-align: right;
+}
+.pos {
+    position: relative;
+}
+.pt10 {
+    padding-top: 10px;
+}
+.br5 {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+/* pc端 */
+
+.wrapper {
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.top {
+    background-color: #f9f9f9;
+}
+.top .container {
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+}
+.top .logo {
+    margin-top: -3px;
+}
+.top .nav a,
+.top .nav span {
+    float: left;
+}
+.top .nav a {
+    display: inline-block;
+    padding: 0 15px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+}
+.pt50 {
+    padding-top: 50px;
+}
+.main {
+    width: 1920px;
+    position: relative;
+    left: 50%;
+    margin-left: -960px;
+    z-index: 0;
+}
+.double-twelve {
+    height: 373px;
+    background: url("../images/rushYear-bannerbj.jpg") no-repeat center center;
+}
+.bx-year-btn {
+    display: block;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    font-weight:bold;
+    text-align: center;
+    font-size: 30px;
+    color: #f02864;
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    background: #ffdc32;
+}
+.bx-activity-rule p {
+    position: relative;
+    padding-left: 14px;
+}
+.bx-feedback {
+    width: 1920px;
+    height: 259px;
+    padding-top: 541px;
+    margin: 0 auto;
+    background: url("../images/bx-h5-feedback.jpg") no-repeat;
+}
+.bx-rule {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 129px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+}
+.bx-present {
+    width: 1920px;
+    height: 278px;
+    padding-top: 236px;
+    background: url("../images/present.jpg") no-repeat;
+}
+.bx-interest {
+    width: 1920px;
+    height: 366px;
+    padding-top: 246px;
+    background: url("../images/bx-interest.jpg") no-repeat;
+}
+.bx-packet {
+    width: 1920px;
+    overflow: hidden;
+    /*    height: 804px;*/
+    background: url("../images/bx-packet.jpg") no-repeat;
+}
+.bx-packet-tab {
+    width: 1200px;
+    height: 520px;
+    margin: 0 auto;
+    background: #fff;
+}
+.packet-tab-header li {
+    float: left;
+    width: 400px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    background: #AA64C7;
+    cursor: default;
+}
+.packet-tab-header .current {
+    background: #fff;
+    color: #f02864;
+}
+.packet-tab-content>div {
+    display: none;
+}
+.packet-tab-content .packet-content-current {
+    display: block;
+}
+
+/* h5页面 */
+
+.bx-mob-main {
+    width: 100%;
+}
+.bx-mob-main img {
+    width: 100%;
+    height: auto;
+}
+.bx-mob-recharge {
+    background: url("../images/bx-mob-banner-bj.gif") no-repeat;
+    background-size: 100% 100%;
+}
+.bx-mob-recharge a {
+    display: block;
+    margin: 0 auto;
+    width: 48.6%;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #f02864;
+    background: #ffdc32;
+}
+.bx-mob-gift {
+    padding-top: 6.25%;
+}
+.bx-mob-rule {
+    margin-top: 6.3%;
+    padding-bottom: 23.61%;
+}
+.bx-app-rule {
+    margin-top: 0;
+}
+.activity-rule >p {
+    padding-left: 8.3%;
+    padding-right: 6.6%;
+    color: #fff;
+}
+.bx-mob-owe-rule {
+    box-sizing: border-box;
+    padding-top: 5.5%;
+    /*    padding-bottom: 4%;*/
+    background: url("../images/bx-mob-gap.gif") no-repeat;
+    background-size: 100% 100%;
+}
+.bx-mob-owe-rule img {
+    width: 100%;
+}
+.bx-mob-money {
+    position: relative;
+    padding-top: 67.5%;
+    /*    padding-bottom: 5.2%;*/
+    background: url("../images/bx-mob-money.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.money-mob {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+}
+.bx-mob-money p {
+    line-height: 1.5;
+}
+.bx-mob-weekend {
+    padding-top: 50%;
+    padding-bottom: 32.4%;
+    background: url("../images/bx-mob-weekend.jpg") no-repeat;
+    background-size: cover;
+}
+.bx-mob-tab {
+    padding: 0 1.94%;
+    padding-bottom: 14%;
+    margin: 0 auto;
+    background: url("../images/bx-mob-tab.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.bx-mob-tab ul {
+    overflow: hidden;
+}
+.bx-mob-tab li {
+    float: left;
+    width: 33.33%;
+    padding: 3.75% 0;
+    text-align: center;
+    color: #fff;
+    background: #AA64C7;
+}
+.bx-mob-tab .current-tab {
+    background: #fff;
+    color: #f02864;
+}
+.bx-mob-tab-con>div {
+    display: none;
+}
+.bx-mob-tab-con .bx-mob-current {
+    display: block;
+}
+.remind {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aa64c8;
+}
+.mob_invite {}
+.mob_invite img {
+    max-width: 100%;
+}
+.mob_invite .mob_page .btn {
+    width: 10%;
+    position: absolute;
+    left: 45%;
+    bottom: 1%;
+}
+.mob_invite .mob_page7 .eggs_btn {
+    width: 25%;
+    position: absolute;
+    right: 7%;
+    top: -2%;
+}
+.mob_invite .mob_page7 ul {
+    position: absolute;
+    left: 12%;
+    top: 12%;
+    right: 10%;
+    color: #ff765e;
+    line-height: 200%;
+    word-wrap: break-word;
+}
+.mob_invite .mob_page7 ul li span {
+    float: left;
+}
+.mob_invite .mob_page7 ul li p {
+    padding-left: 19px;
+}
+@media only screen and (max-width:320px) {
+    .activity-rule p {
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width:400px) {
+    .activity-rule p,
+    .bx-mob-tab li {
+        font-size: 14px;
+    }
+}

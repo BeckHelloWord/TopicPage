@@ -1,0 +1,99 @@
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+/*html,body,.mobile{height:100%;}*/
+a,img,button,input,textarea,div{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+img{max-width:100%;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+.body_bg{background-color:#2d449f;}
+
+.mobile{width:100%;color:#fff;overflow:hidden;}
+
+.games{position:relative;}
+
+.playPart{width:80%;height:88%;position:absolute;left:10%;top:5%;}
+
+#play_item{width:100%;height:100%;position:absolute;left:0;top:0;z-index:10;}
+#play_item > div{width:22%;height:22%;text-align:center;position:absolute;}
+#play_item > div > img{margin-top:12%;height:50%;}
+#play_item > div > p{padding-top:3%;}
+
+.pitem_1,.pitem_10,.pitem_11,.pitem_12,.playPart .pstep1,.playPart .pstep10,.playPart .pstep11,.playPart .pstep12{left:0;}
+.pitem_1,.pitem_2,.pitem_3,.pitem_4,.playPart .pstep1,.playPart .pstep2,.playPart .pstep3,.playPart .pstep4{top:0;}
+.pitem_2,.pitem_9,.playPart .pstep2,.playPart .pstep9{left:26%;}
+.pitem_3,.pitem_8,.playPart .pstep3,.playPart .pstep8{left:52%;}
+.pitem_4,.pitem_5,.pitem_6,.pitem_7,.playPart .pstep4,.playPart .pstep5,.playPart .pstep6,.playPart .pstep7{left:78%;}
+.pitem_5,.pitem_12,.playPart .pstep5,.playPart .pstep12{top:26%;}
+.pitem_6,.pitem_11,.playPart .pstep6,.playPart .pstep11{top:52%;}
+.pitem_7,.pitem_8,.pitem_9,.pitem_10,.playPart .pstep7,.playPart .pstep8,.playPart .pstep9,.playPart .pstep10{top:78%;}
+
+#play_light{width:22% !important;height:22% !important;background:url(../images/curr.png) no-repeat center center;background-size:100% 100%;position:absolute;z-index:0;}
+#play_light .bg_light1{width:100%;height:100%;background-color:rgba(0,0,0,.2);}
+#play_start_time{display:none;}
+
+.play_center{text-align:center;position:absolute;left:25%;top:25%;right:25%;bottom:25%;z-index:100;}
+
+#play_name input{width:100%;height:40%;padding:12% 5%;border:0;text-align:center;font-size:1.5rem;color:#ecb81c;background:url(../images/input_bg.png) no-repeat center center;background-size:100% 100%;}
+#play_name input::-webkit-input-placeholder{color:#ecb81c;}
+#play_name input:-moz-placeholder{color:#ecb81c;}
+#play_name input::-moz-placeholder{color:#ecb81c;}
+#play_name input:-ms-input-placeholder{color:#ecb81c;}
+#play_name p{color:#28aae0;}
+
+#play_start{width:100%;height:40%;background:url(../images/is_start.png) no-repeat center center;background-size:100% 100%;position:absolute;left:0;bottom:0;}
+#play_start:active,#play_start.is_playing,#play_start.is_wait{background-image:url(../images/is_wait.png);}
+#play_sponsor{display:none;}
+
+.explain{padding:1rem 5% 0;}
+.explain h3{height:3rem;line-height:3rem;font-size:1.6rem;font-weight:lighter;color:rgba(236, 184, 28, 1);position:relative;}
+.explain h3:before,.explain h3:after{content:"";width:30%;height:1px;position:absolute;top:50%;}
+.explain h3:before{left:0;background-image:-webkit-linear-gradient(left, rgba(236, 184, 28, 0), rgba(236, 184, 28, 1));background-image:linear-gradient(left, rgba(236, 184, 28, 0), rgba(236, 184, 28, 1));}
+.explain h3:after{right:0;background-image:-webkit-linear-gradient(left, rgba(236, 184, 28, 1), rgba(236, 184, 28, 0));background-image:linear-gradient(left, rgba(236, 184, 28, 1), rgba(236, 184, 28, 0));}
+.explain h3 span:before,.explain h3 span:after{content:"";width:0.6rem;height:0.6rem;margin:-0.5rem 0 0 -0.5rem;background-color:rgba(236, 184, 28, 1);position:absolute;top:50%;display:block;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.explain h3 span:before{left:30%;-webkit-transform-origin:20% 120%;transform-origin:20% 120%;}
+.explain h3 span:after{right:30%;-webkit-transform-origin:20% 120%;transform-origin:20% 120%;}
+.explain ul li{list-style-type:disc;line-height:1.6;margin-left:5%;font-size:1.4rem;color:#7e8ecc;}
+.explain ul li + li{padding-top:10px;}
+.explain ul li span{color:#e71c18;}
+
+.pop{width:100%;height:100%;background-color:rgba(0,0,0,.8);position:fixed;left:0;bottom:0;z-index:9999;display:none;}
+.pop .cont{width:80%;margin-top:-7.3rem;background-color:#fff;position:absolute;left:10%;top:50%;}
+.pop .cont .hd{width:100%;height:10rem;display:table;}
+.pop .cont .hd p{padding:0 18%;vertical-align:middle;font-size:1.8rem;color:#e71c18;display:table-cell;}
+.pop .cont .bd{height:4.6rem;line-height:2.6rem;padding:1rem 0;background-color:#f2f2f8;}
+.pop .cont .bd a{width:50%;font-size:1.4rem;color:#fff;background-color:#ecb81c;display:inline-block;-webkit-border-radius:3px;border-radius:3px;}
+
+#msg{width:100%;height:100%;background-color:rgba(0,0,0,.8);position:fixed;left:0;bottom:0;z-index:9999;display:none;}
+#msg .cont{width:90%;margin-top:-7.3rem;background-color:#fff;position:absolute;left:5%;top:40%;display:none;}
+#msg .cont .hd{width:100%;height:17rem;}
+#msg .cont .hd h3{height:4rem;line-height:4rem;padding-top:0.3rem;font-size:1.6rem;font-weight:normal;color:#e71c18;}
+#msg .cont .hd > p{height:10rem;line-height:10rem;margin-top:1rem;}
+#msg .cont .hd > p img{max-width:94%;max-height:100%;}
+#msg .cont .bd{padding:1rem 0;background-color:#f2f2f8;}
+#msg .cont .bd a{width:40%;padding:0.4rem 0;margin:0 2%;font-size:1.4rem;color:#fff;background-color:#ecb81c;display:inline-block;-webkit-border-radius:3px;border-radius:3px;}
+#msg .cont .bd a:first-child{background-color:#2d449f;}
+#msg .cont .desc{padding:1rem 0;border-top:1px solid #d5d9eb;margin:1rem 1rem 0;}
+#msg .cont .desc h4{font-size:1.5rem;font-weight:normal;}
+#msg .cont .desc h4 span{color:#ecb81c;}
+#msg .cont .desc p{text-align:justify;justify-content:center;font-size:1.2rem;}
+
+#msg.winMask .cont{top:30%;}
+#msg.winMask .cont .hd{height:auto;}
+#msg.winMask .cont:first-child,#msg.noMask .cont:last-child{display:block;}
+
+footer{padding:2rem 0;text-align:center;}
+footer img{width:26%;}
+
+#slider{height:364px;overflow:hidden;}
+
+@media only screen and (max-width:320px){}
+
+@media only screen and (width:360px) and (height:520px){
+    #play_item > div > img{height:36%;}
+}
+@media only screen and (width:360px) and (height:567px){
+    #play_item > div > img{height:30%;}
+}

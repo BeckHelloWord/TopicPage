@@ -1,0 +1,237 @@
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 去除iPhone中默认的input样式 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+    -webkit-appearance: none;
+    resize: none;
+}
+
+/* 取消链接高亮  */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+}
+
+/* 图片自适应 */
+img {
+    max-width: 100%;
+    width:100%;
+    height: auto;
+    width: auto \9; /* ie8 */
+    vertical-align: middle;
+    border:none;
+    -ms-interpolation-mode: bicubic; /*为了照顾ie图片缩放失真*/
+}
+
+/* 初始化 */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font: 12px Microsoft YaHei, Tahoma, Arial, sans-serif;
+    color: #555;
+    background-color: #F7F7F7;
+}
+
+em, i {
+    font-style: normal;
+}
+
+strong {
+    font-weight: normal;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #969696;
+    font-family: Microsoft YaHei, Tahoma, Arial, sans-serif;
+}
+
+a:hover {
+    color: #FED503;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-family: Microsoft YaHei;
+}
+.fl{float: left;}
+.fr{float:right;}
+html{font-size:10px !important}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px !important}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px !important}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px !important}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px !important}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px !important}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px !important}}
+@media screen and (min-width:800px){html{font-size:25px !important}}
+
+.mobile_page{
+    font-size:1.2rem;
+}
+.mobile_page .mobile_wrap{
+    padding:0 2%;
+    background: #2d449f;
+}
+.task{
+    padding:0 2%;
+    background: #fff;
+}
+.mt32{
+    margin-top:32px;
+}
+.br3{
+    border-radius: 3px;
+}
+.mobile_task_one{
+    position: relative;
+
+}
+.task_one_img{
+    position: relative;
+    top:-6px;
+    padding-bottom: 10px;
+}
+.mobile_task_two{
+    position: relative;
+    padding-top:35%;
+}
+.task_two_img{
+    width:96%;
+    position: absolute;
+    top:-0.9%;
+}
+.task_two_example{
+    padding-top:30px;
+}
+.mobile_task_two ul{
+    padding:8% 0 8% 8%;
+}
+.mobile_task_two ul li{
+    position: relative;
+    margin-bottom:5%;
+    font-size:1.4rem;
+    line-height: 1.5;
+    color:#b1943c;
+}
+.mobile_task_two ul li:before{
+    content:'';
+    position: absolute;
+    top:10%;
+    left:-6%;
+    width:4%;
+    padding-top:4%;
+    background: #ecb81c;
+}
+.btn{
+    display: block;
+    margin:7% auto;
+}
+.mobile_rule{
+    position: relative;
+}
+.mobile_rule .rule_title{
+    position: absolute;
+    top:-1.5%;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+    transform:translateX(-50%);
+    width:57%;
+
+}
+.mobile_rule ul{
+    padding-left:10%;
+    padding:20% 0 8% 10%;
+}
+.mobile_rule ul li{
+    position: relative;
+    margin-bottom: 5%;
+    font-size:1.4rem;
+    line-height: 1.5;
+    color:#5d5d5d;
+}
+.mobile_rule ul li span{
+    position: absolute;
+    top:8%;
+    left:-10%;
+    width:6%;
+    padding-top:6%;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    background: #ecb81c;
+}
+.mobile_rule ul li strong{
+    color:#2d449f;
+}
+.mobile_rule ul li span::before{
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:#fff;
+    -webkit-transform:translate(-50%,-50%) rotate(45deg);
+    -moz-transform:translate(-50%,-50%) rotate(45deg);
+    -ms-transform:translate(-50%,-50%) rotate(45deg);
+    -o-transform:translate(-50%,-50%) rotate(45deg);
+    transform:translate(-50%,-50%) rotate(45deg);
+}
+.mobile_rule ul li:nth-child(1) span:before{
+    content: '1';
+
+}
+.mobile_rule ul li:nth-child(2) span:before{
+    content: '2';
+
+}
+.mobile_rule ul li:nth-child(3) span:before{
+    content: '3';
+
+}
+.mobile_rule ul li:nth-child(4) span:before{
+    content: '4';
+
+}
+.mobile_rule ul li:nth-child(5) span:before{
+    content: '5';
+
+
+}
+.mobile_wrap .info{
+    padding:6% 0;
+    font-size:1.4rem;
+    color:#7d8dcf;
+    text-align: center;
+}

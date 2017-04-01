@@ -1,0 +1,44 @@
+<!doctype html>
+<html manifest="bx.appcache">
+<head>
+<meta charset="UTF-8">
+<title>我的客户</title>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no" />
+<meta name="format-detection" content="telephone=no,email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<script src="static/lib/sea.js"></script>
+</head>
+<body id="app">
+<navigation></navigation>
+
+<router-view></router-view>
+
+<menu></menu>
+
+<script src="static/lib/zepto.min.js"></script>
+<script src="static/lib/vue.min.js"></script>
+<script src="static/lib/vue-router.min.js"></script>
+<script>
+(function () {
+    var gMain = {
+        verson:"1.0",
+		basePath:"/vue-router_loader/"
+    };
+
+    // seajs配置信息
+    seajs.config({
+        base: './static',  //seajs的基础路径
+        charset: 'utf-8',
+        map: [[ /^(.*\.(?:css|js|html))(.*)$/i, '$1?v='+gMain.verson]],  //加上版本号，清缓存用
+        //公共路径
+        paths:{
+
+        }
+    });
+		
+    seajs.use(['app.js']);
+})();
+</script>
+</body>
+</html>

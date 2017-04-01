@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="涨薪宝">
+    <meta name="Description" content="涨薪宝">
+    <title>涨薪宝</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <script src="../../js/public.js"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+    <script src="js/jquery.arctext.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="turn">
+            <div class="dish">
+                <div class="turntable-wrap js-turntable">
+                <img src="images/dish.png" alt="" class="dishBg">
+                <ul >
+                    <li>
+                        <p class="span">2000元体验金</p><img src="images/gift01.png" alt=""></li>
+                    <li>
+                        <p>1000元体验金</p><img src="images/gift02.png" alt=""></li>
+                    <li>
+                        <p>5枚体验金</p><img src="images/gift03.png" alt=""></li>
+                    <li>
+                        <p>Thank you</p><img src="images/gift04.png" alt=""></li>
+                    <li>
+                        <p>小米"Air Wear"</p><img src="images/gift05.png" alt=""></li>
+                    <li>
+                        <p>小米旅行箱</p><img src="images/gift06.png" alt=""></li>
+                    <li>
+                        <p>小米电饭煲</p><img src="images/gift07.png" alt=""></li>
+                    <li>
+                        <p>小米空气净化器</p><img src="images/gift08.png" alt=""></li>
+                </ul>
+                </div>
+                <a href="javascript:void(0)" class="btn js-start"><img src="images/btn.png" alt=""><div class="lottery-wrap"><p>抽奖</p><p class="lottery-num">(<span class="js-lotteryNum">0</span>次)</p></div></a>
+                <img src="images/shadow.png" class="shadow"/>
+            </div>
+        </div>
+        <div class="listTop"><img src="images/listTop.png" alt=""></div>
+        <div class="list">
+            <h2>获取名单</h2>
+            <div class="listLine">
+                <ul class="w92">
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                    <li><span class="s1">182****0045</span><span class="s2">获得小米90分旅行箱20寸</span><span class="s3">3月15日</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="time"></div>
+        <div class="rule"></div>
+        <div class="bot"></div>
+        <br><br><br><br><br>
+    </div>
+    <script>
+        (function () {
+            $(".dish li p").arctext({ radius: 100 })
+        } ());
+
+    </script>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.rotate.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script>
+        // 转盘转动 start
+        $(function () {
+            var $btn = $('.js-start');
+            var $jl = $('.js-turntable');
+            var playnum = 10; //初始次数，由后台传入
+            $('.js-lotteryNum').text(playnum);
+            var isture = false;
+            var clickfunc = function () {
+                var data = [1, 2, 3, 4, 5, 6, 7, 8];
+                //data为随机出来的结果，根据概率后的结果
+
+                data = data[Math.floor(Math.random() * data.length)];
+                switch (6) {
+                    case 1:
+                        rotateFunc(1, 0, '2000元体验金（75名）');
+                        break;
+                    case 2:
+                        rotateFunc(2, 45, '1000元体验金（850名）');
+                        break;
+                    case 3:
+                        rotateFunc(3, 90, '5枚宝象币（50名）');
+                        break;
+                    case 4:
+                        rotateFunc(4, 135, '谢谢惠顾（1010名）');
+                        break;
+                    case 5:
+                        rotateFunc(5, 180, 'AIRWEAR防雾霾口罩（10名）价值69元');
+                        break;
+                    case 6:
+                        rotateFunc(6, 225, '小米90分旅行箱 20寸（2名）价值299元');
+                        break;
+                    case 7:
+                        rotateFunc(7, 270, '小米IH电饭煲(2名)价值399元');
+                        break;
+                    case 8:
+                        rotateFunc(8, 315, '小米空气净化器2（1名）价值699元');
+                        break;
+                    default:
+                        alert('服务器正忙,请稍后再试！');
+                        break;
+
+                }
+            };
+            $btn.click(function () {
+                if (isture) return; // 如果在执行就退出
+                isture = true; // 标志为 在执行
+                //先判断是否登录,未登录则执行下面的函数
+                if (1 == 2) {
+                    $('.playnum').html('0');
+                    alert("请先登录");
+                    isture = false;
+                } else { //登录了就执行下面
+                    if (playnum <= 0) { //当抽奖次数为0的时候执行
+                        alert("没有次数了");
+                        $('.playnum').html(0);
+                        isture = false;
+                    } else { //还有次数就执行
+                        playnum = --playnum; //执行转盘了则次数减1
+                        if (playnum <= 0) {
+                            playnum = 0;
+                        }
+                        $('.js-lotteryNum').html(playnum);
+                        clickfunc();
+                    }
+                }
+            });
+            var rotateFunc = function (awards, angle, text) {
+                isture = true;
+                $jl.stopRotate();
+                $jl.rotate({
+                    angle: -22.5,
+                    duration: 10000, //旋转时间
+                    animateTo: 3600 -angle-22.5, //让它根据得出来的结果加上1440度旋转
+                    callback: function () {
+                        isture = false; // 标志为 执行完毕
+                        // alert(text);
+                    }
+                });
+            };
+        });
+        // 转盘转动 end
+    </script>
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+    </div>
+</body>
+
+</html>

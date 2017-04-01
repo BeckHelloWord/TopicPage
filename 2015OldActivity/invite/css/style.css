@@ -1,0 +1,76 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.ml20{margin-left:20px;}
+.yellow{color:#fae572;}
+
+/* pc端 */
+
+.wrapper{width:100%; min-width:1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+.main{width:1920px; position:relative; left:50%; margin-left:-960px; z-index: 0;}
+.main .item{position:relative;}
+.main .item .btn{display:block; position:absolute; left:50%; margin-left:-136px; width:273px; height:79px; background:url(../images/btn.png) no-repeat;}
+.main .item .tab{position:absolute; left:0; top:220px; width:100%; text-align:center;}
+.main .item .tab .hd{height:81px; line-height:80px;}
+.main .item .tab .hd a{display:inline-block; width:310px; height:81px; color:#fff; font-size:36px; background:url(../images/tabbtn.png) no-repeat; margin:0 15px;}
+.main .item .tab .hd a.curr{background-image:url(../images/tabbtnhover.png); color:#0d2332;}
+.main .item .tab .bd{padding-top:70px;}
+
+.main .banner .btn{top:660px;}
+.main .invitetab .btn{bottom:-140px; z-index:100;}
+
+.rule{width:100%; padding-top:320px; background:url(../images/invite_03.jpg) no-repeat center top #143676;}
+.rule ol{width:940px; margin:0 auto; font-size:22px; color:#fff;}
+.rule ol li{list-style-type:decimal; margin:0 -50px 0 30px; line-height:2;}
+
+.mobrule{background-image:url(../images/mobinvite_03.jpg); background-size:100%; padding-top: 18%;}
+.mobrule ol{width:auto; font-size:12px; padding:0 4% 0 10%;}
+.mobrule ol li{margin:0 0 0 10%;}
+
+.notice a{display:block; position:absolute; left: 710px; bottom: 284px; width:600px; height:80px; background:url(about:blank);}
+
+
+/* h5页面 */
+.mobinvite{}
+.mobinvite img{max-width:100%;}
+.mobinvite section{position:relative;}
+.mobinvite .btn{display:block; position:absolute; left:37%; width:26%;}
+.mobinvite .invitetab{position:absolute; left:0; top:18%; width:100%; text-align: center;}
+.mobinvite .invitetab h3 a{display:inline-block; width:32%; padding:2% 0; font-size:14px; color:#fff; margin:0 1%; background:url(../images/tabbtn.png) no-repeat; background-size: 100% 100%;}
+.mobinvite .invitetab h3 a.curr{background-image:url(../images/tabbtnhover.png); color:#0d2332;}
+.mobinvite .invitetab p{padding-top:8%;}
+.mobinvite .invitetab p.first img{padding-top:5%;}
+.mobinvite .btn.a1{ bottom:8%;}
+.mobinvite .btn.a2{ bottom:-3%; z-index: 100;}
+.mobinvite .mobnotice{position:absolute; left: 30%; top: 15%; width: 46%; height: 16%;}

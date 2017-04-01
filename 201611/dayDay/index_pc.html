@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>宝象大作战</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- 导航区域 start -->
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航区域 end -->
+    <div id="mainmain">
+        <div class="main container">
+            <div class="see">
+                <div class="hd clearfix">
+                    <p class="fl">你的12月现金投资额：<span class="js-isLogin"></span></p>
+                    <a class="fl btn" href="//www.bxjr.com/lc" target="_blank">去投资</a>
+                    <p class="fr last">可用的游戏额外次数：<span class="js-isLogin"></span></p>
+                </div>
+                <div class="bd">叮叮当，叮叮当，铃儿响叮当，又到了每年最温馨浪漫的圣诞节，圣诞宝象坐着雪橇来寻找自己的双胞胎兄弟新年宝象啦，可是调皮的新年宝象一直躲着不肯出来哦，机智的圣诞宝象发起了寻找新年宝象的大作战！并邀请大家一起给圣诞国度中的民众点赞来获得帮助，可新年宝象为了不被找到也安插了不少卧底哦！参加大作战的你，可要小心应对！</div>
+                <div class="fd t_c">
+                    <div class="count">
+                        <h3>大作战倒计时</h3>
+                        <div class="time js-time"></div>
+                        <p>12月现金投资越多，游戏机会越多哦！</p>
+                    </div>
+                    <div class="start hidden">
+                        <img src="images/qr-code.jpg" alt="" />
+                        <p>扫描二维码，开始大作战</p>
+                        <p>12月现金投资越多，游戏机会越多哦！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rule">
+                <h3 class="t_c">活动规则</h3>
+                <ul>
+                    <li><span>1.</span><p>用户点击活动页面内的开始按钮进行游戏，在30s限时内对画面内出现的形象进行点赞，以此获得相应的加分和减分；</p></li>
+                    <li><span>2.</span><p>用户完成游戏即可获得现金红包、投资红包等随机奖励；</p></li>
+                    <li><span>3.</span><p>用户游戏积分将会进入排行榜，活动结束后，排名前50名的用户将会得到2017限量版宝象公仔以及2017全年投资券礼包的专属奖励；</p></li>
+                    <li><span>4.</span><p>每个用户在活动期间每日可以参与10次游戏，除此之外，用户在12月1日—12月31日的现金投资额可以用1000：1的比例转化为新的游戏机会；（例：小象在12月1日—5日累计现金投资10000元，他在活动期间的游戏机会会在每日10次常规机会之外增加10次额外机会；</p></li>
+                    <li><span>5.</span><p>用户在活动期间每日首次完成游戏并分享到自己的朋友圈后，可以得到1000元体验金的奖励；</p></li>
+                    <li><span>6.</span><p>如有任何疑问请联系客服电话：400-885-1100 ；</p></li>
+                    <li><span>7.</span><p>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer t_c">市场有风险，投资需谨慎</div>
+    </div>
+</div>
+<!-- 音乐 -->
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+    
+<script src="../../js/jquery-1.8.2.min.js"></script>
+<script src="../../js/layer1.9/layer.js"></script>
+<script src="../../js/public.js"></script>
+<script src="js/index.js"></script>
+<script>
+    timerFinish();
+    
+    function timerFinish(){
+        $(".count").hide();
+        $(".start").show();
+    }
+</script>
+<!--统计代码-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

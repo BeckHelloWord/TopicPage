@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="岁末白拿">
+    <meta name="Description" content="岁末白拿">
+    <title>岁末白拿</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/js/validform/js/validform_v5.3.2.js?v=${g.version()}"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <script src="../../js/public.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/layer_mobile/layer.js"></script>
+    <style>
+    html,body{height:100%;}
+    </style>
+</head>
+<body>
+<div class="main">
+    <img src="images/bgTop.png" />
+    <div class="bgBottom registerBottom">
+        <div class="box">
+            <form id="register-form" class="register-form" action="">
+                <label>
+                    <input type="tel" id="mobile" name="mobile" class="inputBox" dataType="m" maxlength="11" placeholder="请输入手机号码" />
+                </label>
+                <label class="mobile_code hidden">
+                    <div class="clearfix">
+                        <input type="tel" id="verifyNo" dataType="*" name="verifyNo" class="inputBox fl" maxlength="6" placeholder="请输入您的验证码"/>
+                        <button id="send_code" class="send_code fr">获取验证码</button>
+                    </div>
+                    <span style="display:block;height:20px;line-height:20px;"></span>
+                </label>
+                <p class="loginButton" id="loginButton">您已经注册 <a href="javascript:void(0)">点此一键登录</a></p>
+                <button type="button" id="share_btn" class="btn bgStyle">下一步</button>
+                <a href="javascript:void(0)" id="login_btn" class="btn bgStyle" style="display:none;">下一步</a>
+
+                <input type="hidden" id="password" name="password" value=""/>
+                <input type="hidden" name="ct" value="4"/>
+                <input type="hidden" name="bt" value="0"/>
+                <p class="agreement">
+                    <input type="checkbox" checked="checked" id="checkAgreement" class="checkAgreement" />
+                    <label class="cka"  style="display: inline" for="checkAgreement"></label>
+                    <a href="/agreement/service.html" class="agBtn">《宝象金融注册协议》</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="tips">活动最终解释权归宝象金融所有</div>
+</div>
+<script>
+    (function(){
+        if (!/MicroMessenger/i.test(navigator.userAgent)) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+        }else{
+            $(".mobile_code").hide();
+            $(".mobile_password").hide();
+            /*表单验证*/
+            $("#register-form").Validform({
+                ajaxPost: true,
+                tiptype: 3,
+                showAllError: true,
+                postonce: true,
+                realDetection: true,
+                label: ".label",
+                beforeSubmit: function () {
+                    $("#password").val($("#verifyNo").val());
+                }
+            });
+            /*手机号输入完毕*/
+            $("#mobile").unbind("keyup blur input");
+            $("#mobile").bind("keyup blur", function () {
+                var _this = $(this);
+                /*初步验证通过*/
+                if (/^1[3456789][0-9]{9}$/.test(_this.val())) {
+                    $.ajax({
+                        url: "/validate/ajax-mobile.html",
+                        type: 'POST',
+                        data: {param : _this.val(), name : "mobile"},
+                        cache:false,
+                        success: function (data) {
+                            if (data.status == "y") {
+                                /*此手机号验证通过*/
+                                $(".loginButton").hide();//按钮
+                                $(".mobile_code").show();//验证码
+                                $(".agreement").show();
+                                $("#share_btn").show();
+                                $("#login_btn").hide();
+                                $(".main .bgBottom").css('bottom','20px');
+                                localStorage.setItem("mobNew",$("#mobile").val());
+                            } else {
+                                /*此手机号已存在*/
+                                $(".loginButton").show();
+                                $(".agreement").hide();
+                                $("#share_btn").hide();
+                                $("#login_btn").show().css("marginTop","20px");
+                                $(".main .bgBottom").css('bottom','28px');
+                            }
+                        }
+                    });
+                } else {
+                    $(".mobile_code").hide();
+                }
+            });
+
+            toRegister();
+            /*同意注册协议*/
+            $("#checkAgreement").on("change", function () {
+                if (!$(this).is(':checked')) {
+                    $("#share_btn").attr("disabled", true);
+                } else {
+                    $("#share_btn").attr("disabled",false);
+                }
+            });
+            if (!$("#checkAgreement").is(':checked')) {
+                $("#share_btn").attr("disabled", true);
+            } else {
+                $("#share_btn").attr("disabled",false);
+            }
+            /*一键登录*/
+            $("#loginButton,#login_btn").click(function(){
+                $.ajax({
+                    url: "/act-year-end-free/go-login-link.html",
+                    success: function (data) {
+                        location.href = data.url
+                    }
+                });
+            });
+            // 注册
+            $("#share_btn").click(function(){
+                $.ajax({
+                    url: "/secure/do-register.html",
+                    type: 'POST',
+                    data: {mobile: $("#mobile").val(),password: $("#verifyNo").val(), verifyNo :  $("#verifyNo").val(), ct: 4, bt: 0},
+                    success: function (json) {
+                        if (json.success) {
+                            location.href="prize.html"
+                        } else {
+                            layer.open({
+                                content:json.errors[0].message ,
+                                skin: 'msg'
+                            });
+                            $("#verifyNo").val("").focus();
+                        }
+                    }
+                });
+
+            });
+            //跳转到协议
+            $(".agBtn").on("click",function(){
+                localStorage.setItem("mobNew",$("#mobile").val());
+            });
+
+            /*存手机号*/
+            var mob = localStorage.getItem("mobNew");
+
+            if(mob){
+                $("#mobile").val(mob).blur();
+            }
+            /*微信分享*/
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "岁末白拿，这一次不玩虚的！",
+                    desc: "宝象盛宴，喜迎新年",
+                    link: 'http://t.cn/RM7WhKC',
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1612/aca4cc5b-915c-4cfa-97be-038fec717a25.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline', // 分享到朋友圈
+                        'menuItem:share:appMessage'
+                    ]
+                },
+                callback:function(){
+                }
+            };
+            wechatShare.init(shareData);
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

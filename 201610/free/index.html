@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>年货白拿</title>
+    <link rel="stylesheet" href="https://www.bxjr.com/topic/css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//www.bxjr.com/topic/js/jquery-1.8.2.min.js"></script>
+    <script src="//www.bxjr.com/topic/js/layer1.9/layer.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <!--导航区域 start-->
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl"><a href="/" class="newyear_logo">宝象金融</a></div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <!--导航区域 end-->
+<div class="main">
+    <div class="banner"><img src="images/banner.jpg" class="bannerImg"></div>
+    <!--<div class="prompt cont"><p>每日早8点起前100位投资成功者更可得<strong>24K纯现金红包</strong></p><img class="promptClose" src="images/promptClose.png" /></div>-->
+    <div class="cont">
+        <div class="mt clearfix">
+            <ul class="tab">
+                <li class="tab-item on" data-cate="fashionLife"><a href="javascript:void(0)">“食”来运转</a></li>
+                <li class="tab-item" data-cate="cheapLife"><a href="javascript:void(0)">快乐“智”上</a></li>
+                <li class="tab-item" data-cate="proveLife"><a href="javascript:void(0)">“洗”从天降</a></li>
+                <li class="tab-item" data-cate="APPLife"><a href="javascript:void(0)">胜“券”在握</a></li>
+            </ul>
+        </div>
+        <div class="mc">
+            <div class="mcItem mcItemOne clearfix" data-cate="fashionLife"><ul></ul></div>
+            <div class="mcItem clearfix" data-cate="cheapLife"><ul></ul></div>
+            <div class="mcItem clearfix" data-cate="proveLife"><ul></ul></div>
+            <div class="mcItem clearfix" data-cate="APPLife"><ul></ul></div>
+        </div>
+        <div class="me">
+            <h3>活动说明</h3>
+            <ul>
+                <li>1. 客户需投资指定标的的对应金额方可获得对应商品，如果客户在投资页面内自行修改投资金额，可能会导致不能获得对应的商品；</li>
+                <li>2. 奖品将于活动结束后第一个自然周内寄出；</li>
+                <li>3. 商品订单生效后，客户不得取消订单，投资项目不支持使用红包，不支持后期发起债权转让；</li>
+                <li>4. 订单成功后，非产品质量问题，不支持退换货，您的理财资金不会自动退回。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mask" id="">
+        <div class="bot">
+            <a href="javascript:void(0)" class="close"></a>
+            <h3 class="name"></h3>
+            <div class="mask-con">
+                <ul>
+                    <li class="clearfix">
+                        <div class="s1 fl">商品价格：</div>
+                        <div class="s2 fl">
+                            <i class="price">￥<span>119.00</span></i>
+                            已有<span class="getNum"></span>人成功白拿
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="s1 fl">商品描述：</div>
+                        <div class="s2 fl des"></div>
+                    </li>
+                    <li>
+                        <div class="mask-line"></div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="s1 fl">领取方式：</div>
+                        <div class="s2 fl">投资白拿</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="s1 fl">投资情况：</div>
+                        <div class="s2 fl">
+                            投资金额：<i class="amount"><span class="investMoney"></span>元</i>
+                            投资周期：<span class="days"></span>天
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="s1 fl">收益说明：</div>
+                        <div class="s2 fl">
+                            <p><span class="name"></span><small>（投资满标后第一个自然周内发货）</small></p>
+                            <p><span class="plus">+</span>本金 <span class="investMoney"></span> 元<small>（标期满后自动返还）</small></p>
+                            <p><span class="plus">+</span>收益 <span class="investIncome"></span> 元<small>（标期满后自动获得）</small></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mask-line"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-btn">
+                <a href="">投资白拿</a>
+            </div>
+        </div>
+    </div>
+    <div class="tips">市场有风险，投资需谨慎</div>
+</div>
+</div>
+
+<script>
+    (function(){
+        $(".mask .close").on("click",function(){
+            $(".mask").hide();
+        });
+        $(".tab-item").unbind("mouseenter").unbind("mouseleave");
+        $(".tab-item").on("mouseenter",function(){
+            var $this = $(this), ind = $this.index(), cate = $this.data("cate");
+
+            $this.addClass("on").siblings().removeClass("on");
+            $(".mcItem").eq(ind).show().siblings().hide();
+
+            if($(".mcItem").eq(ind).find("ul li").length < 1){//加载数据
+                getList(cate, ind);
+            }
+        });
+        getList("fashionLife", 0);
+        /*数据*/
+        function getList(cate, ind){
+            $.ajax({
+                url:"/act-singles-free/index.html",
+                type:'post',
+                data: {goodType: cate},
+                success:function(json){
+                    if(!json.type){
+                        layer.alert(json.message);
+                        return false;
+                    }
+                    var html = "";
+                    for(var i = 0,len = json.data.length ; i < len ; i++){
+                        html += '<li id=' + json.data[i].giftId + '>';
+                        html += '<div class="p-img layerBtn">';
+                        html += '<a target="_blank" href="" title=' + json.data[i].name + '>';
+                        html += '<img alt=' + json.data[i].name + ' src=' + json.data[i].img + '>';
+                        html += '</a>';
+                        html += '</div>';
+                        html += '<div class="p-name layerBtn">';
+                        html += '<a target="_blank" href="" title="">' + json.data[i].name + '</a>';
+                        html += '</div>';
+                        html += '<div class="p-price">&yen;&nbsp;<span>' + json.data[i].price + '</span></div>';
+                        html += '<div class="p-btn">';
+                        html += '<a href="javascript:void(0)" class="layerBtn">立即白拿</a>';
+                        html += '<p><span class="getNum">'+ json.data[i].count +'</span>人白拿成功</p>';
+                        html += '</div>';
+                        html += '</li>';
+                    }
+
+                    $(".mcItem").eq(ind).find("ul").html(html);
+
+                    /*弹框*/
+                    goodLayer();
+                }
+            })
+        }
+        /*弹框*/
+        function goodLayer(){
+            $(".layerBtn").unbind("click")
+            $(".layerBtn").on("click",function(e){
+                var id = $(this).parents("li").attr("id"), cate = $(this).parents(".mcItem").data("cate");
+
+                $.ajax({
+                    url:'/act-singles-free/index.html',
+                    type:'post',
+                    data:{goodType: cate, giftId: id},
+                    success:function(json){
+                        if(!json.type){
+                            layer.alert(json.message);
+                            return false;
+                        }
+
+                        $(".mask").attr("id", json.data[0].investId);
+                        $(".mask .name").html(json.data[0].name);
+                        $(".mask .getNum").html(json.data[0].count);
+                        $(".mask .des").html($(json.data[0].description).text());
+                        $(".mask .price span").html(json.data[0].price);
+                        $(".mask .days").html(json.data[0].investDay);
+                        $(".mask .investMoney").html(json.data[0].investMoney);
+                        $(".mask .investIncome").html(json.data[0].investIncome);
+                        $(".mask").show();
+
+
+                        var maskId = $(".mask").attr("id");
+                        maskBtn(id,maskId);
+                    }
+                });
+                e.preventDefault();
+            })
+        }
+        /*白拿跳转链接*/
+        function maskBtn(id,maskId){
+            $(".mask .p-btn").unbind("click")
+               $(".mask .p-btn").on("click",function(e){
+                   $.ajax({
+                       url:"/act-singles-free/go-invest.html",
+                       data:{giftId: id, investId: maskId},
+                       type:'post',
+                       success:function(json){
+                           if(!json.success){
+                               window.location.href = "/login/index.html?redirect=/topic/201610/free/";
+                               return;
+                           }
+                           if(!json.type){
+                               layer.alert(json.message);
+                               return;
+                           }
+                           location.href =json.url;
+                       }
+                   });
+                   e.preventDefault();
+               })
+
+        }
+        
+        var  url = location.href;
+        if(url.indexOf("m.") != -1){
+            location.href = url.replace("m.", "www.")
+        }
+
+        $(".prompt").css({"height": "40px"}).show();
+        $(".promptClose").on("click",function(){
+            var _this = $(this);
+
+            _this.parent(".prompt").css({"height": "0","borderBottom":"0"});
+
+            setTimeout(function(){
+                _this.parent(".prompt").css({"height": "0","border":"0"});
+                _this.css({"height": "0"})
+            }, 400);
+        })
+    }())
+</script>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script>
+    (function(){
+        var wechatShare = new WeChatShare();//创建对象
+        // 分享
+        var shareData = {
+            shareConfig:{
+                title: "双11不剁手！折扣不如白拿！",
+                desc: "iPhone 7 ！ Fresh 面膜！ LAMY 钢笔！统统白拿！",
+                link: location.href,
+                imgUrl: "https://www.bxjr.com/topic/201610/free/images/h5-share.png"
+            },
+            menuList:{
+                menuList: [
+                    'menuItem:share:appMessage',
+                    'menuItem:share:qq',
+                    'menuItem:readMode', // 阅读模式
+                    'menuItem:share:timeline', // 分享到朋友圈
+                    'menuItem:copyUrl' // 复制链接
+                ]
+            }
+        }
+        wechatShare.init(shareData);//创建分享 自定义菜单
+    }());
+</script>
+<!--统计代码-->
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,957 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+ * 底部沉底
+ */
+html, body {
+    height: 100%;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%; /*IE6不识别min-height*/
+    position: relative;
+}
+
+.main {
+    padding-bottom: 100px;
+    height: 1000px;
+}
+
+.foot {
+    bottom: 0;
+    width: 100%;
+    background-color: #F00;
+    clear: both;
+}
+
+/* css reset */
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, button, input, textarea, /* form elements 表单元素 */
+th, td {
+    /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea {
+    font: 12px/1 "微软雅黑";
+    outline: none;
+    color: #333;
+    outline: none;
+}
+
+address, cite, em, var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+
+h1 {
+    font-size: 18px; /* 18px / 12px = 1.5 */
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+    text-decoration: none;
+    color: #333;
+    outline: none;
+}
+
+a:focus {
+    outline: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    border: 0 none;
+}
+
+span.error {
+    color: #F00;
+}
+
+.input {
+    padding: 8px 0 8px 3%;
+    height: 38px;
+    line-height: 22px;
+    border: 1px solid #ededed;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #3b9fe5;
+}
+
+.button {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 1%;
+    background: #3b9fe5;
+    color: #fff;
+    border: 1px solid #cccccc;
+}
+
+.button_orange {
+    min-width: 72px;
+    width: 30%;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 2%;
+    background: #fcdc59;
+    color: #f75951;
+    border: 0;
+}
+
+/*.button:hover{background:#f6f6f6;color:#919191;}*/
+.button:hover {
+}
+
+.submit-btn {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 0;
+}
+
+.submit_yellow {
+    background: #ff5d55;
+    color: #fff;
+}
+
+.submit_yellow:hover {
+    background: #d9a200;
+}
+
+.submit_yellow:disabled {
+    color: #919191;
+    background: #f6f6f6;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.w75 {
+    width: 75%;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+header {
+    padding: 10px 3%;
+    overflow: hidden;
+}
+
+header .logo {
+    width: 42%;
+    float: left;
+    max-width: 207px;
+    max-height: 55px;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+header .phoneTel {
+    float: right;
+    margin-top: 10px;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 22px;
+    color: #eabc33;
+    font-size: 18px;
+    background: url(../images/phone_icon_mobile.png) no-repeat 0 center;
+    background-size: 20px 22px;
+}
+
+.new_user_pic {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.new_user_pic > img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 5%;
+    margin: 0 auto;;
+}
+
+.new_user_pic > h3 {
+    text-align: center;
+}
+
+.regisTable {
+    padding: 16% 4% 4% 4%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../images/form_bj.gif") repeat-y;
+    background-size: 100% auto;
+}
+
+.regisTable table {
+    width: 100%;
+}
+
+.regisTable span.error {
+    display: block;
+    height: 18px;
+    line-height: 18px;
+    float: left;
+    width: 100%;
+    color: #fff;
+}
+
+/*.regisTable .phone_icon{background:url(../images/username_icon_mobile.png) no-repeat 10px center;background-size:17px 20px;}*/
+/*.regisTable .password_icon{background:url(../images/lock_icon_mobile.png) no-repeat 10px center;background-size:19px 20px;}*/
+/*.regisTable .code_icon{background:url(../images/key_icon_mobile.png) no-repeat 10px center;background-size:20px 11px;}*/
+.regisTable tfoot td {
+    padding: 10px 0 0 0;
+}
+
+.regisTable tfoot td input[type=checkbox] {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+
+.regisTable tfoot td > span {
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    color: #919191;
+}
+
+.regisTable tfoot td > span > a {
+    color: #47a5e7;
+}
+
+.company {
+    padding: 4%;
+    background: #fff7c1;
+}
+
+.company h2 {
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.company p {
+    line-height: 1.8;
+    color: #919191;
+    font-size: 13px;
+}
+
+.reg_succeed {
+    padding: 4%;
+}
+
+.reg_succeed > span {
+    display: block;
+    width: 130px;
+    margin: 20px auto 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    padding-left: 30px;
+    background: url(../images/succed_icon_mobile.png) no-repeat 0 center;
+    background-size: 24px 24px;
+}
+
+.reg_succeed .submit {
+    color: #fff;
+    margin: 20px 0;
+}
+
+.reg_succeed > a {
+    color: #3c9fe5;
+    display: block;
+    text-align: center;
+}
+
+.reg_succeed .submit-btn {
+    color: #fff;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    outline: none;
+}
+
+.imgVerify {
+    width: 400px;
+    background: #fff;
+    margin: 0 auto;
+    display: none;
+}
+
+.imgVerify .hd {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #000;
+    background: #f0f1f2;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.imgVerify .imgVerifyForm {
+    padding: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.imgVerify .imgVerifyForm label {
+    position: relative;
+    display: inline-block;
+}
+
+.imgVerify .imgVerifyForm label input[type="text"] {
+    display: inline-block;
+    width: 105px;
+    height: 38px;
+    line-height: 20px;
+    font-size: 14px;
+    border: 1px solid #c6c6c6;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 0 10px 4px;
+}
+
+/*.imgVerify .imgVerifyForm label span{display:inline-block;}*/
+.imgVerify .imgVerifyForm label span img {
+    vertical-align: top;
+}
+
+.imgVerify .imgVerifyForm .Validform_checktip {
+    left: 0px;
+    top: 100%;
+    margin-top: 2px;
+}
+
+.imgVerify .imgVerifyForm p {
+    margin-top: 25px;
+}
+
+.imgVerify .imgVerifyForm p .imgVerifyBtn {
+    display: inline-block;
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #fff;
+    background: #ff6600;
+    border: 1px solid #e25f07;
+    margin: 0 10px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.imgVerify .imgVerifyForm p .imgVerifyBtn.close {
+    background-color: #f1f1f1;
+    border-color: #e4e4e4;
+    color: #333;
+}
+
+.imgVerify .formError {
+    top: 33px !important;
+    left: 0 !important;
+}
+
+.imgVerify .formError .formErrorArrowBottom {
+    margin: 2px 0 0 0;
+    box-shadow: none;
+}
+
+.imgVerify .formError .formErrorArrow {
+    width: 0;
+    z-index: -1;
+    height: 0;
+    display: none;
+}
+
+.imgVerify .formError-white .formErrorContent {
+    border: 0;
+    background: none;
+    color: #f00;
+}
+
+.imgVerify .formError .jiantou, .imgVerify .formError .nei-jiantou {
+    border: none;
+}
+
+.imgVerify .imgVerifyForm .formErrorContent {
+    top: -15px;
+    left: -110px;
+    border: 0;
+    background: none;
+    color: #f00;
+    position: absolute;
+}
+
+.imgVoiceTip {
+    color: #33cc99;
+    font-size: 12px;
+    height: 23px;
+    display: none;
+}
+
+/*第一模块*/
+.bx_first {
+    margin-bottom: 20px;
+}
+
+.bx_first .bx_safe {
+    width: 899px;
+    height: 99px;
+    float: left;
+}
+
+.bx_first .bx_safe li {
+    height: 99px;
+    float: left;
+    font-size: 14px;
+}
+
+.bx_first .bx_safe li .safeico {
+    width: 70px;
+    height: 70px;
+    margin: 14px 10px 0 15px;
+    float: left;
+    background: url(../../../images/indexnew/bx_safe_icon.png) 0 0 no-repeat;
+}
+
+.bx_first .bx_safe li strong {
+    height: 30px;
+    color: #f90;
+    margin-top: 21px;
+    display: block;
+}
+
+.bx_first .bx_safe li p {
+    color: #999;
+}
+
+.bx_first .bx_safe .bxsi1 {
+    width: 215px;
+}
+
+.bx_first .bx_safe .bxsi2 {
+    width: 215px;
+}
+
+.bx_first .bx_safe .bxsi2 .safeico {
+    background-position: -70px 0;
+}
+
+.bx_first .bx_safe .bxsi3 {
+    width: 205px;
+}
+
+.bx_first .bx_safe .bxsi3 .safeico {
+    background-position: -140px 0;
+}
+
+.bx_first .bx_safe .bxsi4 {
+    width: 261px;
+}
+
+.bx_first .bx_safe .bxsi4 .safeico {
+    background-position: -210px 0;
+}
+
+.bx_first .bx_message {
+    width: 298px;
+    height: 99px;
+    float: left;
+    border-left: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+
+.bx_first .messageInfo {
+    width: 295px;
+    height: 81px;
+    margin: 4px 0 0 0;
+    font-size: 12px;
+}
+
+.messageInfo ul {
+    height: 81px;
+    line-height: 29px;
+    color: #999;
+    overflow: hidden;
+}
+
+.messageInfo em {
+    color: #f90;
+}
+
+.bx_usermain .genRecommended {
+    color: #333;
+}
+
+
+html{font-size:10px !important}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px !important}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px !important}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px !important}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px !important}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px !important}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px !important}}
+@media screen and (min-width:800px){html{font-size:25px !important}}
+
+/*扫啥哟*/
+.richScan .banner img {
+    width: 100%;
+}
+
+.richScan .content {
+    width: 100%;
+    padding-bottom: 14px;
+    background-image:-webkit-linear-gradient(top,#91bc7d,#88b374,#7aa665,#73a05d);
+}
+
+.richScan .content .con {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.richScan .content .con .column {
+    position: relative;
+    color: #fff;
+}
+.richScan .content .con .column .click-box{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+.richScan .content .con .column .click-box li{
+    float:left;
+    padding-top:15%;
+}
+.richScan .content .con .column .click-box li:nth-child(1){
+    width:38%;
+}
+.richScan .content .con .column .click-box li:nth-child(2){
+    width:29%;
+}
+.richScan .content .con .column .click-box.invest-tab li:nth-child(1){
+    width:29%;
+}
+.richScan .content .con .column .click-box.invest-tab li:nth-child(2){
+    width:42%;
+}
+
+.richScan .content .con .txt {
+    box-sizing: border-box;
+    position: relative;
+    padding:5%;
+    color: #434642;
+    border: 2px solid #000;
+    border-top:none;
+    border-radius: 0 0 10px 10px;
+    background: -webkit-linear-gradient(top,#f7f3e6,#ffffff,#ffffff,#ffffff,#e8e2cf);
+}
+
+.richScan .content .con .txt .con-list {
+    display: none;
+    box-sizing: border-box;
+    padding:5%;
+    font-size:1.4rem;
+    line-height: 160%;
+    border-radius: 5px;
+    text-align: justify;
+}
+
+.richScan .content .con .txt .on {
+    display: block;
+}
+
+.richScan .content .con .txt .con-list h2 {
+    font-size: 1.6rem;
+    line-height: 250%;
+    color: #434642;
+    text-align: center;
+}
+.richScan .content .con .txt .sign-in{
+    padding-bottom:35%;
+}
+.richScan .content .con .txt .con-list .btn {
+    /*    position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);*/
+    display: inline-block;
+    width: 100%;
+    margin-top:12%;
+    line-height: 300%;
+    font-size: 1.8rem;
+    text-align: center;
+    /*border-radius: 22px;*/
+    color: #ee2b27;
+    background: url("../images/btn.png") no-repeat;
+    background-size: 100% 100%;
+}
+.richScan .content .con .txt .con-list .btn.invalid{
+    color:#bcbcbc;
+    background: url("../images/gray_btn.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tab-title,.nullity-btn{display: none;}
+.showTab{display: block;}
+/*成功页面*/
+.richScan-succeed{}
+.richScan-succeed .entry{width:92%;margin:0 auto;font-size:1.6rem;text-align:center;color:#ecb81c}
+.richScan-succeed .entry>div{padding:12% 0 10%;line-height: 180%;}
+.richScan-succeed .entry a{display: block;width:90%;line-height:300%;margin:10% auto 0;}
+.richScan-succeed .entry .vip a{position:relative;color:#fee88f;background:url("../images/succeed-enter.png") no-repeat;background-size: 100% 100%;}
+.richScan-succeed .entry .vip a:before{content: "";position:absolute;top:-37px;left:-9px;width:64px;height:47px;background: url("../images/packet.png") no-repeat;background-size: 100% 100%;z-index: -1;}
+.richScan-succeed .entry .invest{color:#333;}
+.richScan-succeed .entry .invest span,.richScan-succeed .entry .invest strong{color:#ecb81c;}
+.richScan-succeed .entry .invest a{color:#ee2b27;background:url("../images/succeed-go.png") no-repeat;background-size: 100% 100%;}

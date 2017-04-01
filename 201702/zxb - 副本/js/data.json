@@ -1,0 +1,61 @@
+{
+    "success": true,
+    "type": true, 
+    "gifts": [
+        {
+            "title": "Thank you",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/1b947f29-c0d5-42da-adcb-feb34b146f2d.png"
+        },
+        {
+            "title": "小米“Air Wear”",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/936fcb74-0bcf-47b3-911b-3776491bf58b.png"
+        },
+        {
+            "title": "小米旅行箱",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/47b50134-feb2-41e6-96b4-8c7ca767e939.png"
+        },
+        {
+            "title": "小米电饭煲",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/ab188022-3078-4ea0-8098-a7cb06997a20.png"
+        },
+        {
+            "title": "小米空气净化器",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/d5265ff2-15ff-4441-902e-e64e6d6735d1.png"
+        },
+        {
+            "title": "5000元体验金",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/80a074b4-42b7-4b0f-b2a2-f44cbc1a996e.png"
+        },
+        {
+            "title": "1000元体验金",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/fba493f9-6368-4038-86df-e68c4b8c3b73.png"
+        },
+        {
+            "title": "5枚宝象币",
+            "logo": "//bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1703/4c23a654-9b69-470a-a743-fa644790c80a.png"
+        }
+    ],
+    "exchanges": [
+        {
+            "mobile": "139 **** 5000",
+            "giftName": "1000元体验金",
+            "dateCreated": "2017-03-05 14:16:43",
+            "isGood": false
+        },
+        {
+            "mobile": "139 **** 5000",
+            "giftName": "5000元体验金",
+            "dateCreated": "2017-03-05 14:18:33",
+            "isGood": false
+        },
+        {
+            "mobile": "139 **** 5000",
+            "giftName": "1000元体验金",
+            "dateCreated": "2017-03-05 15:08:32",
+            "isGood": false
+        }
+    ],
+    "mobile": "139 **** 5000",
+    "amount": 2103,
+    "count": 2
+}

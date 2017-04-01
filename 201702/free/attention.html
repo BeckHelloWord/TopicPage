@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="我是女王，我做主！">
+    <meta name="Description" content="9款商品限时大派送开始啦！">
+    <title>我是女王，我做主！</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/wechatLink-1.1.js"></script>
+    <style>
+        html,body{height:100%;}
+    </style>
+</head>
+
+<body>
+<div class="main">
+    <img src="images/bgTop.png" />
+    <div class="box attentionBox">
+        <img src="images/bgReport.jpg" alt="" />
+        <div class="cont t_c">
+            <div class="petal"><img src="images/petal.png" alt="" /></div>
+            <img class="wechat" src="images/index.jpg" alt="" />
+            <p>长按识别二维码参加活动</p>
+        </div>
+    </div>
+    <p class="tips">活动最终解释权归宝象金融所有</p>
+</div>
+
+<script>
+    (function(){
+        if (!/MicroMessenger/i.test(navigator.userAgent)) {
+            var html = '<img src="images/wechat.jpg"/>';
+            $("body").addClass("noBody").html(html);
+            return false;
+        }else{
+            var wechatShare=new WeChatShare();
+            var shareData ={
+                shareConfig:{
+                    title: "我是女王，我做主！",
+                    desc: "9款商品限时大派送开始啦！",
+                    link: 'http://t.cn/RJOOJeL', // 长网址http://mp.weixin.qq.com/s/kVmqHziVlkygpKYA7pO9Mg
+                    imgUrl: "http://bxwd-img.oss-cn-hangzhou.aliyuncs.com/upload/image/1702/4f61bb68-fd64-416d-a302-b582380b215b.jpg"
+                },
+                menuList:{
+                    menuList: [
+                        'menuItem:readMode', // 阅读模式
+                        'menuItem:share:timeline' // 分享到朋友圈
+                    ]
+                },
+                callback:function(){}
+            };
+            wechatShare.init(shareData);
+        }
+    }());
+</script>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

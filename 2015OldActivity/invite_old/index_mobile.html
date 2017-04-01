@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>好友邀请手机端</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="mobinvite">
+    <p><img src="images/mobinvite1.jpg" /></p>
+    <p><img src="images/mobinvite2.jpg" /></p>
+    <p><img src="images/mobinvite3.jpg" /></p>
+    <p><img src="images/mobinvite4.jpg" /></p>
+    <a class="friendinvite" href="javascript:void(0);"></a>
+    <div class="invitetab">
+        <h3>
+            <a class="curr" href="javascript:void(0);">微信端推荐流程</a>
+            <a href="javascript:void(0);">PC端推荐流程</a>
+            <span><img src="images/mobinviteh3.png" /></span>
+        </h3>
+        <p class="p1"><img src="images/mobinviteweixin.png" /></p>
+        <p class="p2" style="display:none;"><img src="images/mobinvitepc.png" /></p>
+    </div>
+    <script>
+        $(function(){
+            <g:if test="${Current.current}">
+            $(".friendinvite").attr("href","//m.bxjr.cc/center/recommend/index")
+            </g:if>
+            <g:else>
+            $(".friendinvite").attr("href","//m.bxjr.cc/secure/register.html")
+            </g:else>
+            $(".invitetab h3 a").click(function(){
+                $(this).addClass("curr").siblings("a").removeClass("curr");
+
+                var ind = $(this).index();
+                $(".invitetab p").eq(ind).show().siblings("p").hide();
+            });
+        });
+    </script>
+</div>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-好友推荐活动</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/logostyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var timer=null,appTimer=null,appTimerTwo=null,wxTimer=null,wxTimerTwo=null;
+            var roll=function(options){
+                var i=0;
+               return function commonRoll() {
+                    i-=options.pageW;
+                   if(i===-options.confine){
+                       i=0;
+                   }
+                   options.$this.css({"left":i});
+               }
+            };
+            clearInterval(timer);
+            timer=setInterval(roll({$this:$(".pc-invite-action ul"),pageW:648,confine:1296}),3000);
+            clearInterval(appTimer);
+            appTimer=setInterval(roll({$this:$(".app-invite-action ul"),pageW:247,confine:494}),3000);
+            clearInterval(appTimerTwo);
+            appTimerTwo=setInterval(roll({$this:$(".app-invite-action-two ul"),pageW:247,confine:494}),3000);
+            clearInterval(wxTimer);
+            wxTimer=setInterval(roll({$this:$(".wx-active ul"),pageW:246,confine:492}),3000);
+            clearInterval(wxTimerTwo);
+            wxTimerTwo=setInterval(roll({$this:$(".wx-active-two ul"),pageW:246,confine:492}),3000);
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <!--导航 开始-->
+    <div class="top">
+        <div class="container clearfix">
+            <div class="logo fl">
+                <a href="/" class="newyear_logo">宝象金融</a>
+            </div>
+            <div class="nav fr">
+                <a href="/">宝象金融首页</a><span>|</span>
+                <a href="/lc">理财</a><span>|</span>
+                <!--<a href="/zc">商品众筹</a><span>|</span>-->
+                <!--<a href="/gq">股权众筹</a><span>|</span>-->
+                <a href="/borrow/index.html">借款</a><span>|</span>
+                <a href="/about/index.html">关于宝象</a><span>|</span>
+                <a href="/center/home/index">我的账户</a>
+            </div>
+        </div>
+    </div>
+    <!--导航 结束-->
+    <div class="main">
+        <!--banner 开始-->
+        <div class="pc-ccfp-head">
+            <div class="dredge">
+                <img src="./images/pc-dredge.png"/>
+            </div>
+            <div class="cloud-wrap">
+                <img src="./images/cloud1.png" class="cloud-dec_01"/>
+                <img src="./images/cloud2.png" class="cloud-dec_02"/>
+                <img src="./images/cloud03.png" class="cloud-dec_03"/>
+            </div>
+            <div class="balloon-wrap">
+                <img src="./images/balloon01.png" class="balloon-01"/>
+                <img src="./images/balloon02.png" class="balloon-02"/>
+                <img src="./images/balloon03.png" class="balloon-03"/>
+            </div>
+            <div class="cloud-text">
+                <div class="cloud-text01">
+                    <h2>我是宝象理财师<br/>还可以不定期获得Bigger好礼！</h2>
+                </div>
+                <div class="cloud-text02">
+                    <h2>我是宝象理财师<br/>派888元红包得888元！</h2>
+                </div>
+                <div class="cloud-text03">
+                    <h2>我是宝象理财师<br/>邀请好友理财，双层奖金天天赚！</h2>
+                </div>
+            </div>
+        </div>
+        <!--banner 结束-->
+
+        <!--内容 开始-->
+        <div class="pc-ccfp-conent">
+            <div class="make-money">
+                <ul class="clearfix ccfplist">
+                    <li>
+                        <div class="li-no1">
+                            <div class="elephant no1"></div>
+                            <h3>理财师-小象</h3>
+                            <p>今天我邀请的好友投资了5万，我邀请的好友又邀请了他们的好友投资6万，于是我今天可以赚取0.98元，一个月就赚29.45元。</p>
+                        </div>
+                        <p class="formula">奖励计算公式：<br/>M1*0.60%/365+M2*0.10%/365</p>
+                    </li>
+                    <li>
+                        <div class="li-no">
+                            <div class="elephant no2"></div>
+                            <h3>理财师-大象</h3>
+                            <p>今天我邀请的好友投资了50万，我邀请的好友又邀请了他们的好友投资60万，于是我今天可以赚取14.25元，一个月就赚427.43元。</p>
+                        </div>
+                        <p class="formula">奖励计算公式：<br/>M1*0.80%/365+M2*0.20%/365</p>
+
+                    </li>
+                    <li>
+                        <div class="li-no">
+                            <div class="elephant no3"></div>
+                            <h3>普通理财师</h3>
+                            <p>今天我邀请的好友投资了100万，于是我今天可以赚取27.39元，一个月就赚912.91元。</p>
+                        </div>
+                        <p class="formula noP">奖励计算公式：<br/>M1*0.80%/365+M2*0.20%/365<br/>25万=< M1 <
+                            100万；M1*0.80%/365<br/>100万=< M1 < 300万；M1*1.00%/365</p>
+                    </li>
+                    <li>
+                        <div class="li-no">
+                            <div class="elephant no4"></div>
+                            <h3>金牌理财师</h3>
+                            <p>今天我邀请的好友投资了300万，于是我今天可以赚取98.63元，一个月就赚2958.90元。</p>
+                        </div>
+                        <p class="formula">奖励计算公式：<br/>100万=< M1 < 500万；<br/>M1*1.20%/365 </p>
+                    </li>
+                    <li class="lastLi">
+                        <div class="li-no">
+                            <div class="elephant no5"></div>
+                            <h3>超级理财师</h3>
+                            <p>今天我邀请的好友投资了500万，于是我今天可以赚取205.48元，一个月就赚6164.38元。</p>
+                        </div>
+                        <p class="formula">奖励计算公式：<br/>M1 >= 500万；<br/>M1*1.40%/365</p>
+                    </li>
+                </ul>
+                <ul class="remind">
+                    <li>注：1.M1为一级好友当日在投金额，M2为二级好友当日在投金额，单位：元。</li>
+                    <li class="remind-no2">2.大象小象每日结算一次，自动划入到您的理财账户余额；理财师奖励每日计算并显示，下月8号结算到账户余额。</li>
+                </ul>
+                <p class="tips">&nbsp;&nbsp;&nbsp;有钱就可以任性<br/>不定期惊喜派礼！</p>
+            </div>
+            <div class="pc-invite mt84">
+                <div class="invite-wrap">
+                    <div class="way">
+                        <h3>邀请方式</h3>
+                        <ul class="step">
+                            <li>PC进入“我的账户”</li>
+                            <li class="lino2">点击左侧“邀请好友”</li>
+                            <li class="lino3">分享专属“邀请链接”即可</li>
+                        </ul>
+                        <a href="//www.bxjr.com/center/invite/index" class="invite-btn">
+                        </a>
+                    </div>
+                </div>
+                <!--pc分享演示 开始-->
+                <div class="pc-invite-action">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/pc-invite-01.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/pc-invite-02.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/pc-invite-01.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/pc-invite-02.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+                <!--pc分享演示 结束-->
+            </div>
+            <div class="app-invite mt84">
+                <div class="invite-wrap">
+                    <div class="way">
+                        <h3>邀请方式</h3>
+                        <ul class="step">
+                            <li>APP点击进入“发现”</li>
+                            <li class="lino2">点击“邀请好友”</li>
+                            <li class="lino3">点击“推荐好友，让TA帮你赚钱”</li>
+                            <li class="lino4">分享专属“邀请链接”即可</li>
+                        </ul>
+                        <img class="mt28" src="./images/ewm.jpg"/>
+                    </div>
+                </div>
+                <div class="app-invite-action">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/app_action01.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/app_action02.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="app-invite-action-two">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/app_action03.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/app_action04.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wx-invite mt84">
+                <div class="invite-wrap">
+                    <div class="way">
+                        <h3>邀请方式</h3>
+                        <ul class="step">
+                            <li>进入“宝象金融”公众微信</li>
+                            <li class="lino2">点击“我的账户”</li>
+                            <li class="lino3">点击“邀请好友”</li>
+                            <li class="lino4">点击“立即邀请好友”分享专属<br/>“邀请链接”即可</li>
+                        </ul>
+                        <img class="mt28" src="./images/wx-ewm.jpg"/>
+                    </div>
+                </div>
+                <div class="wx-active">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/wx-active03.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/wx-active01.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wx-active-two">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="./images/wx-active04.jpg"/>
+                        </li>
+                        <li>
+                            <img src="./images/wx-active02.jpg"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="frinfo">友情提示：理财有风险，投资需谨慎</p>
+        </div>
+        <!--内容 结束-->
+    </div>
+</div>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+
+
+</div>
+</body>
+
+</html>

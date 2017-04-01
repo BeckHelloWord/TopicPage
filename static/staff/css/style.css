@@ -1,0 +1,137 @@
+::-webkit-scrollbar-track-piece{
+	background-color:#fff;
+	-webkit-border-radius:0;
+}
+::-webkit-scrollbar{
+	width:8px;
+	height:8px;
+}
+::-webkit-scrollbar-thumb{
+	height:50px;
+	background-color:#999;
+	-webkit-border-radius:4px;
+	outline:2px solid #fff;
+	outline-offset:-2px;
+	border: 2px solid #fff;
+}
+::-webkit-scrollbar-thumb:hover{
+	height:50px;
+	background-color:#9f9f9f;
+	-webkit-border-radius:4px;
+}
+
+/* BaoXiang cssReset */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+margin:0;padding:0;
+}
+button, input, select, textarea{outline:none;}
+address, cite, em, var,i{font-style: normal;} /* 将斜体扶正 */
+h1{font-size:18px;}/* 18px / 12px = 1.5 */
+h2{font-size:16px;}
+h3{font-size:14px;}
+h4, h5, h6{font-size: 100%;}
+
+/* 重置列表元素 */
+ul, ol{list-style:none;}
+
+/* 重置文本格式元素 */
+a{text-decoration: none;color:#666; }
+body a:hover{text-decoration:none;cursor:pointer;color:#f60;}
+
+html, button, input, select, textarea{color: #333;}
+body{font:12px/22px 'Microsoft YaHei',Helvetica,'Heiti','SC';}
+::-moz-selection{background:#b3d4fc;text-shadow:none;}
+::selection{background:#b3d4fc;text-shadow:none;}
+table{border-spacing:0px;}
+hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;display:block;}
+audio, canvas, img, video{vertical-align:middle;}
+fieldset{border:0;margin:0;padding:0;}
+textarea{resize:vertical;}
+img{border:0 none;}
+
+
+.clearfix:before,
+.clearfix:after {
+content: " "; /* 1 */
+display: table; /* 2 */
+}
+.clearfix:after {
+clear: both;
+}
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.clearfix {
+*zoom: 1;
+}
+
+/* Browse Happy prompt */
+.browsehappy{padding:0.2em 0;margin:0.2em 0;color:#000;background-color:#ccc;}
+/* 底部沉底 */
+html,body{height:100%;}
+.bx_wrap{min-width:1200px;min-height:100%;height: auto !important;position:relative;height:100%;/*IE6不识别min-height*/}
+/*.bx_main{padding-bottom:327px;}*/
+.bx_foot{width:100%;min-width: 1200px;padding:30px 0 52px;background-color:#4c4c4c;clear:both;position:absolute;bottom:0;z-index:9999;}
+/* 居中容器 */
+.w1200{margin-left:auto;margin-right:auto;width:1200px;}
+.bx_fl,.fl{float:left;}
+.bx_fr,.fr{float:right;}
+
+/* 副导航 */
+.bx_subnav{height:44px;max-height:44px;border-top:1px solid #e7e7e7;/*border-bottom:2px solid #f7f7f7;margin-bottom:10px;*/}
+.bx_subnav ul{height:44px;}
+.bx_subnav ul li{height:44px;line-height:44px;margin:0 18px;float:left;}
+.bx_subnav ul li.on{border-bottom:1px solid #ff9c00;color:#ff9c00;margin-top:-1px;}
+.bx_subnav ul li.on a{color:#ff9c00;}
+.bx_subnav ul li a{height:44px;font-size:14px;display:block;}
+
+
+.gray {color: #999;}
+.ta-c {text-align: center;}
+/* 关于我们--员工风采 */
+.staff{width:100%;overflow:hidden;}
+.staff_banner{width:1920px;margin:20px 0 30px -960px;position:relative;left:50%;}
+.staff_slide { overflow: hidden;height: 360px;position: relative; margin-top: 50px;width: 726px;top: -4px;left: 50%;transform: translateX(-50%);}
+.staff_slide ul { width: 600px; height: 360px;float: left;position: relative;}
+.staff_slide li {list-style: none;width: 600px;height: 360px; margin: 0; padding: 0; position: absolute;top: 0; left: 0;}
+.staff_slider{padding-bottom:75px;margin:100px auto;background-repeat:no-repeat;background-position:center bottom;}
+.staff_banner_bg1{background-image:url(../images/staff/staff_bg1.jpg);}
+.staff_banner_bg2{background-image:url(../images/staff/staff_bg2.jpg);}
+.staff_banner_bg3{background-image:url(../images/staff/staff_bg3.jpg);}
+.staff_banner_bg5{background-image:url(../images/staff/staff_bg5.jpg);}
+.staff_banner_bg6{background-image:url(../images/staff/staff_bg6.jpg);}
+
+.staff_banner_content{width:1040px;margin: 0 auto;}
+.staff h1{position: relative;color:#fea319;font-size:30px;font-weight: normal;margin-bottom: 28px;}
+.staff h1:before {content: '';position: absolute;width: 15px;height: 15px;left: -25px;top: 6px;background: #fea319;transform: rotate(45deg);}
+.mouse_direction{ width: 126px;height: 360px; float:left;background:#a5b2e6;text-align:center;position: relative;}
+.mouse_direction_inner{ width:56px; height: 150px;position:relative;top:50%;left:50%;margin-top:-75px;margin-left: -28px;}
+.mouse_top,.mouse_bottom{cursor: pointer;width:56px;height: 28px;}
+.mouse_top{background:url(../images/staff/stafftb.png) no-repeat; margin-bottom: 90px;}
+.mouse_bottom{background: url(../images/staff/stafftb.png) no-repeat 0 -28px;}
+.mouse_top:hover{background:url(../images/staff/stafftb.png) no-repeat -56px 0;}
+.mouse_bottom:hover{background:url(../images/staff/stafftb.png) no-repeat -56px -28px;}
+.caption { background: #444; width:580px; height: 40px; line-height: 40px; top:320px;  z-index: 9;color: #fff; clear: both; position: absolute;opacity: 0.8;padding-left: 20px;font-size: 16px;}
+
+.culture {margin-top: 57px;width: 104%;}
+.culture-pic {position: relative;width: 50%;height: 110px;float: left;}
+.culture-pic-third {margin-top: 93px;margin-bottom: 80px;}
+.culture-pic:before {content:url(../images/staff/staff_0_1.png);position: absolute;}
+.culture-pic .content-title {position: absolute;left: 29px;top: 42px;font-size: 18px;color: #fff;}
+.culture-pic .content-title-special {position: absolute;left: 20px;top: 30px;text-align: center;font-size: 18px;color: #fff;}
+.culture-pic .content-content {position: relative;}
+.culture-pic .content-content li {position: absolute;left: 152px;font-size: 16px;color: #383d43;}
+.culture-pic .content-content li:before{content: '';position: absolute;width: 6px;height: 6px;left: -15px;top: 8px;background: #fea319;transform: rotate(45deg);}
+.culture-pic .content-content .content-content-special {top: 42px;}
+.culture-pic .content-content .content-content-first {top: 7px;}
+.culture-pic .content-content .content-content-second {top: 42px;}
+.culture-pic .content-content .content-content-third {top: 77px;}
+.staff_banner_content>p {font-size: 16px;color: #666;margin-bottom: 40px;}
+.culture-pic-bot {width: 83%;}
+
+.staff_banner_content>span {font-size: 16px;color: #383d43;}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资嘉年华·收益乐翻天</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../js/artTemplate.js"></script>
+</head>
+
+<body>
+<div class="bx_wrap">
+    {activity}
+    <div class="bx_main">
+        <div class="main_top">
+            <div class="banner"><img src="images/pc_banner.jpg" class="bannerImg"></div>
+            <div class="free-banner w1200">
+                <a href="../free/index_pc.html" target="_blank" class="free_btn"><img src="images/pc_activity_free.jpg" alt=""/></a>
+                <ul class="clearfix">
+                    <li><a href="../chest/index_pc.html" target="_blank"><img src="images/pc_activity06.jpg" alt=""/><p></p></a></li>
+                    <!--<li><a href="javascript:void(0)" target="_blank"><img src="images/pc_activity01.jpg" alt=""/><p></p></a></li>-->
+                    <!--<li><a href="../invite/index_pc.html" target="_blank"><img src="images/pc_activity02.jpg" alt=""/><p></p></a></li>-->
+                    <li><a href="../wish/index_pc.html" target="_blank"><img src="images/pc_activity03.jpg" alt=""/><p></p></a></li>
+                    <!--<li><a href="../fight/index_pc.html" target="_blank"><img src="images/pc_activity04.jpg" alt=""/><p></p></a></li>-->
+                    <!--<li><a href="javascript:void(0)" target="_blank"><img src="images/pc_activity05.jpg" alt=""/><p></p></a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="pc_check clearfix">
+            <div class="check_ul w1200">
+                <ul class="js-sign clearfix">
+                    <li class="curr"><p class="p1"><span>连续签到</span><b>1天</b></p><p class="p2"><small>X</small>10</p></li>
+                    <li class="curr"><p class="p1"><span>连续签到</span><b>2天</b></p><p class="p2"><small>X</small>10</p></li>
+                    <li class="row curr"><p class="p1"><span>连续签到</span><b>3天</b></p><p class="p2"><small>X</small>50</p></li>
+                    <li class="curr"><p class="p1"><span>连续签到</span><b>4天</b></p><p class="p2"><small>X</small>10</p></li>
+                    <li class="curr"><p class="p1"><span>连续签到</span><b>5天</b></p><p class="p2"><small>X</small>10</p></li>
+                    <li class="curr"><p class="p1"><span>连续签到</span><b>6天</b></p><p class="p2"><small>X</small>10</p></li>
+                    <li class="row curr"><p class="p1"><span>连续签到</span><b>7天</b></p><p class="p2"><small>X</small>100</p></li>
+                </ul>
+            </div>
+            <div class="check_rank">
+                <div class="fl">
+                    <p class="p3"><i>1</i>签到需在当天0点到24点，超时则视为断签；</p>
+                    <p class="p3"><i>2</i>成功签到得10欢乐券，连续3天送50欢乐券，连续7天送100欢乐券。</p>
+                    <div class="check_data clearfix hadLogin">
+                        <p class="p4">欢乐券: <span class="s1 js-ticket-number">--</span></p>
+                        <p class="p5">排名: <span class="s1 js-ticket-number-no">--</span></p>
+                    </div>
+                </div>
+                <div class="fr check_btn">
+                    <a class="js-sign-btn" href="">我要签到</a>
+                    <p class="hadLogin">已累计签到&nbsp;<span class="js-sign-total">0</span>&nbsp;天</p>
+                </div>
+            </div>
+        </div>
+        <div class="pc_list">
+            <div class="pc_title w1200">
+                <img src="images/pc_list.png" />
+            </div>
+            <div class="clearfix w1200 pc_con">
+                <div class="fl list_bx">
+                    <div class="pc_small_title">
+                        <h3>欢乐券宝象榜</h3>
+                        <p>欢乐券消费总额排行</p>
+                    </div>
+                    <div class="ul_title clearfix">
+                        <span>排名</span>
+                        <span>用户名</span>
+                        <span>消费(张)</span>
+                        <span>排名</span>
+                        <span>用户名</span>
+                        <span>消费(张)</span>
+                    </div>
+                    <div class="ul_list" id="consume"><ul class="clearfix JQ-slide-content js-consume"></ul></div>
+                </div>
+                <div class="fr list_cf">
+                    <div class="pc_small_title">
+                        <h3>欢乐券财富榜</h3>
+                        <p>欢乐券当前总额排行</p>
+                    </div>
+                    <div class="ul_title clearfix">
+                        <span>排名</span>
+                        <span>用户名</span>
+                        <span>拥有(张)</span>
+                        <span>排名</span>
+                        <span>用户名</span>
+                        <span>拥有(张)</span>
+                    </div>
+                    <div class="ul_list" id="treasure"><ul class="clearfix JQ-slide-content js-treasure"></ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="pc_bottom">
+            <div class="pc_info w1200">
+                <div class="pc_title">
+                    <img src="images/pc_info.png" />
+                </div>
+                <div class="pc_info_p">
+                    <p>用户在活动期间投资平台指定直投标的获取欢乐券（1000元现金投资投360天标的，计入1000欢乐券，若投 180天则计入500欢乐券，以此类推，四舍五入）；</p>
+                    <p>欢乐券可以在活动期间通过欢乐商城兑换实物奖励、红包；</p>
+                    <p>活动期间，用户可以通过签到、投资获得欢乐券，参与开宝箱、幸运转盘等需要消耗一定的欢乐券；</p>
+                    <p>用户的欢乐券会显示在欢乐英雄榜上，榜单前10名以及前50名会得到丰厚的奖励！并且活动期间，每日早8点18分，以及晚8点18分，投资90天以上标的5000元现金以上的用户可以额外得到惊喜奖励！</p>
+                </div>
+            </div>
+            <div class="pc_rule w1200">
+                <div class="pc_title">
+                    <img src="images/pc_rule.png" />
+                </div>
+                <div class="pc_rule_ol">
+                    <ol>
+                        <li>活动时间：<span>2017年4月17日至5月04日</span>；</li>
+                        <li>用户通过投资平台指定直投标的获得欢乐券，参与活动（不含月月丰、债权转让以及个人消费贷）;</li>
+                        <li>每日早<span>8点18分</span>，以及晚<span>8点18分</span>，投资90天以上标的5000元现金以上的用户可以额外得到惊喜奖励，以时刻后最接近的为准，每位用户活动期间最多领取3次；</li>
+                        <li>所有实物奖品的发放将在活动结束后7个工作日之内发出；</li>
+                        <li>用户在欢乐英雄榜单的前10名用户，将得到惊喜大礼；前50名用户得到2017限量版宝象新年公仔1个；</li>
+                        <li>各个版块规则以活动落地页面为准；</li>
+                        <li>如有任何疑问请联系在线客服；</li>
+                        <li>为保证健康公平的投资环境，一切恶意刷奖行为将被取消获奖资格；</li>
+                        <li>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+                    </ol>
+                </div>
+            </div>
+            <p class="tips ">市场有风险，投资需谨慎</p>
+        </div>
+    </div>
+</div>
+<script id="rankConsume" type="text/template">
+    {{each used60 as item i}}
+    <li><span>{{i+1}}</span><span>{{item.userName}}</span><span>{{item.count}}</span></li>
+    {{/each}}
+</script>
+<script id="rankTreasure" type="text/template">
+    {{each left60 as item i}}
+    <li><span>{{i+1}}</span><span>{{item.userName}}</span><span>{{item.count}}</span></li>
+    {{/each}}
+</script>
+<script src="../js/layer/layer.js"></script>
+<script src="js/jq.Slide.js"></script>
+<script src="../js/login.js"></script>
+<script src="js/sign.js"></script>
+<script>
+    function rankScrollConsume() {
+        $("#consume").Slide({
+            effect : "scroolTxt",
+            speed : "normal",
+            timer : 3000,
+            steps: 2
+        });
+    }
+    function rankScrollTreasure() {
+        $("#treasure").Slide({
+            effect : "scroolTxt",
+            speed : "normal",
+            timer : 3000,
+            steps: 2
+        });
+    }
+    (function(){
+        loginFun();
+    }())
+</script>
+<span style="display: none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var s = document.getElementsByTagName("script")[0];
+    //百度统计
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+    s.parentNode.insertBefore(hm, s);
+    //友盟统计
+    var ym = document.createElement("script");
+    ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+    s.parentNode.insertBefore(ym, s);
+})();
+</script>
+</span>
+</body>
+</html>
+

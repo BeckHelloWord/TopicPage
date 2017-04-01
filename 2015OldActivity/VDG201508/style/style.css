@@ -1,0 +1,80 @@
+body,p,div{padding: 0; margin:0;}
+
+body{font: 12px/1.8 '微软雅黑','Arial', 'Helvetica', 'sans-serif'; color:#666;}
+ol,li{ list-style:none;margin:0;padding:0;}
+img{border:0 none; vertical-align:middle;}
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+.wrap{width: 100%; min-width: 1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+
+.main{width: 1920px; position:relative; left:50%; margin-left:-960px;}
+.footer{text-align: center; margin:40px 0; font-size: 16px;}
+.page{position:relative; text-align:center;}
+.page .btn{display:block; width:330px; height:90px; background:url(../images/hurt_btn.png) no-repeat center;line-height:90px;color:#fff;font-size:34px;z-index:2; position:absolute;left:50%;margin-left:-165px;bottom:80px;}
+.page4 i{ display:block;width:132px; height:110px;background:url(../images/hurt_btn_top.png) no-repeat center;z-index:3; position:absolute;left:50%;margin-left:-210px;bottom:110px;}
+.page7{width:100%;background:#e4ecf9;border-top:1px solid #ccc;border-bottom:1px solid #ccc;}
+.page7_in{ width:1200px;margin:0 auto;padding:100px 0;}
+
+.page_list{ background:url(../images/hurt_title_list.png) no-repeat;width:275px; height:56px;font-size:30px;color:#fff;margin-top:60px; text-align:center;}
+ol span{background:#579de7;border-radius:28px;display:inline-block;width:28px;height:28px;color:#fff; line-height:28px; text-align:center;font-size:22px;}
+ol li{text-align:left;font-size:18px;margin:20px 0;}
+
+
+
+
+<!--h5-->
+.h5-wrap{width: 100%;position: relative; height: 100%; margin: 0 auto; background-color: #fff; overflow: hidden;}
+.h5-wrap img{max-width:100%;}
+.h5-main { position: relative; width: 100%; height: 100%; overflow: hidden;}
+img.h5page7_in_tilte{width:217px; height:52px; position:relative;left:50%;margin-left:-108px;}
+.h5page7_in{background:#e4ecf9;padding:50px 20px 20px 20px;}
+.h5page_list{background:url(../images/hurt_title_list.png) no-repeat;background-size:100%;width:60%;font-size:16px;text-align:center;color:#fff; margin-top:60px;position:relative;left:-20px; }
+.h5page7_in li{color:#666;font-size:12px;}
+.h5page7_in ol span{width:18px;height:18px;line-height:18px;font-size:14px}
+footer{text-align:left;width:90%; margin-left:5%;font-size:12px; padding:20px 0;}
+
+.h5-wrap section{position:relative;}
+.h5-wrap .btn{position:absolute; left:30%; display:block; width:40%; bottom:10%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

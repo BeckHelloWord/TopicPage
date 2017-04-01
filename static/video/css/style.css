@@ -1,0 +1,136 @@
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    /* Center slide text vertically */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+.science_01{min-width: 1200px;height: 100%;background: url("../images/science_bg_01.jpg") no-repeat center;width: 100%;position: relative;background-size:100% 100%}
+.science_01 .science_01_a{height: 100%;position: relative}
+.science_01 .science_01_a .banner_txt_l{width: 300px;height: 300px;color: white;position: absolute;top: 50%;margin-top: -150px;left: 100px;text-align: left}
+.science_01 .science_01_a .banner_txt_l .banner_txt_l_01,.science_01 .science_01_a .banner_txt_r .banner_txt_r_01{font-size: 30px;margin-bottom: 30px;position: relative}
+.science_01 .science_01_a .banner_txt_l .banner_txt_l_01:after{display: block;content: "";width: 250px;height:30px;background: url("../images/science_effect1.png") no-repeat center;position: absolute;bottom: 0;left: 0;margin-bottom: -30px}
+.science_01 .science_01_a .banner_txt_r .banner_txt_r_01:after{display: block;content: "";width: 250px;height:30px;background: url("../images/science_effect2.png") no-repeat center;position: absolute;bottom: 0;right:0;margin-bottom: -30px}
+.science_01 .science_01_a .banner_txt_l .banner_txt_l_02,.science_01 .science_01_a .banner_txt_r .banner_txt_r_02{font-size: 22px;margin-bottom: 30px}
+.science_01 .science_01_a .banner_txt_r{width: 300px;height: 300px;color: white;position: absolute;top: 50%;margin-top: -150px;right: 100px;text-align: right}
+.science_01 .science_01_a .banner_txt_c{width: 500px;height: 100px;color: white;position: absolute;bottom: 70px;margin-top: -150px;left: 50%;margin-left:-250px;text-align: center}
+.next_arrow {width: 28px;height: 28px;border-bottom: 2px solid;border-left: 2px solid;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);border-color: white;position: absolute;bottom: 30px;left: 50%;margin-left: -15px}
+.next_arrow2 {width: 28px;height: 28px;border-bottom: 2px solid;border-left: 2px solid;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);border-color: #17309f;position: absolute;bottom: 30px;left: 50%;margin-left: -15px}
+.next_arrow3 {width: 28px;height: 28px;border-top: 2px solid;border-right: 2px solid;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);border-color: white;position: absolute;bottom: 30px;left: 50%;margin-left: -15px}
+
+.science_02{height: 100%;background: url("../images/science_bg_02.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_02 .science_02_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+.science_02 .science_02_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;color: #666666}
+.science_02 .science_02_logo{width: 1000px;position: absolute;top: 50%;margin-top: -100px;left: 50%;margin-left: -490px}
+.science_02 .science_02_shadow{width: 300px;height:18px;position: absolute;top: 50%;margin-top: 250px;left: 50%;margin-left: -150px;background-color: #ebebeb;border-radius: 100%}
+.science_03{height: 100%;background: url("../images/science_bg_03.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_03 .science_03_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+.science_03 .science_03_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;color: #ebebeb}
+.science_03 .science_03_img{width: 1100px;position: absolute;top: 50%;margin-top: -100px;left: 50%;margin-left: -550px;color: #ebebeb}
+.science_04{height: 100%;background: url("../images/science_bg_04.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_04 .science_04_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+.science_04 .science_04_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;color: #666666}
+.science_04 .science_04_table{width: 1200px;position: absolute;top: 50%;margin-top: -100px;height: 500px;color: #2230aa}
+.science_04 .science_04_table ul li{display: block;float: left;width: 270px;height: 380px;border: 1px solid #2f3caf;background: white}
+.science_04 .science_04_table ul li+li{margin-left: 37px}
+.science_04 .science_04_table .table_title{height: 75px;background-color: #2d30c4}
+.science_04 .science_04_table .table_title span{color: white;line-height: 75px;font-size: 22px;position: relative;padding-left: 35px}
+.science_04 .science_04_table .table_title span:before{display: block;content: "";height: 30px;width: 30px;position: absolute;left: 0;top:-2px}
+.science_04 .science_04_table .table_title .icon1:before{background: url("../images/science_icon1.png") no-repeat center}
+.science_04 .science_04_table .table_title .icon2:before{background: url("../images/science_icon2.png") no-repeat center}
+.science_04 .science_04_table .table_title .icon3:before{background: url("../images/science_icon3.png") no-repeat center}
+.science_04 .science_04_table .table_title .icon4:before{background: url("../images/science_icon4.png") no-repeat center}
+.science_04 .science_04_table table{margin-top: 30px;}
+.science_04 .science_04_table .td1 div{min-width: 105px;text-align: left;border-bottom: 1px dashed #e5e5e5;margin: 0px 25px;padding-left: 20px;line-height: 20px;font-size: 16px;position: relative;padding-top: 10px;padding-bottom: 10px}
+.science_04 .science_04_table .td2 div{min-width: 105px;text-align: left;border-bottom: 1px dashed #e5e5e5;margin: 0px 5px;padding-left: 20px;line-height: 20px;font-size: 16px;position: relative;padding-top: 10px;padding-bottom: 10px}
+.science_04 .science_04_table .td2 div:before{display: block;content: "";width: 8px;height: 8px;background-color: #e8b91f;position: absolute;left: 6px;top: 14px}
+.science_04 .science_04_table .td1 div:before{display: block;content: "";width: 8px;height: 8px;background-color: #e8b91f;position: absolute;left: 6px;top: 14px}
+.science_05{height: 100%;background: url("../images/science_bg_03.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_05 .science_05_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+.science_05 .science_05_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;color: white;word-break: break-all}
+.science_05 .science_05_img{width: 1100px;position: absolute;top: 50%;margin-top: -100px;left: 50%;margin-left: -550px;color: #ebebeb}
+.science_06{height: 100%;background: url("../images/science_bg_05.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_06 .science_06_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+.science_06 .zhengshu{width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;overflow: hidden}
+.science_06 .zhengshu img{width: 100%}
+.science_06 .zhengshu_prev{position: absolute;top: 50%;margin-top: -100px;left: 50%;margin-left: -550px;cursor:pointer}
+.science_06 .zhengshu_next{position: absolute;top: 50%;margin-top: -100px;right: 50%;margin-right: -550px;cursor:pointer}
+.science_06 .science_06_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: 100px;left: 50%;margin-left: -500px;text-align: left}
+.science_06 .science_06_txt h2{font-size: 18px;margin-bottom: 20px;color: #666666;font-weight: normal}
+.science_06 .science_06_txt p{font-size: 16px;margin-bottom: 35px;color: #999999;line-height: 30px}
+.science_07{height: 100%;background: url("../images/science_bg_07.jpg") no-repeat center;width: 100%;position: relative;background-size: auto 100%}
+.science_07 .science_07_c{width: 700px;position: absolute;top: 50%;margin-top: -330px;left: 50%;margin-left: -350px}
+.science_07 .science_07_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -260px;left: 50%;margin-left: -500px;color: white}
+.science_rank{border: 1px solid #6b6bff;height: 490px;position: absolute;left: 50%;top: 50%;margin-top: -180px;margin-left: 80px;font-size: 12px;color: white}
+.science_rank tr td{padding: 0 10px;border-top:1px solid #6b6bff}
+.science_rank tr td:first-child{border-right:1px solid #6b6bff }
+.science_rank tr td:last-child{border-left:1px solid #6b6bff }
+.science_rank .rank_title{color: #ffd930;background-color: #4544c5;line-height: 20px;font-size: 16px;padding: 5px 20px;}
+.science_rank .rank_select{color: #ffd930}
+.science_foot{background-color: #4c4c4c}
+
+.video_container{height: 800px;background-color: white;min-width: 1200px}
+.video_container .video_box{margin-top: 62.5px}
+
+.js_next{cursor:pointer}
+.js_top{cursor:pointer}
+
+.bx_foot .bx_link {
+    margin-right: 25px !important;
+}
+
+@media screen and (max-width: 1366px) {
+    .science_03 .science_03_img{transform: scale(0.8);-webkit-transform:scale(0.8);margin-top: -150px;}
+    .science_04 .science_04_table{transform: scale(0.8);-webkit-transform:scale(0.8);left: 50%;margin-left: -600px}
+    .science_06 .zhengshu{transform: scale(0.8);-webkit-transform:scale(0.8)}
+    .science_06 .zhengshu_prev{position: absolute;top: 50%;margin-top: -100px;left: 50%;margin-left: -500px;cursor:pointer}
+    .science_06 .zhengshu_next{position: absolute;top: 50%;margin-top: -100px;right: 50%;margin-right: -500px;cursor:pointer}
+    .science_06 .science_06_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: 50px;left: 50%;margin-left: -500px;text-align: left}
+    .science_06 .science_06_txt h2{font-size: 18px;margin-bottom: 10px;color: #666666;font-weight: normal}
+    .science_06 .science_06_txt p{font-size: 16px;margin-bottom: 20px;color: #999999;line-height: 30px}
+    .science_rank{transform: scale(0.8);-webkit-transform:scale(0.8)}
+    .science_07 .science_07_c{width: 700px;position: absolute;top: 50%;margin-top: -300px;left: 50%;margin-left: -350px}
+    .science_07 .science_07_txt{font-size: 18px;line-height:35px;width: 1000px;position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -500px;color: white}
+}
+
+
+
+.footer-ad{position: relative; font-size: 20px; color: #fff;}
+.footer-ad a{display: block;}
+.footer-ad img{}
+.footer-ad .footer-ad-txt{position: absolute; top: 0; right: 25px; text-align: right; height: 105px; line-height: 105px;}
+.footer-ad .footer-ad-txt a{display: inline-block; margin-left: 70px; width: 142px; height: 36px; line-height: 36px; text-align: center; color: #fff; background: #ecb81c; border-radius: 3px;}
+.footer-copyright{width: 100%; height: 363px; background: #E7E7E7; font-size: 14px; color: #666;}
+.footer-copyright .footer-nav{padding: 50px 14px 25px; border-bottom: 1px solid #D1D1D1;}
+.footer-copyright .footer-nav .footer-phone{height: 128px; padding: 0 85px 0 69px; background: url("../images/footer_phone.png") no-repeat left top;}
+.footer-copyright .footer-nav .footer-phone .phone-number{font-size: 32px; line-height: 1; margin-bottom: 10px;}
+.footer-copyright .footer-nav .footer-phone .icon-weibo{display: inline-block; vertical-align: middle; width: 23px; height: 20px; margin-right: 15px; margin-top: 15px; background: url("../images/icon_weibo.png") no-repeat center;}
+.footer-copyright .footer-nav .footer-phone .icon-QQ{display: inline-block; vertical-align: middle; width: 17px; height: 21px; margin-top: 15px; background: url("../images/icon_QQ.png") no-repeat center;}
+.footer-copyright .footer-nav .footer-map{width: 450px;}
+.footer-copyright .footer-nav .footer-map .map-dl{width: 73px; float: left; margin-right: 77px;}
+.footer-copyright .footer-nav .footer-map .map-dl dt{padding-bottom: 5px; margin-bottom: 10px; font-size: 16px; color: #333; border-bottom: 1px solid #d1d1d1;}
+.footer-copyright .footer-nav .footer-map .map-dl dd{margin-left: 0; line-height: 22px;}
+.footer-copyright .footer-nav .footer-ewm{width: 244px; font-size: 14px; color: #999; text-align: center;}
+.footer-copyright .footer-nav .footer-ewm div{margin: 0 12px;}
+.footer-copyright .footer-nav .footer-ewm div .ewm-txt{margin-top: 10px;}
+.footer-copyright .footer-links{padding: 27px 0 42px; color: #999;}
+.footer-copyright .footer-links li{float: left; margin-right: 8px;}
+.footer-copyright .footer-links li a{color: #999;}
+.footer-copyright .footer-txt{font-size: 12px; color: #999;}
+.footer-copyright .footer-txt .footer-img a{display: block; float: left; margin-right: 7px;}
+.footer-copyright .footer-txt .copyright-txt{padding-left: 21px; line-height: 33px; height: 33px;}
+.footer-copyright .footer-txt .copyright-txt a{color: #999;}

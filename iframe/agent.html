@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>宝象金融</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            var isSet = false
+            var inteval = setInterval(function() {
+                var search = location.search.replace('?', '')
+                if (isSet) {
+                    clearInterval(inteval)
+                    return
+                }
+                if (search) {
+                    var height = search.split('=')[1]
+                    var doc = parent.parent.document
+                    var frame3d = doc.getElementById('frame3d')
+                    frame3d.style.height = height + 'px'
+                    isSet = true
+                }
+            },1)
+        }
+    </script>
+</body>
+</html>

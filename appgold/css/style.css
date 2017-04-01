@@ -1,0 +1,71 @@
+html, body {width:100%;height:100%;overflow:hidden;margin:0;padding:0;
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td,form{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+html{font-size:62.5%;}
+body{font:1rem/1.6 Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self;color:#333;-webkit-user-select:none;}
+body.noBody{background:#e1e0de;}
+
+a{color:#333; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+img{max-width:100%;}
+
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.pos{position:relative;}
+.p14{padding:0 14px;}
+.hidden{display:none;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+
+
+.main{width:100%;height:100%;overflow:hidden;position:absolute;left:0;top:0;z-index:10;text-align:center;background:url(../images/bg.jpg)no-repeat;background-size:100%;}
+section{width:100%;height:100%;position:absolute;display:table;text-align:center;vertical-align:middle;}
+section .pp-tableCell{display:table-cell;vertical-align:middle;width:100%;height:100%;}
+.img img{width:90%;;}
+.gold{width:100%;position:absolute;top:30%;left:0;text-align:center;}
+.gold .gold_1{color:#b26014;}
+.gold .gold_2{color:#ffc30d;font-size:2rem;}
+.gold .gold_3{color:#ffc30d;font-size:1.4rem;}
+.content{width:100%;position:absolute;top:58%;left:0;color:#fff9ab;text-align:center;}
+a.btn{width:50%;margin-left:25%;color:#fff;border-radius:10px;border:3px solid #ffef5b;padding:5px 20px;background:#f75036;display:block;box-sizing:border-box;}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+    .gold{top:33%;}
+}
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
+    .gold{top:33%;}
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+    .gold{top:34%;}
+}

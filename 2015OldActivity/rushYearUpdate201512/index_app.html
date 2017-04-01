@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>宝象金融-闯年关</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".bx-mob-tab li").click(function() {
+                var num = $(this).index();
+                $(this).addClass("current-tab").siblings().removeClass();
+                $(".bx-mob-tab-con div").eq(num).addClass("bx-mob-current").siblings().removeClass();
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <section class="bx-mob-main">
+        <div>
+            <img src="./images/bx-mob-header.jpg" />
+        </div>
+        <div class="bx-mob-recharge">
+            <!--            <a href="/center/home/index">立即充值</a>-->
+            <div class="bx-mob-rule activity-rule bx-app-rule">
+                <p>1. 充值金额在活动期间为单笔统计，活动后3个工作日内发放红包。
+                </p>
+                <p>2. 红包发放，单笔不累计，活动期间多笔充值可累计。</p>
+                <p>3. 红包可直接按比例抵扣投资额，100元起投，单次有效，使用 要求以红包定义为准。
+                </p>
+            </div>
+        </div>
+        <div class="bx-mob-owe">
+            <img src="./images/bx-mob-owe.jpg" />
+        </div>
+        <div class="bx-mob-owe-rule">
+            <div class="activity-rule">
+                <p>1. 活动时间为12月1日至22日, 奖品在活动结束5个工作日内发放。</p>
+                <p>2. 累投金额为活动期间直投项目（本金）的投资总额，不含周转贷、 添添金及债权转让。
+                </p>
+            </div>
+            <div class="pt10">
+                <img src="./images/bx-mob-money-gap.gif" />
+            </div>
+        </div>
+        <div class="bx-mob-money">
+            <div class="activity-rule">
+                <p>1. 红包由系统发放, 当日最多领取1个, 当月可多次领取。</p>
+                <p>2. 回款仅限直投项目，添添金和债权转让等不参加活动。红 包使用规则参见红包定义。
+                </p>
+            </div>
+        </div>
+        <div>
+            <img src="./images/bx-mob-gift-gap.gif" />
+        </div>
+        <div class="bx-mob-weekend">
+            <div class="activity-rule">
+                <p>1. 标的加息与否请以标题为准。</p>
+                <p>2. 加息奖励在满标之后由系统自动发放。</p>
+            </div>
+        </div>
+        <section class="bx-mob-tab">
+            <ul>
+                <li class="current-tab">新人注册即赠888</li>
+                <li>排名有奖</li>
+                <li>生日红包</li>
+            </ul>
+            <div class="bx-mob-tab-con">
+                <div class="bx-mob-current">
+                    <img src="./images/bx-mob-register.gif" />
+                </div>
+                <div>
+                    <img src="./images/bx-mob-ranking.gif" />
+                </div>
+                <div>
+                    <img src="./images/bx-mob-birthday.gif" />
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <div style="display:none">
+        <!-- CNZZ统计代码 -->
+        <script type="text/javascript">
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1255472698'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1255472698' type='text/javascript'%3E%3C/script%3E"));
+
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?efee95d0149c1f6ca6092bbfbd6a29ef";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+﻿body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+/*ul,ol,li{list-style-type:none;}*/
+body{font:12px/1.8 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+ul,li{list-style:none;}
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;}
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+.wrap{width: 100%; min-width: 1200px; overflow:hidden;}
+
+.container{width:1200px; margin:0 auto;}
+
+.top{background-color: #f9f9f9;}
+.top .container{height:60px; line-height:60px; position:relative; text-align:center;}
+.top .logo{margin-top:-3px;}
+.top .nav a,.top .nav span{float:left;}
+.top .nav a{display:inline-block; padding:0 15px;}
+
+/* h5页面 */
+/*.h5-wrap{}*/
+/*.h5-wrap img{max-width:100%;}*/
+/*footer{color:#333;font-size:14px;background:url(../images/mobinvest_09.jpg) no-repeat center top #efefef;background-size:100%;}*/
+/*footer h3{font-weight:normal;font-size:24px;padding:5% 0;}*/
+/*footer ol{margin-left:10%;margin-right:5%;}*/
+/*footer p{max-width:90%;margin:5% auto 0;padding-bottom:5%;font-size:16px;position:relative;}*/
+/*footer p span{padding:0 10px;position:relative;background:#ededed;display:inline-block;z-index:9;}*/
+/*footer p i{width:100%;border-top:1px solid #999;position:absolute;left:0;top:15px;display:block;}*/
+
+/* PC */
+.main{width:1920px;position:relative;left:50%;margin-left:-960px;font-size:16px;}
+.page{position:relative;}
+.page h2{font-size:30px;position:absolute;font-weight:bold;top:230px;left:620px;color:#fff;}
+.page h2 span{color:#fff000;}
+.page .directions{position:absolute;top:670px;left:430px;color:#000;}
+.page .doubleKill_btn{width:298px;height:85px;line-height:70px;background:url(../images/doubleKill_btn.png) no-repeat;position:absolute;top:790px;left:590px;color:#fff;font-size:30px;display:block;text-align:center;}
+.page2 ul{position:absolute;top:10px;left:10px;}
+.page2 ul li{float:left;}
+.page2 ul li .invest{width:133px;height:98px;padding-left:20px;padding-top:20px;line-height:1;background:url(../images/doubleKill_dialog.png) no-repeat;position:absolute;top:330px;left:450px;}
+.page2 ul li .invest2{top:321px;left:710px;}
+.page2 ul li .invest3{top:323px;left:1006px;}
+.page2 ul li .invest span{color:#de5113;}
+.page2 ul li .full{width:200px;position:absolute;left:420px;top:600px;color:#612409;}
+.page2 ul li .full2{left:660px;}
+.page2 ul li .full3{left:900px;}
+.page2 ul li .full span{font-size: 28px;color:#de5113;}
+.page2 .recharge{position:absolute;top:400px;left:420px;}
+
+.page3 h2{top:177px;left:1043px;}
+.page3 .directions{top:560px;left:850px;}
+.page3 .claimsCon{position:absolute;top:306px;left:837px;text-align:center;line-height:1.2;font-size:23px;color:#612409;}
+.page3 .claimsCon span{font-size:40px;color:#de5113;}
+.page3 .doubleKill_btn{top:735px;left:1030px;}
+.page .claims{position:absolute;top:235px;left:1170px;}
+
+.page4 h2{top:238px;left:495px;}
+.page4 .directions{top:700px;left:450px;}
+.page4 .celebrate{position:absolute;top:350px;left:446px;font-size:22px;color:#612409;}
+.page4 .doubleKill_btn{top:835px;left:550px;}
+.page4 .claims{top:470px;left:810px;}
+
+
+
+/* h5页面 */
+.doubleKill{color:#000;}
+.doubleKill img{max-width:100%;}
+.doubleKill section{position:relative;}
+.doubleKill .directions{width:90%;top:58%;left:5%;position:absolute;}
+.doubleKill .celebrate{width:100%;font-size:14px;text-align:center;color:#612409;position:absolute;top:31%;left:0;}
+.doubleKill .doubleKillCon .directions{top:65%;}
+.doubleKill .doubleKill_btn{display:block;position:absolute;left:37%;top:84%;width:30%;}
+.doubleKill .h5page2 .directions{}
+.doubleKill .h5page2 .doubleKill_btn{top:86%;}
+.doubleKill .h5page3 .directions{left: 10%;}
+.doubleKill .h5page4 .directions{top:63%;}
+@media only screen and (min-device-width: 375px), only screen and (min-device-width: 414px){
+    /*iPhone 6+ Portrait*/
+    .doubleKill .h5page2 .doubleKill_btn,.doubleKill .h5page3 .doubleKill_btn,.doubleKill .h5page4 .doubleKill_btn{width:40%;top:80%;left:30%;}
+}
+
+
+

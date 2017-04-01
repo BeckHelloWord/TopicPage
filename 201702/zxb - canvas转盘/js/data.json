@@ -1,0 +1,36 @@
+{"isSuccess":true,
+  "result": [
+    {
+      "name": "2000体验金",
+      "img": "gift01"
+    },
+    {
+      "name": "1000体验金",
+      "img": "gift02"
+    },
+    {
+      "name": "5枚体验金",
+      "img": "gift03"
+    },
+    {
+      "name": "Thank you",
+      "img": "gift04"
+    },
+    {
+      "name": "小米口罩",
+      "img": "gift05"
+    },
+    {
+      "name": "小米旅行箱",
+      "img": "gift06"
+    },
+    {
+      "name": "小米电饭煲",
+      "img": "gift07"
+    },
+    {
+      "name": "小米空气净化机",
+      "img": "gift08"
+    }
+  ]
+}

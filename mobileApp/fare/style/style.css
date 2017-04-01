@@ -1,0 +1,427 @@
+*{box-sizing:border-box;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+q:before,q:after{content:'';}/* 消除q前后的内容 */
+button,input,select,textarea{font-size:100%;}/* 使得表单元素在 ie 下能继承字体大小 */
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+address,cite,dfn,em,var{font-style:normal;} /* 将斜体扶正 */
+img{border:none; vertical-align:middle;}
+ul,ol,li{list-style-type:none;}
+
+body{font:12px/2 "Microsoft YaHei", "微软雅黑"; color: #666;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#f90; text-decoration:none;}
+a:focus,input:focus{outline:0;}
+
+.fl,.left{float:left;}
+.fr,.right{float:right;}
+.t_l{text-align:left;} 
+.t_c{text-align:center;}
+.t_r{text-align:right;}
+.pos{position:relative;}
+.br5{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+body{
+    font-family: Helvetica,'Heiti','SC';
+    font-size: 12px;
+}
+.fare{
+    padding: 0 4%;
+    padding-top: 22px;
+}
+.fare .title{
+    color: #666;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 12px;
+}
+.fare .phone{
+    font-size: 1.3rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #333;
+    margin-bottom:14px;
+}
+.fare .carrieroperator{
+    padding-left: 3%;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.line{
+    height: 1px;
+    background: #e1e8f2;
+    width: 100%;
+}
+.error{
+    padding: 0 4%;
+    color: #bf2e2b;
+    font-size: 1rem;
+    line-height: 1rem;
+    height: 1rem;
+    margin-top: 12px;
+}
+.fare .choose-title{
+    padding-top: 18px;
+    color: #999;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+.fare .choose-title .rule{
+    color: #2d449f;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.fare .choose{
+    width: 100%;
+}
+
+.fare .choose .choose-body{
+    width: 32%;
+    margin-top: 16px;
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    background: url('../images/border.jpg') no-repeat center center;
+    background-size: 100% 100%;
+}
+.fare .choose .choose-body.middle{
+    margin: 0 2%;
+    margin-top: 16px;
+}
+.fare .choose .choose-body.on{
+    background: url('../images/border_on.jpg') no-repeat center center;
+    background-size: 100% 100%;
+}
+.fare .choose .choose-body p{
+    text-align: center;
+    color: #333;
+}
+.fare .choose .choose-body.on p{
+    color: #2d449f;
+}
+.fare .choose .choose-body p.price{
+    padding-top: 36px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    padding-bottom: 36px;
+}
+.fare .choose .choose-body p.real-price{
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    padding-bottom: 36px;
+    display: none
+}
+.fare .warning{
+    margin-top: 20px;
+    font-size: .9rem;
+    color: #e71c18;
+    line-height: 18px;
+    position: relative
+}
+.fare .warning span{
+   padding-left: 18px; 
+}
+.fare .warning span strong{
+    font-weight: normal;
+}
+.fare .warning img{
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    position: absolute;
+
+}
+.fare .button{
+    margin-top: 24px;
+    outline: none;
+    border: none;
+    display: inline-block;
+    background: #2d449f;
+    color: #fff;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: normal;
+    padding: 12px 0;
+}
+.fare .button[disabled]{
+    background: #d8d8d8 !important;
+    color: #bcbcbc !important;
+}
+.fare-img{
+    padding: 0 4%;
+    width: 100%;
+    position: relative;
+}
+.fare-img .detail{
+    color:#fee88f; 
+    position: absolute;
+    font-size: .9rem;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 82%;
+}
+.fare-img .money{
+    color:#fee88f; 
+    position: absolute;
+    font-size: .9rem;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 62%;
+}
+.fare-img .money span{
+    font-size: 1.75rem;
+}
+.fare-img img{
+    width: 100%;
+}
+.fare-img .title{
+    width: 100%;
+    text-align: center;
+    color:#fee88f; 
+    font-size:0.8rem;
+    line-height: 0.8rem;
+    position: absolute;
+    top: 31%;
+    left: 0;
+    z-index: 100;
+}
+.pay{
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #bcbcbc;
+    position: fixed;
+    left:0;
+    bottom: 4rem;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+.pay img{
+    width: 20%;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+    background: #edf0f3;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    padding: 18px 4%;
+    color: #333;
+}
+.footer .invest{
+    color: #2d449f;
+}
+
+.layer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    opacity: 0.8;
+    height: 0;
+    background: #333;
+    width: 100%;
+    padding: 0 4%;
+    z-index: 9999;
+}
+
+.layer h2{
+    padding-top: 38px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    color: #fff;
+    font-weight: normal;
+    margin-bottom: 22px;
+}
+
+.layer p{
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #fff;
+}
+
+.layer .close{
+    margin-top: 20%;
+    width: 100%;
+    text-align: center;
+}
+.layer .close a{
+    width: 18%;
+    display: inline-block;
+    margin: 0 auto;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.layer .close a img{
+    width: 100%;
+}
+
+.success{
+    display: none;
+    background: #999;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.alertBody{
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 20%;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 5px 15px;
+    z-index: 99999;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    transform: translateX(-50%);
+}
+.weight{
+    display: none;
+    position: fixed;
+    left: 6%;
+    top: 12%;
+    width: 88%;
+    z-index: 99999;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    opacity: 1;
+}
+.weight h3{
+    color: #333;
+    padding: 18px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: normal;
+}
+.weight p{
+    font-size: 1.1rem;
+    line-height: 2.2rem;
+    color: #666;
+}
+.weight p span{
+    color: #e71c18;
+}
+.weight .btn-group{
+    padding: 35px 4% 12px;
+    text-align: center;
+}
+.weight .btn-group a{
+    letter-spacing: 0.2rem;
+    padding: 12px 0;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+.weight .btn-group .review{
+    width: 45%;
+    background: #fff;
+    border: 1px solid #2d449f;
+    color: #2d449f;
+    display: inline-block;
+    margin-left: 2%;
+}
+.weight .btn-group .more{
+    width: 45%;
+    background: #ecb81c;
+    color: #fff;
+    display: inline-block;
+}
+.weight .btn-group .more2{
+    width: 92%;
+    background: #ecb81c;
+    color: #fff;
+    display: inline-block;
+}
+
+/*老年机*/
+@media screen  
+and (min-width : 270px)  
+and (max-width : 330px)
+and (min-height : 400px) 
+and (max-height : 470px) {
+    .footer{
+        font-size: .8rem;
+        line-height: .8rem;
+    }
+    .fare-img{
+        margin-bottom: 100px;
+    }
+    .pay{
+        position: relative;
+    }
+    .fare-img .money{
+        top: 73%;
+        font-size: .8rem;
+        line-height: .8rem;
+    }
+    .fare-img .detail{
+        top: 88%;
+        font-size: .8rem;
+        line-height: .8rem;
+    }
+}
+
+ /*iphone4 */
+@media screen 
+and (device-width: 320px) 
+and (device-height: 480px) {
+    .footer span.money{
+        font-size: 1.6rem;
+    }
+    .footer .invest{
+        font-size: 1.5rem;
+    }
+    .weight h3{
+        font-size: 1.6rem !important;
+    }
+     .footer{
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+    }
+    .fare-img{
+        margin-bottom: 0;
+    }
+}
+
+ /*iphone5 */
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+    .footer span.money{
+        font-size: 1.6rem;
+    }
+    .footer .invest{
+        font-size: 1.5rem;
+    }
+
+}
+
+/* 判断iphone5-iphone6s */
+
+/*@media only screen
+
+and (min-device-width : 320px)
+
+and (max-device-width : 380px)
+
+and (max-device-height : 600){
+    
+}*/

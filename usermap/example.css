@@ -1,0 +1,63 @@
+
+body{margin:0;background-color:#1c2342;}
+ul,li{margin:0;padding:0;}
+em{font-style:normal;}
+#page{position:relative;height:100%;}
+
+.today_num{width:100%;text-align:center;color:#fff;
+font:40px/50px Helvetica,'Microsoft YaHei','Heiti','SC';
+position:absolute;top:10px;z-index:1;}
+.today_num .borderA{background-color:rgba(0,0,0,0.5);padding:10px;border-radius:10px;box-shadow: 1px 1px 3px #333;}
+.today_num>div{margin-top:30px;display:inline-block;}
+/*
+#today_data span{display:inline-block;margin-right:4px;color:#fff;font-size:50px;}
+#today_data span.num{width:34px;text-align:center;background-color:rgba(255,255,255,1);color:#0a0b4b;}
+*/
+#today_data{
+-webkit-transform: scale(0.8);
+transform: scale(0.8);
+}
+
+#today_num{display:inline-block;}
+
+
+
+.today_unit{height:90px;line-height:120px;font-size:50px;display:inline-block;overflow:hidden;}
+.today_num div>span{width:30px;height:90px;display:inline-block;overflow:hidden;}
+.today_num .sign{line-height:76px;font-size:80px;}
+
+.today_num .num0,
+.today_num .num1,
+.today_num .num2,
+.today_num .num3,
+.today_num .num4,
+.today_num .num5,
+.today_num .num6,
+.today_num .num7,
+.today_num .num8,
+.today_num .num9{width:67px;height:90px;background:url(digits.png) 0 0 no-repeat;
+-webkit-transition: background-position 0.3s ease-in-out;
+transition: background-position 0.3s ease-in-out;
+}
+
+.today_num .num0{background-position:0 0;}
+.today_num .num1{background-position:0 -540px;}
+.today_num .num2{background-position:0 -1080px;}
+.today_num .num3{background-position:0 -1620px;}
+.today_num .num4{background-position:0 -2160px;}
+.today_num .num5{background-position:0 -2700px;}
+.today_num .num6{background-position:0 -3240px;}
+.today_num .num7{background-position:0 -3780px;}
+.today_num .num8{background-position:0 -4320px;}
+.today_num .num9{background-position:0 -4860px;}
+
+
+
+#main{height:100%;text-shadow: 1px 1px 3px #ff00de;}
+
+.today_info{width:780px;height:166px;padding:6px 0;background-color:rgba(0,0,0,.4);position:absolute;left:40px;bottom:40px;z-index:1;overflow:hidden;}
+.today_info ul{font:20px/28px Helvetica,'Microsoft YaHei','Heiti','SC';color:#fff;text-shadow: 1px 1px 3px #ff00de;}
+.today_info li{margin-left:40px;height:28px;line-height:28px;}
+.today_info li em{color:#efffa7;}
+
+

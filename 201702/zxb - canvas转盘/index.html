@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="涨薪宝">
+    <meta name="Description" content="涨薪宝">
+    <title>涨薪宝</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <!--<script src="../../js/wechatLink-1.1.js"></script>-->
+    <!--<script src="../../js/public.js"></script>-->
+    <script src="js/layer_mobile/layer.js"></script>
+    <script src="js/jquery.arctext.js"></script>
+    <script src="https://www.bxjr.com/assets/mobile/js/jq.Slide.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="win"></div>
+        <div class="turn">
+            <div class="dish">
+				<div class="turnplate">
+					<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+					<!--<img class="pointer" src="images/turnplate-pointer.png" />-->
+                    <a href="javascript:void(0)" class="pointer"><img src="images/turnplate-pointer.png" alt=""><div class="lottery-wrap"><p>抽奖</p><p class="lottery-num">(<span class="js-lotteryNum">0</span>次)</p></div></a>
+				</div>
+
+                <img src="images/shadow.png" class="shadow"/>
+            </div>
+        </div>
+        <div class="listTop"><img src="images/listTop.png" alt=""></div>
+        <div class="list box">
+            <h2>获取名单</h2>
+            <div class="listLine scroll">
+                <div class="w92">
+                    <ul class="JQ-slide-content"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="time w92 clearfix">
+            <div class="fl timeImg"><img alt="" src="images/time.png"></div>
+            <div class="timeCon fl">
+                <h3>活动时间</h3>
+                <p> 2017年3月15日 00:00至2017年3月31日23:59</p>
+            </div>
+        </div>
+        <div class="rule box">
+            <h2>活动规则</h2>
+            <div class="listLine">
+                <ul class="w92">
+                    <li><h3>活动时间</h3></li>
+                    <li>体验金当即到帐；<br />实物奖品在活动结束后15个工作日内寄出。</li>
+                    <br />
+                    <li><h3>参与方式</h3></li>
+                    <li>在宝象平台内投任意散标满200元即可获得一次抽奖机会；<br />投资金额(不含红包金额)在活动期限内可累加计算。</li>
+                </ul>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="bot">
+            <!--未登录-->
+            <!--<div class="notLogin">-->
+                <!--<a href="//m.bxjr.com//login/index.html?redirect=/topic/201702/zxb/" class="blue btnStyle"><i></i>登录</a>-->
+            <!--</div>-->
+            <div class="hasLogin clearfix">
+                <p class="fl">当前账户：<span>182****5874</span></p>
+                <p class="fl">已投金额：<span>1824</span></p>
+                <a href="" class="yellow btnStyle fl">去投资</a>
+            </div>
+        </div>
+    </div>
+<script>
+    (function(){
+        //文字弧度
+        $(".dish li p").arctext({radius: 100});
+        //遍历获奖名单
+        traversal();
+        function traversal(){
+            $.ajax({
+                url:"js/index.json",
+                dataType: "json",
+                success:function(json){
+                    if(!json.success){
+                        return false;
+                    }
+                    var html = "",
+                        winHtml = "";
+                    for(var i = 0 ,len = json.data.length ; i < len; i++){
+                        html += '<li><span class="s1">'+ json.data[i].id +'</span><span class="s2">'+ json.data[i].prize +'</span><span class="s3">'+ json.data[i].time +'</span></li>';
+                    }
+                    $(".JQ-slide-content").html(html);
+
+                    setTimeout(function () {
+                        var win = $(".win") ; range = 20 * Math.random();
+                        if(json.data[1].shiwu){
+                            win.html('<div class="winCon">恭喜 <span>'+ json.data[1].id +'</span> 获得 '+ json.data[1].prize +'</div>');
+                        }
+                        win.css({top:range+"%",left:"-200%",transition:"all 10s linear"});
+                    },1000)
+                }
+            });
+        }
+        //获奖名单滚动
+        $(".scroll").Slide({
+            effect: "scroolTxt",
+            autoPlay: true,
+            speed: "normal",
+            timer: 2000,
+            steps: 1
+        });
+
+
+    }());
+</script>
+	<script type="text/javascript" src="js/awardRotate.js"></script>
+	<script type="text/javascript" src="js/lanren.js"></script>
+	<script type="text/javascript">
+        /*公共参数*/
+		var turnplate = {
+			restaraunts: [],				//大转盘奖品名称
+			colors: [],					//大转盘奖品区块对应背景颜色
+			outsideRadius: 192,			//大转盘外圆的半径
+			textRadius: 155,				//大转盘奖品位置距离圆心的距离
+			insideRadius: 50,			//大转盘内圆的半径
+			startAngle: 0,				//开始角度
+			bRotate: false,				//false:停止;ture:旋转
+            imgUrl:'http://'+location.host+'/topic/201702/zxb/images/', //配置图片地址
+            clickNum:2  //抽奖次数
+		};
+
+		$(document).ready(function () {
+			//动态添加大转盘的奖品与奖品区域背景颜色
+            $.ajax({
+                url:"js/data.json",
+                dataType: "json",
+                success:function(json){
+                    if(!json.isSuccess){
+                        return false;
+                    }
+                    /*turnplate.restaraunts = [{name:'2000体验金',img:'gift01'},{name:'1000体验金',img:'gift02'},{name:'5枚体验金',img:'gift03'},{name:'Thank you',img:'gift04'},{name:'小米口罩',img:'gift05'},{name:'小米旅行箱',img:'gift06'},{name:'小米电饭煲',img:'gift07'},{name:'小米空气净化机',img:'gift08'}];*/
+                    turnplate.restaraunts=json.result;  //获得后台配置图片和名字
+                    turnplate.colors = ["#ffe511", "#fff27f", "#ffe511", "#fff27f", "#ffe511", "#fff27f", "#ffe511", "#fff27f"];
+                    $(".js-lotteryNum").text(turnplate.clickNum);   //抽奖次数
+
+                    // 提前获得奖品图片的宽高
+                    var imgW,imgH;
+                    turnplate.restaraunts.forEach(function (value,index) {
+                        imgReady(turnplate.imgUrl+value.img+'.png', function () {
+                            imgW=Math.ceil(this.width*0.6);
+                            imgH=Math.ceil(this.height*0.6);
+                            turnplate.restaraunts[index].width=imgW;
+                            turnplate.restaraunts[index].height=imgH;
+                            console.log('读取图片宽'+imgW+"   "+"高"+imgH);
+                        });
+                    });
+
+                    var rotateTimeOut = function () {
+                        $('#wheelcanvas').rotate({
+                            angle: 0,
+                            animateTo: 2160,
+                            duration: 8000,
+                            callback: function () {
+                                alert('网络超时，请检查您的网络设置！');
+                            }
+                        });
+                    };
+
+                    //旋转转盘 item:奖品位置; txt：提示语;
+                    var rotateFn = function (item, txt) {
+                        var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
+
+                        if (angles < 270) {
+                            angles = 270 - angles;
+                        } else {
+                            angles = 360 - angles + 270;
+                        }
+                        $('#wheelcanvas').stopRotate();
+                        $('#wheelcanvas').rotate({
+                            angle: 0,
+                            animateTo: angles + 1800-22.5,
+                            duration: 8000,
+                            callback: function () {
+                                alert(txt.name);
+                                turnplate.bRotate = !turnplate.bRotate;
+                            }
+                        });
+                    };
+
+                    /*开始旋转*/
+                    $('.pointer').click(function () {
+                        if (turnplate.bRotate) return;
+                        if(turnplate.clickNum<=0){
+                            alert('机会已用完');
+                            return false;
+                        }
+                        $(".js-lotteryNum").text(--turnplate.clickNum);
+                        turnplate.bRotate = !turnplate.bRotate;
+                        //获取随机数(奖品个数范围内)
+                        var item = (1, turnplate.restaraunts.length);
+                        //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+                        rotateFn(item, turnplate.restaraunts[item - 1]);
+                    });
+                }
+            });
+
+		});
+
+		function rnd(n, m) {
+			var random = Math.floor(Math.random() * (m - n + 1) + n);
+			return random;
+
+		}
+
+
+		//页面所有元素加载完毕后执行drawRouletteWheel()方法对转盘进行渲染
+		window.onload = function () {
+            console.log(turnplate.restaraunts);
+            setTimeout(function(){
+                drawRouletteWheel();
+            },500)
+			
+		};
+
+        /*对转盘进行渲染*/
+		function drawRouletteWheel() {
+			var canvas = document.getElementById("wheelcanvas");
+			if (canvas.getContext) {
+				//根据奖品个数计算圆周角度
+				var arc = Math.PI / (turnplate.restaraunts.length / 2);
+				var ctx = canvas.getContext("2d");
+				//在给定矩形内清空一个矩形
+				ctx.clearRect(0, 0, 422, 422);
+
+				//strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
+				ctx.strokeStyle = "#b95b1c";
+				//font 属性设置或返回画布上文本内容的当前字体属性
+				ctx.font = '16px Microsoft YaHei';
+				for (var i = 0; i < turnplate.restaraunts.length; i++) {
+					var angle = turnplate.startAngle + i * arc+Math.PI/8;
+					ctx.fillStyle = turnplate.colors[i];
+					ctx.beginPath();
+					//arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+					ctx.arc(211, 211, turnplate.outsideRadius, angle, angle + arc, false);
+					ctx.arc(211, 211, turnplate.insideRadius, angle + arc, angle, true);
+					ctx.stroke();
+					ctx.fill();
+					//锁画布(为了保存之前的画布状态)
+					ctx.save();
+
+					//----绘制奖品开始----
+					ctx.fillStyle = "#E5302F";
+					var text = turnplate.restaraunts[i];
+					var line_height = 17;
+					//translate方法重新映射画布上的 (0,0) 位置
+					ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
+
+					//rotate方法旋转当前的绘图
+					ctx.rotate(angle + arc / 2 + Math.PI / 2);
+
+					/** 下面代码根据奖品类型、奖品名称长度渲染不同效果，如字体、颜色、图片效果。(具体根据实际情况改变) **/
+					// if (text.name.indexOf("M") > 0) {//流量包
+					// 	var texts = text.split("M");
+					// 	for (var j = 0; j < texts.length; j++) {
+					// 		ctx.font = j == 0 ? 'bold 20px Microsoft YaHei' : '16px Microsoft YaHei';
+					// 		if (j == 0) {
+					// 			ctx.fillText(texts[j] + "M", -ctx.measureText(texts[j] + "M").width / 2, j * line_height);
+					// 		} else {
+					// 			ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+					// 		}
+					// 	}
+					// } else if (text.name.indexOf("M") == -1 && text.name.length > 20) {//奖品名称长度超过一定范围
+					// 	text = text.name.substring(0, 7) + "||" + text.name.substring(7);
+					// 	var texts = text.split("||");
+					// 	for (var j = 0; j < texts.length; j++) {
+					// 		ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);
+					// 	}
+					// } else {
+					// 	//在画布上绘制填色的文本。文本的默认颜色是黑色
+					// 	//measureText()方法返回包含一个对象，该对象包含以像素计的指定字体宽度
+						
+					// }
+                    ctx.fillText(text.name, -ctx.measureText(text.name).width / 2, 0);
+					//添加对应图标
+					var img=document.createElement("img");
+					img.src=turnplate.imgUrl+text.img+'.png';
+					console.log("开始绘画："+text.width+"   "+text.height)
+                    ctx.drawImage(img, -30,15,text.width,text.height);
+                    //把当前画布返回（调整）到上一个save()状态之前
+                    ctx.restore();
+                    //----绘制奖品结束----
+				}
+			}
+		}
+
+	</script>
+    <div style="display:none">
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var s = document.getElementsByTagName("script")[0];
+                //百度统计
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+                s.parentNode.insertBefore(hm, s);
+                //友盟统计
+                var ym = document.createElement("script");
+                ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+                s.parentNode.insertBefore(ym, s);
+            })();
+        </script>
+    </div>
+</body>
+
+</html>

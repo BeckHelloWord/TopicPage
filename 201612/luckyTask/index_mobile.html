@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>手气任务</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../../js/layer1.9/layer.js"></script>
+</head>
+<body class="h5-main">
+<img src="images/h5-banner.jpg">
+<section class="subject p14">
+    <h3>手气任务：<span class="cycleDay">0</span>天</h3>
+    <div class="clearfix h5-amount">
+        <div class="h5-timer fl">
+            <span>距活动结束时间还剩：</span>
+            <p><i id="time_d">0</i>&nbsp;:&nbsp;<i id="time_h">0</i>&nbsp;:&nbsp;<i id="time_m">0</i>&nbsp;:&nbsp;<i id="time_s">0</i></p>
+        </div>
+        <div class="h5-lave fl">
+            <span>剩余可投金额：</span>
+            <p><i class="canInvestMoney">0</i> 元</p>
+        </div>
+    </div>
+    <span class="h5-money">参团金额：</span>
+    <div class="must-amount t_c"><span class="investMoney">0</span> 元</div>
+    <div class="btnDiv"><a href="javascript:void(0)" class="h5-btnGroup t_c btnGroup">立即投资</a></div>
+</section>
+<section class="h5-lucky">
+    <img src="images/h5-grab.jpg">
+    <div class="w68">
+        <p class="h5-luckyAmount t_c"><span>&yen<span class="voucherTotal">0</span></span>元</p>
+        <p class="t_c h5-now">当前为拼手气红包</p>
+        <div class="h5-numberAmount clearfix p14">
+            <p class="fl">已领取红包个数</p>
+            <p class="fr"><span class="voucherSendCount">0</span>个</p>
+        </div>
+        <p class="h5-totalAmount p14">红包总数<span class="voucherCount">0</span>个</p>
+        <div class="h5-numberAmount h5-laveAmount p14">
+            <p class="fl">红包剩余金额</p>
+            <p class="fr"><span class="voucherCanUsedAmount">0</span>元</p>
+        </div>
+        <a href="javascript:void(0)" class="h5-btnlucky t_c btnlucky">开始抢红包</a>
+    </div>
+</section>
+<section class="h5-note p14">
+    <h2 class="t_c"><img src="images/iBefore.png" />&nbsp;&nbsp;&nbsp;&nbsp;红包记录&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/iAfter.png" /></h2>
+    <ul class="noteTitle clearfix">
+        <li><div class="noteName"><i></i>用户名</div><div>抢购金额</div><div>红包奖励</div></li>
+    </ul>
+    <ul class="clearfix noteUl"></ul>
+</section>
+<section class="h5-rule p14">
+    <h2 class="t_c"><img src="images/iBefore.png" />&nbsp;&nbsp;&nbsp;&nbsp;活动规则&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/iAfter.png" /></h2>
+    <ul>
+        <li><span>1</span>本活动售出的理财产品为宝象金苹果计划，执行<b>8.5% + 0.8%年化收益率，限额20</b>万，售完即止，90天标期；</li>
+        <li><span>2</span>本活动每次购买金额为2000元，每次投资成功后可以得到拼手气红包（得到红包的概率为100%），单个用户可多次购买，上限100人次参加；</li>
+        <li><span>3</span>本次活动总计奖励为3000元24K现金红包，有100次拼手气红包机会，每个拼手气红包金额随机，投资成功次数越多可获得拼手气红包数量越多；</li>
+        <li><span>4</span><b>秒速奖：</b>第一个成功参与本活动的用户，可获得100元现金奖励；</li>
+        <li><span>5</span><b>土豪奖：</b>本活动累计投资金额最多的用户可获得200元现金奖励（若金额相同，则奖励给最先达到此额度的用户）；</li>
+        <li><span>6</span>用户投资成功后需返回活动页面拼手气抢红包，红包信息以弹出框的形式告知成功用户并即时到帐。用户可以在“我的”-“我的红包”内查看；</li>
+        <li><span>7</span>用户只可通过本活动页面入口购买，方可参与生效本次团购活动，通过其他入口购买的用户不计入本次活动；</li>
+        <li><span>8</span>如有任何疑问请联系<b>客服电话：400-885-1100</b>；</li>
+        <li><span>9</span>在法律法规允许范畴内，宝象金融对本活动拥有最终解释权。</li>
+    </ul>
+</section>
+<section class="h5-plan">
+    <div class="clearfix planBorder">
+        <div class="fl h5-plan-title"><img src="images/h5-plan.png" />金苹果投资计划</div>
+        <ul class="clearfix">
+            <li class="clearfix">
+                <img src="images/planIcon01.png">
+                <p><span>收益稳定</span>收益远超银行以及某宝类</p>
+            </li>
+            <li class="clearfix">
+                <img src="images/planIcon02.png">
+                <p><span>优质资产</span>象牙风控体系筛选优质资产支撑</p>
+            </li>
+            <li class="clearfix">
+                <img src="images/planIcon03.png">
+                <p><span>期限多样</span>90天／180天灵活选择</p>
+            </li>
+            <li class="clearfix">
+                <img src="images/planIcon04.png">
+                <p><span>省心便捷</span>固定金额／固定期限／便捷理财</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--<section class="h5-group p14">-->
+    <!--<h2 class="t_c"><img src="images/iBefore.png" />&nbsp;&nbsp;&nbsp;&nbsp;本期团购组合资金投向&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/iAfter.png" /></h2>-->
+    <!--<ul>-->
+        <!--<li><span>资产种类</span><span>资产数量</span></li>-->
+        <!--<li><span>车辆质押贷</span><span>6个</span></li>-->
+        <!--<li><span>资产总额</span><span>资产来源</span></li>-->
+        <!--<li><span>100万</span><span>宝象金融</span></li>-->
+    <!--</ul>-->
+<!--</section>-->
+<section class="tips t_c">市场有风险 投资需谨慎</section>
+<section class="whetherLogin">
+    <div class="notLogin clearfix p14">
+        <a href="/login/index.html">登录</a>
+        <a href="/secure/register.html">注册</a>
+    </div>
+    <div class="hasLogin clearfix p14">
+        <p class="fl">账户余额(含添添金)： <i class="canUsedMoeny">0</i>元</p>
+        <a href="/center/recharge/index" class="fr">充值</a>
+    </div>
+</section>
+<audio id="car_audio"  src="../music/music.mp3" autoplay="autoplay" loop="loop" ></audio>
+<script src="../../js/wechatLink-1.1.js"></script>
+<script src="../../js/public.js"></script>
+<script src="js/index.js"></script>
+<script>
+    loginFun();
+    function loginFun(){
+        $.ajax({
+            url:'/secure/get-login-info.html',
+            success:function(json) {
+                if (!json.isLogin) {
+                    $(".notLogin").show();
+                    $(".hasLogin").hide();
+                    return false;
+                }else{
+                    $(".notLogin").hide();
+                    $(".hasLogin").show();
+                }
+            }
+        });
+    }
+
+    var bol = true;
+
+    $(".btnlucky").on("click",function(){
+        var $this = $(this);
+
+        if(!bol){
+            return false;
+        }
+
+        bol = false;
+        $this.addClass("end").text("抢红包中");
+
+        $.ajax({
+            url:'/act-year-end-lucky/second-kill.html',
+            success:function(json){
+                bol = true;
+                $this.removeClass("end").text("开始抢红包");
+                if(!json.success){
+                    location.href = "/login/index.html?redirect=/topic/201612/luckyTask/";
+                    return false;
+                }
+                if(json.killType == 0){//秒杀失败
+                    layer.open({
+                        content: json.message
+                    });
+                    return false;
+                }
+
+                if(json.killType == 1){//秒杀成功
+                    var suc;
+                    suc = layer.open({
+                        type:1,
+                        area:'90%',
+                        shade: [0.6, '#000'],
+                        closeBtn: true,
+                        title:false, 
+                        content:'<div class="suc layer"><h5>拼手气红包</h5><p class="suc_count layer_count"><span>'+ json.giftMoney +'</span>元</p><p class="suc_message layer_message">恭喜你获得拼手气红包&nbsp;&nbsp;<span>'+ json.giftMoney +'元</span>！<br />好运就在下一次机会等着你哦！</p><div class="suc_btn layer_btn clearfix"><a href="javascript:void(0)" class="suc_close layer_close">知道了</a><a href="javascript:void(0)" class="suc_invest layer_invest">再拼一次</a></div></div>'
+                    });
+                    $(".suc_btn").html('<a href="javascript:void(0)" class="suc_close layer_close">知道了</a><a href="/lc/invest/detail/'+ json.investId +'.html" class="suc_invest layer_invest appUrl" data-app-url="baoxiang://APPProjectInvesting?type=invest&investId='+ json.investId +'">再拼一次</a>');
+                    appUrl();
+                    $(".suc_close").on("click",function(e){
+                        layer.close(suc);
+                        e.preventDefault();
+                    });
+                    $(".voucherSendCount").text(json.voucherSendCount);
+                    $(".voucherCanUsedAmount").text(json.voucherCanUsedAmount);
+                    return false;
+                }
+
+                if(json.killType == 2){//没有机会
+                    var noChance;
+                    noChance = layer.open({
+                        type:1,
+                        area:'90%',
+                        shade: [0.6, '#000'],
+                        closeBtn: true,
+                        title:false, 
+                        content:'<div class="noChance layer"><p class="noChance_message layer_message">您当前没有机会，现在投资得抢红包机会</p><div class="noChance_btn layer_btn clearfix"><a href="javascript:void(0)" class="noChance_close layer_close">再想想</a><a href="javascript:void(0)" class="noChance_invest layer_invest">去投资</a></div></div>'
+                    });
+                    $(".noChance_btn").html('<a href="javascript:void(0)" class="noChance_close layer_close">再想想</a><a href="/lc/invest/detail/'+ json.investId +'.html"  class="noChance_invest layer_invest appUrl"  data-app-url="baoxiang://APPProjectInvesting?type=invest&investId='+ json.investId +'">去投资</a>');
+                    appUrl();
+                    $(".noChance_close").on("click",function(e){
+                        layer.close(noChance);
+                        e.preventDefault();
+                    });
+
+                    return false;
+                }
+
+                if(json.killType == 3){//活动结束
+                    layer.open({
+                        content: '尊敬的客户，活动已结束'
+                    });
+                    return false;
+                }
+            }
+        })
+    });
+
+
+    var  url = location.href;
+    if(url.indexOf("www.") != -1){
+        location.href = url.replace("www.", "m.")
+    }
+
+    var wechatShare=new WeChatShare();
+    var shareData ={
+        shareConfig:{
+            title: "万元红包拼手气，能拿多少你随意！",
+            desc: "投资2000元抢3000元红包！只要手气旺！钱包不怕胖！ ",
+            link: location.href,
+            imgUrl: "http://100cfp.oss-cn-hangzhou.aliyuncs.com/upload/image/0216e901-af69-4429-a6ba-158a633663e2.jpg"
+        },
+        menuList:{
+            menuList: [
+                'menuItem:readMode', // 阅读模式
+                'menuItem:share:timeline', // 分享到朋友圈
+                'menuItem:copyUrl', // 复制链接
+                'menuItem:share:appMessage'
+            ]
+        },
+        callback:function(){}
+    };
+    wechatShare.init(shareData);
+
+    function appUrl(){
+        if (/baoxiang/.test(navigator.userAgent)) {
+            $('a.appUrl').each(function () {
+                var appUrl = $(this).data().appUrl;
+                if (appUrl) {
+                    $(this).attr('href', appUrl);
+                }
+            })
+        }
+    }
+
+
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

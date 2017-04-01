@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <title>欢乐英雄榜</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+</head>
+<body class="body_bg">
+
+<div class="mobMain">
+    <div class="mobBanner"><img src="images/mob_banner.jpg" alt="" /></div>
+    <div class="mobExchange clearfix">
+        <div class="change clearfix">
+            <div class="packet left">
+            <img src="images/packet.png" alt=""/><span>限兑换：<i>10次/天</i></span>
+              <p>兑换1张欢乐券将消耗您的10宝象币</p>
+            </div>
+            <!--<a class="joyBtn" href="#"> <img class="right" src="images/joyBtn.png" alt="" /><span id="num"></span></a>-->
+        </div>
+        <div class="dataList">
+            你的宝象币：<span class="js-integralTotal"></span><font>，排名：<span class="js-integralNo"></span></font>；你的欢乐券：<span class="js-ticketTotal"></span><font>， 排名：<span class="js-ticketNo"></span></font>。
+        </div>
+    </div>
+    <div class="centerEnd">
+        <table>
+            <caption><span>第1名：</span>小米60寸4K电视一台</caption>
+            <tr>
+                <td><img src="images/prizeEnd01.png" /></td>
+                <td class="td1"><span>Aa*****on</span></td>
+                <td><span>1675张欢乐券</span></td>
+            </tr>
+        </table>
+        <table>
+            <caption><span>第2-5名：</span>小米max智能手机一部</caption>
+            <tr>
+                <td rowspan="4"><img src="images/prizeEnd02.png" /></td>
+                <td class="td1"><span>小*****心</span></td>
+                <td><span>1299张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>jx*****96</span></td>
+                <td><span>1238张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****HP</span></td>
+                <td><span>1230张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>雨*****88</span></td>
+                <td><span>1220张欢乐券</span></td>
+            </tr>
+        </table>
+        <table>
+            <caption><span>第6-10名：</span>小米智能床头灯一台</caption>
+            <tr>
+                <td rowspan="5"><img src="images/prizeEnd03.png" /></td>
+                <td class="td1"><span>si*****er</span></td>
+                <td><span>1164张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****Pu</span></td>
+                <td><span>630张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>Mr*****nt</span></td>
+                <td><span>533张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****Zg</span></td>
+                <td><span>519张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>晨*****晏</span></td>
+                <td><span>469张欢乐券</span></td>
+            </tr>
+        </table>
+        <table>
+            <caption><span>第11-18名：</span>小米路由器mini一台</caption>
+            <tr>
+                <td rowspan="8"><img src="images/prizeEnd04.png" /></td>
+                <td class="td1"><span>白*****鱼</span></td>
+                <td><span>431张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>la*****ny</span></td>
+                <td><span>380张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>裸*****皮</span></td>
+                <td><span>291张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****u7g</span></td>
+                <td><span>278张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****H7g</span></td>
+                <td><span>269张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>sy*****ia</span></td>
+                <td><span>136张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>bx*****zH</span></td>
+                <td><span>132张欢乐券</span></td>
+            </tr>
+            <tr>
+                <td class="td1"><span>jj*****23</span></td>
+                <td><span>130张欢乐券</span></td>
+            </tr>
+        </table>
+    </div>
+    <!--<div class="mobStore">-->
+        <!--<div class="hd t_c"><img src="images/mob_store_title.png" alt="" /></div>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_01.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>60元红包</h3>-->
+                <!--<p>价值: 5张欢乐券</p>-->
+                <!--<p class="txtRule">红包使用规则前往宝象金融App个人账户查看</p>-->
+                <!--<a class="btn" href="" data-prize="cash60">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_01.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>80元红包</h3>-->
+                <!--<p>价值: 5张欢乐券</p>-->
+                <!--<p class="txtRule">红包使用规则前往宝象金融App个人账户查看</p>-->
+                <!--<a class="btn" href="" data-prize="cash80">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_02.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>10000元体验金</h3>-->
+                <!--<p>价值: 30张欢乐券</p>-->
+                <!--<p class="txtRule">体验金使用规则前往宝象金融App个人账户查看</p>-->
+                <!--<a class="btn" href="" data-prize="coupon10000">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_05.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>18倍日化投资收益券</h3>-->
+                <!--<p>价值: 50张欢乐券<br/>（活动内限量1次）</p>-->
+                <!--<p class="txtRule">用户在818/918当天，直投项目在投金额中本金最高的一笔，可享18倍年化收益奖励。该特权仅限享受1次，奖励以红包形式发放，0元激活。</p>-->
+                <!--<a class="btn" href="" data-prize="profit18">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_03.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>小米电池套组</h3>-->
+                <!--<p>价值: 50张欢乐券<br/>（每日限量5组）</p>-->
+                <!--<p class="txtRule">换取后请联系客服4008851100登记寄送地址以及所需型号</p>-->
+                <!--<a class="btn" href="" data-prize="miPackage">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+        <!--<dl>-->
+            <!--<dt><img src="images/goods_06.png" alt="" /></dt>-->
+            <!--<dd>-->
+                <!--<h3>善诊孝心体检套餐<br />(价值235元)</h3>-->
+                <!--<p>价值: 1张欢乐券<br/>（每人限用1次）</p>-->
+                <!--<p class="txtRule">兑换后后请关注宝象金融微信服务号（服务号ID：bxjrccs）回复“善诊”获得使用方式。</p>-->
+                <!--<a class="btn" href="" data-prize="cinemaTicket">兑换</a>-->
+            <!--</dd>-->
+        <!--</dl>-->
+
+    <!--</div>-->
+    <div class="mobExplain">
+        <div class="mobWay">
+            <h3><span>本次宝象嘉年华所有实物<br/>礼品均选自小米智能产品</span></h3>
+            <h4 class="first">获取方式一：冲击欢乐英雄榜</h4>
+            <p>第1名：小米60寸4K电视一台</p>
+            <p>第2-5名：小米max智能手机一部</p>
+            <p>第6-10名：小米智能床头灯一台</p>
+            <p>第11-18名：小米路由器mini一个</p>
+            <h4>获取方式二：每日818投资</h4>
+            <p>每日上午8：18投资（1000元以上）<br />小米智能插线板  每日首位</p><br />
+            <p>每日下午8：18投资（1000元以上）<br />小米移动电源   每日首位</p>
+            <h4>获取方式三：欢乐商城兑换</h4>
+            <p>小米七彩电池套组（每日限量5套）</p>
+        </div>
+        <div class="mobUse">
+            <h3><span>实物礼品获得说明</span></h3>
+            <p>宝象英雄榜排名从8月10日预热开始至9月17日23:59分截止；</p>
+            <p>每日818投资获礼需满足投资金额1000以上（现金／且不含添添金以及债权转让）；</p>
+            <p>工作人员将会在获奖的48小时内联系获奖者，联系奖品发放的具体事宜；</p>
+            <p>宝象金融对该活动具有最终解释权，并有权取消恶意刷奖用户的领奖资格（领奖人需完成平台实名认证，恶意刷奖判定包括但不限于同一IP地址、同一联系人等）</p>
+            <h3><span>宝象币使用/获取方式</span></h3>
+            <p>活动期间在活动首页首次签到可以领取30枚宝象币；</p>
+            <p>活动期间每日上下午在活动首页签到可以分别领取10枚宝象币；</p>
+            <p>投资金额每100元可以获得1枚宝象币；</p>
+            <p>参与每个活动都需要消耗10枚宝象币；</p>
+            <h3><span>欢乐券使用/获取方式</span></h3>
+            <p>活动期间参与任意嘉年华项目可获得1张欢乐券；</p>
+            <p>部分活动可以直接抽取一定数量欢乐券；</p>
+            <p>欢乐英雄榜页面可以使用宝象币兑换欢乐券（10：1），每日限量100个宝象币；</p>
+            <p>欢乐券可以直接在兑换商店兑换投资红包等礼品；</p>
+        </div>
+    </div>
+    <div class="footer t_c"><img src="images/logo.png" alt="" /></div>
+</div>
+<!--弹出框-->
+<div class="mobPop sucPop">
+    <div class="cont">
+        <p>成功兑换1张欢乐券</p>
+        <img src="images/packet2.png" alt="" />
+        <div class="bottom">
+            <a class="close mobBtn" href="#">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="mobPop errPop">
+    <div class="cont">
+        <p>成功兑换1张欢乐券</p>
+        <div class="bottom">
+            <a class="close mobBtn" href="#">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="mobPop mobMask sucMask">
+    <div class="cont">
+        <h3>兑换成功</h3>
+        <img src="images/success.png" />
+        <p>您成功兑换了<span>30元红包</span>。</p>
+        <div class="bottom">
+            <a class="close mobBtn" href="#">知道了</a>
+        </div>
+    </div>
+</div>
+<div class="mobPop mobMask failMask">
+    <div class="cont">
+        <h3>兑换失败</h3>
+        <img src="images/fail.png" />
+        <p></p>
+        <div class="bottom">
+            <a class="close mobBtn" href="#">知道了</a>
+        </div>
+    </div>
+</div>
+
+<!-- 音乐 -->
+<audio id="car_audio"  src="images/music.mp3" autoplay="autoplay" loop="loop"></audio>
+<script>
+    (function(){
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
+        }
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        });
+
+        $.ajax({
+            url: "/lottery-armory/index.html",
+            success: function(json){
+                if(!json.success){
+                    window.location.href = "/login/index.html?redirect=/topic/201608/heroList/";
+
+                    return false;
+                }
+
+                if(!json.integralTotal){
+                    $(".js-integralNo").parent().hide();
+                }
+                $(".js-integralTotal").text(json.integralTotal);
+                $(".js-integralNo").text(json.integralNo);
+
+                if(!json.ticketTotal){
+                    $(".js-ticketNo").parent().hide();
+                }
+                $(".js-ticketTotal").text(json.ticketTotal);
+                $(".js-ticketNo").text(json.ticketNo);
+                $("#num").text(json.remainChoice);
+
+                var html2 = "";
+
+                for(var j = 0, len = json.happyTicketTop.length; j < len; j ++){
+                    html2 += '<li class="li' + (j + 1) + '">';
+                    html2 += '<span class="s1">' + (j + 1) + '</span>';
+                    html2 += '<span class="s2">' + json.happyTicketTop[j].nickName + '</span>';
+                    html2 += '<span class="s3">' + json.happyTicketTop[j].count + '</span>';
+                    html2 += '</li>';
+                }
+
+                $(".mobRanking ul").html(html2);
+            }
+        });
+
+        $(".joyBtn").on("click", function(e){
+            $.ajax({
+                url: "/lottery-armory/to-ticket.html",
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201607/crystalBall/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".errPop").show().find("p").text(json.message);
+
+                        return false;
+                    }
+
+                    if(json.integralTotal){
+                        $(".js-integralNo").parent().show();
+                    }
+                    $(".js-integralTotal").text(json.integralTotal);
+                    $(".js-integralNo").text(json.integralNo);
+
+
+                    if(json.ticketTotal){
+                        $(".js-ticketNo").parent().show();
+                    }
+                    $(".js-ticketTotal").text(json.ticketTotal);
+                    $(".js-ticketNo").text(json.ticketNo);
+
+                    $(".sucPop").show();
+                    $("#num").text(json.remainChoice);
+                }
+            });
+
+            e.preventDefault();
+        });
+
+
+        $(".mobStore dl dd a").on("click", function(e){
+            var prize = $(this).data("prize"), tit = $(this).siblings("h3").text();
+
+            $.ajax({
+                url: "/lottery-armory/shopping-exchange.html",
+                data: {"goodsSign": prize},
+                success: function(json){
+                    if(!json.success){
+                        window.location.href = "/login/index.html?redirect=/topic/201607/crystalBall/";
+
+                        return false;
+                    }
+
+                    if(!json.type){
+                        $(".failMask").show().find("p").text(json.message)
+
+                        return false;
+                    }
+
+                    if(json.integralTotal){
+                        $(".js-integralNo").parent().show();
+                    }
+                    $(".js-integralTotal").text(json.integralTotal);
+                    $(".js-integralNo").text(json.integralNo);
+
+
+                    if(json.ticketTotal){
+                        $(".js-ticketNo").parent().show();
+                    }
+                    $(".js-ticketTotal").text(json.ticketTotal);
+                    $(".js-ticketNo").text(json.ticketNo);
+
+                    $(".sucMask").show().find("p span").text(tit);
+
+                    var html2 = "";
+
+                    for(var j = 0, len = json.happyTicketTop.length; j < len; j ++){
+                        html2 += '<li class="li' + (j + 1) + '">';
+                        html2 += '<span class="s1">' + (j + 1) + '</span>';
+                        html2 += '<span class="s2">' + json.happyTicketTop[j].nickName + '</span>';
+                        html2 += '<span class="s3">' + json.happyTicketTop[j].count + '</span>';
+                        html2 += '</li>';
+                    }
+
+                    $(".mobRanking ul").html(html2);
+                }
+            });
+
+            e.preventDefault();
+        });
+
+        $(".close").on("click", function(e){
+            $(this).parents(".mobPop").hide();
+
+            e.preventDefault();
+        })
+    }())
+</script>
+
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            //百度统计
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9d8516b072af1baf608b889209361cbe";
+            s.parentNode.insertBefore(hm, s);
+            //友盟统计
+            var ym = document.createElement("script");
+            ym.src = "//s4.cnzz.com/z_stat.php?id=1258672745";
+            s.parentNode.insertBefore(ym, s);
+        })();
+    </script>
+</div>
+</body>
+</html>

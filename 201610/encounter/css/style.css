@@ -1,0 +1,18 @@
+*{-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+/* H5 */
+.mob-main{width:100%;overflow:hidden;}
+.mob-main img{width:100%;}
+
+.first {padding-top: 3rem}
+.second {margin: 3rem 0;}
+.bold {font-weight: bold;}
+
+.encounter-process {background: url(../images/h5-encounter-process.jpg);background-size: 100% 100%;}
+.encounter-order {text-align: center;font-size: 1.8rem;color: #220b00;}
+.encounter-sendto {padding: 0 8%;text-align: justify;font-size: 1.5rem;color: #220b00;}
+.encounter-rule {padding: 0 8%;text-align: justify;font-size: 1.5rem;color: #220b00;}
+.encounter-mail {color: #294ac7;text-decoration: underline;}
+
+.encounter-bottom {padding: 2rem 0 3rem 0;text-align: center;background: url(../images/h5-encounter-bottom.jpg);background-size: 100% 100%;}
+.encounter-bottom img {width: 80%;}
